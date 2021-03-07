@@ -27,7 +27,7 @@ import de.topobyte.android.maps.utils.label.RenderWorker;
 public class RenderWorkerPoi extends RenderWorker<LabelClass>
 {
 
-  private Context context;
+  private final Context context;
 
   public RenderWorkerPoi(Context context,
                          LabelDrawer<?, LabelClass, ?> labelDrawer)

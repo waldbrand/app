@@ -29,7 +29,7 @@ import de.topobyte.melon.enums.naming.SimpleEnumNamer;
 public class LabelDrawerPreferenceAbstraction
 {
 
-  private SharedPreferences prefs;
+  private final SharedPreferences prefs;
 
   public LabelDrawerPreferenceAbstraction(Context context)
   {

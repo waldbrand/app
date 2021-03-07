@@ -49,11 +49,11 @@ public class SearchWorker implements Runnable
   private static final int LIMIT = 50;
   private static final int LIMIT2 = 500;
 
-  private static DiacriticUtil diacritic = new DiacriticUtil();
+  private static final DiacriticUtil diacritic = new DiacriticUtil();
 
   private boolean destroyed = false;
 
-  private Object sync = new Object();
+  private final Object sync = new Object();
 
   private SearchQuery last = null;
   private SearchQuery queue = null;
@@ -62,10 +62,10 @@ public class SearchWorker implements Runnable
   protected IConnection ldb = null;
   protected SQLiteDatabase db = null;
 
-  private SearchResultsReceiver receiver;
+  private final SearchResultsReceiver receiver;
 
-  private SpatialIndex spatialIndexStreets;
-  private SpatialIndex spatialIndexPois;
+  private final SpatialIndex spatialIndexStreets;
+  private final SpatialIndex spatialIndexPois;
 
   public SearchWorker(String filename, SearchResultsReceiver receiver,
                       SpatialIndex spatialIndexStreets, SpatialIndex spatialIndexPois)
@@ -134,7 +134,7 @@ public class SearchWorker implements Runnable
     Log.i(LOG_TAG, "SearchWorker quit");
   }
 
-  private IterativeSearcher<SqRoad> searcherRoads = new IterativeSearcher<SqRoad>()
+  private final IterativeSearcher<SqRoad> searcherRoads = new IterativeSearcher<SqRoad>()
   {
 
     @Override
@@ -147,7 +147,7 @@ public class SearchWorker implements Runnable
     }
   };
 
-  private IterativeSearcher<SqPoi> searcherPoi = new IterativeSearcher<SqPoi>()
+  private final IterativeSearcher<SqPoi> searcherPoi = new IterativeSearcher<SqPoi>()
   {
 
     @Override

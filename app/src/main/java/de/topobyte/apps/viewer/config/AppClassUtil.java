@@ -20,9 +20,9 @@ package de.topobyte.apps.viewer.config;
 public class AppClassUtil
 {
 
-  private static String TYPE_PAID = "paid";
-  private static String TYPE_FREEMIUM = "freemium";
-  private static String TYPE_ADMOB = "admob";
+  private static final String TYPE_PAID = "paid";
+  private static final String TYPE_FREEMIUM = "freemium";
+  private static final String TYPE_ADMOB = "admob";
 
   public static boolean showGooglePlayLinksToApps()
   {

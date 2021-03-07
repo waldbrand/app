@@ -34,7 +34,7 @@ import de.topobyte.mapocado.styles.labels.elements.PlainLabel;
 public class LabelClass implements MagnificationSupport
 {
 
-  private float density;
+  private final float density;
   private float magnification;
 
   public LabelType type;

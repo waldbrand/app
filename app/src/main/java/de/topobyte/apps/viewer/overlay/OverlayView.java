@@ -37,16 +37,16 @@ public class OverlayView extends RelativeLayout
 
   private List<BvgButton> buttons;
 
-  private int marginTop = 10;
-  private int marginBottom = 10;
-  private int marginRight = 10;
+  private final int marginTop = 10;
+  private final int marginBottom = 10;
+  private final int marginRight = 10;
 
-  private int bw = 50;
-  private int bh = 50;
-  private float cr = 5;
-  private float padding = 5;
+  private final int bw = 50;
+  private final int bh = 50;
+  private final float cr = 5;
+  private final float padding = 5;
 
-  private float is = 35;
+  private final float is = 35;
 
   private float dbw;
   private float dbh;

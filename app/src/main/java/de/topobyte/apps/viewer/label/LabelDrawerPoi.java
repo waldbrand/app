@@ -215,7 +215,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
         && lat >= box.getLat2() && lat <= box.getLat1();
   }
 
-  private Map<String, Bitmap> symbolsCache = new HashMap<>();
+  private final Map<String, Bitmap> symbolsCache = new HashMap<>();
 
   private void renderIcons(int type, SteplessMapWindow mapWindow, BBox bbox,
                            Canvas canvas, RectangleIntersectionTester tester)

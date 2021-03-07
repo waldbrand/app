@@ -25,7 +25,7 @@ import java.util.Set;
 public class ThemeList
 {
 
-  private List<Theme> themes = new ArrayList<>();
+  private final List<Theme> themes = new ArrayList<>();
 
   public void add(Theme theme)
   {

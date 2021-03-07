@@ -19,8 +19,8 @@ package de.topobyte.apps.viewer.poi.category;
 
 public class Category
 {
-  private int nameId;
-  private String preferenceKey;
+  private final int nameId;
+  private final String preferenceKey;
 
   public Category(int nameId, String preferenceKey)
   {

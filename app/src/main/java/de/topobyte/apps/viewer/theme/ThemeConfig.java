@@ -21,7 +21,7 @@ import java.util.Set;
 
 public class ThemeConfig
 {
-  private static ThemeList themes = new ThemeList();
+  private static final ThemeList themes = new ThemeList();
 
   static {
     themes.add(new Theme("Default", "style-default", false));
@@ -32,9 +32,9 @@ public class ThemeConfig
     themes.add(new Theme("Black & White dark", "style-bw-dark", false));
   }
 
-  private String[] themeNames = themes.getNamesArray();
-  private String[] themeKeys = themes.getKeysArray();
-  private Set<String> themeKeySet = themes.getKeySet();
+  private final String[] themeNames = themes.getNamesArray();
+  private final String[] themeKeys = themes.getKeysArray();
+  private final Set<String> themeKeySet = themes.getKeySet();
 
   public String[] getThemeNames()
   {

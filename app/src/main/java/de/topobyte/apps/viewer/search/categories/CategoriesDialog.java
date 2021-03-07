@@ -37,8 +37,8 @@ import de.topobyte.apps.viewer.search.fragments.SearchFragment;
 public class CategoriesDialog extends DialogFragment
 {
 
-  private final int BUTTON_ALL = DialogInterface.BUTTON_NEUTRAL;
-  private final int BUTTON_NONE = DialogInterface.BUTTON_NEGATIVE;
+  private final static int BUTTON_ALL = DialogInterface.BUTTON_NEUTRAL;
+  private final static int BUTTON_NONE = DialogInterface.BUTTON_NEGATIVE;
 
   private CategoryList list;
 

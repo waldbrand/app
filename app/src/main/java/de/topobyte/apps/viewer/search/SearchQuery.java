@@ -24,11 +24,11 @@ import de.topobyte.nomioc.luqe.dao.MatchMode;
 public class SearchQuery
 {
 
-  private String query;
-  private MatchMode matchMode;
-  private ResultOrder resultOrder;
-  private Point position;
-  private TypeSelection typeSelection;
+  private final String query;
+  private final MatchMode matchMode;
+  private final ResultOrder resultOrder;
+  private final Point position;
+  private final TypeSelection typeSelection;
 
   public SearchQuery(String query, MatchMode matchMode,
                      ResultOrder resultOrder, Point position, TypeSelection typeSelection)

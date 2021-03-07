@@ -19,9 +19,9 @@ package de.topobyte.apps.viewer.theme;
 
 public class Theme
 {
-  private String name;
-  private String key;
-  private boolean premium;
+  private final String name;
+  private final String key;
+  private final boolean premium;
 
   public Theme(String name, String key, boolean premium)
   {

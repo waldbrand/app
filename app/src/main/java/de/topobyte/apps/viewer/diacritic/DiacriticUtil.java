@@ -24,7 +24,7 @@ public class DiacriticUtil
 {
   // http://www.rgagnon.com/javadetails/java-0456.html
 
-  private static Pattern pattern = Pattern
+  private static final Pattern pattern = Pattern
       .compile("\\p{InCombiningDiacriticalMarks}+");
 
   private static final String PLAIN_ASCII =

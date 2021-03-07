@@ -261,7 +261,7 @@ public class OverlayGroup extends RelativeLayout
     private SavedState(Parcel in)
     {
       super(in);
-      boolean values[] = new boolean[1];
+      boolean[] values = new boolean[1];
       in.readBooleanArray(values);
       this.controlsVisible = values[0];
     }

@@ -184,7 +184,7 @@ public class AboutActivity extends PlainActivity
   static class StaticUrlTransformer implements Linkify.TransformFilter
   {
 
-    private String link;
+    private final String link;
 
     public StaticUrlTransformer(String link)
     {

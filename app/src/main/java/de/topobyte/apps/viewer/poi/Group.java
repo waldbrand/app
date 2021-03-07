@@ -26,8 +26,8 @@ import de.topobyte.apps.viewer.poi.category.Category;
 public class Group
 {
 
-  private int titleId;
-  private List<Category> children = new ArrayList<Category>();
+  private final int titleId;
+  private final List<Category> children = new ArrayList<Category>();
 
   public Group(int titleId)
   {

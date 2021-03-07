@@ -26,9 +26,9 @@ import android.widget.PopupMenu;
 public abstract class EnumMenu<T extends Enum<?>>
 {
 
-  private int[] ids;
-  private T[] values;
-  private PopupMenu p;
+  private final int[] ids;
+  private final T[] values;
+  private final PopupMenu p;
 
   public EnumMenu(Context context, View v, int menuResource, T value,
                   int[] ids, T[] values)

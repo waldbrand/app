@@ -29,9 +29,9 @@ public class PoiShareMenuItemOnClickListener implements OnMenuItemClickListener
 {
 
   private final Context context;
-  private double lon;
-  private double lat;
-  private String name;
+  private final double lon;
+  private final double lat;
+  private final String name;
 
   public PoiShareMenuItemOnClickListener(Context context, double lon, double lat, String name)
   {

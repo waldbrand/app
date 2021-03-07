@@ -30,8 +30,8 @@ import de.topobyte.util.maps.MercatorUtil;
 public class LocationOverlay implements OnDrawListener<BaseMapView>
 {
 
-  private MapWindow mapWindow;
-  private float density;
+  private final MapWindow mapWindow;
+  private final float density;
 
   private boolean valid = false;
   private boolean enabled = true;

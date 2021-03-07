@@ -25,7 +25,7 @@ public class PositionHistory
 {
   public static double THRESHOLD = 0.0001;
 
-  private LinkedList<Coordinate> history = new LinkedList<>();
+  private final LinkedList<Coordinate> history = new LinkedList<>();
 
   public void push(Coordinate c)
   {

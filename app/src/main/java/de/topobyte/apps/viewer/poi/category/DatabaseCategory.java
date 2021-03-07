@@ -24,7 +24,7 @@ import java.util.List;
 public class DatabaseCategory extends Category
 {
 
-  private List<String> ids = new ArrayList<>();
+  private final List<String> ids = new ArrayList<>();
 
   public DatabaseCategory(int nameId, String preferenceKey,
                           String... identifiers)

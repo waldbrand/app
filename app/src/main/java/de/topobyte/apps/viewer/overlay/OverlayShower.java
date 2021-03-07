@@ -29,12 +29,12 @@ public class OverlayShower extends RelativeLayout
   private float density;
   private ShowButton button;
 
-  private int marginTop = 10;
-  private int marginRight = 0;
+  private final int marginTop = 10;
+  private final int marginRight = 0;
 
-  private int bw = 25;
-  private int bh = 50;
-  private float cr = 5;
+  private final int bw = 25;
+  private final int bh = 50;
+  private final float cr = 5;
 
   private void init()
   {

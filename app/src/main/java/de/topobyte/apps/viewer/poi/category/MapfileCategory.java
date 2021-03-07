@@ -24,7 +24,7 @@ import java.util.List;
 public class MapfileCategory extends Category
 {
 
-  private List<String> ids = new ArrayList<>();
+  private final List<String> ids = new ArrayList<>();
 
   public MapfileCategory(int nameId, String preferenceKey,
                          String... identifiers)

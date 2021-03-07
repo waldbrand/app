@@ -42,7 +42,7 @@ public class Clearable implements OnTouchListener, TextWatcherListener
     new Clearable(edit);
   }
 
-  private EditText edit;
+  private final EditText edit;
   private Drawable icon;
 
   private Clearable(EditText edit)

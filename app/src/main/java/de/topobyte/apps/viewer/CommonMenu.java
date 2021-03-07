@@ -18,11 +18,10 @@
 package de.topobyte.apps.viewer;
 
 import android.content.Intent;
-
-import androidx.fragment.app.FragmentActivity;
-
 import android.view.Menu;
 import android.view.MenuItem;
+
+import androidx.fragment.app.FragmentActivity;
 
 import java.util.Locale;
 

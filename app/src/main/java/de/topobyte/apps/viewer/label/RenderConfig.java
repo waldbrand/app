@@ -54,11 +54,11 @@ import de.topobyte.apps.viewer.poi.category.DatabaseCategory;
 import de.topobyte.apps.viewer.poi.category.MapfileCategory;
 import de.topobyte.luqe.android.AndroidConnection;
 import de.topobyte.luqe.iface.IConnection;
-import de.topobyte.nomioc.luqe.model.SqPoiType;
 import de.topobyte.mapocado.android.style.MapRenderConfig;
 import de.topobyte.mapocado.styles.directory.StyleDirectory;
 import de.topobyte.mapocado.styles.labels.elements.LabelContainer;
 import de.topobyte.mapocado.styles.labels.elements.Rule;
+import de.topobyte.nomioc.luqe.model.SqPoiType;
 
 public class RenderConfig
 {

@@ -20,11 +20,10 @@ package de.topobyte.apps.viewer;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-
-import androidx.fragment.app.FragmentManager;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import de.topobyte.android.loader2.LoaderDialog;
 import de.topobyte.android.loader3.TaskFragment;

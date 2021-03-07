@@ -24,8 +24,8 @@ import android.os.Bundle;
 import android.provider.Settings;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.DialogFragment;
 import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.DialogFragment;
 
 import de.topobyte.apps.maps.atestcity.R;
 

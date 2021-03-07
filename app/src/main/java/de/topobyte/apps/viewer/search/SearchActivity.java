@@ -18,13 +18,12 @@
 package de.topobyte.apps.viewer.search;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import de.topobyte.apps.maps.atestcity.R;
 import de.topobyte.apps.viewer.CommonMenu;

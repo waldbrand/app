@@ -18,13 +18,12 @@
 package de.topobyte.apps.viewer.search.fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import de.topobyte.apps.maps.atestcity.R;
 import de.topobyte.apps.viewer.freemium.FreemiumUtil;

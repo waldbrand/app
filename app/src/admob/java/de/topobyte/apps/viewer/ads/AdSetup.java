@@ -17,11 +17,11 @@
 
 package de.topobyte.apps.viewer.ads;
 
+import android.util.Log;
+
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.util.Log;
 
 import de.topobyte.apps.maps.atestcity.R;
 import de.topobyte.apps.viewer.freemium.FreemiumUtil;

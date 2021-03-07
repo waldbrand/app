@@ -54,12 +54,12 @@ import de.topobyte.bvg.BvgAndroidPainter;
 import de.topobyte.bvg.BvgIO;
 import de.topobyte.bvg.BvgImage;
 import de.topobyte.jeography.core.mapwindow.SteplessMapWindow;
-import de.topobyte.mercatorcoordinates.GeoConv;
-import de.topobyte.sqlitespatial.spatialindex.access.SpatialIndex;
 import de.topobyte.mapocado.android.mapfile.MapFileOpener;
 import de.topobyte.mapocado.mapformat.Mercator;
 import de.topobyte.mapocado.styles.labels.elements.IconLabel;
 import de.topobyte.mapocado.styles.labels.elements.LabelType;
+import de.topobyte.mercatorcoordinates.GeoConv;
+import de.topobyte.sqlitespatial.spatialindex.access.SpatialIndex;
 
 public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView>
 {

@@ -64,7 +64,7 @@ public class PoiTypeInfo
         typeToTypeId.put(type.getName(), type.getId());
       }
     } catch (QueryException e) {
-      Log.e("render-config", "Error while retrieveing types", e);
+      Log.e("render-config", "Error while retrieving types", e);
     }
 
     peakIds.add(typeToTypeId.get("peak"));

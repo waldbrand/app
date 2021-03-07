@@ -1,0 +1,19 @@
+<resources>
+
+    <style name="MainBaseTheme" parent="Theme.AppCompat.Light">
+        <item name="clearcross">@drawable/cancel_glow</item>
+        <item name="drawer_bg">#ccefefef</item>
+        <item name="icon_sort_az">@drawable/sort_a_z</item>
+        <item name="icon_sort_za">@drawable/sort_z_a</item>
+        <item name="icon_sort_distance">@drawable/sort_distance</item>
+        <item name="icon_match_anywhere">@drawable/match_mode_anywhere</item>
+        <item name="icon_match_start">@drawable/match_mode_start_with</item>
+        <item name="icon_match_end">@drawable/match_mode_end_with</item>
+        <item name="icon_match_exact">@drawable/match_mode_exact</item>
+        <item name="icon_check_yes">@drawable/checkbox_yes</item>
+        <item name="icon_check_no">@drawable/checkbox_no</item>
+        <item name="icon_check_half">@drawable/checkbox_half</item>
+        <item name="icon_categories">@drawable/categories</item>
+    </style>
+
+</resources>

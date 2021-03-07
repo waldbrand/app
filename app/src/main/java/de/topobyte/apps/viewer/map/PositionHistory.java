@@ -1,0 +1,56 @@
+// Copyright 2021 Sebastian Kuerten
+//
+// This file is part of stadtplan-app.
+//
+// stadtplan-app is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// stadtplan-app is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with stadtplan-app. If not, see <http://www.gnu.org/licenses/>.
+
+package de.topobyte.apps.viewer.map;
+
+import org.locationtech.jts.geom.Coordinate;
+
+import java.util.LinkedList;
+
+public class PositionHistory
+{
+  public static double THRESHOLD = 0.0001;
+
+  private LinkedList<Coordinate> history = new LinkedList<>();
+
+  public void push(Coordinate c)
+  {
+    if (history.size() > 0) {
+      Coordinate last = history.getLast();
+      double distance = last.distance(c);
+      if (distance <= THRESHOLD) {
+        return;
+      }
+    }
+    history.add(c);
+    if (history.size() > 3) {
+      history.removeFirst();
+    }
+  }
+
+  public boolean isEmpty()
+  {
+    return history.isEmpty();
+  }
+
+  public Coordinate pop()
+  {
+    Coordinate c = history.removeLast();
+    return c;
+  }
+
+}

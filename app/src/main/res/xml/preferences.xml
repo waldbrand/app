@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/menu_preferences">
+
+    <PreferenceCategory android:title="@string/preferences_map">
+        <CheckBoxPreference
+            android:key="showScaleBar"
+            android:summary="@string/preferences_show_scale_bar_desc"
+            android:title="@string/preferences_show_scale_bar" />
+
+        <ListPreference
+            android:dialogTitle="@string/preferences_renderstyle_dialog_title"
+            android:key="renderTheme"
+            android:summary="@string/preferences_renderstyle_summary"
+            android:title="@string/preferences_renderstyle_title" />
+
+        <de.topobyte.apps.viewer.preferences.MagnificationPreference
+            android:key="magnification"
+            android:summary="@string/preferences_magnification_desc"
+            android:title="@string/preferences_magnification" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferences_general">
+        <CheckBoxPreference
+            android:key="showTips"
+            android:summary="@string/preferences_show_tips_desc"
+            android:title="@string/preferences_show_tips" />
+        <CheckBoxPreference
+            android:key="fullscreen"
+            android:summary="@string/preferences_fullscreen_desc"
+            android:title="@string/preferences_fullscreen" />
+        <CheckBoxPreference
+            android:key="wakeLock"
+            android:summary="@string/preferences_wake_lock_desc"
+            android:title="@string/preferences_wake_lock" />
+
+        <de.topobyte.apps.viewer.preferences.MoveSpeedPreference
+            android:key="moveSpeed"
+            android:summary="@string/preferences_move_speed_desc"
+            android:title="@string/preferences_move_speed" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferences_system">
+        <Preference
+            android:key="appInfo"
+            android:summary="@string/preferences_app_info_desc"
+            android:title="@string/preferences_app_info" />
+        <Preference
+            android:key="locationSources"
+            android:summary="@string/preferences_locations_sources_desc"
+            android:title="@string/preferences_locations_sources" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="privacy"
+        android:title="@string/preferences_privacy">
+        <CheckBoxPreference
+            android:key="personalizedAds"
+            android:summary="@string/preferences_personalized_ads_desc"
+            android:title="@string/preferences_personalized_ads" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferences_advanced">
+        <CheckBoxPreference
+            android:key="showCoordinates"
+            android:summary="@string/preferences_show_coordinates_desc"
+            android:title="@string/preferences_show_coordinates" />
+        <CheckBoxPreference
+            android:key="showZoomLevel"
+            android:summary="@string/preferences_show_zoom_level_desc"
+            android:title="@string/preferences_show_zoom_level" />
+        <CheckBoxPreference
+            android:key="showGrid"
+            android:summary="@string/preferences_show_grid_desc"
+            android:title="@string/preferences_show_grid" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

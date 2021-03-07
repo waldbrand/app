@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_privacy">
+
+    <TextView
+        style="@style/Text"
+        android:text="@string/privacy1"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <View style="@style/MediumSpacer" />
+
+    <TextView
+        style="@style/Text"
+        android:text="@string/privacy2"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <View style="@style/MediumSpacer" />
+
+    <TextView
+        style="@style/Text"
+        android:text="@string/privacy4"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <View
+        android:id="@+id/spacer_before_unlock_installed"
+        style="@style/MediumSpacer"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/unlock_installed"
+        style="@style/Text"
+        android:textStyle="bold"
+        android:text="@string/privacy6"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/spacer_before_google"
+        style="@style/MediumSpacer" />
+
+    <TextView
+        android:id="@+id/google"
+        style="@style/Text"
+        android:text="@string/privacy5"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</merge>

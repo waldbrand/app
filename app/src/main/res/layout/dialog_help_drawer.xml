@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dialog_bottom_margin"
+    android:paddingLeft="@dimen/dialog_horizontal_margin"
+    android:paddingRight="@dimen/dialog_horizontal_margin"
+    android:paddingTop="@dimen/dialog_top_margin">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="RtlHardcoded">
+
+            <TextView
+                android:id="@+id/textView1"
+                style="@style/DialogFont"
+                android:text="@string/help_drawer_text1" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/DialogFont.Continued"
+                android:layout_below="@+id/textView1"
+                android:text="@string/help_drawer_text2" />
+
+            <!-- Icons -->
+
+            <View
+                android:id="@+id/isosep0"
+                style="@style/DialogVerticalSeparator"
+                android:layout_above="@+id/textView3"
+                android:layout_below="@+id/textView2" />
+
+            <ImageView
+                android:id="@+id/icb1"
+                style="@style/DialogIcon"
+                android:layout_below="@+id/textView2"
+                android:layout_toRightOf="@+id/isosep0"
+                android:src="?attr/icon_check_no"
+                tools:ignore="ContentDescription" />
+
+            <View
+                android:id="@+id/icbsep1"
+                style="@style/DialogVerticalSeparator"
+                android:layout_above="@+id/textView3"
+                android:layout_below="@+id/textView2"
+                android:layout_toRightOf="@+id/icb1" />
+
+            <ImageView
+                android:id="@+id/icb2"
+                style="@style/DialogIcon"
+                android:layout_below="@+id/textView2"
+                android:layout_toRightOf="@+id/icbsep1"
+                android:src="?attr/icon_check_yes"
+                tools:ignore="ContentDescription" />
+
+            <View
+                android:id="@+id/icbsep2"
+                style="@style/DialogVerticalSeparator"
+                android:layout_above="@+id/textView3"
+                android:layout_below="@+id/textView2"
+                android:layout_toRightOf="@+id/icb2" />
+
+            <ImageView
+                android:id="@+id/icb3"
+                style="@style/DialogIcon"
+                android:layout_below="@+id/textView2"
+                android:layout_toRightOf="@+id/icbsep2"
+                android:src="?attr/icon_check_half"
+                tools:ignore="ContentDescription" />
+
+            <View
+                android:id="@+id/icbsep3"
+                style="@style/DialogVerticalSeparator"
+                android:layout_above="@+id/textView3"
+                android:layout_below="@+id/textView2"
+                android:layout_toRightOf="@+id/icb3" />
+
+            <!-- End of icons -->
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/DialogFont.Continued"
+                android:layout_below="@+id/icb1"
+                android:text="@string/help_drawer_text3" />
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/DialogFont.Continued"
+                android:layout_below="@+id/textView3"
+                android:text="@string/help_drawer_text4" />
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

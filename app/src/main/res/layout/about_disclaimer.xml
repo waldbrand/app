@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/activity_about">
+
+    <TextView
+        style="@style/Head"
+        android:text="@string/legal_disclaimer"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <View style="@style/MediumSpacer" />
+
+    <TextView
+        android:id="@+id/textViewDisclaimer"
+        style="@style/Text"
+        android:text="@string/disclaimer"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</merge>

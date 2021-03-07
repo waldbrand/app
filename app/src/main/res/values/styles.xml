@@ -1,0 +1,62 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="MainBaseTheme" parent="Theme.AppCompat.Light">
+        <item name="clearcross">@drawable/cancel_glow</item>
+        <item name="drawer_bg">#ccefefef</item>
+        <item name="icon_sort_az">@drawable/sort_a_z_outline</item>
+        <item name="icon_sort_za">@drawable/sort_z_a_outline</item>
+        <item name="icon_sort_distance">@drawable/sort_distance_outline</item>
+        <item name="icon_match_anywhere">@drawable/match_mode_anywhere_outline</item>
+        <item name="icon_match_start">@drawable/match_mode_start_with_outline</item>
+        <item name="icon_match_end">@drawable/match_mode_end_with_outline</item>
+        <item name="icon_match_exact">@drawable/match_mode_exact_outline</item>
+        <item name="icon_check_yes">@drawable/checkbox_yes_outline</item>
+        <item name="icon_check_no">@drawable/checkbox_no_outline</item>
+        <item name="icon_check_half">@drawable/checkbox_half_outline</item>
+        <item name="icon_categories">@drawable/categories_outline</item>
+    </style>
+
+    <style name="MainTheme" parent="MainBaseTheme">
+
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="colorAccent">#33b5e5</item>
+        <item name="colorPrimary">#9FA8DA</item>
+        <item name="colorPrimaryDark">#5C6BC0</item>
+    </style>
+
+    <style name="DialogFont">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="DialogFont.Continued">
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="DialogIcon">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+
+    <style name="DialogVerticalSeparator">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/darker_gray</item>
+    </style>
+
+    <!-- Stuff for laying out content -->
+
+    <style name="HorizontalLine">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/horizontal_line_height</item>
+        <item name="android:background">@color/horizontal_line_fill_color</item>
+        <item name="android:layout_marginTop">@dimen/large_spacer</item>
+        <item name="android:layout_marginBottom">@dimen/large_spacer</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,29 @@
+wrapper {
+    gradleVersion = '6.5.1'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.1'
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            url maven_path_topobyte
+        }
+        maven {
+            url 'http://mvn.topobyte.de'
+        }
+        maven {
+            url 'http://mvn.slimjars.com'
+        }
+        jcenter()
+        google()
+    }
+}

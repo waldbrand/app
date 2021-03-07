@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/alphabetic"
+            android:icon="?attr/icon_sort_az"
+            android:title="@string/alphabetic" />
+        <item
+            android:id="@+id/alphabetic_inverse"
+            android:icon="?attr/icon_sort_za"
+            android:title="@string/alphabetic_inverse" />
+        <item
+            android:id="@+id/distance"
+            android:icon="?attr/icon_sort_distance"
+            android:title="@string/by_distance" />
+    </group>
+
+</menu>

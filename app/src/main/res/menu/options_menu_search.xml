@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:support="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_map"
+        android:icon="@drawable/ic_map"
+        android:orderInCategory="100"
+        android:title="@string/menu_map"
+        support:showAsAction="always" />
+    <item
+        android:id="@+id/menu_preferences"
+        android:icon="@drawable/ic_settings"
+        android:orderInCategory="110"
+        android:title="@string/menu_preferences"
+        support:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_weather"
+        android:icon="@drawable/ic_weather"
+        android:orderInCategory="112"
+        android:title="@string/menu_weather"
+        support:showAsAction="never" />
+    <item
+        android:id="@+id/menu_public_transport"
+        android:orderInCategory="115"
+        android:title="@string/menu_public_transport_map"
+        support:showAsAction="never" />
+    <item
+        android:id="@+id/menu_help"
+        android:icon="@drawable/ic_help"
+        android:orderInCategory="150"
+        android:title="@string/menu_help_info"
+        support:showAsAction="never">
+
+        <menu>
+            <item
+                android:id="@+id/menu_tips_and_tricks"
+                android:orderInCategory="100"
+                android:title="@string/dialog_startup_title" />
+            <item
+                android:id="@+id/menu_faq"
+                android:orderInCategory="110"
+                android:title="@string/menu_faq" />
+            <item
+                android:id="@+id/menu_more_maps"
+                android:orderInCategory="140"
+                android:title="@string/menu_more_maps" />
+        </menu>
+
+    </item>
+    <item
+        android:id="@+id/menu_info_privacy"
+        android:icon="@drawable/ic_info"
+        android:orderInCategory="165"
+        android:title="@string/menu_privacy"
+        support:showAsAction="never" />
+    <item
+        android:id="@+id/menu_info_about"
+        android:icon="@drawable/ic_info"
+        android:orderInCategory="170"
+        android:title="@string/menu_info_about"
+        support:showAsAction="never" />
+
+</menu>

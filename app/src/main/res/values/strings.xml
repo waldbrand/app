@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+
+    <string name="app_name">ATestCity Map</string>
+
+    <!-- loader -->
+
+    <string name="nospaceleft">Not enough space left on device.</string>
+    <string name="spaceneeded1">This program needs at least</string>
+    <string name="spaceneeded2">of free space to operate. Consider moving the program to SD card if possible.</string>
+    <string name="loading_data">Extracting data. Please wait…</string>
+    <string name="error">Error</string>
+    <string name="close">Close</string>
+    <string name="file_size_bytes">bytes</string>
+    <string name="file_size_kb">kB</string>
+    <string name="file_size_mb">MB</string>
+
+    <!-- yes and no -->
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- consent dialog -->
+
+    <string name="consent_title">Privacy Policy</string>
+    <string name="consent_accept">Accept</string>
+    <string name="consent_decline">Decline</string>
+
+    <!-- labels -->
+
+    <string name="labels">Labels</string>
+
+    <string name="open_drawer">Show sidebar</string>
+    <string name="close_drawer">Hide sidebar</string>
+
+    <!-- menu -->
+
+    <string name="menu_info_about">About this software</string>
+    <string name="menu_privacy">Privacy policy</string>
+    <string name="menu_position">Position</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_search_remove">Remove Marker</string>
+    <string name="menu_preferences">Preferences</string>
+    <string name="menu_more_maps">More maps</string>
+    <string name="menu_map">Map</string>
+    <string name="menu_position_last_known">Last known location</string>
+    <string name="menu_position_my_location_enable">Show my location</string>
+    <string name="menu_position_my_location_disable">Remove my location</string>
+    <string name="menu_weather">Weather</string>
+    <string name="menu_public_transport_map">Public transport map</string>
+    <string name="menu_faq">FAQ</string>
+    <string name="menu_help_info">Help &amp; Info</string>
+
+    <string name="menu_help">Help</string>
+    <string name="menu_select_all">Select all</string>
+    <string name="menu_select_none">Select none</string>
+
+    <!-- location -->
+    <string name="title_location_permission">Permission Required</string>
+    <string name="rationale_location_permission">To display your location, this app needs permission to access your device\'s location. Please grant the permission in the next dialog.</string>
+    <string name="rationale_location_permission_denied">To display your location, this app needs permission to access your device\'s location. Because you have denied this permission permanently before, you can only enable it in the system settings of this app. Do you want to open the settings dialog now?</string>
+    <string name="error_last_location_unknown">The last location is unknown</string>
+    <string name="no_location_provider_available">No location source available. Would you like to open the system settings for location sources?</string>
+
+    <!-- preferences -->
+
+    <string name="preferences_general">General settings</string>
+    <string name="preferences_map">Map settings</string>
+    <string name="preferences_system">System settings</string>
+    <string name="preferences_privacy">Privacy settings</string>
+    <string name="preferences_advanced">Advanced settings</string>
+
+    <string name="preferences_show_scale_bar">Map scale bar</string>
+    <string name="preferences_show_scale_bar_desc">Show the scale of the map</string>
+    <string name="preferences_fullscreen">Full screen mode</string>
+    <string name="preferences_fullscreen_desc">Hide the status bar</string>
+    <string name="preferences_wake_lock">Stay awake</string>
+    <string name="preferences_wake_lock_desc">Stop the screen from locking</string>
+    <string name="preferences_move_speed">Move speed</string>
+    <string name="preferences_move_speed_desc">Adjust the move speed of the map</string>
+    <string name="preferences_move_speed_value">%d %% move speed</string>
+    <string name="preferences_magnification">Font size</string>
+    <string name="preferences_magnification_desc">Adjust the size of fonts on the map</string>
+    <string name="preferences_magnification_value">%d %% magnification</string>
+    <string name="snap_to_location_enabled">Snap to position is activated</string>
+    <string name="snap_to_location_disabled">Snap to position is disabled</string>
+
+    <string name="preferences_renderstyle_dialog_title">Select a map theme</string>
+    <string name="preferences_renderstyle_title">Map theme</string>
+    <string name="preferences_renderstyle_summary">Appearance of the map</string>
+
+    <string name="preferences_show_tips">Show tips</string>
+    <string name="preferences_show_tips_desc">Display tips and tricks when starting the app</string>
+
+    <string name="preferences_app_info">App info</string>
+    <string name="preferences_app_info_desc">Show system info about the app and manage permissions</string>
+    <string name="preferences_locations_sources">Location settings</string>
+    <string name="preferences_locations_sources_desc">Show system settings for location sources</string>
+
+    <string name="preferences_personalized_ads">Personalized ads</string>
+    <string name="preferences_personalized_ads_desc">Show personalized ad banners. If you deactivate this option, only non-personalized ads will be displayed</string>
+
+    <string name="preferences_show_grid">Show grid</string>
+    <string name="preferences_show_grid_desc">Display the boundaries of the map tiles used to create the map</string>
+    <string name="preferences_show_zoom_level">Show zoom level</string>
+    <string name="preferences_show_zoom_level_desc">Display the current zoom level in the upper left corner</string>
+    <string name="preferences_show_coordinates">Show coordinates</string>
+    <string name="preferences_show_coordinates_desc">Display the current coordinates of the map center in the upper left corner</string>
+
+    <!-- search -->
+
+    <string name="search_hint">Search database</string>
+
+    <string name="search_match_mode">match mode</string>
+    <string name="search_order">order</string>
+    <string name="search_filter">filter</string>
+    <string name="search_help">help</string>
+
+    <string name="alphabetic">alphabetic</string>
+    <string name="alphabetic_inverse">inverse</string>
+    <string name="by_distance">by distance</string>
+
+    <string name="anywhere">anywhere</string>
+    <string name="exact">exact</string>
+    <string name="start_with">starts with</string>
+    <string name="end_with">ends with</string>
+
+    <string name="categories_select_all">all categories</string>
+    <string name="categories_select_streets">streets</string>
+    <string name="categories_select_food">food &amp; drink</string>
+    <string name="categories_pick">pick categories</string>
+
+    <string name="search_no_results">No results. Try a less specific query…</string>
+    <string name="search_no_results_more">If you do not find what you\'re looking for, try setting the match mode to \"anywhere\" and remove category restrictions by selecting \"all categories\".</string>
+
+    <string name="context_dial">dial</string>
+    <string name="context_website">visit website</string>
+
+    <string name="elevation">Elevation</string>
+
+    <string name="unlock">Unlock premium features</string>
+    <string name="unlock2">Premium also removes ads</string>
+    <string name="unlock3">One purchase upgrades all our free maps</string>
+    <string name="unlock_short">Search Options</string>
+    <string name="unlock_long">Search Options? Unlock this premium feature</string>
+    <string name="please_donate">Like this app? Please donate</string>
+
+    <!-- categories -->
+
+    <string name="cat_orientation">Orientation</string>
+    <string name="cat_streets">Streets</string>
+    <string name="cat_places">Places</string>
+
+    <string name="cat_transportation">Transportation</string>
+    <string name="cat_railstop">Railway stops</string>
+    <string name="cat_tramstop">Tram stops</string>
+    <string name="cat_busstop">Bus stops</string>
+
+    <string name="cat_nature">Parks &amp; Nature</string>
+    <string name="cat_parks">Parks</string>
+    <string name="cat_water">Water</string>
+    <string name="cat_cemeteries">Cemeteries</string>
+    <string name="cat_peaks">Peaks</string>
+    <string name="cat_playgrounds">Playgrounds</string>
+
+    <string name="cat_foods_drinks">Foods &amp; Drink</string>
+    <string name="cat_restaurant">Restaurants</string>
+    <string name="cat_cafe">Cafes</string>
+    <string name="cat_bakeries">Bakeries</string>
+    <string name="cat_pubs">Pubs</string>
+    <string name="cat_bars">Bars</string>
+    <string name="cat_fastfood">Fast food</string>
+    <string name="cat_biergardens">Beer gardens</string>
+    <string name="cat_nightclubs">Nightclubs</string>
+
+    <string name="cat_arts_culture">Arts &amp; Culture</string>
+    <string name="cat_theatres">Theatres</string>
+    <string name="cat_cinemas">Cinemas</string>
+    <string name="cat_museums">Museums</string>
+    <string name="cat_religious">Religious</string>
+    <string name="cat_attraction">Attractions</string>
+    <string name="cat_memorial">Memorials</string>
+
+    <string name="cat_accommodation">Accommodation</string>
+    <string name="cat_hotels">Hotels</string>
+    <string name="cat_hostels">Hostels</string>
+    <string name="cat_guest_houses">Guest houses</string>
+
+    <string name="cat_education">Education</string>
+    <string name="cat_kindergarten">Preschool</string>
+    <string name="cat_school">Schools</string>
+    <string name="cat_universty">Universities</string>
+    <string name="cat_library">Libraries</string>
+
+    <string name="cat_health">Healthcare</string>
+    <string name="cat_hospitals">Hospitals</string>
+    <string name="cat_doctors">Doctors</string>
+    <string name="cat_dentists">Dentists</string>
+    <string name="cat_veterinary">Veterinary</string>
+    <string name="cat_pharmacies">Pharmacies</string>
+
+    <string name="cat_shops">Shops</string>
+    <string name="cat_clothes">Clothes</string>
+    <string name="cat_shoes">Shoes</string>
+    <string name="cat_jewelry">Jewelry</string>
+    <string name="cat_supermarkets">Supermarkets</string>
+    <string name="cat_chemists">Chemists</string>
+    <string name="cat_convenience">Convenience</string>
+    <string name="cat_carshops">Car shops</string>
+    <string name="cat_bikeshops">Bike shops</string>
+    <string name="cat_flowers">Flowers</string>
+    <string name="cat_diy">Hardware</string>
+    <string name="cat_electronics">Electronics</string>
+    <string name="cat_furniture">Furniture</string>
+    <string name="cat_books">Books</string>
+
+    <string name="cat_misc">Misc</string>
+    <string name="cat_banks_atms">Banks &amp; ATMs</string>
+    <string name="cat_embassies">Embassies</string>
+    <string name="cat_parking">Parking</string>
+    <string name="cat_post_boxes">Post boxes</string>
+    <string name="cat_telephones">Telephones</string>
+    <string name="cat_recycling">Recycling</string>
+    <string name="cat_toilets">Toilets</string>
+
+    <string name="cat_none">None</string>
+    <string name="cat_housenumbers">Housenumbers</string>
+    <string name="cat_other">Other</string>
+
+    <!-- dialogs -->
+
+    <string name="dialog_select_theme_title">Select map theme</string>
+
+    <string name="dialog_select_categories_title">Select categories</string>
+    <string name="all">All</string>
+    <string name="none">None</string>
+
+    <string name="help_drawer_title">Map sidebar</string>
+    <string name="help_drawer_text1">With this menu you can configure the icons and labels that appear on the map.</string>
+    <string name="help_drawer_text2">Use the switch at the top to toggle the visibility of all icons and labels at once.</string>
+    <string name="help_drawer_text3">To enable or disable specific elements on the map touch the desired item\'s checkbox in the list.</string>
+    <string name="help_drawer_text4">The available categories are organized in groups that can be toggled altogether. You can expand these groups and select contained items independently.</string>
+
+    <string name="help_search_title">Search features</string>
+    <string name="help_search_text1">You can use the buttons just below the textfield to refine the search results.</string>
+    <string name="help_search_text2">Use the first button to select the match mode, i.e. where you would like the search query to appear in the name: for example, if you select \"starts with\", each item\'s name in the results will begin with your input. Similarly, there is an option \"ends with\", but there are also two more modes: \"anywhere\" and \"exact\". \"Anywhere\" means that the query can appear anywhere in the name, while \"exact\" means that each name has to match your query exactly. By default, the mode \"anywhere\" is selected.</string>
+    <string name="help_search_text3">With the second button you can adjust the order of results. You can choose \"alphabetic\", reverse alphabetic (\"inverse\") and \"by distance\". The \"by distance\" mode will sort results by distance from the center of the map (i.e. the portion of the map that is currently visible in the map view). It will also display the distance from the center of the map for each item.</string>
+    <string name="help_search_text4">With the third button you can select the categories of items to include in the search. For example you could configure to look only for streets or just for restaurants. However, you can select any combination of categories: another example would be to restrict the results to museums and theatres or hotels.</string>
+
+    <string name="dialog_unlock_title">Get premium features</string>
+    <string name="dialog_unlock_text1_freemium">Unlock premium features of the application and enjoy even better search functionality. With the unlocked version you will be able to sort results by distance and have better control over your results by selecting categories and by defining the match mode.</string>
+    <string name="dialog_unlock_text1_admob">• Remove ad banner from map\n• Enjoy even better search functionality. With the unlocked version you will be able to sort results by distance and have better control over your results by selecting categories and by defining the match mode.</string>
+    <string name="dialog_unlock_button1">Explain premium features</string>
+    <string name="dialog_unlock_button2">Unlock using Google Play</string>
+
+    <string name="dialog_startup_title">Tips and tricks</string>
+    <string name="dialog_startup_text1">You can select which icons and labels are visible on the map, so that you can find what you\'re looking for more easily and to make the map better readable. Touch the button in the top left corner or swipe from the left to open the sidebar where you can configure the visible items.</string>
+    <string name="dialog_startup_text2">To find streets, restaurants, shops or other points of interest, open the search dialog by selecting the magnifying glass in the menu bar at the top.</string>
+    <string name="dialog_startup_text3">To show your current location on the map, select the GPS icon in the menu bar. It may take a while before your location appears on the screen.</string>
+    <string name="dialog_startup_text4">While showing your location on the map, you can toggle the button that appears at the top left corner to lock the map\'s position to your location. This makes it easy to track your location, so that you always know where you are.</string>
+    <string name="dialog_startup_text5">If you would like to increase the font size of the text displayed on the map, there is an option for that in the preferences menu.</string>
+    <string name="dialog_startup_text6">The preferences menu also allows you to configure other things such as the visibility of the scale bar, or whether the app runs in fullscreen mode.</string>
+    <string name="dialog_startup_show">Show this dialog at startup</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <!-- more maps -->
+
+    <string name="mm_head">More apps by Topobyte.de</string>
+
+    <string name="mm_head_netzplan">Public transport</string>
+    <string name="mm_intro_public_transport_map">For this city there is also a public transport map available that let\'s you browse the transportation network:</string>
+    <string name="mm_button_public_transport_map">Public transport map</string>
+
+    <string name="mm_head_maps">Other cities</string>
+    <string name="mm_intro_maps">We offer maps for several other cities and regions. You can either browse the maps on our website or download our manager app that let\'s you browse all maps conveniently:</string>
+    <string name="mm_button_web">Browse maps on the web</string>
+    <string name="mm_button_manager_app">Get manager app</string>
+
+    <string name="mm_head_atlas">World map / Atlas</string>
+    <string name="mm_intro_atlas">We created a world map app that let\'s you browse a political map of the world and explore countries and cities. It also includes some useful information about countries and a little quiz about country flags and more:</string>
+    <string name="mm_button_atlas">World map &amp; Atlas</string>
+
+    <string name="mm_head_misc">Miscellaneous</string>
+    <string name="mm_intro_dice">Do you sometimes want to play a board or dice game and don\'t have any dice? Maybe you would like to use our decent dice simulator:</string>
+    <string name="mm_button_dice">Dice simulator</string>
+
+    <!-- about dialog -->
+
+    <string name="app_version">App version: %s</string>
+
+    <string name="about_rate">Rate</string>
+    <string name="about_share">Share</string>
+
+    <string name="legal_disclaimer">Legal Disclaimer</string>
+    <string name="disclaimer">This program has been implemented with great care to help you exploring this city. The data it presents has been taken from the OpenStreetMap project. Because of OpenStreetMap\'s collaborative way of collecting data, we cannot make warranties of any kind about the accurateness, correctness, completeness or reliability of the information presented here. This applies especially to all location based information presented on the map as well as information such as telephone numbers or website URLs. Because we cannot guarantee the validity of the data presented, this software is provided on an \"As Is\" basis without a warranty of any kind. Thus you should not rely on the information presented here, but instead always consider additional sources of information as well. Especially in road transportation, local traffic signs and traffic lights do of course apply and take precedence over any information on this map.</string>
+
+    <string name="map_data">Map data</string>
+    <string name="map_copyright">© OpenStreetMap contributors</string>
+    <string name="map_license">License: Open Data Commons Open Database License (ODbL)</string>
+
+    <!-- privacy dialog -->
+
+    <string name="privacy_head">Privacy policy</string>
+    <string name="privacy1">The legal basis for this privacy policy is the General Data Protection Regulation (GDPR). The controller for the processing of any kind of personal data through this app is Sebastian Kürten (sebastian@topobyte.de).</string>
+    <string name="privacy2">As the publisher of this app, we take the protection of your privacy very seriously. Hence we do not process or store any personal data about you. It is also impossible to us, because no data is transmitted from this app to either us, our servers or third parties.</string>
+    <string name="privacy4">If you activate the location display, the app reads your device\'s location so that it is able to display it on the map. Depending on your system settings, it will detect your location via GPS, Wifi or GSM with varying accuracy. If you use this functionality, you consent to the processing of this information for the purpose of displaying it on the map. Your location is not transmitted to us or third parties and hence is not processed or stored by us. Your location data is not permanently stored and you can stop processing it at any time by disabling the location display.</string>
+    <string name="privacy5">This app is financed by showing ad banners from Google. By default these banners display personalized ads. Google processes information stored on your device to accomplish this. You can read about what Google is doing in their <a href="https://policies.google.com/technologies/partner-sites">Privacy Policy</a>. To protect your privacy, you can configure to show only non-personalized ads in the settings. You can use the app completely without ads by using the premium version, or by purchasing the <a href="https://play.google.com/store/apps/details?id=de.topobyte.apps.freemium.unlock.citymaps">unlocker app</a> to disable the ad banners.</string>
+    <string name="privacy6">You have the unlocker app installed. Hence the following paragraph about ad banners does not apply because no ads will be used.</string>
+
+</resources>

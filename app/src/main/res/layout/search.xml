@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="RtlHardcoded">
+
+    <LinearLayout
+        android:id="@+id/searchBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:paddingTop="4dp">
+
+        <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/search"
+            android:ems="10"
+            android:hint="@string/search_hint"
+            android:imeOptions="flagNoExtractUi|actionDone"
+            android:inputType="text|textNoSuggestions"
+            android:maxLines="1"
+            android:singleLine="true"></EditText>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/buttonMatchMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/searchBox"
+        android:contentDescription="@string/search_match_mode"
+        android:src="@drawable/match_mode_anywhere" />
+
+    <ImageButton
+        android:id="@+id/buttonOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchBox"
+        android:layout_toRightOf="@+id/buttonMatchMode"
+        android:contentDescription="@string/search_order"
+        android:src="@drawable/sort_a_z" />
+
+    <ImageButton
+        android:id="@+id/buttonFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchBox"
+        android:layout_toRightOf="@+id/buttonOrder"
+        android:contentDescription="@string/search_filter"
+        android:src="@drawable/categories" />
+
+    <ImageButton
+        android:id="@+id/buttonHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchBox"
+        android:layout_toRightOf="@+id/buttonFilter"
+        android:contentDescription="@string/search_help"
+        android:src="@drawable/sl_ic_action_help" />
+
+    <Button
+        android:id="@+id/unlock"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonMatchMode"
+        android:text="@string/unlock_long"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:id="@+id/results"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/unlock" />
+
+</RelativeLayout>

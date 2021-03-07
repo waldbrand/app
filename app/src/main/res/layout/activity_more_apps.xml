@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <TextView
+            android:id="@+id/head"
+            style="@style/Head"
+            android:text="@string/mm_head" />
+
+        <!-- Netzplan -->
+
+        <View
+            android:id="@+id/spacerNetzplan"
+            style="@style/LargeSpacer" />
+
+        <TextView
+            android:id="@+id/headNetzplan"
+            style="@style/Subhead"
+            android:text="@string/mm_head_netzplan" />
+
+        <TextView
+            android:id="@+id/textNetzplan"
+            style="@style/Body"
+            android:text="@string/mm_intro_public_transport_map" />
+
+        <Button
+            android:id="@+id/buttonNetzplan"
+            style="@style/IconButtonStyle"
+            android:text="@string/mm_button_public_transport_map" />
+
+        <!-- Maps -->
+
+        <View style="@style/LargeSpacer" />
+
+        <TextView
+            style="@style/Subhead"
+            android:text="@string/mm_head_maps" />
+
+        <TextView
+            style="@style/Body"
+            android:text="@string/mm_intro_maps" />
+
+        <Button
+            android:id="@+id/buttonOtherAppsWeb"
+            style="@style/IconButtonStyle"
+            android:text="@string/mm_button_web" />
+
+        <Button
+            android:id="@+id/buttonOtherAppsApp"
+            style="@style/IconButtonStyle"
+            android:drawableLeft="@drawable/common_globe_36"
+            android:text="@string/mm_button_manager_app" />
+
+        <!-- Atlas -->
+
+        <View style="@style/LargeSpacer" />
+
+        <TextView
+            style="@style/Subhead"
+            android:text="@string/mm_head_atlas" />
+
+        <TextView
+            style="@style/Body"
+            android:text="@string/mm_intro_atlas" />
+
+        <Button
+            android:id="@+id/buttonAtlas"
+            style="@style/IconButtonStyle"
+            android:drawableLeft="@drawable/common_globe_36"
+            android:text="@string/mm_button_atlas" />
+
+        <!-- Misc -->
+
+        <View style="@style/LargeSpacer" />
+
+        <TextView
+            style="@style/Subhead"
+            android:text="@string/mm_head_misc" />
+
+        <TextView
+            style="@style/Body"
+            android:text="@string/mm_intro_dice" />
+
+        <Button
+            android:id="@+id/buttonDice"
+            style="@style/IconButtonStyle"
+            android:text="@string/mm_button_dice" />
+
+    </LinearLayout>
+
+</ScrollView>

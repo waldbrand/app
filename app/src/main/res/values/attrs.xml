@@ -1,0 +1,19 @@
+<resources>
+
+    <declare-styleable name="MainBaseTheme">
+        <attr name="clearcross" format="reference" />
+        <attr name="drawer_bg" format="color" />
+        <attr name="icon_sort_az" format="reference" />
+        <attr name="icon_sort_za" format="reference" />
+        <attr name="icon_sort_distance" format="reference" />
+        <attr name="icon_match_anywhere" format="reference" />
+        <attr name="icon_match_start" format="reference" />
+        <attr name="icon_match_end" format="reference" />
+        <attr name="icon_match_exact" format="reference" />
+        <attr name="icon_check_yes" format="reference" />
+        <attr name="icon_check_no" format="reference" />
+        <attr name="icon_check_half" format="reference" />
+        <attr name="icon_categories" format="reference" />
+    </declare-styleable>
+
+</resources>

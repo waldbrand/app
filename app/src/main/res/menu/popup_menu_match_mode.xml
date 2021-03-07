@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/anywhere"
+            android:icon="?attr/icon_match_anywhere"
+            android:title="@string/anywhere" />
+        <item
+            android:id="@+id/exact"
+            android:icon="?attr/icon_match_exact"
+            android:title="@string/exact" />
+        <item
+            android:id="@+id/start_with"
+            android:icon="?attr/icon_match_start"
+            android:title="@string/start_with" />
+        <item
+            android:id="@+id/end_with"
+            android:icon="?attr/icon_match_end"
+            android:title="@string/end_with" />
+    </group>
+
+</menu>

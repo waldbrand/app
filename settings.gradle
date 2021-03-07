@@ -1,0 +1,10 @@
+include ':app'
+
+include 'rotate-layout/rotatelayout'
+project(':rotate-layout/rotatelayout').name = 'rotatelayout'
+
+include ':loader-util/loader-util'
+project(':loader-util/loader-util').name = 'loader-util'
+
+include ':common-resources/app'
+project(':common-resources/app').name = 'common-resources'

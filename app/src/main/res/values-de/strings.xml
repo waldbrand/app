@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+
+    <string name="app_name">ATestCity Stadtplan</string>
+
+    <!-- loader -->
+
+    <string name="nospaceleft">Nicht genug Speicher verfügbar.</string>
+    <string name="spaceneeded1">Dieses Programm benötigt mindestens</string>
+    <string name="spaceneeded2">freien Speicher. Eventuell hilft es, die Anwendung auf die SD-Karte zu verschieben.</string>
+    <string name="loading_data">Extrahiere Daten. Bitte warten…</string>
+    <string name="error">Fehler</string>
+    <string name="close">Schließen</string>
+    <string name="file_size_bytes">Bytes</string>
+    <string name="file_size_kb">kB</string>
+    <string name="file_size_mb">MB</string>
+
+    <!-- yes and no -->
+
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+
+    <!-- consent dialog -->
+
+    <string name="consent_title">Datenschutz-Richtlinien</string>
+    <string name="consent_accept">Akzeptieren</string>
+    <string name="consent_decline">Ablehnen</string>
+
+    <!-- labels -->
+
+    <string name="labels">Beschriftungen</string>
+
+    <string name="open_drawer">Seitenleiste einblenden</string>
+    <string name="close_drawer">Seitenleiste ausblenden</string>
+
+    <!-- menu -->
+
+    <string name="menu_info_about">Über diese Software</string>
+    <string name="menu_privacy">Datenschutz</string>
+    <string name="menu_position">Position</string>
+    <string name="menu_search">Suchen</string>
+    <string name="menu_search_remove">Markierung entfernen</string>
+    <string name="menu_preferences">Einstellungen</string>
+    <string name="menu_more_maps">Weitere Stadtpläne</string>
+    <string name="menu_map">Karte</string>
+    <string name="menu_position_last_known">Letzte bekannte Position</string>
+    <string name="menu_position_my_location_enable">Meine Position anzeigen</string>
+    <string name="menu_position_my_location_disable">Meine Position entfernen</string>
+    <string name="menu_weather">Wetter</string>
+    <string name="menu_public_transport_map">ÖPNV-Karte</string>
+    <string name="menu_faq">FAQ</string>
+    <string name="menu_help_info">Hilfe &amp; Info</string>
+
+    <string name="menu_help">Hilfe</string>
+    <string name="menu_select_all">Alle auswählen</string>
+    <string name="menu_select_none">Nichts auswählen</string>
+
+    <!-- location -->
+    <string name="title_location_permission">Berechtigung benötigt</string>
+    <string name="rationale_location_permission">Um Ihren Standort anzeigen zu können, benötigt die App Zugriff auf den Standort des Geräts. Bitte erteilen Sie diese Berechtigung im folgenden Dialog.</string>
+    <string name="rationale_location_permission_denied">Um Ihren Standort anzeigen zu können, benötigt die App Zugriff auf den Standort des Geräts. Da Sie diese Berechtigung zuvor dauerhaft abgelehnt haben, können Sie diese Berechtigung nur über die Systemeinstellungen der App erteilen. Möchten Sie diese Einstellungen jetzt öffnen?</string>
+    <string name="error_last_location_unknown">Die letzte Position ist unbekannt</string>
+    <string name="no_location_provider_available">Keine Standortquelle verfügbar. Möchten Sie die Systemeinstellungen zu Standortquellen anzeigen?</string>
+
+    <!-- preferences -->
+
+    <string name="preferences_general">Allgemeines</string>
+    <string name="preferences_map">Karte</string>
+    <string name="preferences_system">System</string>
+    <string name="preferences_privacy">Datenschutz</string>
+    <string name="preferences_advanced">Erweitert</string>
+
+    <string name="preferences_show_scale_bar">Kartenmaßstab</string>
+    <string name="preferences_show_scale_bar_desc">Maßstabsbalken der Karte anzeigen</string>
+    <string name="preferences_fullscreen">Vollbildmodus</string>
+    <string name="preferences_fullscreen_desc">Verberge die Statusleiste</string>
+    <string name="preferences_wake_lock">Aktiv bleiben</string>
+    <string name="preferences_wake_lock_desc">Abschaltung des Bildschirms verhindern</string>
+    <string name="preferences_move_speed">Scrollgeschwindigkeit</string>
+    <string name="preferences_move_speed_desc">Scrollgeschwindigkeit der Karte anpassen</string>
+    <string name="preferences_move_speed_value">%d %% Scrollgeschwindigkeit</string>
+    <string name="preferences_magnification">Schriftgröße</string>
+    <string name="preferences_magnification_desc">Schriftgröße auf der Karte anpassen</string>
+    <string name="preferences_magnification_value">%d %% Vergrößerung</string>
+    <string name="snap_to_location_enabled">Einrasten am Standort ist aktiviert</string>
+    <string name="snap_to_location_disabled">Einrasten am Standort ist deaktiviert</string>
+
+    <string name="preferences_renderstyle_dialog_title">Kartenstil auswählen</string>
+    <string name="preferences_renderstyle_title">Kartenstil</string>
+    <string name="preferences_renderstyle_summary">Das Aussehen der Karte</string>
+
+    <string name="preferences_show_tips">Tipps anzeigen</string>
+    <string name="preferences_show_tips_desc">Beim Start der App Tipps und Tricks anzeigen</string>
+
+    <string name="preferences_app_info">App-Info</string>
+    <string name="preferences_app_info_desc">Systemeinstellungen der App und Berechtigungen verwalten</string>
+    <string name="preferences_locations_sources">Standorteinstellungen</string>
+    <string name="preferences_locations_sources_desc">Systemdialog zu Standortquellen anzeigen</string>
+
+    <string name="preferences_personalized_ads">Personalisierte Werbung</string>
+    <string name="preferences_personalized_ads_desc">Erlaube personalisierte Werbebanner. Wenn Sie diese Option deaktivieren, werden nur nicht-personalisierte Banner angezeigt</string>
+
+    <string name="preferences_show_grid">Kacheln anzeigen</string>
+    <string name="preferences_show_grid_desc">Die Grenzen der Karten-Kacheln anzeigen aus denen die Karte insgesamt aufgebaut ist</string>
+    <string name="preferences_show_zoom_level">Zoomstufe anzeigen</string>
+    <string name="preferences_show_zoom_level_desc">Die aktuelle Zoomstufe oben links einblenden</string>
+    <string name="preferences_show_coordinates">Koordinaten anzeigen</string>
+    <string name="preferences_show_coordinates_desc">Die Koordinaten des Zentrums des aktuellen Kartenausschnitts oben links einblenden</string>
+
+    <!-- search -->
+
+    <string name="search_hint">Datenbank durchsuchen</string>
+
+    <string name="search_match_mode">Suchmodus</string>
+    <string name="search_order">Reihenfolge</string>
+    <string name="search_filter">Filter</string>
+    <string name="search_help">Hilfe</string>
+
+    <string name="alphabetic">alphabetisch</string>
+    <string name="alphabetic_inverse">umgekehrt</string>
+    <string name="by_distance">nach Entfernung</string>
+
+    <string name="anywhere">irgendwo</string>
+    <string name="exact">genau</string>
+    <string name="start_with">am Anfang</string>
+    <string name="end_with">am Ende</string>
+
+    <string name="categories_select_all">Alle auswählen</string>
+    <string name="categories_select_streets">Straßen</string>
+    <string name="categories_select_food">Essen &amp; Trinken</string>
+    <string name="categories_pick">Kategorien wählen</string>
+
+    <string name="search_no_results">Es konnten keine Ergebnisse gefunden werden. Bitte versuchen Sie eine andere Suchanfrage…</string>
+    <string name="search_no_results_more">Wenn Sie nicht finden, wonach Sie suchen, versuchen Sie den Suchmodus auf „irgendwo“ zu stellen und wählen Sie am besten alle Kategorien aus.</string>
+
+    <string name="context_dial">Anrufen</string>
+    <string name="context_website">Website aufrufen</string>
+
+    <string name="elevation">Höhe</string>
+
+    <string name="unlock">Premium-Features freischalten</string>
+    <string name="unlock2">Premium entfernt auch das Werbebanner</string>
+    <string name="unlock3">Ein Kauf schaltet alle unsere kostenlosen Karten frei</string>
+    <string name="unlock_short">Suchoptionen</string>
+    <string name="unlock_long">Suchoptionen? Premium-Features freischalten</string>
+    <string name="please_donate">Brauchbare App? Bitte spenden Sie</string>
+
+    <!-- categories -->
+
+    <string name="cat_orientation">Orientierung</string>
+    <string name="cat_streets">Straßen</string>
+    <string name="cat_places">Orte</string>
+
+    <string name="cat_transportation">Verkehrsmittel</string>
+    <string name="cat_railstop">Bahnhaltestellen</string>
+    <string name="cat_tramstop">Straßenbahnhaltestellen</string>
+    <string name="cat_busstop">Bushaltestellen</string>
+
+    <string name="cat_nature">Parks &amp; Natur</string>
+    <string name="cat_parks">Parks</string>
+    <string name="cat_water">Gewässer</string>
+    <string name="cat_cemeteries">Friedhöfe</string>
+    <string name="cat_peaks">Berge</string>
+    <string name="cat_playgrounds">Spielplätze</string>
+
+    <string name="cat_foods_drinks">Essen &amp; Trinken</string>
+    <string name="cat_restaurant">Restaurants</string>
+    <string name="cat_cafe">Cafes</string>
+    <string name="cat_bakeries">Bäckereien</string>
+    <string name="cat_pubs">Kneipen</string>
+    <string name="cat_bars">Bars</string>
+    <string name="cat_fastfood">Fast food</string>
+    <string name="cat_biergardens">Biergärten</string>
+    <string name="cat_nightclubs">Discos</string>
+
+    <string name="cat_arts_culture">Kunst &amp; Kultur</string>
+    <string name="cat_theatres">Theater</string>
+    <string name="cat_cinemas">Kinos</string>
+    <string name="cat_museums">Museen</string>
+    <string name="cat_religious">Religiöses</string>
+    <string name="cat_attraction">Sehenswürdigkeiten</string>
+    <string name="cat_memorial">Denkmäler</string>
+
+    <string name="cat_accommodation">Unterkünfte</string>
+    <string name="cat_hotels">Hotels</string>
+    <string name="cat_hostels">Hostels</string>
+    <string name="cat_guest_houses">Pensionen</string>
+
+    <string name="cat_education">Bildung</string>
+    <string name="cat_kindergarten">Kindergärten</string>
+    <string name="cat_school">Schulen</string>
+    <string name="cat_universty">Universitäten</string>
+    <string name="cat_library">Bibliotheken</string>
+
+    <string name="cat_health">Gesundheitswesen</string>
+    <string name="cat_hospitals">Krankenhäuser</string>
+    <string name="cat_doctors">Ärzte</string>
+    <string name="cat_dentists">Zahnärzte</string>
+    <string name="cat_veterinary">Tierärzte</string>
+    <string name="cat_pharmacies">Apotheken</string>
+
+    <string name="cat_shops">Geschäfte</string>
+    <string name="cat_clothes">Bekleidung</string>
+    <string name="cat_shoes">Schuhe</string>
+    <string name="cat_jewelry">Schmuck</string>
+    <string name="cat_supermarkets">Supermärkte</string>
+    <string name="cat_chemists">Drogerien</string>
+    <string name="cat_convenience">Kioske</string>
+    <string name="cat_carshops">Autos</string>
+    <string name="cat_bikeshops">Fahrräder</string>
+    <string name="cat_flowers">Blumen</string>
+    <string name="cat_diy">Baumärkte</string>
+    <string name="cat_electronics">Elektronik</string>
+    <string name="cat_furniture">Möbel</string>
+    <string name="cat_books">Bücher</string>
+
+    <string name="cat_misc">Verschiedenes</string>
+    <string name="cat_banks_atms">Banken und Automaten</string>
+    <string name="cat_embassies">Botschaften</string>
+    <string name="cat_parking">Parkplätze</string>
+    <string name="cat_post_boxes">Briefkästen</string>
+    <string name="cat_telephones">Telefonzellen</string>
+    <string name="cat_recycling">Recycling</string>
+    <string name="cat_toilets">Toiletten</string>
+
+    <string name="cat_none">Keine</string>
+    <string name="cat_housenumbers">Hausnummern</string>
+    <string name="cat_other">Anderes</string>
+
+    <!-- dialogs -->
+
+    <string name="dialog_select_theme_title">Kartenstil auswählen</string>
+
+    <string name="dialog_select_categories_title">Kategorien wählen</string>
+    <string name="all">Alles</string>
+    <string name="none">Nichts</string>
+
+    <string name="help_drawer_title">Seitenleiste</string>
+    <string name="help_drawer_text1">Mit diesem Menu können Sie die Symbole und Beschriftungen, die auf der Karte erscheinen einstellen.</string>
+    <string name="help_drawer_text2">Mit dem Schalter ganz oben können Sie alle Symbole und Beschriftungen gleichzeitig ein- und ausschalten.</string>
+    <string name="help_drawer_text3">Um einzelne Elemente ein- oder auszuschalten können Sie das jeweilige Kontrollkäschen in der Liste umschalten.</string>
+    <string name="help_drawer_text4">Alle Kategorien sind in Gruppen organisiert, sodass Sie sie alle gleichzeitig umschalten können. Sie können diese Gruppen aber auch aufklappen um einzelne Elemente ein- oder auszuschalten.</string>
+
+    <string name="help_search_title">Suchoptionen</string>
+    <string name="help_search_text1">Mit den Knöpfen direkt unter dem Eingabefeld können Sie die angezeigten Suchergebnisse verfeinern.</string>
+    <string name="help_search_text2">Der erste Knopf stellt den Suchmodus ein und bestimmt an welcher Stelle Ihre Eingabe in den Namen der Ergebnisse vorkommen soll. Wenn Sie z.B. „am Anfang“ auswählen, dann beginnen alle angezeigten Ergebnisse mit Ihrem Suchbegriff. Zur Auswahl stehen hier noch „am Ende“, „irgendwo“ und „genau“. Bei „irgendwo“ kann der Suchbegriff an beliebiger Stelle enthalten sein und bei „genau“ muss der Name exakt mit der Eingabe übereinstimmen. Standardmäßig ist der Modus „irgendwo“ eingestellt.</string>
+    <string name="help_search_text3">Mit Hilfe des zweiten Knopfs können Sie die Reihenfolge der Suchergebnisse bestimmen. Normalerweise werden die Ergebnisse alphabetisch sortiert. Sie können hier jedoch auch auf umgekehrt alphabetische Reihenfolge umstellen, oder die Ergebnisse gemäß ihrer Entfernung zum aktuellen Kartenmittelpunkt sortieren. Im letzteren Modus wird Ihnen dann auch die jeweilige Entfernung für jedes Ergebnis angezeigt.</string>
+    <string name="help_search_text4">Der dritte Knopf dient zum Auswählen der Kategorien, die in die Suche einbezogen werden sollen. Z.B. können Sie die Suche hier auf Straßen eingrenzen oder sich lediglich Restaurants anzeigen lassen. Sie können die Kategorien beliebig kombinieren, sodass es z.B. möglich ist nach Museen und Hotels gleichzeitig zu suchen.</string>
+
+    <string name="dialog_unlock_title">Premium Features</string>
+    <string name="dialog_unlock_text1_freemium">Schalten Sie die Premium-Features frei und finden Sie noch schneller, wonach Sie suchen. Mit der freigeschalteten Version können Sie die Suchergebnisse nach ihrer Entfernung sortieren, sie auf bestimmte Kategorien begrenzen und den Suchmodus einstellen.</string>
+    <string name="dialog_unlock_text1_admob">• Entfernt Werbe-Banner von der Karte\n• Finden Sie noch schneller, wonach Sie suchen. Mit der freigeschalteten Version können Sie die Suchergebnisse nach ihrer Entfernung sortieren, sie auf bestimmte Kategorien begrenzen und den Suchmodus einstellen.</string>
+    <string name="dialog_unlock_button1">Premium Features erklären</string>
+    <string name="dialog_unlock_button2">Auf Google Play freischalten</string>
+
+    <string name="dialog_startup_title">Tipps und Tricks</string>
+    <string name="dialog_startup_text1">Sie können einstellen, welche Symbole und Beschriftungen auf der Karte sichtbar sind, sodass Sie schneller finden, wonach Sie suchen und die Karte insgesamt übersichtlicher ist. Berühren Sie dazu den Knopf ganz oben links oder ziehen Sie das Menu von links heraus, indem Sie vom linken Bildschrimrand nach rechts hinein wischen.</string>
+    <string name="dialog_startup_text2">Um Straßen, Lokale, Geschäfte und anderes zu finden, können Sie den Suchdialog öffnen, indem Sie in der Menuleiste ganz oben auf das Lupensymbol klicken.</string>
+    <string name="dialog_startup_text3">Um sich Ihren aktuellen Standort auf der Karte anzeigen zu lassen, wählen Sie das GPS-Icon in der Menuleiste aus. Es kann jedoch eine Weile dauern, bis Ihre Position bestimmt ist.</string>
+    <string name="dialog_startup_text4">Wenn Sie die Anzeige des Standorts aktivieren, erscheint ein Umschaltknopf in der linken oberen Ecke, mit dem Sie einstellen können, dass die Karte immer automatisch zu Ihrem aktuellen Standort verschoben werden soll.</string>
+    <string name="dialog_startup_text5">Falls Sie die Schriftgröße der Beschriftungen auf der Karte vergrößern möchten, finden Sie eine entsprechende Möglichkeit im Einstellungsmenu.</string>
+    <string name="dialog_startup_text6">Das Einstellungsmenu bietet darüber hinaus verschiedene Möglichkeiten, wie das Einblenden eines Kartenmaßstabs, oder ob die App im Vollbildmodus laufen soll.</string>
+    <string name="dialog_startup_show">Dialog beim Start anzeigen</string>
+    <string name="next">Nächster</string>
+    <string name="previous">Vorheriger</string>
+
+    <!-- more maps -->
+
+    <string name="mm_head">Weitere Apps von Topobyte.de</string>
+
+    <string name="mm_head_netzplan">Öffentlicher Nahverkehr</string>
+    <string name="mm_intro_public_transport_map">Für diese Stadt haben wir auch einen Liniennetzplan des Nahverkehrs im Angebot:</string>
+    <string name="mm_button_public_transport_map">Liniennetzplan</string>
+
+    <string name="mm_head_maps">Andere Städte</string>
+    <string name="mm_intro_maps">Wir bieten auch Karten für viele weitere Städte und Regionen an. Sie können die Apps auf unserer Homepage durchstöbern oder ganz einfach über unsere Manager-App ansehen und direkt herunterladen:</string>
+    <string name="mm_button_web">Apps im Browser anzeigen</string>
+    <string name="mm_button_manager_app">Manager-App installieren</string>
+
+    <string name="mm_head_atlas">Weltkarte / Atlas</string>
+    <string name="mm_intro_atlas">Wir geben auch einen Atlas heraus, der eine politische Weltkarte mit Ländern und Städten bietet. Außerdem enthält er einige nützliche Informationen über Länder sowie ein kleines Quiz über Landesflaggen und mehr.</string>
+    <string name="mm_button_atlas">Weltkarte &amp; Atlas</string>
+
+    <string name="mm_head_misc">Verschiedenes</string>
+    <string name="mm_intro_dice">Möchten Sie manchmal ein Brett- oder Würfelspiel spielen und haben keine Würfel dabei? Vielleicht wäre unser Würfel-Simulator etwas für Sie:</string>
+    <string name="mm_button_dice">Würfel-Simulator</string>
+
+    <!-- about dialog -->
+
+    <string name="app_version">App-Version: %s</string>
+
+    <string name="about_rate">Bewerten</string>
+    <string name="about_share">Teilen</string>
+
+    <string name="legal_disclaimer">Haftungsausschluss</string>
+    <string name="disclaimer">Dieses Programm wurde mit großer Sorgfalt erstellt, um Ihnen zu helfen diese Stadt zu erkunden. Die Daten, die es darstellt stammen aus dem OpenStreetMap-Projekt. Dadurch, dass die OpenStreetMap ein Gemeinschaftsprojekt ist, für das viele Individuen die Daten sammeln, können wir keinerlei Gewährleistung über die Genauigkeit, Korrektheit, Vollständigkeit oder Verlässlichkeit der dargestellten Informationen geben. Dies trifft insbesondere auf alle ortsbezogenen Daten, die auf der Karte dargestellt werden, sowie Telefonnummern oder Internetadressen zu. Da wir die Stimmigkeit der Daten nicht garantieren können, wird diese Software „wie sie ist“ angeboten, ohne jegliche Garantie. Demzufolge sollten Sie sich nicht auf diese Informationen verlassen, sondern immer auch andere Quellen zu Rate ziehen. Insbesondere im Straßenverkehr gilt selbstverständlich immer die örtliche Beschilderung.</string>
+
+    <string name="map_data">Kartendaten</string>
+    <string name="map_copyright">© OpenStreetMap contributors</string>
+    <string name="map_license">Lizenz: Open Data Commons Open Database License (ODbL)</string>
+
+    <!-- privacy dialog -->
+
+    <string name="privacy_head">Datenschutz</string>
+    <string name="privacy1">Rechtsgrundlage für diese Datenschutzerklärung ist die Datenschutzgrundverordnung (DSGVO). Verantwortlicher für jegliche Verarbeitung personenbezogener Daten durch diese App ist Sebastian Kürten (sebastian@topobyte.de).</string>
+    <string name="privacy2">Als Anbieter dieser App nehmen wir den Schutz Ihrer Privatsphäre sehr ernst. Daher verarbeiten oder speichern wir keinerlei personenbezogene Daten über Sie. Dies ist uns auch unmöglich, denn die App übermittelt keinerlei Informationen über Sie an uns, unsere Server oder an Dritte.</string>
+    <string name="privacy4">Wenn Sie die Standortanzeige aktivieren, liest die App den Standort Ihres Geräts aus, um Ihnen Ihre Position auf der Karte anzeigen zu können. Dazu wird je nach Systemeinstellung eine Lokalisierung über GPS, WLAN oder GSM mit unterschiedlicher Genauigkeit vorgenommen. Wenn Sie diese Funktion benutzen, willigen Sie in die Verarbeitung dieser Standortinformation zur Anzeige auf der Karte durch die App ein. Diese Standortinformation wird nicht an uns oder an Dritte übermittelt und dementsprechend auch nicht von uns verarbeitet oder gespeichert. Die Standortinformationen werden nicht dauerhaft gespeichert und Sie können deren Verarbeitung jederzeit beenden, indem Sie die Standortanzeige wieder deaktivieren.</string>
+    <string name="privacy5">Diese App finanziert sich über Werbebanner von Google. Normalerweise zeigen diese Banner personalisierte Werbeanzeigen an. Google verarbeitet dazu Daten die auf Ihrem Gerät gespeichert sind. Sie können mehr darüber in der <a href="https://policies.google.com/technologies/partner-sites">Datenschutzerklärung</a> von Google erfahren. Um Ihre Privatsphäre zu schützen, können Sie in den Einstellungen konfigurieren, dass nur nicht-personalisierte Werbeanzeigen angezeigt werden sollen. Sie können die App komplett ohne Werbung benutzen, indem Sie die Premium-Version verwenden oder indem Sie durch Kauf der <a href="https://play.google.com/store/apps/details?id=de.topobyte.apps.freemium.unlock.citymaps">Unlock-App</a> die Werbebanner abschalten.</string>
+    <string name="privacy6">Sie haben die Unlock-App installiert. Daher hat der folgende Absatz über Werbebanner keine Gültigkeit, da Ihnen keine Werbebanner angezeigt werden.</string>
+
+</resources>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dialog_bottom_margin"
+    android:paddingLeft="@dimen/dialog_horizontal_margin"
+    android:paddingRight="@dimen/dialog_horizontal_margin"
+    android:paddingTop="@dimen/dialog_top_margin">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="RtlHardcoded">
+
+            <TextView
+                android:id="@+id/textView1"
+                style="@style/DialogFont"
+                android:text="@string/help_search_text1" />
+
+            <!-- Matchmode -->
+
+            <View
+                android:id="@+id/immsep0"
+                style="@style/DialogVerticalSeparator"
+                android:layout_above="@+id/textView2"
+                android:layout_below="@+id/textView1" />
+
+            <ImageView
+                android:id="@+id/imm1"
+                style="@style/DialogIcon"
+                android:layout_below="@+id/textView1"
+                android:layout_toRightOf="@+id/immsep0"
+                android:src="?attr/icon_match_anywhere"
+                tools:ignore="ContentDescription" />
+
+            <View
+                android:id="@+id/immsep1"
+                style="@style/DialogVerticalSeparator"
+                android:layout_above="@+id/textView2"
+                android:layout_below="@+id/textView1"
+                android:layout_toRightOf="@+id/imm1" />
+
+            <ImageView
+                android:id="@+id/imm2"
+                style="@style/DialogIcon"
+                android:layout_below="@+id/textView1"
+                android:layout_toRightOf="@+id/immsep1"
+                android:src="?attr/icon_match_start"
+                tools:ignore="ContentDescription" />
+
+            <View
+                android:id="@+id/immsep2"
+                style="@style/DialogVerticalSeparator"
+                android:layout_above="@+id/textView2"
+                android:layout_below="@+id/textView1"
+                android:layout_toRightOf="@+id/imm2" />
+
+            <ImageView
+                android:id="@+id/imm3"
+                style="@style/DialogIcon"
+                android:layout_below="@+id/textView1"
+                android:layout_toRightOf="@+id/immsep2"
+                android:src="?attr/icon_match_end"
+                tools:ignore="ContentDescription" />
+
+            <View
+                android:id="@+id/immsep3"
+                style="@style/DialogVerticalSeparator"
+                android:layout_above="@+id/textView2"
+                android:layout_below="@+id/textView1"
+                android:layout_toRightOf="@+id/imm3" />
+
+            <ImageView
+                android:id="@+id/imm4"
+                style="@style/DialogIcon"
+                android:layout_below="@+id/textView1"
+                android:layout_toRightOf="@+id/immsep3"
+                android:src="?attr/icon_match_exact"
+                tools:ignore="ContentDescription" />
+
+            <View
+                android:id="@+id/immsep4"
+                style="@style/DialogVerticalSeparator"
+                android:layout_above="@+id/textView2"
+                android:layout_below="@+id/textView1"
+                android:layout_toRightOf="@+id/imm4" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/DialogFont.Continued"
+                android:layout_below="@+id/imm1"
+                android:text="@string/help_search_text2" />
+
+            <!-- Sort order -->
+
+            <View
+                android:id="@+id/isosep0"
+                style="@style/DialogVerticalSeparator"
+                android:layout_above="@+id/textView3"
+                android:layout_below="@+id/textView2" />
+
+            <ImageView
+                android:id="@+id/icb1"
+                style="@style/DialogIcon"
+                android:layout_below="@+id/textView2"
+                android:layout_toRightOf="@+id/immsep0"
+                android:src="?attr/icon_sort_az"
+                tools:ignore="ContentDescription" />
+
+            <View
+                android:id="@+id/icbsep1"
+                style="@style/DialogVerticalSeparator"
+                android:layout_above="@+id/textView3"
+                android:layout_below="@+id/textView2"
+                android:layout_toRightOf="@+id/icb1" />
+
+            <ImageView
+                android:id="@+id/icb2"
+                style="@style/DialogIcon"
+                android:layout_below="@+id/textView2"
+                android:layout_toRightOf="@+id/icbsep1"
+                android:src="?attr/icon_sort_za"
+                tools:ignore="ContentDescription" />
+
+            <View
+                android:id="@+id/icbsep2"
+                style="@style/DialogVerticalSeparator"
+                android:layout_above="@+id/textView3"
+                android:layout_below="@+id/textView2"
+                android:layout_toRightOf="@+id/icb2" />
+
+            <ImageView
+                android:id="@+id/icb3"
+                style="@style/DialogIcon"
+                android:layout_below="@+id/textView2"
+                android:layout_toRightOf="@+id/icbsep2"
+                android:src="?attr/icon_sort_distance"
+                tools:ignore="ContentDescription" />
+
+            <View
+                android:id="@+id/icbsep3"
+                style="@style/DialogVerticalSeparator"
+                android:layout_above="@+id/textView3"
+                android:layout_below="@+id/textView2"
+                android:layout_toRightOf="@+id/icb3" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/DialogFont.Continued"
+                android:layout_below="@+id/icb1"
+                android:text="@string/help_search_text3" />
+
+            <!-- Categories -->
+
+            <View
+                android:id="@+id/icasep0"
+                style="@style/DialogVerticalSeparator"
+                android:layout_above="@+id/textView4"
+                android:layout_below="@+id/textView3" />
+
+            <ImageView
+                android:id="@+id/ica"
+                style="@style/DialogIcon"
+                android:layout_below="@+id/textView3"
+                android:layout_toRightOf="@+id/icasep0"
+                android:src="?attr/icon_categories"
+                tools:ignore="ContentDescription" />
+
+            <View
+                android:id="@+id/icasep1"
+                style="@style/DialogVerticalSeparator"
+                android:layout_above="@+id/textView4"
+                android:layout_below="@+id/textView3"
+                android:layout_toRightOf="@+id/ica" />
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/DialogFont.Continued"
+                android:layout_below="@+id/ica"
+                android:text="@string/help_search_text4" />
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

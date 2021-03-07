@@ -1,0 +1,136 @@
+apply plugin: 'com.android.application'
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
+    defaultConfig {
+        applicationId 'de.topobyte.apps.maps.atestcity'
+        minSdkVersion 14
+        targetSdkVersion 29
+        versionCode 140
+        versionName "8.0.0"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    signingConfigs {
+        release {
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+        }
+    }
+    lintOptions {
+        disable 'MissingTranslation'
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    packagingOptions {
+        exclude 'darwin/x86_64/liblz4-java.dylib'
+        exclude 'win32/amd64/liblz4-java.so'
+        exclude 'linux/amd64/liblz4-java.so'
+        exclude 'linux/i386/liblz4-java.so'
+    }
+
+    flavorDimensions 'platform', 'type'
+
+    productFlavors {
+        google {
+            dimension 'platform'
+        }
+        amazon {
+            dimension 'platform'
+        }
+        paid {
+            dimension 'type'
+        }
+        freemium {
+            dimension 'type'
+        }
+        admob {
+            dimension 'type'
+            proguardFiles 'proguard-rules-admob.pro'
+        }
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+    buildTypes {
+        applicationVariants.all { variant ->
+
+            def projectFlavorNames = []
+
+            variant.productFlavors.each() { flavor ->
+                projectFlavorNames.add(flavor.name)
+            }
+
+            println('Application variant ' + variant.name + '. Flavor names list: ' + projectFlavorNames)
+            println('Build type: ' + variant.buildType.name)
+
+            if (!variant.buildType.name.equals("release")) {
+                def appId = "de.topobyte.apps.maps.atestcitymap"
+
+                variant.productFlavors.each() { flavor ->
+                    println('flavor: ' + flavor.name)
+                    appId = appId + "." + flavor.name
+                }
+
+                variant.mergedFlavor.applicationId = appId
+
+                println('Using application id: ' + variant.applicationId)
+            }
+        }
+
+    }
+}
+
+configurations {
+    implementation.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+    implementation.exclude group: 'log4j', module: 'log4j'
+    implementation.exclude group: 'com.google.android', module: 'android'
+    testImplementation.exclude group: 'com.google.guava', module: 'guava'
+}
+
+dependencies {
+    implementation 'de.topobyte:mapocado-android:0.1.0'
+    implementation 'de.topobyte:nomioc-luqe:0.1.0'
+    implementation 'de.topobyte:luqe-android:0.0.6'
+    implementation 'de.topobyte:android-seekbarpreference:0.0.1'
+    implementation 'de.topobyte:adt-multicollections:0.0.4'
+    implementation 'de.topobyte:android-app-version-util:0.0.1'
+    implementation 'de.topobyte:android-map-zoom-controls:0.0.2'
+    implementation 'de.topobyte:android-fullscreen:0.0.1'
+    implementation 'de.topobyte:sqlite-spatial:0.2.0'
+    implementation 'de.topobyte:geomath:0.1.0'
+    implementation 'de.topobyte:melon-enums:0.0.1'
+    implementation 'de.topobyte:android-map-utils:0.2.0'
+    implementation 'de.topobyte:android-intent-utils:0.1.0'
+    implementation 'com.slimjars.trove4j:trove4j-int-int-hash-map:1.0.1'
+    implementation project(':rotatelayout')
+    implementation project(':loader-util')
+    implementation project(':common-resources')
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'org.slf4j:slf4j-android:1.7.12'
+    implementation 'pub.devrel:easypermissions:1.3.0'
+    admobImplementation 'com.google.android.gms:play-services-ads:18.2.0'
+
+    testImplementation 'org.robolectric:robolectric:3.3.1'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'de.topobyte:luqe-jdbc:0.0.6'
+    testImplementation 'org.slf4j:slf4j-api:1.7.12'
+    testImplementation 'org.xerial:sqlite-jdbc:3.8.9.1'
+}

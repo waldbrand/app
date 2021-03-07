@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/activity_about">
+
+    <TextView
+        android:id="@+id/head"
+        style="@style/Head"
+        android:text="@string/fb_head1" />
+
+    <Button
+        android:id="@+id/buttonRate"
+        style="@style/IconButtonStyle"
+        android:text="@string/fb_rate" />
+
+    <Button
+        android:id="@+id/buttonMail"
+        style="@style/IconButtonStyle"
+        android:text="@string/fb_mail" />
+
+    <Button
+        android:id="@+id/buttonShare"
+        style="@style/IconButtonStyle"
+        android:text="@string/fb_share" />
+
+</merge>

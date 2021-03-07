@@ -64,9 +64,9 @@ public abstract class CategoriesListAdapter extends BaseExpandableListAdapter
   }
 
   @Override
-  public Object getChild(int groupPosition, int childPosititon)
+  public Object getChild(int groupPosition, int childPosition)
   {
-    return groups.get(groupPosition).getChildren().get(childPosititon);
+    return groups.get(groupPosition).getChildren().get(childPosition);
   }
 
   @Override

@@ -15,7 +15,13 @@ Clone the repository recursively (including submodules):
 
     git clone --recursive https://github.com/topobyte/android-stadtplan.git
 
-TODO: add map and database file
+You need a map file and database to build the app in directory
+`app/src/main/assets`. The map file is called `map.xmap.jet` and the
+database is called `map.sqlite.jet`.
+
+You can download example files for Berlin using this script:
+
+    ./get-berlin-data.sh
 
 Create a `local.properties` file:
 

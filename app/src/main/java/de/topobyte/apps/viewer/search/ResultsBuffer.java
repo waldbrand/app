@@ -59,7 +59,7 @@ public class ResultsBuffer implements SearchResultsReceiver
     this.results = results;
     state = ResultState.SOME;
 
-    Log.i(LOG_TAG, "Deglate available? " + (delegate != null));
+    Log.i(LOG_TAG, "Delegate available? " + (delegate != null));
     if (delegate != null) {
       delegate.report(query, results);
     }

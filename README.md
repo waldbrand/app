@@ -17,7 +17,16 @@ Clone the repository recursively (including submodules):
 
 TODO: add map and database file
 
-TODO: create local.properties and keystore.properties files
+Create a `local.properties` file:
+
+    sdk.dir=/path/to/Android/Sdk/on/your/system
+
+To create release builds, create a `keystore.properties` file:
+
+    storeFile=/path/to/your/release.keystore
+    storePassword=your-store-password
+    keyAlias=your-key-alias
+    keyPassword=your-key-password
 
 Build the application:
 

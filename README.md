@@ -11,9 +11,13 @@ License. See [GPL.md](GPL.md) for details.
 
 # Building from source
 
+## Get the source
+
 Clone the repository recursively (including submodules):
 
     git clone --recursive https://github.com/topobyte/android-stadtplan.git
+
+## Add local map and database files
 
 You need a map file and database to build the app in directory
 `app/src/main/assets`. The map file is called `map.xmap.jet` and the
@@ -26,6 +30,18 @@ You can download example files for Berlin using this script:
 Create a `local.properties` file:
 
     sdk.dir=/path/to/Android/Sdk/on/your/system
+
+## Debug builds
+
+Build the application:
+
+    ./gradlew assembleGooglePaidDebug
+
+Install:
+
+    adb install app/build/outputs/apk/googlePaid/debug/app-google-paid-debug.apk
+
+## Release builds
 
 To create release builds, create a `keystore.properties` file:
 

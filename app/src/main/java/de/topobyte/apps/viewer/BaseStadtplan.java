@@ -422,12 +422,12 @@ public class BaseStadtplan extends MapActivity implements OverlayListener,
     supportInvalidateOptionsMenu();
   }
 
-  void updateMenuWithDrawerState(boolean drawerVisiblity)
+  void updateMenuWithDrawerState(boolean drawerVisibility)
   {
-    if (drawerVisiblity == drawerPartiallyOrCompletelyVisible) {
+    if (drawerVisibility == drawerPartiallyOrCompletelyVisible) {
       return;
     }
-    drawerPartiallyOrCompletelyVisible = drawerVisiblity;
+    drawerPartiallyOrCompletelyVisible = drawerVisibility;
     supportInvalidateOptionsMenu();
   }
 

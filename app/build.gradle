@@ -1,24 +1,10 @@
-import java.util.zip.GZIPInputStream
+import de.topobyte.BuildUtil
 
 apply plugin: 'com.android.application'
 
 def keystorePropertiesFile = rootProject.file("keystore.properties")
 def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-
-ext.extractedSize = { file ->
-    GZIPInputStream is = new GZIPInputStream(new FileInputStream(file));
-    long size = 0;
-
-    while (is.available() > 0)
-    {
-        byte[] buf = new byte[1024];
-        int read = is.read(buf);
-        if (read > 0) size += read;
-    }
-
-    return size;
-}
 
 android {
     compileSdkVersion 29
@@ -29,8 +15,10 @@ android {
         targetSdkVersion 29
         versionCode 140
         versionName "8.0.0"
-        buildConfigField "int", "MAP_FILE_SIZE", "" + new File("app/src/main/assets/map.xmap.jet").size()
-        buildConfigField "int", "DATABASE_FILE_SIZE", "" + extractedSize(new File("app/src/main/assets/map.sqlite.jet"))
+        buildConfigField "int", "MAP_FILE_SIZE", "" +
+                new File("app/src/main/assets/map.xmap.jet").size()
+        buildConfigField "int", "DATABASE_FILE_SIZE", "" +
+                BuildUtil.unGzippedSize(new File("app/src/main/assets/map.sqlite.jet"))
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

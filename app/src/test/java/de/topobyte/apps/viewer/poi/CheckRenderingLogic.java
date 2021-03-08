@@ -17,6 +17,8 @@
 
 package de.topobyte.apps.viewer.poi;
 
+import android.os.Build;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
@@ -59,7 +61,7 @@ import de.topobyte.mapocado.styles.labels.elements.Rule;
 import de.topobyte.nomioc.luqe.model.SqPoiType;
 
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class)
+@Config(sdk = Build.VERSION_CODES.P)
 public class CheckRenderingLogic
 {
   private static final boolean INITIAL = false;

@@ -2,7 +2,7 @@
 
 DIR=$(dirname $0)
 
-OUT="$DIR/app/src/main/assets"
+OUT="$DIR/../app/src/main/assets"
 MAP="$OUT/map.xmap.jet"
 DB="$OUT/map.sqlite.jet"
 

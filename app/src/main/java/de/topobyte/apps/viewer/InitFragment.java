@@ -27,6 +27,7 @@ import java.io.IOException;
 import de.topobyte.android.appversions.VersionUpdateChecker;
 import de.topobyte.android.loader3.TaskFragment;
 import de.topobyte.android.maps.utils.MagnificationConfig;
+import de.topobyte.apps.maps.atestcity.BuildConfig;
 import de.topobyte.apps.viewer.map.MapPreferenceAbstraction;
 import de.topobyte.apps.viewer.theme.ThemeConfig;
 
@@ -129,7 +130,7 @@ public class InitFragment extends TaskFragment
     try {
       FileUtil.ensureAssets(getActivity(), ResourceConstants.ASS_DATABASE_FILE,
           ResourceConstants.DATABASE_FILE,
-          ResourceConstants.DATABASE_FILE_SIZE, true);
+          BuildConfig.DATABASE_FILE_SIZE, true);
       filesOk = true;
     } catch (IOException e) {
       Log.e(LOG_TAG_DATA, "unable to ensure assets: " + e.getMessage());

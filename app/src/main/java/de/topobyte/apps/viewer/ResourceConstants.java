@@ -23,6 +23,4 @@ public class ResourceConstants
   public static final String DATABASE_FILE = "map.sqlite";
   public static final String ASS_MAP_FILE = "map.xmap.jet";
   public static final String ASS_DATABASE_FILE = "map.sqlite.jet";
-  public static final int MAP_FILE_SIZE = 27893440;
-  public static final int DATABASE_FILE_SIZE = 11183104;
 }

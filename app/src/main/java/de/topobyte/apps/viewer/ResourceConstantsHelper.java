@@ -17,20 +17,22 @@
 
 package de.topobyte.apps.viewer;
 
+import de.topobyte.apps.maps.atestcity.BuildConfig;
+
 public class ResourceConstantsHelper
 {
 
   public static int getNumberOfRequiredBytes()
   {
     int sum = 0;
-    sum += ResourceConstants.DATABASE_FILE_SIZE;
+    sum += BuildConfig.DATABASE_FILE_SIZE;
     return sum;
   }
 
   public static int getEstimatedNumberOfRequiredBytes()
   {
     int sum = 0;
-    sum += ResourceConstants.DATABASE_FILE_SIZE;
+    sum += BuildConfig.DATABASE_FILE_SIZE;
     sum += 4096;
     return sum;
   }

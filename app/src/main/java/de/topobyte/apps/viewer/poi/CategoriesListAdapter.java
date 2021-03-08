@@ -25,7 +25,6 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
@@ -37,10 +36,8 @@ import java.util.List;
 import de.topobyte.apps.maps.atestcity.R;
 import de.topobyte.apps.viewer.poi.category.Category;
 import de.topobyte.apps.viewer.widget.NormalCheckBox;
-import de.topobyte.apps.viewer.widget.NormalCheckBox.OnCheckedChangeListener;
 import de.topobyte.apps.viewer.widget.TriStateCheckBox;
 import de.topobyte.apps.viewer.widget.TriStateCheckBox.ButtonState;
-import de.topobyte.apps.viewer.widget.TriStateCheckBox.OnStateChangeListener;
 
 public abstract class CategoriesListAdapter extends BaseExpandableListAdapter
 {
@@ -86,7 +83,7 @@ public abstract class CategoriesListAdapter extends BaseExpandableListAdapter
     int number = special ? 2 : 1;
 
     if (convertView == null || convertView.getTag() == null
-        || !convertView.getTag().equals(Integer.valueOf(number))) {
+        || !convertView.getTag().equals(number)) {
       Log.i("children", "create new? yes");
 
       LayoutInflater inflater = (LayoutInflater) this.context
@@ -99,7 +96,7 @@ public abstract class CategoriesListAdapter extends BaseExpandableListAdapter
         convertView = inflater.inflate(
             R.layout.row_layout_drawer_list_item, parent, false);
       }
-      convertView.setTag(Integer.valueOf(number));
+      convertView.setTag(number);
     } else {
       Log.i("children", "create new? no");
     }
@@ -119,26 +116,12 @@ public abstract class CategoriesListAdapter extends BaseExpandableListAdapter
         + checked);
     checkbox.setChecked(checked);
 
-    checkbox.setOnCheckedChangeListener(new OnCheckedChangeListener()
-    {
+    checkbox.setOnCheckedChangeListener(
+        (button, newChecked) -> itemCheckedChanged(groupPosition, childPosition, category,
+            checkbox.isChecked()));
 
-      @Override
-      public void onCheckedChanged(NormalCheckBox button, boolean checked)
-      {
-        itemCheckedChanged(groupPosition, childPosition, category,
-            checkbox.isChecked());
-      }
-
-    });
-
-    checkbox.setOnClickListener(new OnClickListener()
-    {
-
-      @Override
-      public void onClick(View button)
-      {
-        // empty listener to allow for click sound
-      }
+    checkbox.setOnClickListener(button -> {
+      // empty listener to allow for click sound
     });
 
     return convertView;
@@ -178,8 +161,7 @@ public abstract class CategoriesListAdapter extends BaseExpandableListAdapter
     boolean special = specialIndices.contains(groupPosition);
     int number = special ? 2 : 1;
 
-    if (convertView == null
-        || !convertView.getTag().equals(Integer.valueOf(number))) {
+    if (convertView == null || !convertView.getTag().equals(number)) {
       LayoutInflater inflater = (LayoutInflater) this.context
           .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
       if (special) {
@@ -190,7 +172,7 @@ public abstract class CategoriesListAdapter extends BaseExpandableListAdapter
         convertView = inflater.inflate(
             R.layout.row_layout_drawer_list_group, parent, false);
       }
-      convertView.setTag(Integer.valueOf(number));
+      convertView.setTag(number);
     }
 
     if (special) {
@@ -213,25 +195,11 @@ public abstract class CategoriesListAdapter extends BaseExpandableListAdapter
       ButtonState state = groupState(group);
       checkbox.setState(state);
 
-      checkbox.setOnStateChangeListener(new OnStateChangeListener()
-      {
+      checkbox.setOnStateChangeListener(
+          (button, newState) -> groupClicked(groupPosition, group, newState));
 
-        @Override
-        public void onStateChanged(TriStateCheckBox button,
-                                   ButtonState state)
-        {
-          groupClicked(groupPosition, group, state);
-        }
-      });
-
-      checkbox.setOnClickListener(new OnClickListener()
-      {
-
-        @Override
-        public void onClick(View button)
-        {
-          // empty listener to allow for click sound
-        }
+      checkbox.setOnClickListener(button -> {
+        // empty listener to allow for click sound
       });
     }
 

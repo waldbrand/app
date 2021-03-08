@@ -79,8 +79,7 @@ public class PoiTypeInfo
   // Returns -1 if not found
   public int getTypeId(String type)
   {
-    int typeId = typeToTypeId.get(type);
-    return typeId;
+    return typeToTypeId.get(type);
   }
 
   TIntSet getPeakIds()

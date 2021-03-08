@@ -27,7 +27,7 @@ public class Group
 {
 
   private final int titleId;
-  private final List<Category> children = new ArrayList<Category>();
+  private final List<Category> children = new ArrayList<>();
 
   public Group(int titleId)
   {

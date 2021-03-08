@@ -39,7 +39,7 @@ public class MapViewWithOverlays extends MapView
   private AppData appData;
 
   private LabelDrawerPoi labelDrawer;
-  private SulfurScaleDrawer scaleDrawer;
+  private MapocadoScaleDrawer scaleDrawer;
 
   private final float gap = 5;
 
@@ -103,14 +103,14 @@ public class MapViewWithOverlays extends MapView
       Log.e("label", "error while creating label drawer", e);
     }
 
-    scaleDrawer = new SulfurScaleDrawer((int) Math.ceil(120 * density),
+    scaleDrawer = new MapocadoScaleDrawer((int) Math.ceil(120 * density),
         margin * density, (margin + overlayTextSize + gap) * density,
         overlayFgStroke * density, overlayBgStroke * density,
         8 * density, overlayTextSize * density);
     addOnDrawListener(scaleDrawer);
   }
 
-  public SulfurScaleDrawer getScaleDrawer()
+  public MapocadoScaleDrawer getScaleDrawer()
   {
     return scaleDrawer;
   }

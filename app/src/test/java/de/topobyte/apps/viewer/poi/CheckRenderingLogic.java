@@ -51,12 +51,12 @@ import de.topobyte.apps.viewer.poi.category.DatabaseCategory;
 import de.topobyte.apps.viewer.poi.category.MapfileCategory;
 import de.topobyte.luqe.iface.IConnection;
 import de.topobyte.luqe.jdbc.JdbcConnection;
-import de.topobyte.polonium.luqe.model.SqPoiType;
-import de.topobyte.sulfur.styles.directory.StyleDirectory;
-import de.topobyte.sulfur.styles.labels.elements.IconLabel;
-import de.topobyte.sulfur.styles.labels.elements.LabelContainer;
-import de.topobyte.sulfur.styles.labels.elements.LabelType;
-import de.topobyte.sulfur.styles.labels.elements.Rule;
+import de.topobyte.mapocado.styles.directory.StyleDirectory;
+import de.topobyte.mapocado.styles.labels.elements.IconLabel;
+import de.topobyte.mapocado.styles.labels.elements.LabelContainer;
+import de.topobyte.mapocado.styles.labels.elements.LabelType;
+import de.topobyte.mapocado.styles.labels.elements.Rule;
+import de.topobyte.nomioc.luqe.model.SqPoiType;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class)

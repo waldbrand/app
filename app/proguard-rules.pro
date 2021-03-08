@@ -41,7 +41,6 @@
 }
 
 -dontwarn net.jpountz.util.UnsafeUtils
--dontwarn de.topobyte.sulfur.util.GridBagUtil
 -dontwarn de.topobyte.misc.util.SwingHelper
 -dontwarn de.topobyte.misc.util.ImageUtil
 -dontwarn com.vividsolutions.jts.awt.**

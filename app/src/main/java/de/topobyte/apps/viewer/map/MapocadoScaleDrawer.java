@@ -21,12 +21,12 @@ import de.topobyte.android.maps.utils.ScaleDrawer;
 import de.topobyte.android.maps.utils.map.BaseMapView;
 import de.topobyte.mapocado.android.style.MapRenderConfig;
 
-public class SulfurScaleDrawer extends ScaleDrawer<BaseMapView>
+public class MapocadoScaleDrawer extends ScaleDrawer<BaseMapView>
 {
 
-  public SulfurScaleDrawer(int maxWidth, float offsetX, float offsetY,
-                           float innerLineWidth, float outerLineWidth, float heightBar,
-                           float fontSize)
+  public MapocadoScaleDrawer(int maxWidth, float offsetX, float offsetY,
+                             float innerLineWidth, float outerLineWidth, float heightBar,
+                             float fontSize)
   {
     super(maxWidth, offsetX, offsetY, innerLineWidth, outerLineWidth,
         heightBar, fontSize);

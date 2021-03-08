@@ -25,7 +25,13 @@ database is called `map.sqlite.jet`.
 
 You can download example files for Berlin using this script:
 
-    ./get-berlin-data.sh
+    ./data/get-berlin-data.sh
+
+There a few more scripts for other cities:
+
+    ./data/get-bayreuth-data.sh
+    ./data/get-cambridge-data.sh
+    ./data/get-cottbus-data.sh
 
 Create a `local.properties` file:
 

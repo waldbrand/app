@@ -36,6 +36,8 @@ public class InitFragment extends TaskFragment
 
   private static final String LOG_TAG_DATA = "data";
 
+  private static final String PREF_KEY_DATABASE_HASH = "database-hash";
+
   private VersionUpdateChecker versionUpdateChecker;
 
   @Override
@@ -51,7 +53,14 @@ public class InitFragment extends TaskFragment
   {
 //    SystemClock.sleep(2000);
 
-    if (versionUpdateChecker.isVersionUpdate()) {
+    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
+    String hash = preferences.getString(PREF_KEY_DATABASE_HASH, null);
+    boolean forceCopyDatabase = false;
+    if (!BuildConfig.DATABASE_FILE_MD5.equals(hash)) {
+      forceCopyDatabase = true;
+    }
+
+    if (versionUpdateChecker.isVersionUpdate() || forceCopyDatabase) {
 
       initializeMagnificationSettings();
 
@@ -59,7 +68,7 @@ public class InitFragment extends TaskFragment
         initializeThemes();
       }
 
-      if (versionUpdateChecker.getStoredVersion() < 91) {
+      if (versionUpdateChecker.getStoredVersion() < 91 || forceCopyDatabase) {
         MapPreferenceAbstraction mapPrefs = new MapPreferenceAbstraction(getActivity(), null);
         mapPrefs.clearPosition();
       }
@@ -85,6 +94,10 @@ public class InitFragment extends TaskFragment
 
       if (success) {
         versionUpdateChecker.storeCurrentVersion();
+
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(PREF_KEY_DATABASE_HASH, BuildConfig.DATABASE_FILE_MD5);
+        editor.commit();
       }
 
       return success;

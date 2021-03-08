@@ -20,7 +20,10 @@ package de.topobyte;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.zip.GZIPInputStream;
+
+import org.apache.commons.codec.digest.DigestUtils;
 
 public class BuildUtil
 {
@@ -37,6 +40,12 @@ public class BuildUtil
     }
 
     return size;
+  }
+
+  public static String md5(File file) throws IOException
+  {
+    InputStream is = new FileInputStream(file);
+    return DigestUtils.md5Hex(is);
   }
 
 }

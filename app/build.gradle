@@ -19,6 +19,8 @@ android {
                 new File("app/src/main/assets/map.xmap.jet").size()
         buildConfigField "int", "DATABASE_FILE_SIZE", "" +
                 BuildUtil.unGzippedSize(new File("app/src/main/assets/map.sqlite.jet"))
+        buildConfigField "String", "DATABASE_FILE_MD5", "\"" +
+                BuildUtil.md5(new File("app/src/main/assets/map.sqlite.jet")) + "\""
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

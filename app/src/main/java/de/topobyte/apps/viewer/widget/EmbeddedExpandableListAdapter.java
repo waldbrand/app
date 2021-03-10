@@ -151,13 +151,12 @@ public abstract class EmbeddedExpandableListAdapter extends
     }
 
     int number = 0;
-    if (convertView == null
-        || !convertView.getTag().equals(Integer.valueOf(number))) {
+    if (convertView == null || !convertView.getTag().equals(number)) {
       LayoutInflater inflater = (LayoutInflater) this.context
           .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
       convertView = inflater.inflate(
           R.layout.row_layout_drawer_list_group_empty, parent, false);
-      convertView.setTag(Integer.valueOf(number));
+      convertView.setTag(number);
     }
     convertView.setVisibility(View.GONE);
     return convertView;

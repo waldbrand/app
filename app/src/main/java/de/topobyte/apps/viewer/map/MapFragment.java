@@ -219,8 +219,7 @@ public class MapFragment extends Fragment implements RenderThemeListener, EasyPe
     map.addOnDrawListener(locationOverlay);
 
     // setup zoom controls
-    MapZoomControls<MapView> mapZoomControls = new MapZoomControls<MapView>(
-        map, zoomControls);
+    MapZoomControls<MapView> mapZoomControls = new MapZoomControls<>(map, zoomControls);
     map.setOnTouchListener(mapZoomControls);
     map.getMapWindow().addZoomListener(mapZoomControls);
 

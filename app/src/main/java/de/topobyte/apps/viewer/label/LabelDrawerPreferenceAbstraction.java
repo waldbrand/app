@@ -41,8 +41,8 @@ public class LabelDrawerPreferenceAbstraction
     this.prefs = prefs;
   }
 
-  public static EnumLookup<LabelMode> modeLookup = EnumLookups.build(
-      LabelMode.class, new SimpleEnumNamer<LabelMode>());
+  public static EnumLookup<LabelMode> modeLookup =
+      EnumLookups.build(LabelMode.class, new SimpleEnumNamer<>());
 
   public void storeLabelMode(LabelMode mode)
   {

@@ -146,7 +146,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
   {
     renderedLabels.clear();
     for (int i : renderConfig.getAllClassIds().toArray()) {
-      renderedLabels.put(i, new ArrayList<LabelBox>());
+      renderedLabels.put(i, new ArrayList<>());
 
       RenderClass renderClass = renderConfig.get(i);
       labelClasses.put(i, renderClass.labelClass);

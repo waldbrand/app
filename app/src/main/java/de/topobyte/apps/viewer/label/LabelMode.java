@@ -20,6 +20,6 @@ package de.topobyte.apps.viewer.label;
 public enum LabelMode
 {
 
-  MINIMAL, BY_CONFIG;
+  MINIMAL, BY_CONFIG
 
 }

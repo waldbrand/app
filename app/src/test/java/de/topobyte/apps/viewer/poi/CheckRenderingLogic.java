@@ -45,7 +45,6 @@ import java.util.zip.GZIPInputStream;
 
 import de.topobyte.adt.multicollections.HashMultiSet;
 import de.topobyte.adt.multicollections.MultiSet;
-import de.topobyte.apps.maps.atestcity.BuildConfig;
 import de.topobyte.apps.viewer.FileUtil;
 import de.topobyte.apps.viewer.ResourceConstants;
 import de.topobyte.apps.viewer.poi.category.Category;

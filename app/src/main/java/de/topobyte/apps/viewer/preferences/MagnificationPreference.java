@@ -42,10 +42,8 @@ public class MagnificationPreference extends SeekBarPreference
   @Override
   protected String getCurrentValueText(int progress)
   {
-    return String.format(
-        getContext()
-            .getString(R.string.preferences_magnification_value),
-        this.min + Integer.valueOf(progress));
+    return String.format(getContext()
+            .getString(R.string.preferences_magnification_value), this.min + progress);
   }
 
 }

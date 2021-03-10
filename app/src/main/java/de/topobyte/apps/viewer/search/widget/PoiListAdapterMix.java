@@ -212,7 +212,7 @@ public class PoiListAdapterMix extends BaseAdapter implements PoiList
   private String getFormattedDistance(double meters)
   {
     if (meters < 1000) {
-      return Integer.toString((int) meters) + "m";
+      return (int) meters + "m";
     }
     double kilometers = meters / 1000;
     return userFormatDistance.format(kilometers) + "km";

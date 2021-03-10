@@ -73,7 +73,7 @@ public class TriStateCheckBox extends ImageButton
     syncImage();
   }
 
-  public static interface OnStateChangeListener
+  public interface OnStateChangeListener
   {
     void onStateChanged(TriStateCheckBox button, ButtonState state);
   }

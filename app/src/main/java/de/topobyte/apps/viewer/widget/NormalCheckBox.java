@@ -68,7 +68,7 @@ public class NormalCheckBox extends ImageButton
     syncImage();
   }
 
-  public static interface OnCheckedChangeListener
+  public interface OnCheckedChangeListener
   {
     void onCheckedChanged(NormalCheckBox button, boolean checked);
   }

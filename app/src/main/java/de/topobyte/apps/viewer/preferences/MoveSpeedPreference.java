@@ -41,8 +41,7 @@ public class MoveSpeedPreference extends SeekBarPreference
   @Override
   protected String getCurrentValueText(int progress)
   {
-    return String.format(getContext().getString(R.string.preferences_move_speed_value),
-        Integer.valueOf(progress));
+    return String.format(getContext().getString(R.string.preferences_move_speed_value), progress);
   }
 
 }

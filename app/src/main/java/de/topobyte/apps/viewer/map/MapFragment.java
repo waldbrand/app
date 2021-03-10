@@ -203,15 +203,7 @@ public class MapFragment extends Fragment implements RenderThemeListener, EasyPe
     locationListener = new MapLocationListener(this, global.getLocation());
 
     overlayGps = overlay.getOverlayGps();
-    overlayGps.getSnapGpsButton().setOnClickListener(new OnClickListener()
-    {
-
-      @Override
-      public void onClick(View v)
-      {
-        overlayGpsClicked();
-      }
-    });
+    overlayGps.getSnapGpsButton().setOnClickListener(v -> overlayGpsClicked());
 
     locationOverlay = new LocationOverlay(map.getMapWindow(),
         global.getDensity());

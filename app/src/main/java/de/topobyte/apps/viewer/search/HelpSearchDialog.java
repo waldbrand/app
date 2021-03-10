@@ -43,13 +43,8 @@ public class HelpSearchDialog extends DialogFragment
     builder.setView(inflater.inflate(R.layout.dialog_help_search, null));
 
     builder.setPositiveButton(android.R.string.ok,
-        new DialogInterface.OnClickListener()
-        {
-          @Override
-          public void onClick(DialogInterface dialog, int id)
-          {
-            // ignore
-          }
+        (dialog, id) -> {
+          // ignore
         });
     return builder.create();
   }

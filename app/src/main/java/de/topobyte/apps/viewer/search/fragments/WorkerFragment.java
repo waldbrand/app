@@ -88,29 +88,13 @@ public class WorkerFragment extends Fragment implements SearchResultsReceiver
   @Override
   public void reportNone(final SearchQuery query)
   {
-    runOnUiThread(new Runnable()
-    {
-
-      @Override
-      public void run()
-      {
-        resultsBuffer.reportNone(query);
-      }
-    });
+    runOnUiThread(() -> resultsBuffer.reportNone(query));
   }
 
   @Override
   public void report(final SearchQuery query, final List<SqEntity> results)
   {
-    runOnUiThread(new Runnable()
-    {
-
-      @Override
-      public void run()
-      {
-        resultsBuffer.report(query, results);
-      }
-    });
+    runOnUiThread(() -> resultsBuffer.report(query, results));
   }
 
   private void runOnUiThread(Runnable runnable)

@@ -58,34 +58,18 @@ public class CategoriesDialog extends DialogFragment
     builder.setTitle(R.string.dialog_select_categories_title);
 
     builder.setPositiveButton(android.R.string.ok,
-        new DialogInterface.OnClickListener()
-        {
+        (dialog, which) -> {
 
-          @Override
-          public void onClick(DialogInterface dialog, int which)
-          {
-
-          }
         });
 
     builder.setNeutralButton(R.string.all,
-        new DialogInterface.OnClickListener()
-        {
-          @Override
-          public void onClick(DialogInterface dialog, int id)
-          {
+        (dialog, id) -> {
 
-          }
         });
 
     builder.setNegativeButton(R.string.none,
-        new DialogInterface.OnClickListener()
-        {
-          @Override
-          public void onClick(DialogInterface dialog, int id)
-          {
+        (dialog, id) -> {
 
-          }
         });
 
     return builder.create();
@@ -100,25 +84,9 @@ public class CategoriesDialog extends DialogFragment
     Button buttonAll = dialog.getButton(BUTTON_ALL);
     Button buttonNone = dialog.getButton(BUTTON_NONE);
 
-    buttonAll.setOnClickListener(new OnClickListener()
-    {
+    buttonAll.setOnClickListener(v -> selectAll());
 
-      @Override
-      public void onClick(View v)
-      {
-        selectAll();
-      }
-    });
-
-    buttonNone.setOnClickListener(new OnClickListener()
-    {
-
-      @Override
-      public void onClick(View v)
-      {
-        selectNone();
-      }
-    });
+    buttonNone.setOnClickListener(v -> selectNone());
 
   }
 

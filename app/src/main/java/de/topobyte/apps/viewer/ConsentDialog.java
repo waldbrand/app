@@ -56,25 +56,10 @@ public class ConsentDialog extends DialogFragment
 
     builder.setTitle(R.string.consent_title);
     builder.setPositiveButton(R.string.consent_accept,
-        new DialogInterface.OnClickListener()
-        {
-          @Override
-          public void onClick(DialogInterface dialog, int id)
-          {
-            ((OnAnswerReceived) getActivity()).onConsentDialogAccepted();
-          }
-        });
+        (dialog, id) -> ((OnAnswerReceived) getActivity()).onConsentDialogAccepted());
 
     builder.setNegativeButton(R.string.consent_decline,
-        new DialogInterface.OnClickListener()
-        {
-
-          @Override
-          public void onClick(DialogInterface dialog, int which)
-          {
-            ((OnAnswerReceived) getActivity()).onConsentDialogDenied();
-          }
-        });
+        (dialog, which) -> ((OnAnswerReceived) getActivity()).onConsentDialogDenied());
 
     return builder.create();
   }

@@ -104,24 +104,8 @@ public class OverlayView extends RelativeLayout
     // buttons.add(b);
     // }
 
-    btnLayers.setOnClickListener(new OnClickListener()
-    {
-
-      @Override
-      public void onClick(View v)
-      {
-        toaster.toastShort("select layers");
-      }
-    });
-    btnThemes.setOnClickListener(new OnClickListener()
-    {
-
-      @Override
-      public void onClick(View v)
-      {
-        toaster.toastShort("select theme");
-      }
-    });
+    btnLayers.setOnClickListener(v -> toaster.toastShort("select layers"));
+    btnThemes.setOnClickListener(v -> toaster.toastShort("select theme"));
 
     int paddingTop = Math.round(marginTop * density);
     int paddingRight = Math.round(marginRight * density);

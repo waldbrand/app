@@ -39,17 +39,10 @@ public class NoLocationSourceDialog extends DialogFragment
     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
     builder.setTitle(R.string.error);
     builder.setMessage(R.string.no_location_provider_available);
-    builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener()
-    {
-
-      @Override
-      public void onClick(DialogInterface dialog, int which)
-      {
-        Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-      }
-
+    builder.setPositiveButton(R.string.yes, (dialog, which) -> {
+      Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+      intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+      startActivity(intent);
     });
     builder.setNegativeButton(R.string.no, null);
     return builder.create();

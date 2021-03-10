@@ -51,14 +51,7 @@ public class ErrorDialog extends DialogFragment
     builder.setMessage(message)
         .setCancelable(false)
         .setPositiveButton(close,
-            new DialogInterface.OnClickListener()
-            {
-              @Override
-              public void onClick(DialogInterface dialog, int id)
-              {
-                getActivity().finish();
-              }
-            });
+            (dialog, id) -> getActivity().finish());
     setCancelable(false);
     return builder.create();
   }

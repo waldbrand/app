@@ -50,49 +50,26 @@ public class UnlockDialog extends DialogFragment
     builder.setView(view);
 
     builder.setPositiveButton(android.R.string.ok,
-        new DialogInterface.OnClickListener()
-        {
-          @Override
-          public void onClick(DialogInterface dialog, int id)
-          {
-            Intent unlockIntent = FreemiumUtil.createUnlockIntent();
-            startActivity(unlockIntent);
-          }
+        (dialog, id) -> {
+          Intent unlockIntent = FreemiumUtil.createUnlockIntent();
+          startActivity(unlockIntent);
         });
 
     builder.setNegativeButton(android.R.string.cancel,
-        new DialogInterface.OnClickListener()
-        {
-          @Override
-          public void onClick(DialogInterface dialog, int id)
-          {
-            // ignore
-          }
+        (dialog, id) -> {
+          // ignore
         });
 
     Button button1 = view.findViewById(R.id.button1);
-    button1.setOnClickListener(new OnClickListener()
-    {
-
-      @Override
-      public void onClick(View v)
-      {
-        HelpSearchDialog helpDialog = new HelpSearchDialog();
-        helpDialog
-            .show(getActivity().getSupportFragmentManager(), null);
-      }
+    button1.setOnClickListener(v -> {
+      HelpSearchDialog helpDialog = new HelpSearchDialog();
+      helpDialog.show(getActivity().getSupportFragmentManager(), null);
     });
 
     Button button2 = view.findViewById(R.id.button2);
-    button2.setOnClickListener(new OnClickListener()
-    {
-
-      @Override
-      public void onClick(View v)
-      {
-        Intent unlockIntent = FreemiumUtil.createUnlockIntent();
-        startActivity(unlockIntent);
-      }
+    button2.setOnClickListener(v -> {
+      Intent unlockIntent = FreemiumUtil.createUnlockIntent();
+      startActivity(unlockIntent);
     });
 
     return builder.create();

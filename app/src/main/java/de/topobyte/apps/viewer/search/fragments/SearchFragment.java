@@ -304,135 +304,88 @@ public class SearchFragment extends BaseGeocodingFragment implements
   private void setupListeners()
   {
     textWatcherAdapter = new TextWatcherAdapter(searchInput,
-        new TextWatcherAdapter.TextWatcherListener()
-        {
-
-          @Override
-          public void onTextChanged(EditText view, String text)
-          {
-            inputChanged();
-          }
-        });
+        (view, text) -> inputChanged());
 
     searchInput.addTextChangedListener(textWatcherAdapter);
 
-    buttonMatchMode.setOnClickListener(new OnClickListener()
-    {
+    buttonMatchMode.setOnClickListener(v -> {
+      int[] ids = new int[]{
+          R.id.anywhere, R.id.exact, R.id.start_with, R.id.end_with};
 
-      @Override
-      public void onClick(View v)
+      MatchMode[] values = new MatchMode[]{
+          MatchMode.ANYWHERE, MatchMode.EXACT,
+          MatchMode.BEGIN_WITH, MatchMode.END_WITH};
+
+      EnumMenu<MatchMode> enumMenu = new EnumMenu<MatchMode>(
+          getActivity(), v, R.menu.popup_menu_match_mode,
+          matchMode, ids, values)
       {
-        int[] ids = new int[]{R.id.anywhere, R.id.exact,
-            R.id.start_with, R.id.end_with};
 
-        MatchMode[] values = new MatchMode[]{MatchMode.ANYWHERE,
-            MatchMode.EXACT, MatchMode.BEGIN_WITH,
-            MatchMode.END_WITH};
-
-        EnumMenu<MatchMode> enumMenu = new EnumMenu<MatchMode>(
-            getActivity(), v, R.menu.popup_menu_match_mode,
-            matchMode, ids, values)
+        @Override
+        protected void clicked(MatchMode value)
         {
+          setMatchMode(value);
+        }
 
-          @Override
-          protected void clicked(MatchMode value)
-          {
-            setMatchMode(value);
-          }
-
-        };
-        enumMenu.show();
-      }
+      };
+      enumMenu.show();
     });
 
-    buttonResultOrder.setOnClickListener(new OnClickListener()
-    {
+    buttonResultOrder.setOnClickListener(v -> {
+      int[] ids = new int[]{R.id.alphabetic,
+          R.id.alphabetic_inverse, R.id.distance};
+      ResultOrder[] values = new ResultOrder[]{
+          ResultOrder.ALPHABETICALLY,
+          ResultOrder.ALPHABETICALLY_INVERSE,
+          ResultOrder.BY_DISTANCE};
 
-      @Override
-      public void onClick(View v)
+      EnumMenu<ResultOrder> enumMenu = new EnumMenu<ResultOrder>(
+          getActivity(), v, R.menu.popup_menu_result_order,
+          resultOrder, ids, values)
       {
-        int[] ids = new int[]{R.id.alphabetic,
-            R.id.alphabetic_inverse, R.id.distance};
-        ResultOrder[] values = new ResultOrder[]{
-            ResultOrder.ALPHABETICALLY,
-            ResultOrder.ALPHABETICALLY_INVERSE,
-            ResultOrder.BY_DISTANCE};
 
-        EnumMenu<ResultOrder> enumMenu = new EnumMenu<ResultOrder>(
-            getActivity(), v, R.menu.popup_menu_result_order,
-            resultOrder, ids, values)
+        @Override
+        protected void clicked(ResultOrder value)
         {
+          setResultOrder(value);
+        }
 
-          @Override
-          protected void clicked(ResultOrder value)
-          {
-            setResultOrder(value);
-          }
-
-        };
-        enumMenu.show();
-      }
+      };
+      enumMenu.show();
     });
 
-    buttonCategories.setOnClickListener(new OnClickListener()
-    {
+    buttonCategories.setOnClickListener(v -> {
+      PopupMenu menu = new PopupMenu(getActivity(), v);
+      menu.inflate(R.menu.popup_menu_categories);
+      menu.show();
 
-      @Override
-      public void onClick(View v)
-      {
-        PopupMenu menu = new PopupMenu(getActivity(), v);
-        menu.inflate(R.menu.popup_menu_categories);
-        menu.show();
-
-        menu.setOnMenuItemClickListener(new OnMenuItemClickListener()
-        {
-
-          @Override
-          public boolean onMenuItemClick(MenuItem item)
-          {
-            switch (item.getItemId()) {
-              case R.id.select_all:
-                pickAllCategories();
-                break;
-              case R.id.select_streets:
-                pickStreets();
-                break;
-              case R.id.select_food:
-                pickFood();
-                break;
-              case R.id.pick:
-                showCategoriesDialog();
-                break;
-            }
-            return false;
-          }
-
-        });
-      }
+      menu.setOnMenuItemClickListener(item -> {
+        switch (item.getItemId()) {
+          case R.id.select_all:
+            pickAllCategories();
+            break;
+          case R.id.select_streets:
+            pickStreets();
+            break;
+          case R.id.select_food:
+            pickFood();
+            break;
+          case R.id.pick:
+            showCategoriesDialog();
+            break;
+        }
+        return false;
+      });
     });
 
-    buttonHelp.setOnClickListener(new OnClickListener()
-    {
-
-      @Override
-      public void onClick(View view)
-      {
-        HelpSearchDialog helpDialog = new HelpSearchDialog();
-        helpDialog
-            .show(getActivity().getSupportFragmentManager(), null);
-      }
+    buttonHelp.setOnClickListener(view -> {
+      HelpSearchDialog helpDialog = new HelpSearchDialog();
+      helpDialog.show(getActivity().getSupportFragmentManager(), null);
     });
 
-    buttonUnlock.setOnClickListener(new OnClickListener()
-    {
-
-      @Override
-      public void onClick(View view)
-      {
-        UnlockDialog unlockDialog = new UnlockDialog();
-        unlockDialog.show(getActivity().getSupportFragmentManager(),
-            null);
-      }
+    buttonUnlock.setOnClickListener(view -> {
+      UnlockDialog unlockDialog = new UnlockDialog();
+      unlockDialog.show(getActivity().getSupportFragmentManager(), null);
     });
   }
 
@@ -488,8 +441,8 @@ public class SearchFragment extends BaseGeocodingFragment implements
     Log.i(LOG_TAG, "inputChanged()");
     String queryString = searchInput.getText().toString();
 
-    SearchQuery query = new SearchQuery(queryString, matchMode,
-        resultOrder, mapCenter, typeSelection);
+    SearchQuery query =
+        new SearchQuery(queryString, matchMode, resultOrder, mapCenter, typeSelection);
 
     update(query);
   }
@@ -517,8 +470,7 @@ public class SearchFragment extends BaseGeocodingFragment implements
       return;
     }
 
-    FragmentTransaction transaction = getChildFragmentManager()
-        .beginTransaction();
+    FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
 
     if (state == ResultState.SOME) {
       resultsFragment = new ResultsFragment();

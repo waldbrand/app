@@ -71,36 +71,18 @@ public class TipsAndTricksDialog extends DialogFragment
 
     builder.setTitle(R.string.dialog_startup_title);
     builder.setPositiveButton(android.R.string.ok,
-        new DialogInterface.OnClickListener()
-        {
-          @Override
-          public void onClick(DialogInterface dialog, int id)
-          {
-            CheckBox check = view
-                .findViewById(R.id.check);
-            setTipsEnabledOnStartup(check.isChecked());
-          }
+        (dialog, id) -> {
+          CheckBox check1 = view.findViewById(R.id.check);
+          setTipsEnabledOnStartup(check1.isChecked());
         });
 
     builder.setNeutralButton(R.string.next,
-        new DialogInterface.OnClickListener()
-        {
+        (dialog, which) -> {
 
-          @Override
-          public void onClick(DialogInterface dialog, int which)
-          {
-
-          }
         });
     builder.setNegativeButton(R.string.previous,
-        new DialogInterface.OnClickListener()
-        {
+        (dialog, which) -> {
 
-          @Override
-          public void onClick(DialogInterface dialog, int which)
-          {
-
-          }
         });
 
     return builder.create();
@@ -122,28 +104,16 @@ public class TipsAndTricksDialog extends DialogFragment
     Button buttonNext = dialog.getButton(BUTTON_NEXT);
     Button buttonPrev = dialog.getButton(BUTTON_PREV);
 
-    buttonNext.setOnClickListener(new OnClickListener()
-    {
-
-      @Override
-      public void onClick(View v)
-      {
-        incrementIndex();
-        updateText();
-        updateUI();
-      }
+    buttonNext.setOnClickListener(v -> {
+      incrementIndex();
+      updateText();
+      updateUI();
     });
 
-    buttonPrev.setOnClickListener(new OnClickListener()
-    {
-
-      @Override
-      public void onClick(View v)
-      {
-        decrementIndex();
-        updateText();
-        updateUI();
-      }
+    buttonPrev.setOnClickListener(v -> {
+      decrementIndex();
+      updateText();
+      updateUI();
     });
 
     updateText();

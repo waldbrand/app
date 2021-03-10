@@ -98,20 +98,13 @@ public class ResultsFragment extends Fragment
     resultsList.setOnCreateContextMenuListener(new PoiContextMenuListener(
         typeInfo));
 
-    resultsList.setOnItemClickListener(new OnItemClickListener()
-    {
-
-      @Override
-      public void onItemClick(AdapterView<?> parent, View view,
-                              int position, long id)
-      {
-        Object item = parent.getItemAtPosition(position);
-        if (!(item instanceof SqEntity)) {
-          return;
-        }
-        SqEntity entity = (SqEntity) item;
-        finish(entity.getX(), entity.getY());
+    resultsList.setOnItemClickListener((parent, view, position, id) -> {
+      Object item = parent.getItemAtPosition(position);
+      if (!(item instanceof SqEntity)) {
+        return;
       }
+      SqEntity entity = (SqEntity) item;
+      finish(entity.getX(), entity.getY());
     });
   }
 

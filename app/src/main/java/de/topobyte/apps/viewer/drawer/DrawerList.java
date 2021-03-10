@@ -70,36 +70,20 @@ public class DrawerList extends EmbeddedList
       expandGroup(groupIndex + 1);
     }
 
-    setOnGroupClickListener(new ExpandableListView.OnGroupClickListener()
-    {
-
-      @Override
-      public boolean onGroupClick(ExpandableListView parent, View view,
-                                  int groupPosition, long id)
-      {
-        if (specialIndices.contains(groupPosition - 1)) {
-          return true;
-        } else {
-          return false;
-        }
+    setOnGroupClickListener((parent, view, groupPosition, id) -> {
+      if (specialIndices.contains(groupPosition - 1)) {
+        return true;
+      } else {
+        return false;
       }
     });
 
-    setOnChildClickListener(new OnChildClickListener()
-    {
-
-      @Override
-      public boolean onChildClick(ExpandableListView parent, View v,
-                                  int groupPosition, int childPosition, long id)
-      {
-        if (groupPosition > 0
-            && groupPosition < adapter.getGroupCount() - 1) {
-          NormalCheckBox checkbox = v
-              .findViewById(R.id.chkListItem);
-          checkbox.toggle();
-        }
-        return true;
+    setOnChildClickListener((parent, v, groupPosition, childPosition, id) -> {
+      if (groupPosition > 0 && groupPosition < adapter.getGroupCount() - 1) {
+        NormalCheckBox checkbox = v.findViewById(R.id.chkListItem);
+        checkbox.toggle();
       }
+      return true;
     });
   }
 

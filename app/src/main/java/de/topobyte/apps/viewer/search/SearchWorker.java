@@ -365,20 +365,14 @@ public class SearchWorker implements Runnable
 
   private void sortByDistance(List<? extends SqEntity> pois, final Point point)
   {
-    Collections.sort(pois, new Comparator<SqEntity>()
-    {
-
-      @Override
-      public int compare(SqEntity a, SqEntity b)
-      {
-        long d = distance(a, point) - distance(b, point);
-        if (d == 0) {
-          return 0;
-        } else if (d < 0) {
-          return -1;
-        } else {
-          return 1;
-        }
+    Collections.sort(pois, (Comparator<SqEntity>) (a, b) -> {
+      long d = distance(a, point) - distance(b, point);
+      if (d == 0) {
+        return 0;
+      } else if (d < 0) {
+        return -1;
+      } else {
+        return 1;
       }
     });
   }

@@ -95,16 +95,7 @@ public class DrawerListAdapter extends EmbeddedExpandableListAdapter
       CompoundButton button = convertView
           .findViewById(R.id.button);
       button.setChecked(on);
-      button.setOnCheckedChangeListener(new OnCheckedChangeListener()
-      {
-
-        @Override
-        public void onCheckedChanged(CompoundButton button,
-                                     boolean state)
-        {
-          setLabelDrawerMode(state);
-        }
-      });
+      button.setOnCheckedChangeListener((button1, state) -> setLabelDrawerMode(state));
     }
 
     return convertView;

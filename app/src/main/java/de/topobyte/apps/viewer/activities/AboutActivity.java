@@ -76,37 +76,14 @@ public class AboutActivity extends PlainActivity
     commonIcons.setEmail(buttonMail);
     commonIcons.setShare(buttonShare);
 
-    buttonRate.setOnClickListener(new View.OnClickListener()
-    {
-
-      @Override
-      public void onClick(View view)
-      {
-        Intent intent = IntentFactory
-            .createRateAppIntent(AboutActivity.this);
-        startActivity(intent);
-      }
+    buttonRate.setOnClickListener(view -> {
+      Intent intent = IntentFactory.createRateAppIntent(AboutActivity.this);
+      startActivity(intent);
     });
 
-    buttonMail.setOnClickListener(new View.OnClickListener()
-    {
+    buttonMail.setOnClickListener(view -> FeedbackUtil.sendFeedbackMail(AboutActivity.this));
 
-      @Override
-      public void onClick(View view)
-      {
-        FeedbackUtil.sendFeedbackMail(AboutActivity.this);
-      }
-    });
-
-    buttonShare.setOnClickListener(new View.OnClickListener()
-    {
-
-      @Override
-      public void onClick(View view)
-      {
-        FeedbackUtil.share(AboutActivity.this);
-      }
-    });
+    buttonShare.setOnClickListener(view -> FeedbackUtil.share(AboutActivity.this));
   }
 
   private void setupDonate()
@@ -123,63 +100,28 @@ public class AboutActivity extends PlainActivity
     commonIcons.setCinema(buttonDonate5);
     commonIcons.setRestaurant(buttonDonate10);
 
-    buttonDonate1.setOnClickListener(new View.OnClickListener()
-    {
-
-      @Override
-      public void onClick(View view)
-      {
-        Intent intent = TopobyteIntentFactory
-            .createThanksAppDetailIntent(ThankOption.THANK_1);
-        startActivity(intent);
-      }
+    buttonDonate1.setOnClickListener(view -> {
+      Intent intent = TopobyteIntentFactory.createThanksAppDetailIntent(ThankOption.THANK_1);
+      startActivity(intent);
     });
 
-    buttonDonate2.setOnClickListener(new View.OnClickListener()
-    {
-
-      @Override
-      public void onClick(View view)
-      {
-        Intent intent = TopobyteIntentFactory
-            .createThanksAppDetailIntent(ThankOption.THANK_2);
-        startActivity(intent);
-      }
+    buttonDonate2.setOnClickListener(view -> {
+      Intent intent = TopobyteIntentFactory.createThanksAppDetailIntent(ThankOption.THANK_2);
+      startActivity(intent);
     });
 
-    buttonDonate5.setOnClickListener(new View.OnClickListener()
-    {
-
-      @Override
-      public void onClick(View view)
-      {
-        Intent intent = TopobyteIntentFactory
-            .createThanksAppDetailIntent(ThankOption.THANK_5);
-        startActivity(intent);
-      }
+    buttonDonate5.setOnClickListener(view -> {
+      Intent intent = TopobyteIntentFactory.createThanksAppDetailIntent(ThankOption.THANK_5);
+      startActivity(intent);
     });
 
-    buttonDonate10.setOnClickListener(new View.OnClickListener()
-    {
-
-      @Override
-      public void onClick(View view)
-      {
-        Intent intent = TopobyteIntentFactory
-            .createThanksAppDetailIntent(ThankOption.THANK_10);
-        startActivity(intent);
-      }
+    buttonDonate10.setOnClickListener(view -> {
+      Intent intent = TopobyteIntentFactory.createThanksAppDetailIntent(ThankOption.THANK_10);
+      startActivity(intent);
     });
   }
 
-  static final Linkify.MatchFilter allFilter = new Linkify.MatchFilter()
-  {
-    @Override
-    public boolean acceptMatch(CharSequence s, int start, int end)
-    {
-      return true;
-    }
-  };
+  static final Linkify.MatchFilter allFilter = (s, start, end) -> true;
 
   static class StaticUrlTransformer implements Linkify.TransformFilter
   {

@@ -76,47 +76,19 @@ public class OverlayGroup extends RelativeLayout
   {
     sv.setVisibility(View.INVISIBLE);
 
-    os.getButton().setOnClickListener(new OnClickListener()
-    {
-
-      @Override
-      public void onClick(View v)
-      {
-        Log.i("overlay", "show clicked");
-        showView();
-      }
+    os.getButton().setOnClickListener(v -> {
+      Log.i("overlay", "show clicked");
+      showView();
     });
 
-    ov.getCloseButton().setOnClickListener(new OnClickListener()
-    {
-
-      @Override
-      public void onClick(View v)
-      {
-        Log.i("overlay", "hide clicked");
-        hideView();
-      }
+    ov.getCloseButton().setOnClickListener(v -> {
+      Log.i("overlay", "hide clicked");
+      hideView();
     });
 
-    ov.getThemesButton().setOnClickListener(new OnClickListener()
-    {
+    ov.getThemesButton().setOnClickListener(v -> listener.selectTheme());
 
-      @Override
-      public void onClick(View v)
-      {
-        listener.selectTheme();
-      }
-    });
-
-    ov.getLayersButton().setOnClickListener(new OnClickListener()
-    {
-
-      @Override
-      public void onClick(View v)
-      {
-        listener.selectLayers();
-      }
-    });
+    ov.getLayersButton().setOnClickListener(v -> listener.selectLayers());
   }
 
   @Override

@@ -48,22 +48,15 @@ public abstract class EnumMenu<T extends Enum<?>>
 
     menu.findItem(selected).setChecked(true);
 
-    p.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener()
-    {
-
-      @Override
-      public boolean onMenuItemClick(MenuItem item)
-      {
-        int id = item.getItemId();
-        for (int i = 0; i < EnumMenu.this.ids.length; i++) {
-          if (id == EnumMenu.this.ids[i]) {
-            clicked(EnumMenu.this.values[i]);
-            return true;
-          }
+    p.setOnMenuItemClickListener(item -> {
+      int id = item.getItemId();
+      for (int i = 0; i < EnumMenu.this.ids.length; i++) {
+        if (id == EnumMenu.this.ids[i]) {
+          clicked(EnumMenu.this.values[i]);
+          return true;
         }
-        return false;
       }
-
+      return false;
     });
   }
 

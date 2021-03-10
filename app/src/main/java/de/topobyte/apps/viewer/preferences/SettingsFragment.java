@@ -68,37 +68,23 @@ public class SettingsFragment extends PreferenceFragment
   private void setupAppInfoButton()
   {
     Preference button = findPreference(Constants.PREF_APP_INFO);
-    button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
-    {
-
-      @Override
-      public boolean onPreferenceClick(Preference preference)
-      {
-        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-            .setData(Uri.fromParts("package", getActivity().getPackageName(), null));
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        return true;
-      }
-
+    button.setOnPreferenceClickListener(preference -> {
+      Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+          .setData(Uri.fromParts("package", getActivity().getPackageName(), null));
+      intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+      startActivity(intent);
+      return true;
     });
   }
 
   private void setupLocationSettingsButton()
   {
     Preference button = findPreference(Constants.PREF_LOCATION_SOURCES);
-    button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
-    {
-
-      @Override
-      public boolean onPreferenceClick(Preference preference)
-      {
-        Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        return true;
-      }
-
+    button.setOnPreferenceClickListener(preference -> {
+      Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+      intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+      startActivity(intent);
+      return true;
     });
   }
 

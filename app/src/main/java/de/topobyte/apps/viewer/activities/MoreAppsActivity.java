@@ -54,15 +54,8 @@ public class MoreAppsActivity extends PlainActivity
     if (showNetzplanInfo) {
       commonIcons.setNetzplan(buttonNetzplan);
 
-      buttonNetzplan.setOnClickListener(new View.OnClickListener()
-      {
-
-        @Override
-        public void onClick(View view)
-        {
-          startActivity(IntentFactory.createGooglePlayAppDetailsIntent(AppConstants.PACKAGE_NETZPLAN));
-        }
-      });
+      buttonNetzplan.setOnClickListener(view -> startActivity(
+          IntentFactory.createGooglePlayAppDetailsIntent(AppConstants.PACKAGE_NETZPLAN)));
     } else {
       View spacerNetzplan = findViewById(R.id.spacerNetzplan);
       TextView headNetzplan = findViewById(R.id.headNetzplan);
@@ -77,45 +70,17 @@ public class MoreAppsActivity extends PlainActivity
     commonIcons.setDice(buttonDice);
     commonIcons.setMap(buttonOtherAppsWeb);
 
-    buttonOtherAppsWeb.setOnClickListener(new View.OnClickListener()
-    {
+    buttonOtherAppsWeb.setOnClickListener(
+        view -> startActivity(AppMetaIntents.createMapListIntent(MoreAppsActivity.this)));
 
-      @Override
-      public void onClick(View view)
-      {
-        startActivity(AppMetaIntents.createMapListIntent(MoreAppsActivity.this));
-      }
-    });
+    buttonOtherAppsApp.setOnClickListener(
+        view -> startActivity(TopobyteIntentFactory.createAppManagerIntent(MoreAppsActivity.this)));
 
-    buttonOtherAppsApp.setOnClickListener(new View.OnClickListener()
-    {
+    buttonAtlas.setOnClickListener(
+        view -> startActivity(TopobyteIntentFactory.createAtlasIntent(MoreAppsActivity.this)));
 
-      @Override
-      public void onClick(View view)
-      {
-        startActivity(TopobyteIntentFactory.createAppManagerIntent(MoreAppsActivity.this));
-      }
-    });
-
-    buttonAtlas.setOnClickListener(new View.OnClickListener()
-    {
-
-      @Override
-      public void onClick(View view)
-      {
-        startActivity(TopobyteIntentFactory.createAtlasIntent(MoreAppsActivity.this));
-      }
-    });
-
-    buttonDice.setOnClickListener(new View.OnClickListener()
-    {
-
-      @Override
-      public void onClick(View view)
-      {
-        startActivity(TopobyteIntentFactory.createDiceIntent(MoreAppsActivity.this));
-      }
-    });
+    buttonDice.setOnClickListener(
+        view -> startActivity(TopobyteIntentFactory.createDiceIntent(MoreAppsActivity.this)));
 
   }
 

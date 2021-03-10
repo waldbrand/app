@@ -71,15 +71,7 @@ public class ThemeSelectorDialog extends DialogFragment
         R.string.dialog_select_theme_title));
 
     builder.setSingleChoiceItems(names, currentIndex,
-        new DialogInterface.OnClickListener()
-        {
-
-          @Override
-          public void onClick(DialogInterface dialog, int which)
-          {
-            selected(which);
-          }
-        });
+        (dialog, which) -> selected(which));
 
     return builder.create();
   }

@@ -66,35 +66,20 @@ public class CategoryList extends ExpandableListView
       expandGroup(groupIndex);
     }
 
-    setOnGroupClickListener(new ExpandableListView.OnGroupClickListener()
-    {
-
-      @Override
-      public boolean onGroupClick(ExpandableListView parent, View view,
-                                  int groupPosition, long id)
-      {
-        if (specialIndices.contains(groupPosition)) {
-          return true;
-        } else {
-          return false;
-        }
+    setOnGroupClickListener((parent, view, groupPosition, id) -> {
+      if (specialIndices.contains(groupPosition)) {
+        return true;
+      } else {
+        return false;
       }
     });
 
-    setOnChildClickListener(new OnChildClickListener()
-    {
+    setOnChildClickListener((parent, v, groupPosition, childPosition, id) -> {
 
-      @Override
-      public boolean onChildClick(ExpandableListView parent, View v,
-                                  int groupPosition, int childPosition, long id)
-      {
+      NormalCheckBox checkbox = v.findViewById(R.id.chkListItem);
+      checkbox.toggle();
 
-        NormalCheckBox checkbox = v
-            .findViewById(R.id.chkListItem);
-        checkbox.toggle();
-
-        return true;
-      }
+      return true;
     });
   }
 

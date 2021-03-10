@@ -105,14 +105,7 @@ public class MapView extends BaseMapView
     textOverlayDrawer = new TextOverlayDrawer(overlayTextSize,
         overlayBgStroke, global.getDensity());
 
-    mapWindow.addZoomListener(new ZoomChangedListener()
-    {
-      @Override
-      public void zoomChanged()
-      {
-        global.updateCacheSize(calculateCacheSize());
-      }
-    });
+    mapWindow.addZoomListener(() -> global.updateCacheSize(calculateCacheSize()));
   }
 
   @Override

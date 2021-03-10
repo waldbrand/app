@@ -16,6 +16,11 @@
         android:text="@string/fb_rate" />
 
     <Button
+        android:id="@+id/buttonCommunity"
+        style="@style/IconButtonStyle"
+        android:text="@string/fb_community" />
+
+    <Button
         android:id="@+id/buttonMail"
         style="@style/IconButtonStyle"
         android:text="@string/fb_mail" />

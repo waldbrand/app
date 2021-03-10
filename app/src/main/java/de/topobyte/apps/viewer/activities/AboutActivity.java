@@ -24,6 +24,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -33,6 +34,7 @@ import de.topobyte.android.intent.utils.ThankOption;
 import de.topobyte.android.intent.utils.TopobyteIntentFactory;
 import de.topobyte.apps.maps.atestcity.BuildConfig;
 import de.topobyte.apps.maps.atestcity.R;
+import de.topobyte.apps.viewer.AppConstants;
 import de.topobyte.apps.viewer.FeedbackUtil;
 
 public class AboutActivity extends PlainActivity
@@ -83,12 +85,14 @@ public class AboutActivity extends PlainActivity
     Button buttonRate = findViewById(R.id.buttonRate);
     Button buttonMail = findViewById(R.id.buttonMail);
     Button buttonShare = findViewById(R.id.buttonShare);
+    Button buttonCommunity = findViewById(R.id.buttonCommunity);
 
     CommonIcons commonIcons = new CommonIcons(this, 36);
 
     commonIcons.setRate(buttonRate);
     commonIcons.setEmail(buttonMail);
     commonIcons.setShare(buttonShare);
+    commonIcons.setGroup(buttonCommunity);
 
     buttonRate.setOnClickListener(view -> {
       Intent intent = IntentFactory.createRateAppIntent(AboutActivity.this);
@@ -98,6 +102,16 @@ public class AboutActivity extends PlainActivity
     buttonMail.setOnClickListener(view -> FeedbackUtil.sendFeedbackMail(AboutActivity.this));
 
     buttonShare.setOnClickListener(view -> FeedbackUtil.share(AboutActivity.this));
+
+    buttonCommunity.setOnClickListener(view -> {
+      Locale locale = Locale.getDefault();
+      String lang = locale.getLanguage();
+      String url = "https://www.topobyte.de/stadtplan-app/community";
+      if (lang.equals("de")) {
+        url = "https://www.topobyte.de/de/stadtplan-app/community";
+      }
+      startActivity(IntentFactory.createUrlIntent(url));
+    });
   }
 
   private void setupDonate()

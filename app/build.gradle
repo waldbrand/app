@@ -36,6 +36,7 @@ android {
     }
     lintOptions {
         disable 'MissingTranslation'
+        checkReleaseBuilds false
     }
     testOptions {
         unitTests.returnDefaultValues = true

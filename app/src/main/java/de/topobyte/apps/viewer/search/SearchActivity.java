@@ -110,9 +110,6 @@ public class SearchActivity extends FullscreenAppCompatActivity
     switch (item.getItemId()) {
 
       case android.R.id.home:
-        finish();
-        return true;
-
       case R.id.menu_map:
         finish();
         return true;

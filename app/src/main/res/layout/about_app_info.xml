@@ -30,8 +30,19 @@
     <TextView
         android:id="@+id/textViewWebsite"
         style="@style/Text"
-        android:autoLink="web"
         android:text="@string/website"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textViewRepo"
+        style="@style/Text"
+        android:text="@string/repo"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textViewLicense"
+        style="@style/Text"
+        android:text="@string/about_license"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </merge>

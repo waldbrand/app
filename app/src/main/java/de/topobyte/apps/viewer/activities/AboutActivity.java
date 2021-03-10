@@ -55,6 +55,20 @@ public class AboutActivity extends PlainActivity
     setupFeedback();
     setupDonate();
 
+    TextView website = findViewById(R.id.textViewWebsite);
+    TextView repo = findViewById(R.id.textViewRepo);
+    TextView license = findViewById(R.id.textViewLicense);
+
+    license.setText(
+        String.format("%s: %s", getString(R.string.about_license), getString(R.string.gpl_3_0)));
+
+    Linkify.addLinks(website, Pattern.compile("www.topobyte.de"), "", allFilter,
+        new StaticUrlTransformer("https://www.topobyte.de"));
+    Linkify.addLinks(repo, Pattern.compile("topobyte/stadtplan-app"), "", allFilter,
+        new StaticUrlTransformer("https://github.com/topobyte/stadtplan-app"));
+    Linkify.addLinks(license, Pattern.compile(getString(R.string.gpl_3_0)), "", allFilter,
+        new StaticUrlTransformer("https://www.gnu.org/licenses/gpl-3.0.en.html"));
+
     TextView mapCopyright = findViewById(R.id.textViewMapCopyright);
     TextView mapLicense = findViewById(R.id.textViewMapLicense);
 

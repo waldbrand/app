@@ -289,6 +289,8 @@
 
     <string name="app_version">App version: %s</string>
 
+    <string name="about_license">License</string>
+
     <string name="about_rate">Rate</string>
     <string name="about_share">Share</string>
 

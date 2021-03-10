@@ -89,7 +89,7 @@ android {
             println('Application variant ' + variant.name + '. Flavor names list: ' + projectFlavorNames)
             println('Build type: ' + variant.buildType.name)
 
-            if (!variant.buildType.name.equals("release")) {
+            if (variant.buildType.name != "release") {
                 def appId = "de.topobyte.apps.maps.atestcitymap"
 
                 variant.productFlavors.each() { flavor ->

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="copyright" translatable="false">© 2019 Sebastian Kürten</string>
+    <string name="copyright" translatable="false">© 2021 Sebastian Kürten</string>
     <string name="website" translatable="false">www.topobyte.de</string>
 
 </resources>

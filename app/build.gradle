@@ -13,8 +13,8 @@ android {
         applicationId 'de.topobyte.apps.maps.atestcity'
         minSdkVersion 14
         targetSdkVersion 30
-        versionCode 150
-        versionName "9.0.0"
+        versionCode 151
+        versionName "9.0.1"
         buildConfigField "int", "MAP_FILE_SIZE", "" +
                 new File("app/src/main/assets/map.xmap.jet").size()
         buildConfigField "int", "DATABASE_FILE_SIZE", "" +

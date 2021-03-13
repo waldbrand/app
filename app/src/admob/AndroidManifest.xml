@@ -14,4 +14,8 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:theme="@android:style/Theme.Translucent" />
     </application>
+
+    <queries>
+        <package android:name="de.topobyte.apps.freemium.unlock.citymaps" />
+    </queries>
 </manifest>

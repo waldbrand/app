@@ -16,6 +16,8 @@
 #   public *;
 #}
 
+-dontobfuscate
+
 -assumenosideeffects class * implements org.slf4j.Logger {
      public void debug(...);
      public void info(...);

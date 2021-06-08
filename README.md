@@ -1,8 +1,11 @@
 # About
 
-stadtplan-app is an Android app that provides offline maps for a
-geographic region such as a city or an island. It works completely offline
-and offers maps and a search index.
+This is the Android app of the Waldbrand project.
+It is designed to work completely offline and allow fire fighters
+to find hydrants and other sources of water supply.
+
+Data is based on OpenStreetMap and should be updated regularly from
+an online source in order to have current data on the device.
 
 # License
 
@@ -15,7 +18,7 @@ License. See [GPL.md](GPL.md) for details.
 
 Clone the repository recursively (including submodules):
 
-    git clone --recursive https://github.com/topobyte/android-stadtplan.git
+    git clone --recursive https://github.com/waldbrand/app.git
 
 ## Add local map and database files
 

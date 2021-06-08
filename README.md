@@ -6,7 +6,7 @@ and offers maps and a search index.
 
 # License
 
-This library is released under the terms of the GNU General Public
+This software is released under the terms of the GNU General Public
 License. See [GPL.md](GPL.md) for details.
 
 # Building from source

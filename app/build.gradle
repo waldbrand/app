@@ -113,9 +113,9 @@ configurations {
 }
 
 dependencies {
-    implementation 'de.topobyte:mapocado-android:0.1.0'
+    implementation 'de.topobyte:mapocado-android:0.2.0'
     implementation 'de.topobyte:nomioc-luqe:0.1.0'
-    implementation 'de.topobyte:luqe-android:0.0.6'
+    implementation 'de.topobyte:luqe-android:0.2.1'
     implementation 'de.topobyte:android-seekbarpreference:0.0.1'
     implementation 'de.topobyte:adt-multicollections:0.0.4'
     implementation 'de.topobyte:android-app-version-util:0.0.1'
@@ -137,7 +137,7 @@ dependencies {
 
     testImplementation 'org.robolectric:robolectric:4.5.1'
     testImplementation 'junit:junit:4.12'
-    testImplementation 'de.topobyte:luqe-jdbc:0.0.6'
+    testImplementation 'de.topobyte:luqe-jdbc:0.2.1'
     testImplementation 'org.slf4j:slf4j-api:1.7.12'
     testImplementation 'org.xerial:sqlite-jdbc:3.8.9.1'
 }

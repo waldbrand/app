@@ -36,8 +36,8 @@ import de.topobyte.apps.viewer.Constants;
 import de.topobyte.apps.viewer.LoaderActivity;
 import de.topobyte.apps.viewer.ResourceConstants;
 import de.topobyte.apps.viewer.theme.ThemeConfig;
-import de.topobyte.mapocado.android.mapfile.AssetMapFileOpener;
-import de.topobyte.mapocado.android.mapfile.MapFileOpener;
+import de.topobyte.mapocado.android.mapfile.AssetMapfileOpener;
+import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.mapformat.Mapfile;
 
 public abstract class MapActivity extends LoaderActivity
@@ -47,7 +47,7 @@ public abstract class MapActivity extends LoaderActivity
 
   protected Global global;
 
-  protected MapFileOpener opener;
+  protected MapfileOpener opener;
 
   private boolean loaded = false;
 
@@ -113,7 +113,7 @@ public abstract class MapActivity extends LoaderActivity
 
     // open map file
     Log.i(LOG_TAG_MA, "Opening map file");
-    opener = new AssetMapFileOpener(this, ResourceConstants.ASS_MAP_FILE);
+    opener = new AssetMapfileOpener(this, ResourceConstants.ASS_MAP_FILE);
 
     if (AppConstants.USE_MAPFILE_POSITION) {
       try {

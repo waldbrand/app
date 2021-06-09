@@ -30,7 +30,7 @@ import de.topobyte.apps.viewer.label.LabelDrawerPoi;
 import de.topobyte.apps.viewer.label.RenderConfig;
 import de.topobyte.luqe.android.AndroidConnection;
 import de.topobyte.luqe.iface.IConnection;
-import de.topobyte.mapocado.android.mapfile.MapFileOpener;
+import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.android.style.MapRenderConfig;
 
 public class MapViewWithOverlays extends MapView
@@ -74,7 +74,7 @@ public class MapViewWithOverlays extends MapView
   }
 
   @Override
-  public void setMapFile(MapFileOpener opener) throws IOException,
+  public void setMapFile(MapfileOpener opener) throws IOException,
       ClassNotFoundException
   {
     super.setMapFile(opener);
@@ -82,7 +82,7 @@ public class MapViewWithOverlays extends MapView
     setup(opener);
   }
 
-  private void setup(MapFileOpener opener)
+  private void setup(MapfileOpener opener)
   {
     float density = global.getDensity();
 

@@ -35,7 +35,7 @@ import de.topobyte.android.misc.utils.AndroidTimeUtil;
 import de.topobyte.luqe.android.AndroidConnection;
 import de.topobyte.luqe.iface.IConnection;
 import de.topobyte.luqe.iface.QueryException;
-import de.topobyte.mapocado.android.mapfile.MapFileOpener;
+import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.mapformat.Mapfile;
 import de.topobyte.mapocado.mapformat.geom.Coordinate;
 import de.topobyte.mapocado.mapformat.model.TextNode;
@@ -67,7 +67,7 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
 
   public QueryWorkerPoi(LabelDrawerPoi labelDrawer, SQLiteDatabase db,
                         RenderConfig renderConfig, SpatialIndex spatialIndex,
-                        MapFileOpener opener)
+                        MapfileOpener opener)
   {
     super(labelDrawer);
     labelDrawerPoi = labelDrawer;

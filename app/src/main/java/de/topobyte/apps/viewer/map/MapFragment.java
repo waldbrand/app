@@ -53,7 +53,7 @@ import de.topobyte.apps.viewer.location.MapLocationListener;
 import de.topobyte.apps.viewer.overlay.OverlayGps;
 import de.topobyte.apps.viewer.overlay.OverlayGroup;
 import de.topobyte.jeography.core.mapwindow.MapWindow;
-import de.topobyte.mapocado.android.mapfile.MapFileOpener;
+import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.android.style.MapRenderConfig;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
@@ -91,7 +91,7 @@ public class MapFragment extends Fragment implements RenderThemeListener, EasyPe
 
   private Global global;
 
-  protected MapFileOpener opener;
+  protected MapfileOpener opener;
 
   private MapViewWithOverlays map;
   private OverlayGroup overlay;

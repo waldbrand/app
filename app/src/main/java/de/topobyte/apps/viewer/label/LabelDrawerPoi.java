@@ -54,7 +54,7 @@ import de.topobyte.bvg.BvgAndroidPainter;
 import de.topobyte.bvg.BvgIO;
 import de.topobyte.bvg.BvgImage;
 import de.topobyte.jeography.core.mapwindow.SteplessMapWindow;
-import de.topobyte.mapocado.android.mapfile.MapFileOpener;
+import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.mapformat.Mercator;
 import de.topobyte.mapocado.styles.labels.elements.IconLabel;
 import de.topobyte.mapocado.styles.labels.elements.LabelType;
@@ -80,7 +80,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
   private final Context context;
 
   private final SpatialIndex spatialIndex;
-  private final MapFileOpener opener;
+  private final MapfileOpener opener;
 
   private RenderConfig renderConfig;
 
@@ -98,7 +98,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
   }
 
   public LabelDrawerPoi(Context context, View view, float density,
-                        SpatialIndex spatialIndex, MapFileOpener opener) throws IOException
+                        SpatialIndex spatialIndex, MapfileOpener opener) throws IOException
   {
     super(context, view, density);
     this.context = context;

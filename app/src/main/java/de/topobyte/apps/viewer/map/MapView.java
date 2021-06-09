@@ -33,7 +33,7 @@ import de.topobyte.interactiveview.ZoomChangedListener;
 import de.topobyte.jeography.core.Tile;
 import de.topobyte.jeography.core.mapwindow.SteplessMapWindow;
 import de.topobyte.jeography.core.viewbounds.BboxViewBounds;
-import de.topobyte.mapocado.android.mapfile.MapFileOpener;
+import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.android.style.MapRenderConfig;
 
 public class MapView extends BaseMapView
@@ -181,7 +181,7 @@ public class MapView extends BaseMapView
     postInvalidate();
   }
 
-  public void setMapFile(MapFileOpener opener) throws IOException,
+  public void setMapFile(MapfileOpener opener) throws IOException,
       ClassNotFoundException
   {
     postInvalidate();

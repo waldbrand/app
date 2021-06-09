@@ -38,7 +38,7 @@ import de.topobyte.android.mapview.ImageManagerSourceRam;
 import de.topobyte.android.mapview.ReferenceCountedBitmap;
 import de.topobyte.apps.viewer.FileUtil;
 import de.topobyte.jeography.core.Tile;
-import de.topobyte.mapocado.android.mapfile.MapFileOpener;
+import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.android.rendering.MapocadoImageSource;
 import de.topobyte.mapocado.android.style.MapRenderConfig;
 import de.topobyte.mapocado.android.style.StyleLinker;
@@ -65,7 +65,7 @@ public class Global
   private float density;
 
   private Mapfile mapfile;
-  private MapFileOpener opener;
+  private MapfileOpener opener;
 
   private Coordinate startupPosition;
 
@@ -105,7 +105,7 @@ public class Global
     return imageManager;
   }
 
-  public void setMapFile(MapFileOpener opener) throws IOException,
+  public void setMapFile(MapfileOpener opener) throws IOException,
       ClassNotFoundException
   {
     if (this.opener != null && this.opener.equals(opener)) {
@@ -238,7 +238,7 @@ public class Global
     return mapRenderConfig;
   }
 
-  public MapFileOpener getMapFileOpener()
+  public MapfileOpener getMapFileOpener()
   {
     return opener;
   }

@@ -27,7 +27,7 @@ import de.waldbrandapp.R;
 public class FeedbackUtil
 {
 
-  private static final String MAILTO_FEEDBACK = "maps-feedback@topobyte.de";
+  private static final String MAILTO_FEEDBACK = "team@waldbrand-app.de";
 
   public static void sendFeedbackMail(Context context)
   {

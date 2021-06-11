@@ -33,7 +33,7 @@ public class AppConstants
   public static final boolean HAS_MIN_ZOOM = true;
   public static final boolean HAS_MAX_ZOOM = true;
 
-  public static final int MIN_ZOOM = 10;
+  public static final int MIN_ZOOM = 8;
   public static final int MAX_ZOOM = 21;
 
   public static final Envelope BBOX = new Envelope(11.266228, 14.765816,

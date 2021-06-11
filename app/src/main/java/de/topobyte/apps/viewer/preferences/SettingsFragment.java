@@ -22,15 +22,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.provider.Settings;
 
 import androidx.annotation.Nullable;
 
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.Constants;
 import de.topobyte.apps.viewer.theme.ThemeConfig;
+import de.waldbrandapp.R;
 
 public class SettingsFragment extends PreferenceFragment
 {

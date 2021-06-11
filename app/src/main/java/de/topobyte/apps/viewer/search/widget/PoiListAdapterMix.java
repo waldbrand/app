@@ -40,7 +40,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.poi.ListDrawables;
 import de.topobyte.apps.viewer.poi.PoiHelper;
 import de.topobyte.apps.viewer.poi.PoiTypeInfo;
@@ -53,6 +52,7 @@ import de.topobyte.nomioc.luqe.model.SqBorough;
 import de.topobyte.nomioc.luqe.model.SqEntity;
 import de.topobyte.nomioc.luqe.model.SqPoi;
 import de.topobyte.nomioc.luqe.model.SqPostcode;
+import de.waldbrandapp.R;
 
 public class PoiListAdapterMix extends BaseAdapter implements PoiList
 {

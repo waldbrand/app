@@ -19,7 +19,6 @@ package de.topobyte.apps.viewer.drawer;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 

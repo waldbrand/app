@@ -18,7 +18,6 @@
 package de.topobyte.apps.viewer.overlay;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -30,10 +29,10 @@ import androidx.fragment.app.DialogFragment;
 
 import java.io.IOException;
 
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.Constants;
 import de.topobyte.apps.viewer.map.Global;
 import de.topobyte.apps.viewer.theme.ThemeConfig;
+import de.waldbrandapp.R;
 
 public class ThemeSelectorDialog extends DialogFragment
 {

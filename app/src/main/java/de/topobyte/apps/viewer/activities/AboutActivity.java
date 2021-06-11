@@ -20,7 +20,6 @@ package de.topobyte.apps.viewer.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.util.Linkify;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -32,10 +31,9 @@ import de.topobyte.android.common.resources.CommonIcons;
 import de.topobyte.android.intent.utils.IntentFactory;
 import de.topobyte.android.intent.utils.ThankOption;
 import de.topobyte.android.intent.utils.TopobyteIntentFactory;
+import de.topobyte.apps.viewer.FeedbackUtil;
 import de.waldbrandapp.BuildConfig;
 import de.waldbrandapp.R;
-import de.topobyte.apps.viewer.AppConstants;
-import de.topobyte.apps.viewer.FeedbackUtil;
 
 public class AboutActivity extends PlainActivity
 {

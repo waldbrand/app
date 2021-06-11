@@ -18,7 +18,6 @@
 package de.topobyte.apps.viewer;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;

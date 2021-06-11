@@ -39,7 +39,6 @@ import com.slimjars.dist.gnu.trove.set.hash.TIntHashSet;
 
 import java.util.List;
 
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.poi.Categories;
 import de.topobyte.apps.viewer.poi.Group;
 import de.topobyte.apps.viewer.poi.ListDrawables;
@@ -62,6 +61,7 @@ import de.topobyte.apps.viewer.widget.TextWatcherAdapter;
 import de.topobyte.luqe.iface.QueryException;
 import de.topobyte.nomioc.luqe.dao.MatchMode;
 import de.topobyte.nomioc.luqe.model.SqEntity;
+import de.waldbrandapp.R;
 
 public class SearchFragment extends BaseGeocodingFragment implements
     SearchResultsReceiver

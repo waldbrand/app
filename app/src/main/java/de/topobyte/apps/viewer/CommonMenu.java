@@ -29,12 +29,12 @@ import de.topobyte.android.intent.utils.AppMetaIntents;
 import de.topobyte.android.intent.utils.IntentFactory;
 import de.topobyte.android.intent.utils.TopobyteIntentFactory;
 import de.topobyte.android.misc.utils.PackageUtil;
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.activities.AboutActivity;
 import de.topobyte.apps.viewer.activities.MoreAppsActivity;
 import de.topobyte.apps.viewer.activities.PrivacyActivity;
 import de.topobyte.apps.viewer.config.AppClassUtil;
 import de.topobyte.apps.viewer.preferences.SettingsActivity;
+import de.waldbrandapp.R;
 
 public class CommonMenu
 {
@@ -100,7 +100,8 @@ public class CommonMenu
         if (AppConstants.PACKAGE_NETZPLAN != null) {
           if (PackageUtil.isPackageInstalled(context, AppConstants.PACKAGE_NETZPLAN)) {
             intent =
-                context.getPackageManager().getLaunchIntentForPackage(AppConstants.PACKAGE_NETZPLAN);
+                context.getPackageManager()
+                    .getLaunchIntentForPackage(AppConstants.PACKAGE_NETZPLAN);
           } else {
             intent = IntentFactory.createGooglePlayAppDetailsIntent(AppConstants.PACKAGE_NETZPLAN);
           }

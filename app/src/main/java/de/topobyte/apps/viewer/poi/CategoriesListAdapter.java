@@ -33,11 +33,11 @@ import com.slimjars.dist.gnu.trove.set.TIntSet;
 
 import java.util.List;
 
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.poi.category.Category;
 import de.topobyte.apps.viewer.widget.NormalCheckBox;
 import de.topobyte.apps.viewer.widget.TriStateCheckBox;
 import de.topobyte.apps.viewer.widget.TriStateCheckBox.ButtonState;
+import de.waldbrandapp.R;
 
 public abstract class CategoriesListAdapter extends BaseExpandableListAdapter
 {

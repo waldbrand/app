@@ -29,7 +29,6 @@ import de.topobyte.android.maps.utils.map.BaseMapView;
 import de.topobyte.android.mapview.ImageManagerSourceRam;
 import de.topobyte.android.mapview.ReferenceCountedBitmap;
 import de.topobyte.apps.viewer.AppConstants;
-import de.topobyte.interactiveview.ZoomChangedListener;
 import de.topobyte.jeography.core.Tile;
 import de.topobyte.jeography.core.mapwindow.SteplessMapWindow;
 import de.topobyte.jeography.core.viewbounds.BboxViewBounds;

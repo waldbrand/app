@@ -24,8 +24,8 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.EditText;
 
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.widget.TextWatcherAdapter.TextWatcherListener;
+import de.waldbrandapp.R;
 
 /**
  * To change clear icon, set

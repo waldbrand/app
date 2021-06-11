@@ -19,7 +19,6 @@ package de.topobyte.apps.viewer.search.widget;
 
 import android.content.Context;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
 

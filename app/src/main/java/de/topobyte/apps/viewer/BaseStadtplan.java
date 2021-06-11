@@ -38,7 +38,6 @@ import org.locationtech.jts.geom.Coordinate;
 
 import de.topobyte.android.loader3.TaskFragment;
 import de.topobyte.android.misc.utils.Toaster;
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.drawer.DrawerList;
 import de.topobyte.apps.viewer.drawer.HelpDrawerDialog;
 import de.topobyte.apps.viewer.map.MapActivity;
@@ -48,6 +47,7 @@ import de.topobyte.apps.viewer.overlay.OverlayListener;
 import de.topobyte.apps.viewer.overlay.ThemeSelectorDialog;
 import de.topobyte.apps.viewer.search.SearchActivity;
 import de.topobyte.mercatorcoordinates.GeoConv;
+import de.waldbrandapp.R;
 
 public class BaseStadtplan extends MapActivity implements OverlayListener,
     MapFragment.OnViewCreatedListener, MapFragment.HasToaster

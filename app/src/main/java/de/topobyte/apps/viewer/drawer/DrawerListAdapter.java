@@ -22,17 +22,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
 import java.util.Locale;
 
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.BaseStadtplan;
 import de.topobyte.apps.viewer.label.LabelDrawerPreferenceAbstraction;
 import de.topobyte.apps.viewer.label.LabelMode;
 import de.topobyte.apps.viewer.poi.Categories;
 import de.topobyte.apps.viewer.widget.EmbeddedExpandableListAdapter;
+import de.waldbrandapp.R;
 
 public class DrawerListAdapter extends EmbeddedExpandableListAdapter
 {

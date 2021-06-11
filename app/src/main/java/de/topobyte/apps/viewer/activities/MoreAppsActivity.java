@@ -26,8 +26,8 @@ import de.topobyte.android.common.resources.CommonIcons;
 import de.topobyte.android.intent.utils.AppMetaIntents;
 import de.topobyte.android.intent.utils.IntentFactory;
 import de.topobyte.android.intent.utils.TopobyteIntentFactory;
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.AppConstants;
+import de.waldbrandapp.R;
 
 public class MoreAppsActivity extends PlainActivity
 {

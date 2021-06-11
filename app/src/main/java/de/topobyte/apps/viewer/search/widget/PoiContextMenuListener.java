@@ -29,11 +29,11 @@ import android.widget.ListView;
 
 import com.slimjars.dist.gnu.trove.set.TIntSet;
 
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.poi.PoiHelper;
 import de.topobyte.apps.viewer.poi.PoiTypeInfo;
 import de.topobyte.nomioc.luqe.model.SqEntity;
 import de.topobyte.nomioc.luqe.model.SqPoi;
+import de.waldbrandapp.R;
 
 public class PoiContextMenuListener implements OnCreateContextMenuListener
 {

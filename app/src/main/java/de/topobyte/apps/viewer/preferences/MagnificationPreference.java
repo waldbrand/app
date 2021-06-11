@@ -21,8 +21,8 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import de.topobyte.android.seekbarpreference.SeekBarPreference;
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.Constants;
+import de.waldbrandapp.R;
 
 public class MagnificationPreference extends SeekBarPreference
 {
@@ -43,7 +43,7 @@ public class MagnificationPreference extends SeekBarPreference
   protected String getCurrentValueText(int progress)
   {
     return String.format(getContext()
-            .getString(R.string.preferences_magnification_value), this.min + progress);
+        .getString(R.string.preferences_magnification_value), this.min + progress);
   }
 
 }

@@ -24,11 +24,11 @@ import com.slimjars.dist.gnu.trove.map.hash.TObjectIntHashMap;
 
 import java.util.List;
 
-import de.waldbrandapp.R;
 import de.topobyte.luqe.iface.IConnection;
 import de.topobyte.luqe.iface.QueryException;
 import de.topobyte.nomioc.luqe.dao.Dao;
 import de.topobyte.nomioc.luqe.model.SqPoiType;
+import de.waldbrandapp.R;
 
 public class ListDrawables
 {

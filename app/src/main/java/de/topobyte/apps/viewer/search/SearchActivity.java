@@ -25,10 +25,10 @@ import android.view.MenuItem;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.CommonMenu;
 import de.topobyte.apps.viewer.search.fragments.SearchFragment;
 import de.topobyte.apps.viewer.search.fragments.WorkerFragment;
+import de.waldbrandapp.R;
 
 public class SearchActivity extends FullscreenAppCompatActivity
 {

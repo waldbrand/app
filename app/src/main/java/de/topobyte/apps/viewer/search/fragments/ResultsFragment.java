@@ -25,15 +25,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
 import java.util.List;
 
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.poi.PoiTypeInfo;
 import de.topobyte.apps.viewer.search.DatabaseAccess;
 import de.topobyte.apps.viewer.search.ResultOrder;
@@ -42,6 +39,7 @@ import de.topobyte.apps.viewer.search.widget.PoiContextMenuListener;
 import de.topobyte.apps.viewer.search.widget.PoiListAdapterMix;
 import de.topobyte.mercatorcoordinates.GeoConv;
 import de.topobyte.nomioc.luqe.model.SqEntity;
+import de.waldbrandapp.R;
 
 public class ResultsFragment extends Fragment
 {

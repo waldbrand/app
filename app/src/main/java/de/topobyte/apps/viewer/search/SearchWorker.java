@@ -322,7 +322,8 @@ public class SearchWorker implements Runnable
   }
 
   private List<SqRoad> executeStreetQuery(SearchQuery query,
-                                          String simplified, SortOrder sortOrder, TypeSelection typeSelection)
+                                          String simplified, SortOrder sortOrder,
+                                          TypeSelection typeSelection)
       throws QueryException
   {
     MatchMode matchMode = query.getMatchMode();

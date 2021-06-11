@@ -30,7 +30,6 @@ import org.locationtech.jts.geom.Point;
 import java.io.IOException;
 
 import de.topobyte.android.fullscreen.FullscreenUtil;
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.AppConstants;
 import de.topobyte.apps.viewer.Constants;
 import de.topobyte.apps.viewer.LoaderActivity;
@@ -39,6 +38,7 @@ import de.topobyte.apps.viewer.theme.ThemeConfig;
 import de.topobyte.mapocado.android.mapfile.AssetMapfileOpener;
 import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.mapformat.Mapfile;
+import de.waldbrandapp.R;
 
 public abstract class MapActivity extends LoaderActivity
 {

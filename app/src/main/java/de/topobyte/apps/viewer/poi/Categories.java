@@ -32,11 +32,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.poi.category.Category;
 import de.topobyte.apps.viewer.poi.category.DatabaseCategory;
 import de.topobyte.apps.viewer.poi.category.MapfileCategory;
 import de.topobyte.apps.viewer.poi.category.SpecialCategory;
+import de.waldbrandapp.R;
 
 public class Categories
 {

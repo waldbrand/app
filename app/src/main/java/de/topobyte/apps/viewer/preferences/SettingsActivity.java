@@ -19,8 +19,8 @@ package de.topobyte.apps.viewer.preferences;
 
 import android.os.Bundle;
 
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.activities.PlainActivity;
+import de.waldbrandapp.R;
 
 public class SettingsActivity extends PlainActivity
 {

@@ -21,8 +21,8 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import de.topobyte.android.seekbarpreference.SeekBarPreference;
-import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.Constants;
+import de.waldbrandapp.R;
 
 public class MoveSpeedPreference extends SeekBarPreference
 {

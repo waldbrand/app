@@ -79,7 +79,8 @@ public abstract class EmbeddedExpandableListAdapter extends
   }
 
   public abstract View getSpecialChildView(final int groupPosition,
-                                           final int childPosition, boolean isLastChild, View convertView,
+                                           final int childPosition, boolean isLastChild,
+                                           View convertView,
                                            ViewGroup parent);
 
   public abstract boolean isSpecialChildSelectable(int position);

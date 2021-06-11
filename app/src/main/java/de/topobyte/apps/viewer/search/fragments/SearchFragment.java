@@ -24,17 +24,13 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
 import androidx.appcompat.widget.PopupMenu;
-import androidx.appcompat.widget.PopupMenu.OnMenuItemClickListener;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -44,7 +40,6 @@ import com.slimjars.dist.gnu.trove.set.hash.TIntHashSet;
 import java.util.List;
 
 import de.topobyte.apps.maps.atestcity.R;
-import de.topobyte.apps.viewer.UnlockDialog;
 import de.topobyte.apps.viewer.freemium.FreemiumUtil;
 import de.topobyte.apps.viewer.poi.Categories;
 import de.topobyte.apps.viewer.poi.Group;
@@ -96,8 +91,6 @@ public class SearchFragment extends BaseGeocodingFragment implements
   private ImageButton buttonCategories;
   private ImageButton buttonHelp;
 
-  private Button buttonUnlock;
-
   private WorkerFragment workerFragment;
 
   private Point mapCenter;
@@ -138,8 +131,6 @@ public class SearchFragment extends BaseGeocodingFragment implements
     buttonResultOrder = view.findViewById(R.id.buttonOrder);
     buttonCategories = view.findViewById(R.id.buttonFilter);
     buttonHelp = view.findViewById(R.id.buttonHelp);
-
-    buttonUnlock = view.findViewById(R.id.unlock);
 
     if (state != null) {
       Log.i(LOG_TAG, "fragment state != null");
@@ -236,7 +227,6 @@ public class SearchFragment extends BaseGeocodingFragment implements
     int visibilityLockableViews = unlocked ? View.VISIBLE : View.GONE;
     int visibilityUnlockButton = unlocked ? View.GONE : View.VISIBLE;
 
-    buttonUnlock.setVisibility(visibilityUnlockButton);
     buttonMatchMode.setVisibility(visibilityLockableViews);
     buttonResultOrder.setVisibility(visibilityLockableViews);
     buttonCategories.setVisibility(visibilityLockableViews);
@@ -381,11 +371,6 @@ public class SearchFragment extends BaseGeocodingFragment implements
     buttonHelp.setOnClickListener(view -> {
       HelpSearchDialog helpDialog = new HelpSearchDialog();
       helpDialog.show(getActivity().getSupportFragmentManager(), null);
-    });
-
-    buttonUnlock.setOnClickListener(view -> {
-      UnlockDialog unlockDialog = new UnlockDialog();
-      unlockDialog.show(getActivity().getSupportFragmentManager(), null);
     });
   }
 

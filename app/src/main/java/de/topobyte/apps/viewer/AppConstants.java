@@ -22,10 +22,10 @@ import org.locationtech.jts.geom.Envelope;
 public class AppConstants
 {
 
-  public static final boolean USE_MAPFILE_POSITION = true;
-  public static final double STARTUP_LON = 0.0;
-  public static final double STARTUP_LAT = 0.0;
-  public static final int STARTUP_ZOOM = 12;
+  public static final boolean USE_MAPFILE_POSITION = false;
+  public static final double STARTUP_LON = 13.3882;
+  public static final double STARTUP_LAT = 52.4784;
+  public static final int STARTUP_ZOOM = 9;
 
   public static final boolean HAS_MIN_ZOOM = true;
   public static final boolean HAS_MAX_ZOOM = true;

@@ -29,7 +29,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.poi.Categories;
 import de.topobyte.apps.viewer.search.Common;
 import de.topobyte.apps.viewer.search.fragments.SearchFragment;

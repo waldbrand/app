@@ -25,7 +25,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 
 public class NoResultsFragment extends Fragment
 {

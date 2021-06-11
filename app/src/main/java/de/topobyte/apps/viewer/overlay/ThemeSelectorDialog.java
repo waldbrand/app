@@ -30,7 +30,7 @@ import androidx.fragment.app.DialogFragment;
 
 import java.io.IOException;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.Constants;
 import de.topobyte.apps.viewer.map.Global;
 import de.topobyte.apps.viewer.theme.ThemeConfig;

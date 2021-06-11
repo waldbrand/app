@@ -39,7 +39,7 @@ import com.slimjars.dist.gnu.trove.set.hash.TIntHashSet;
 
 import java.util.List;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.poi.Categories;
 import de.topobyte.apps.viewer.poi.Group;
 import de.topobyte.apps.viewer.poi.ListDrawables;

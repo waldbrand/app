@@ -33,7 +33,7 @@ import androidx.fragment.app.Fragment;
 
 import java.util.List;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.poi.PoiTypeInfo;
 import de.topobyte.apps.viewer.search.DatabaseAccess;
 import de.topobyte.apps.viewer.search.ResultOrder;

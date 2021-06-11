@@ -27,7 +27,7 @@ import androidx.fragment.app.FragmentManager;
 
 import de.topobyte.android.loader2.LoaderDialog;
 import de.topobyte.android.loader3.TaskFragment;
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 
 public abstract class LoaderActivity extends AppCompatActivity
     implements TaskFragment.TaskCallbacks, ConsentDialog.OnAnswerReceived

@@ -27,7 +27,7 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.BaseStadtplan;
 import de.topobyte.apps.viewer.label.LabelDrawerPreferenceAbstraction;
 import de.topobyte.apps.viewer.label.LabelMode;

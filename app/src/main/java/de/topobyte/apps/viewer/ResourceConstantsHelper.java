@@ -17,7 +17,7 @@
 
 package de.topobyte.apps.viewer;
 
-import de.topobyte.apps.maps.atestcity.BuildConfig;
+import de.waldbrandapp.BuildConfig;
 
 public class ResourceConstantsHelper
 {

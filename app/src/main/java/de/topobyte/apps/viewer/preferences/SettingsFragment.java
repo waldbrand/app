@@ -28,7 +28,7 @@ import android.provider.Settings;
 
 import androidx.annotation.Nullable;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.Constants;
 import de.topobyte.apps.viewer.theme.ThemeConfig;
 

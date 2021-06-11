@@ -27,7 +27,7 @@ import androidx.fragment.app.DialogFragment;
 
 import java.util.Locale;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 
 public class ErrorDialog extends DialogFragment
 {

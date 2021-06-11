@@ -44,7 +44,7 @@ import de.topobyte.android.maps.utils.MagnificationConfig;
 import de.topobyte.android.maps.utils.MapZoomControls;
 import de.topobyte.android.maps.utils.view.MapPosition;
 import de.topobyte.android.misc.utils.Toaster;
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.AppConstants;
 import de.topobyte.apps.viewer.Constants;
 import de.topobyte.apps.viewer.NoLocationSourceDialog;

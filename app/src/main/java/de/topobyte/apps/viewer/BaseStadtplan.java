@@ -38,7 +38,7 @@ import org.locationtech.jts.geom.Coordinate;
 
 import de.topobyte.android.loader3.TaskFragment;
 import de.topobyte.android.misc.utils.Toaster;
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.drawer.DrawerList;
 import de.topobyte.apps.viewer.drawer.HelpDrawerDialog;
 import de.topobyte.apps.viewer.map.MapActivity;

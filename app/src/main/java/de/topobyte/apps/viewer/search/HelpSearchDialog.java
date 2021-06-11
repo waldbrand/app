@@ -26,7 +26,7 @@ import android.view.LayoutInflater;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 
 public class HelpSearchDialog extends DialogFragment
 {

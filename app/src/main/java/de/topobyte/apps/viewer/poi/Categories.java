@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.poi.category.Category;
 import de.topobyte.apps.viewer.poi.category.DatabaseCategory;
 import de.topobyte.apps.viewer.poi.category.MapfileCategory;

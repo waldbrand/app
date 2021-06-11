@@ -27,7 +27,7 @@ import android.widget.BaseExpandableListAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 
 public abstract class EmbeddedExpandableListAdapter extends
     BaseExpandableListAdapter

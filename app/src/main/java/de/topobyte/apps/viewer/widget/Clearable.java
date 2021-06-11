@@ -24,7 +24,7 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.EditText;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.widget.TextWatcherAdapter.TextWatcherListener;
 
 /**

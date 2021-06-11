@@ -29,7 +29,7 @@ import android.widget.ListView;
 
 import com.slimjars.dist.gnu.trove.set.TIntSet;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.poi.PoiHelper;
 import de.topobyte.apps.viewer.poi.PoiTypeInfo;
 import de.topobyte.nomioc.luqe.model.SqEntity;

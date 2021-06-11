@@ -33,7 +33,7 @@ import com.slimjars.dist.gnu.trove.set.TIntSet;
 
 import java.util.List;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.poi.category.Category;
 import de.topobyte.apps.viewer.widget.NormalCheckBox;
 import de.topobyte.apps.viewer.widget.TriStateCheckBox;

@@ -25,7 +25,7 @@ import android.view.MenuItem;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.CommonMenu;
 import de.topobyte.apps.viewer.search.fragments.SearchFragment;
 import de.topobyte.apps.viewer.search.fragments.WorkerFragment;

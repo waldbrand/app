@@ -22,7 +22,7 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.ImageButton;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 
 public class NormalCheckBox extends ImageButton
 {

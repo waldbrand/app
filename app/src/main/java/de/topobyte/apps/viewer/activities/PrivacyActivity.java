@@ -19,7 +19,7 @@ package de.topobyte.apps.viewer.activities;
 
 import android.os.Bundle;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 
 public class PrivacyActivity extends PlainActivity
 {

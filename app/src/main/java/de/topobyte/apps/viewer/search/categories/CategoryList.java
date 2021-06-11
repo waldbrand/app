@@ -24,7 +24,7 @@ import android.widget.ExpandableListView;
 
 import com.slimjars.dist.gnu.trove.set.TIntSet;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.poi.Categories;
 import de.topobyte.apps.viewer.widget.NormalCheckBox;
 

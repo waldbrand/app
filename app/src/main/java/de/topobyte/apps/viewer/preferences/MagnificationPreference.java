@@ -21,7 +21,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import de.topobyte.android.seekbarpreference.SeekBarPreference;
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.Constants;
 
 public class MagnificationPreference extends SeekBarPreference

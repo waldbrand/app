@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
-import de.topobyte.apps.maps.atestcity.R;
+import de.waldbrandapp.R;
 import de.topobyte.apps.viewer.poi.ListDrawables;
 import de.topobyte.apps.viewer.poi.PoiHelper;
 import de.topobyte.apps.viewer.poi.PoiTypeInfo;

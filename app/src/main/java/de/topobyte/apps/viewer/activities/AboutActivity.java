@@ -64,10 +64,10 @@ public class AboutActivity extends PlainActivity
     license.setText(
         String.format("%s: %s", getString(R.string.about_license), getString(R.string.gpl_3_0)));
 
-    Linkify.addLinks(website, Pattern.compile("www.topobyte.de"), "", allFilter,
-        new StaticUrlTransformer("https://www.topobyte.de"));
-    Linkify.addLinks(repo, Pattern.compile("topobyte/stadtplan-app"), "", allFilter,
-        new StaticUrlTransformer("https://github.com/topobyte/stadtplan-app"));
+    Linkify.addLinks(website, Pattern.compile("www.waldbrand-app.de"), "", allFilter,
+        new StaticUrlTransformer("https://www.waldbrand-app.de"));
+    Linkify.addLinks(repo, Pattern.compile("waldbrand/app"), "", allFilter,
+        new StaticUrlTransformer("https://github.com/waldbrand/app"));
     Linkify.addLinks(license, Pattern.compile(getString(R.string.gpl_3_0)), "", allFilter,
         new StaticUrlTransformer("https://www.gnu.org/licenses/gpl-3.0.en.html"));
 

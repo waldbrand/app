@@ -250,12 +250,6 @@ public class BaseStadtplan extends MapActivity implements OverlayListener,
   {
     Log.d("menu", "onPrepareOptionsMenu");
 
-    if (!drawerPartiallyOrCompletelyVisible) {
-      CommonMenu.setupVisibility(menu);
-    } else {
-      // nothing to do here
-    }
-
     return true;
   }
 

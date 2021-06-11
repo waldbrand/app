@@ -18,44 +18,18 @@
 package de.topobyte.apps.viewer;
 
 import android.content.Intent;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.fragment.app.FragmentActivity;
 
-import java.util.Locale;
-
 import de.topobyte.android.intent.utils.AppMetaIntents;
-import de.topobyte.android.intent.utils.IntentFactory;
-import de.topobyte.android.intent.utils.TopobyteIntentFactory;
-import de.topobyte.android.misc.utils.PackageUtil;
 import de.topobyte.apps.viewer.activities.AboutActivity;
-import de.topobyte.apps.viewer.activities.MoreAppsActivity;
 import de.topobyte.apps.viewer.activities.PrivacyActivity;
-import de.topobyte.apps.viewer.config.AppClassUtil;
 import de.topobyte.apps.viewer.preferences.SettingsActivity;
 import de.waldbrandapp.R;
 
 public class CommonMenu
 {
-
-  public static void setupVisibility(Menu menu)
-  {
-    if (!AppClassUtil.showGooglePlayLinksToApps()) {
-      menuState(menu, R.id.menu_more_maps, false);
-    }
-
-    boolean showNetzplan = AppConstants.PACKAGE_NETZPLAN != null;
-    menuState(menu, R.id.menu_public_transport, showNetzplan);
-  }
-
-  public static void menuState(Menu menu, int itemId, boolean state)
-  {
-    MenuItem item = menu.findItem(itemId);
-    if (item != null) {
-      item.setVisible(state);
-    }
-  }
 
   public static boolean handleMenuItemSelected(FragmentActivity context, MenuItem item)
   {
@@ -78,35 +52,9 @@ public class CommonMenu
         TipsAndTricks.showTipsAndTricks(context);
         return true;
 
-      case R.id.menu_more_maps:
-        intent = new Intent(context, MoreAppsActivity.class);
-        context.startActivity(intent);
-        return true;
-
       case R.id.menu_faq:
         intent = AppMetaIntents.createFAQIntent(context);
         context.startActivity(intent);
-        return true;
-
-      case R.id.menu_weather:
-        Locale locale = Locale.getDefault();
-        String lang = locale.getLanguage();
-        intent = TopobyteIntentFactory.createTopobyteWeatherIntent(
-            AppConstants.ISO3, AppConstants.CITY_NAME, lang, false);
-        context.startActivity(intent);
-        return true;
-
-      case R.id.menu_public_transport:
-        if (AppConstants.PACKAGE_NETZPLAN != null) {
-          if (PackageUtil.isPackageInstalled(context, AppConstants.PACKAGE_NETZPLAN)) {
-            intent =
-                context.getPackageManager()
-                    .getLaunchIntentForPackage(AppConstants.PACKAGE_NETZPLAN);
-          } else {
-            intent = IntentFactory.createGooglePlayAppDetailsIntent(AppConstants.PACKAGE_NETZPLAN);
-          }
-          context.startActivity(intent);
-        }
         return true;
 
       default:

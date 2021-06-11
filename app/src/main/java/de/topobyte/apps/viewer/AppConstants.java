@@ -22,9 +22,6 @@ import org.locationtech.jts.geom.Envelope;
 public class AppConstants
 {
 
-  public static final boolean HAS_POSITION = false;
-  public static final boolean HAS_ZOOM = false;
-
   public static final boolean USE_MAPFILE_POSITION = true;
   public static final double STARTUP_LON = 0.0;
   public static final double STARTUP_LAT = 0.0;
@@ -38,10 +35,5 @@ public class AppConstants
 
   public static final Envelope BBOX = new Envelope(11.266228, 14.765816,
       53.559091, 51.359064);
-
-  public static final String CITY_NAME = "ATestCity";
-  public static final String ISO3 = "DEU";
-
-  public static final String PACKAGE_NETZPLAN = "de.topobyte.transportation.plan.deu.berlin";
 
 }

@@ -90,13 +90,6 @@ public class SearchActivity extends FullscreenAppCompatActivity
   }
 
   @Override
-  public boolean onPrepareOptionsMenu(Menu menu)
-  {
-    CommonMenu.setupVisibility(menu);
-    return true;
-  }
-
-  @Override
   public boolean onOptionsItemSelected(MenuItem item)
   {
     boolean handled = CommonMenu.handleMenuItemSelected(this, item);

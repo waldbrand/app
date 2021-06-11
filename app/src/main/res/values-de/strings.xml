@@ -39,13 +39,10 @@
     <string name="menu_search">Suchen</string>
     <string name="menu_search_remove">Markierung entfernen</string>
     <string name="menu_preferences">Einstellungen</string>
-    <string name="menu_more_maps">Weitere Stadtpläne</string>
     <string name="menu_map">Karte</string>
     <string name="menu_position_last_known">Letzte bekannte Position</string>
     <string name="menu_position_my_location_enable">Meine Position anzeigen</string>
     <string name="menu_position_my_location_disable">Meine Position entfernen</string>
-    <string name="menu_weather">Wetter</string>
-    <string name="menu_public_transport_map">ÖPNV-Karte</string>
     <string name="menu_faq">FAQ</string>
     <string name="menu_help_info">Hilfe &amp; Info</string>
 

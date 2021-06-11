@@ -39,17 +39,6 @@
         android:title="@string/menu_preferences"
         support:showAsAction="ifRoom" />
     <item
-        android:id="@+id/menu_weather"
-        android:icon="@drawable/ic_weather"
-        android:orderInCategory="135"
-        android:title="@string/menu_weather"
-        support:showAsAction="never" />
-    <item
-        android:id="@+id/menu_public_transport"
-        android:orderInCategory="137"
-        android:title="@string/menu_public_transport_map"
-        support:showAsAction="never" />
-    <item
         android:id="@+id/menu_help"
         android:icon="@drawable/ic_help"
         android:orderInCategory="150"
@@ -65,10 +54,6 @@
                 android:id="@+id/menu_faq"
                 android:orderInCategory="110"
                 android:title="@string/menu_faq" />
-            <item
-                android:id="@+id/menu_more_maps"
-                android:orderInCategory="140"
-                android:title="@string/menu_more_maps" />
         </menu>
 
     </item>

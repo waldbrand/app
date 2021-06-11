@@ -41,13 +41,10 @@
     <string name="menu_search">Search</string>
     <string name="menu_search_remove">Remove Marker</string>
     <string name="menu_preferences">Preferences</string>
-    <string name="menu_more_maps">More maps</string>
     <string name="menu_map">Map</string>
     <string name="menu_position_last_known">Last known location</string>
     <string name="menu_position_my_location_enable">Show my location</string>
     <string name="menu_position_my_location_disable">Remove my location</string>
-    <string name="menu_weather">Weather</string>
-    <string name="menu_public_transport_map">Public transport map</string>
     <string name="menu_faq">FAQ</string>
     <string name="menu_help_info">Help &amp; Info</string>
 

@@ -36,8 +36,8 @@ public class AppConstants
   public static final int MIN_ZOOM = 10;
   public static final int MAX_ZOOM = 21;
 
-  public static final Envelope BBOX = new Envelope(13.088315, 13.760908,
-      52.675476, 52.338076);
+  public static final Envelope BBOX = new Envelope(11.266228, 14.765816,
+      53.559091, 51.359064);
 
   public static final String CITY_NAME = "ATestCity";
   public static final String ISO3 = "DEU";

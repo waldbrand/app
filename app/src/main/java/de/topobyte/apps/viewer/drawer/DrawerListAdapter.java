@@ -26,7 +26,7 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
-import de.topobyte.apps.viewer.BaseStadtplan;
+import de.topobyte.apps.viewer.Stadtplan;
 import de.topobyte.apps.viewer.label.LabelDrawerPreferenceAbstraction;
 import de.topobyte.apps.viewer.label.LabelMode;
 import de.topobyte.apps.viewer.poi.Categories;
@@ -36,7 +36,7 @@ import de.waldbrandapp.R;
 public class DrawerListAdapter extends EmbeddedExpandableListAdapter
 {
 
-  private BaseStadtplan stadtplan;
+  private Stadtplan stadtplan;
 
   public DrawerListAdapter(Context context, Categories info)
   {
@@ -55,7 +55,7 @@ public class DrawerListAdapter extends EmbeddedExpandableListAdapter
     return 0;
   }
 
-  public void setStadtplan(BaseStadtplan stadtplan)
+  public void setStadtplan(Stadtplan stadtplan)
   {
     this.stadtplan = stadtplan;
     ((LabelCategoriesListAdapter) listAdapter).setStadtplan(stadtplan);

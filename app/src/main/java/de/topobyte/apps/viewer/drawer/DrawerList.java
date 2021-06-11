@@ -23,7 +23,7 @@ import android.util.Log;
 
 import com.slimjars.dist.gnu.trove.set.TIntSet;
 
-import de.topobyte.apps.viewer.BaseStadtplan;
+import de.topobyte.apps.viewer.Stadtplan;
 import de.topobyte.apps.viewer.poi.Categories;
 import de.topobyte.apps.viewer.widget.EmbeddedList;
 import de.topobyte.apps.viewer.widget.NormalCheckBox;
@@ -52,7 +52,7 @@ public class DrawerList extends EmbeddedList
 
   private Categories info;
 
-  private BaseStadtplan stadtplan;
+  private Stadtplan stadtplan;
 
   private DrawerListAdapter adapter;
 
@@ -85,7 +85,7 @@ public class DrawerList extends EmbeddedList
     });
   }
 
-  public void setStadtplan(BaseStadtplan stadtplan)
+  public void setStadtplan(Stadtplan stadtplan)
   {
     this.stadtplan = stadtplan;
     adapter.setStadtplan(stadtplan);

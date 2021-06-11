@@ -19,7 +19,7 @@ package de.topobyte.apps.viewer.drawer;
 
 import android.content.Context;
 
-import de.topobyte.apps.viewer.BaseStadtplan;
+import de.topobyte.apps.viewer.Stadtplan;
 import de.topobyte.apps.viewer.poi.Categories;
 import de.topobyte.apps.viewer.poi.CategoriesListAdapter;
 import de.topobyte.apps.viewer.poi.Group;
@@ -29,14 +29,14 @@ import de.topobyte.apps.viewer.widget.TriStateCheckBox.ButtonState;
 public class LabelCategoriesListAdapter extends CategoriesListAdapter
 {
 
-  private BaseStadtplan stadtplan;
+  private Stadtplan stadtplan;
 
   public LabelCategoriesListAdapter(Context context, Categories info)
   {
     super(context, info, Categories.PREF_PREFIX_LABELS);
   }
 
-  public void setStadtplan(BaseStadtplan stadtplan)
+  public void setStadtplan(Stadtplan stadtplan)
   {
     this.stadtplan = stadtplan;
   }

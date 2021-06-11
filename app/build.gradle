@@ -22,6 +22,11 @@ android {
         buildConfigField "String", "DATABASE_FILE_MD5", "\"" +
                 BuildUtil.md5(new File("app/src/main/assets/map.sqlite.jet")) + "\""
     }
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+        }
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8

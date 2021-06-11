@@ -10,11 +10,11 @@ android {
     compileSdkVersion 30
     buildToolsVersion '30.0.2'
     defaultConfig {
-        applicationId 'de.topobyte.apps.maps.atestcity'
+        applicationId 'de.waldbrandapp.brandenburg'
         minSdkVersion 14
         targetSdkVersion 30
-        versionCode 151
-        versionName "9.0.1"
+        versionCode 1
+        versionName "1.0.0"
         buildConfigField "int", "MAP_FILE_SIZE", "" +
                 new File("app/src/main/assets/map.xmap.jet").size()
         buildConfigField "int", "DATABASE_FILE_SIZE", "" +
@@ -57,32 +57,6 @@ android {
 
     lintOptions {
         disable 'InvalidPackage'
-    }
-    buildTypes {
-        applicationVariants.all { variant ->
-
-            def projectFlavorNames = []
-
-            variant.productFlavors.each() { flavor ->
-                projectFlavorNames.add(flavor.name)
-            }
-
-            println('Application variant ' + variant.name + '. Flavor names list: ' + projectFlavorNames)
-            println('Build type: ' + variant.buildType.name)
-
-            if (variant.buildType.name != "release") {
-                def appId = "de.topobyte.apps.maps.atestcitymap"
-
-                variant.productFlavors.each() { flavor ->
-                    println('flavor: ' + flavor.name)
-                    appId = appId + "." + flavor.name
-                }
-
-                variant.mergedFlavor.applicationId = appId
-
-                println('Using application id: ' + variant.applicationId)
-            }
-        }
     }
 }
 

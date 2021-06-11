@@ -9,3 +9,5 @@ build
 !.idea/codeStyleSettings.xml
 !.idea/codeStyles
 !.idea/dictionaries
+!.idea/saveactions_settings.xml
+!.idea/inspectionProfiles/

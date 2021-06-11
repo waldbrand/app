@@ -30,7 +30,6 @@ import androidx.annotation.Nullable;
 
 import de.topobyte.apps.maps.atestcity.R;
 import de.topobyte.apps.viewer.Constants;
-import de.topobyte.apps.viewer.freemium.FreemiumUtil;
 import de.topobyte.apps.viewer.theme.ThemeConfig;
 
 public class SettingsFragment extends PreferenceFragment
@@ -51,7 +50,6 @@ public class SettingsFragment extends PreferenceFragment
 
     setupAppInfoButton();
     setupLocationSettingsButton();
-    setupPrivacyVisibility();
   }
 
   private void updateThemePreference()
@@ -86,14 +84,6 @@ public class SettingsFragment extends PreferenceFragment
       startActivity(intent);
       return true;
     });
-  }
-
-  private void setupPrivacyVisibility()
-  {
-    if (!FreemiumUtil.showAdRelatedContent(getActivity())) {
-      PreferenceCategory category = (PreferenceCategory) findPreference(Constants.PREF_CAT_PRIVACY);
-      getPreferenceScreen().removePreference(category);
-    }
   }
 
 }

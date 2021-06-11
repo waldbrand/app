@@ -51,9 +51,6 @@ public class ConsentDialog extends DialogFragment
     final View view = inflater.inflate(R.layout.dialog_consent, null);
     builder.setView(view);
 
-    Privacy.setupVisibility(getContext(), new ViewHasViews(view));
-    Privacy.setupLinks(new ViewHasViews(view));
-
     builder.setTitle(R.string.consent_title);
     builder.setPositiveButton(R.string.consent_accept,
         (dialog, id) -> ((OnAnswerReceived) getActivity()).onConsentDialogAccepted());

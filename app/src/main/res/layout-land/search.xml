@@ -65,12 +65,6 @@
             android:contentDescription="@string/search_help"
             android:src="@drawable/sl_ic_action_help" />
 
-        <Button
-            android:id="@+id/unlock"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/unlock_short"
-            android:textSize="12sp" />
     </LinearLayout>
 
     <RelativeLayout

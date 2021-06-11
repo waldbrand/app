@@ -40,7 +40,6 @@ import com.slimjars.dist.gnu.trove.set.hash.TIntHashSet;
 import java.util.List;
 
 import de.topobyte.apps.maps.atestcity.R;
-import de.topobyte.apps.viewer.freemium.FreemiumUtil;
 import de.topobyte.apps.viewer.poi.Categories;
 import de.topobyte.apps.viewer.poi.Group;
 import de.topobyte.apps.viewer.poi.ListDrawables;
@@ -75,7 +74,6 @@ public class SearchFragment extends BaseGeocodingFragment implements
 
   private static final String STATE_RESULT_STATE = "result-state";
 
-  private boolean unlocked = false;
   private SearchQuery lastQueuedQuery = null;
 
   private ResultState resultState = ResultState.NOT_INITIALIZED;
@@ -181,8 +179,6 @@ public class SearchFragment extends BaseGeocodingFragment implements
     super.onResume();
     Log.i(LOG_TAG, "SearchFragment.onResume()");
 
-    updateFreemiumStuff();
-
     openDatabase();
 
     SearchQuery query = loadQuery();
@@ -218,19 +214,6 @@ public class SearchFragment extends BaseGeocodingFragment implements
     }
 
     setupListeners();
-  }
-
-  private void updateFreemiumStuff()
-  {
-    unlocked = FreemiumUtil.showPremiumFeatures(getActivity());
-
-    int visibilityLockableViews = unlocked ? View.VISIBLE : View.GONE;
-    int visibilityUnlockButton = unlocked ? View.GONE : View.VISIBLE;
-
-    buttonMatchMode.setVisibility(visibilityLockableViews);
-    buttonResultOrder.setVisibility(visibilityLockableViews);
-    buttonCategories.setVisibility(visibilityLockableViews);
-    buttonHelp.setVisibility(visibilityLockableViews);
   }
 
   private void syncIcons()
@@ -500,12 +483,10 @@ public class SearchFragment extends BaseGeocodingFragment implements
     SharedPreferences prefs = PreferenceManager
         .getDefaultSharedPreferences(getActivity());
     String query = prefs.getString(Common.PREF_SEARCH_QUERY, "");
-    MatchMode matchMode = unlocked ? get(prefs,
-        Common.PREF_SEARCH_QUERY_EXACT, MatchMode.class,
-        MatchMode.ANYWHERE) : MatchMode.ANYWHERE;
-    ResultOrder resultOrder = unlocked ? get(prefs,
-        Common.PREF_SEARCH_QUERY_ORDER, ResultOrder.class,
-        ResultOrder.ALPHABETICALLY) : ResultOrder.ALPHABETICALLY;
+    MatchMode matchMode = get(prefs, Common.PREF_SEARCH_QUERY_EXACT, MatchMode.class,
+        MatchMode.ANYWHERE);
+    ResultOrder resultOrder = get(prefs, Common.PREF_SEARCH_QUERY_ORDER, ResultOrder.class,
+        ResultOrder.ALPHABETICALLY);
     TypeSelection typeSelection = loadTypeSelection(prefs);
 
     return new SearchQuery(query, matchMode, resultOrder, mapCenter,
@@ -518,27 +499,10 @@ public class SearchFragment extends BaseGeocodingFragment implements
 
     Categories categories = Categories.getSearchInstance();
 
-    boolean includeStreets = unlocked ? categories.isEnabled(prefs,
-        Categories.PREF_KEY_STREETS) : true;
+    boolean includeStreets = categories.isEnabled(prefs, Categories.PREF_KEY_STREETS);
 
     PoiTypeSelection poiTypes = PoiTypeSelection.ALL;
     TIntSet typeIds = new TIntHashSet();
-
-    if (!unlocked) {
-      for (Group group : categories.getGroups()) {
-        for (Category category : group.getChildren()) {
-          if (category instanceof DatabaseCategory) {
-            DatabaseCategory dcat = (DatabaseCategory) category;
-            for (String typeId : dcat.getIdentifiers()) {
-              int id = typesInfo.getTypeId(typeId);
-              typeIds.add(id);
-            }
-          }
-        }
-      }
-
-      return new TypeSelection(includeStreets, poiTypes, typeIds);
-    }
 
     boolean includeOthers = categories.isEnabled(prefs,
         Categories.PREF_KEY_OTHERS);

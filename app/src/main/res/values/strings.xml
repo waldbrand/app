@@ -138,13 +138,6 @@
 
     <string name="elevation">Elevation</string>
 
-    <string name="unlock">Unlock premium features</string>
-    <string name="unlock2">Premium also removes ads</string>
-    <string name="unlock3">One purchase upgrades all our free maps</string>
-    <string name="unlock_short">Search Options</string>
-    <string name="unlock_long">Search Options? Unlock this premium feature</string>
-    <string name="please_donate">Like this app? Please donate</string>
-
     <!-- categories -->
 
     <string name="cat_orientation">Orientation</string>
@@ -247,12 +240,6 @@
     <string name="help_search_text3">With the second button you can adjust the order of results. You can choose \"alphabetic\", reverse alphabetic (\"inverse\") and \"by distance\". The \"by distance\" mode will sort results by distance from the center of the map (i.e. the portion of the map that is currently visible in the map view). It will also display the distance from the center of the map for each item.</string>
     <string name="help_search_text4">With the third button you can select the categories of items to include in the search. For example you could configure to look only for streets or just for restaurants. However, you can select any combination of categories: another example would be to restrict the results to museums and theatres or hotels.</string>
 
-    <string name="dialog_unlock_title">Get premium features</string>
-    <string name="dialog_unlock_text1_freemium">Unlock premium features of the application and enjoy even better search functionality. With the unlocked version you will be able to sort results by distance and have better control over your results by selecting categories and by defining the match mode.</string>
-    <string name="dialog_unlock_text1_admob">• Remove ad banner from map\n• Enjoy even better search functionality. With the unlocked version you will be able to sort results by distance and have better control over your results by selecting categories and by defining the match mode.</string>
-    <string name="dialog_unlock_button1">Explain premium features</string>
-    <string name="dialog_unlock_button2">Unlock using Google Play</string>
-
     <string name="dialog_startup_title">Tips and tricks</string>
     <string name="dialog_startup_text1">You can select which icons and labels are visible on the map, so that you can find what you\'re looking for more easily and to make the map better readable. Touch the button in the top left corner or swipe from the left to open the sidebar where you can configure the visible items.</string>
     <string name="dialog_startup_text2">To find streets, restaurants, shops or other points of interest, open the search dialog by selecting the magnifying glass in the menu bar at the top.</string>
@@ -307,7 +294,5 @@
     <string name="privacy1">The legal basis for this privacy policy is the General Data Protection Regulation (GDPR). The controller for the processing of any kind of personal data through this app is Sebastian Kürten (sebastian@topobyte.de).</string>
     <string name="privacy2">As the publisher of this app, we take the protection of your privacy very seriously. Hence we do not process or store any personal data about you. It is also impossible to us, because no data is transmitted from this app to either us, our servers or third parties.</string>
     <string name="privacy4">If you activate the location display, the app reads your device\'s location so that it is able to display it on the map. Depending on your system settings, it will detect your location via GPS, Wifi or GSM with varying accuracy. If you use this functionality, you consent to the processing of this information for the purpose of displaying it on the map. Your location is not transmitted to us or third parties and hence is not processed or stored by us. Your location data is not permanently stored and you can stop processing it at any time by disabling the location display.</string>
-    <string name="privacy5">This app is financed by showing ad banners from Google. By default these banners display personalized ads. Google processes information stored on your device to accomplish this. You can read about what Google is doing in their <a href="https://policies.google.com/technologies/partner-sites">Privacy Policy</a>. To protect your privacy, you can configure to show only non-personalized ads in the settings. You can use the app completely without ads by using the premium version, or by purchasing the <a href="https://play.google.com/store/apps/details?id=de.topobyte.apps.freemium.unlock.citymaps">unlocker app</a> to disable the ad banners.</string>
-    <string name="privacy6">You have the unlocker app installed. Hence the following paragraph about ad banners does not apply because no ads will be used.</string>
 
 </resources>

@@ -26,7 +26,6 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import de.topobyte.apps.maps.atestcity.R;
-import de.topobyte.apps.viewer.freemium.FreemiumUtil;
 
 public class NoResultsFragment extends Fragment
 {
@@ -53,10 +52,8 @@ public class NoResultsFragment extends Fragment
 
     resultsText1.setText(R.string.search_no_results);
 
-    if (FreemiumUtil.showPremiumFeatures(getActivity())) {
-      resultsText2.setVisibility(View.VISIBLE);
-      resultsText2.setText(R.string.search_no_results_more);
-    }
+    resultsText2.setVisibility(View.VISIBLE);
+    resultsText2.setText(R.string.search_no_results_more);
 
     return view;
   }

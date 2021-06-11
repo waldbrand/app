@@ -63,19 +63,11 @@
         android:contentDescription="@string/search_help"
         android:src="@drawable/sl_ic_action_help" />
 
-    <Button
-        android:id="@+id/unlock"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonMatchMode"
-        android:text="@string/unlock_long"
-        android:textSize="12sp" />
-
     <RelativeLayout
         android:id="@+id/results"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/unlock" />
+        android:layout_below="@id/buttonMatchMode" />
 
 </RelativeLayout>

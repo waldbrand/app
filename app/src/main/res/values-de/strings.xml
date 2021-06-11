@@ -136,13 +136,6 @@
 
     <string name="elevation">Höhe</string>
 
-    <string name="unlock">Premium-Features freischalten</string>
-    <string name="unlock2">Premium entfernt auch das Werbebanner</string>
-    <string name="unlock3">Ein Kauf schaltet alle unsere kostenlosen Karten frei</string>
-    <string name="unlock_short">Suchoptionen</string>
-    <string name="unlock_long">Suchoptionen? Premium-Features freischalten</string>
-    <string name="please_donate">Brauchbare App? Bitte spenden Sie</string>
-
     <!-- categories -->
 
     <string name="cat_orientation">Orientierung</string>
@@ -245,12 +238,6 @@
     <string name="help_search_text3">Mit Hilfe des zweiten Knopfs können Sie die Reihenfolge der Suchergebnisse bestimmen. Normalerweise werden die Ergebnisse alphabetisch sortiert. Sie können hier jedoch auch auf umgekehrt alphabetische Reihenfolge umstellen, oder die Ergebnisse gemäß ihrer Entfernung zum aktuellen Kartenmittelpunkt sortieren. Im letzteren Modus wird Ihnen dann auch die jeweilige Entfernung für jedes Ergebnis angezeigt.</string>
     <string name="help_search_text4">Der dritte Knopf dient zum Auswählen der Kategorien, die in die Suche einbezogen werden sollen. Z.B. können Sie die Suche hier auf Straßen eingrenzen oder sich lediglich Restaurants anzeigen lassen. Sie können die Kategorien beliebig kombinieren, sodass es z.B. möglich ist nach Museen und Hotels gleichzeitig zu suchen.</string>
 
-    <string name="dialog_unlock_title">Premium Features</string>
-    <string name="dialog_unlock_text1_freemium">Schalten Sie die Premium-Features frei und finden Sie noch schneller, wonach Sie suchen. Mit der freigeschalteten Version können Sie die Suchergebnisse nach ihrer Entfernung sortieren, sie auf bestimmte Kategorien begrenzen und den Suchmodus einstellen.</string>
-    <string name="dialog_unlock_text1_admob">• Entfernt Werbe-Banner von der Karte\n• Finden Sie noch schneller, wonach Sie suchen. Mit der freigeschalteten Version können Sie die Suchergebnisse nach ihrer Entfernung sortieren, sie auf bestimmte Kategorien begrenzen und den Suchmodus einstellen.</string>
-    <string name="dialog_unlock_button1">Premium Features erklären</string>
-    <string name="dialog_unlock_button2">Auf Google Play freischalten</string>
-
     <string name="dialog_startup_title">Tipps und Tricks</string>
     <string name="dialog_startup_text1">Sie können einstellen, welche Symbole und Beschriftungen auf der Karte sichtbar sind, sodass Sie schneller finden, wonach Sie suchen und die Karte insgesamt übersichtlicher ist. Berühren Sie dazu den Knopf ganz oben links oder ziehen Sie das Menu von links heraus, indem Sie vom linken Bildschrimrand nach rechts hinein wischen.</string>
     <string name="dialog_startup_text2">Um Straßen, Lokale, Geschäfte und anderes zu finden, können Sie den Suchdialog öffnen, indem Sie in der Menuleiste ganz oben auf das Lupensymbol klicken.</string>
@@ -305,7 +292,5 @@
     <string name="privacy1">Rechtsgrundlage für diese Datenschutzerklärung ist die Datenschutzgrundverordnung (DSGVO). Verantwortlicher für jegliche Verarbeitung personenbezogener Daten durch diese App ist Sebastian Kürten (sebastian@topobyte.de).</string>
     <string name="privacy2">Als Anbieter dieser App nehmen wir den Schutz Ihrer Privatsphäre sehr ernst. Daher verarbeiten oder speichern wir keinerlei personenbezogene Daten über Sie. Dies ist uns auch unmöglich, denn die App übermittelt keinerlei Informationen über Sie an uns, unsere Server oder an Dritte.</string>
     <string name="privacy4">Wenn Sie die Standortanzeige aktivieren, liest die App den Standort Ihres Geräts aus, um Ihnen Ihre Position auf der Karte anzeigen zu können. Dazu wird je nach Systemeinstellung eine Lokalisierung über GPS, WLAN oder GSM mit unterschiedlicher Genauigkeit vorgenommen. Wenn Sie diese Funktion benutzen, willigen Sie in die Verarbeitung dieser Standortinformation zur Anzeige auf der Karte durch die App ein. Diese Standortinformation wird nicht an uns oder an Dritte übermittelt und dementsprechend auch nicht von uns verarbeitet oder gespeichert. Die Standortinformationen werden nicht dauerhaft gespeichert und Sie können deren Verarbeitung jederzeit beenden, indem Sie die Standortanzeige wieder deaktivieren.</string>
-    <string name="privacy5">Diese App finanziert sich über Werbebanner von Google. Normalerweise zeigen diese Banner personalisierte Werbeanzeigen an. Google verarbeitet dazu Daten die auf Ihrem Gerät gespeichert sind. Sie können mehr darüber in der <a href="https://policies.google.com/technologies/partner-sites">Datenschutzerklärung</a> von Google erfahren. Um Ihre Privatsphäre zu schützen, können Sie in den Einstellungen konfigurieren, dass nur nicht-personalisierte Werbeanzeigen angezeigt werden sollen. Sie können die App komplett ohne Werbung benutzen, indem Sie die Premium-Version verwenden oder indem Sie durch Kauf der <a href="https://play.google.com/store/apps/details?id=de.topobyte.apps.freemium.unlock.citymaps">Unlock-App</a> die Werbebanner abschalten.</string>
-    <string name="privacy6">Sie haben die Unlock-App installiert. Daher hat der folgende Absatz über Werbebanner keine Gültigkeit, da Ihnen keine Werbebanner angezeigt werden.</string>
 
 </resources>

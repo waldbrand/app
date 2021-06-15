@@ -21,13 +21,11 @@ public class Theme
 {
   private final String name;
   private final String key;
-  private final boolean premium;
 
-  public Theme(String name, String key, boolean premium)
+  public Theme(String name, String key)
   {
     this.name = name;
     this.key = key;
-    this.premium = premium;
   }
 
   public String getName()
@@ -38,11 +36,6 @@ public class Theme
   public String getKey()
   {
     return key;
-  }
-
-  public boolean isPremium()
-  {
-    return premium;
   }
 
 }

@@ -24,7 +24,7 @@ public class ThemeConfig
   private static final ThemeList themes = new ThemeList();
 
   static {
-    themes.add(new Theme("Default", "style-default", false));
+    themes.add(new Theme("Default", "style-default"));
   }
 
   private final String[] themeNames = themes.getNamesArray();

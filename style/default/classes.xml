@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<classes map-background="#f8f8f8" map-overlay-inner="#000000" map-overlay-outer="#eeeeee" 
+	map-overlay-gps-inner="#600000ff" map-overlay-gps-outer="#ff0000ff">
+    <class id="sea">
+        <area fill="#b5d6f1"/>
+    </class>
+    <class id="lu-military">
+        <area src="military.png" stroke="#e4e4e4" stroke-width="0.2"/>
+    </class>
+    <class id="lu-resifarm">
+        <area fill="#e4e4e4"/>
+    </class>
+    <class id="lu-retail">
+        <area fill="#ffebeb" stroke="#e4e4e4" stroke-width="0.2"/>
+    </class>
+    <class id="lu-ibr">
+        <area fill="#ecd8ff" stroke="#e4e4e4" stroke-width="0.2"/>
+    </class>
+    <class id="lu-comm">
+        <area fill="#ffffc0" stroke="#e4e4e4" stroke-width="0.2"/>
+    </class>
+    <class id="lu-constr">
+        <area fill="#a47c41" stroke="#e4e4e4" stroke-width="0.2"/>
+    </class>
+    <class id="lu-garages">
+        <area fill="#d6d6e4"/>
+    </class>
+    <class id="tunnel-foot" zoom-min="14">
+        <line stroke="#707070" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="0.6"/>
+    </class>
+    <class id="tunnel-track" zoom-min="14">
+        <line stroke="#707070" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="1.0"/>
+    </class>
+    <class id="tunnel-cycle" zoom-min="14">
+        <line stroke="#707070" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="1.0"/>
+    </class>
+    <class id="tunnel-constr">
+        <line stroke="#707070" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="1.1"/>
+    </class>
+    <class id="tunnel-road">
+        <line stroke="#707070" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="1.3"/>
+    </class>
+    <class id="tunnel-resi" zoom-min="14">
+        <line stroke="#707070" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="1.5"/>
+    </class>
+    <class id="tunnel-big">
+        <line stroke="#707070" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="1.8"/>
+    </class>
+    <class id="tunnel-motor">
+        <line stroke="#707070" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="2.0"/>
+    </class>
+    <class id="tunnel-foot" zoom-min="14">
+        <line stroke="#ffffff" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="0.45"/>
+    </class>
+    <class id="tunnel-track">
+        <line stroke="#ffffff" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="0.7"/>
+    </class>
+    <class id="tunnel-cycle" zoom-min="14">
+        <line stroke="#ffffff" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="0.85"/>
+    </class>
+    <class id="tunnel-constr">
+        <line stroke="#ffffff" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="1.0"/>
+    </class>
+    <class id="tunnel-road">
+        <line stroke="#ffffff" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="1.25"/>
+    </class>
+    <class id="tunnel-resi" zoom-min="14">
+        <line stroke="#ffffff" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="1.35"/>
+    </class>
+    <class id="tunnel-big">
+        <line stroke="#ffffff" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="1.5"/>
+    </class>
+    <class id="tunnel-motor">
+        <line stroke="#ffffff" stroke-dasharray="5,5" stroke-linecap="butt" stroke-width="1.7"/>
+    </class>
+    <class id="24">
+        <line stroke="#880f0f4c" stroke-dasharray="4,4" stroke-linecap="butt" stroke-width="0.25"/>
+    </class>
+    <class id="25">
+        <line stroke="#aa333333" stroke-dasharray="4,4" stroke-linecap="butt" stroke-width="0.4"/>
+    </class>
+    <class id="lu-landfill">
+        <area fill="#e9dd72" stroke="#556b2f" stroke-width="0.2"/>
+    </class>
+    <class id="lu-cemetery">
+        <area src="cemetery.png" stroke="#e4e4e4" stroke-width="0.2"/>
+    </class>
+    <class id="lu-field">
+        <area fill="#ebfff2" stroke="#9ee673" stroke-width="0.1"/>
+    </class>
+    <class id="lu-allotments">
+        <area fill="#bde3cb" stroke="#6fc13d" stroke-width="0.2"/>
+    </class>
+    <class id="lu-reservoir">
+        <area fill="#b5d6f1"/>
+    </class>
+    <class id="le-park">
+        <area fill="#c7f1a3" stroke="#6fc18e" stroke-width="0.2"/>
+    </class>
+    <class id="forest-c">
+        <area src="wood-coniferous.png"/>
+    </class>
+    <class id="forest-d">
+        <area src="wood-deciduous.png"/>
+    </class>
+    <class id="forest-m">
+        <area src="wood-mixed.png"/>
+    </class>
+    <class id="forest-o">
+        <area fill="#6fc18e" stroke="#6fc18e" stroke-width="0.2"/>
+    </class>
+    <class id="37">
+        <area fill="#cdabde" stroke="#e9dd72" stroke-width="0.2"/>
+    </class>
+    <class id="38">
+        <area src="cemetery.png" stroke="#e4e4e4" stroke-width="0.2"/>
+    </class>
+    <class id="39">
+        <area fill="#ffffc0" stroke="#e9dd72" stroke-width="0.2"/>
+    </class>
+    <class id="40" zoom-min="15">
+        <area src="access-private.png"/>
+    </class>
+    <class id="42">
+        <area fill="#b5d6f1" stroke="#000080" stroke-width="0.15"/>
+    </class>
+    <class id="to-zoo">
+        <area fill="#c7f1a3" stroke="#6fc18e" stroke-width="0.2"/>
+    </class>
+    <class id="coastline">
+        <line stroke="#708599" stroke-width="2.0"/>
+    </class>
+    <class id="na-glacier">
+        <area fill="#fafaff" stroke="#add8e6" stroke-width="0.8"/>
+    </class>
+    <class id="na-land">
+        <area fill="#f8f8f8" stroke="#e0e0e0" stroke-width="0.1"/>
+    </class>
+    <class id="na-beach">
+        <area fill="#eecc55"/>
+    </class>
+    <class id="na-heath">
+        <area fill="#ffffc0" stroke="#ffff90" stroke-width="0.2"/>
+    </class>
+    <class id="na-wet">
+        <area src="marsh.png"/>
+    </class>
+    <class id="le-play-more">
+        <area fill="#c7f1a3" stroke="#6fc18e" stroke-width="0.2"/>
+    </class>
+    <class id="le-nature">
+        <area src="nature-reserve.png" stroke="#6fc18e" stroke-width="0.2"/>
+    </class>
+    <class id="le-stadium">
+        <area fill="#bde3cb" stroke="#6fc18e" stroke-width="0.2"/>
+    </class>
+    <class id="le-track-area">
+        <area fill="#bde3cb" stroke="#6fc18e" stroke-width="0.025"/>
+    </class>
+    <class id="le-track-noarea">
+        <line stroke="#6fc18e" stroke-width="0.75"/>
+        <line stroke="#bde3cb" stroke-width="0.7"/>
+    </class>
+    <class id="le-swimming">
+        <area fill="#b5d6f1" stroke="#6060ff" stroke-width="0.2"/>
+    </class>
+    <class id="ww-1">
+        <line stroke="#b0b0b0" stroke-width="1.0"/>
+    </class>
+    <class id="ww-2">
+        <line stroke="#b0b0b0" stroke-width="1.0"/>
+    </class>
+    <class id="ww-3">
+        <line stroke="#b5d6f1" stroke-width="0.1"/>
+    </class>
+    <class id="ww-4">
+        <line stroke="#b5d6f1" stroke-width="0.8"/>
+    </class>
+    <class id="ww-5">
+        <line stroke="#b5d6f1" stroke-width="0.8"/>
+    </class>
+    <class id="ww-6">
+        <line stroke="#b5d6f1" stroke-width="0.275"/>
+    </class>
+    <class id="ww-7">
+        <line stroke="#b5d6f1" stroke-width="1.0"/>
+    </class>
+    <class id="ww-8">
+        <area fill="#b5d6f1"/>
+    </class>
+    <class id="ww-9">
+        <area fill="#b5d6f1"/>
+    </class>
+    <class id="ww-10">
+        <line stroke="#000044" stroke-width="0.375"/>
+    </class>
+    <class id="ww-11">
+        <line stroke="#000000" stroke-width="0.5"/>
+    </class>
+    <class id="ww-12">
+        <line stroke="#000000" stroke-linecap="butt" stroke-width="2.0"/>
+    </class>
+    <class id="ww-13">
+        <line stroke="#f8f8f8" stroke-linecap="butt" stroke-width="1.5"/>
+    </class>
+    <class id="military">
+        <area src="military.png" stroke="#e4e4e4" stroke-width="0.2"/>
+    </class>
+    <class id="sp-2">
+        <area fill="#b5d6f1" stroke="#6060ff" stroke-width="0.2"/>
+    </class>
+    <class id="sp-3">
+        <area fill="#d18a6a" stroke="#b36c4c" stroke-width="0.2"/>
+    </class>
+    <class id="to-attr">
+        <area fill="#f2caea"/>
+    </class>
+    <class id="na-water">
+        <area fill="#b5d6f1"/>
+    </class>
+    <class id="88">
+        <area fill="#e5e0c2" stroke="#707070" stroke-width="0.15"/>
+    </class>
+    <class id="89">
+        <area fill="#e5e0c2" stroke="#707070" stroke-width="0.15"/>
+    </class>
+    <class id="90">
+        <area fill="#d0d0d0" stroke="#d0d0d0" stroke-width="0.45"/>
+    </class>
+    <class id="91" zoom-min="14">
+        <area fill="#ffffff" stroke="#707070" stroke-width="0.15"/>
+    </class>
+    <class id="92">
+        <area fill="#ffffff" stroke="#707070" stroke-width="0.3"/>
+    </class>
+    <class id="93" zoom-min="14">
+        <area fill="#ffffff" stroke="#707070" stroke-width="0.15"/>
+    </class>
+    <class id="94">
+        <area fill="#d0d0d0"/>
+    </class>
+    <class id="95">
+        <area fill="#ffffff" stroke="#ffffff" stroke-width="0.15"/>
+    </class>
+    <class id="96">
+        <area fill="#9b9b79"/>
+    </class>
+    <class id="97">
+        <line stroke="#9b9b79" stroke-width="0.3"/>
+    </class>
+    <class id="98">
+        <area fill="#d8dcce" stroke="#000000" stroke-width="0.5"/>
+    </class>
+    <class id="99">
+        <area fill="#f0f0f0"/>
+    </class>
+    <class id="100">
+        <area fill="#f3d6b6" stroke="#6a5a8e" stroke-width="0.2"/>
+    </class>
+    <class id="101">
+        <line stroke="#000000" stroke-linecap="square" stroke-width="6.3"/>
+    </class>
+    <class id="102">
+        <line stroke="#000000" stroke-linecap="butt" stroke-width="2.7"/>
+    </class>
+    <class id="104" zoom-min="14">
+        <circle fill="#707070" r="1.5" scale-radius="true"/>
+    </class>
+    <class id="129" zoom-min="14">
+        <line stroke="#707070" stroke-width="0.6"/>
+    </class>
+    <classgroup>
+	<class id="131" zoom-min="14"/>
+	<class id="133" zoom-min="14"/>
+        <line stroke="#707070" stroke-dasharray="2,2" stroke-linecap="butt" stroke-width="0.6"/>
+    </classgroup>
+    <class id="135">
+        <line stroke="#d79331" stroke-width="1.0"/>
+    </class>
+    <class id="137">
+        <line stroke="#d79331" stroke-dasharray="18,9" stroke-linecap="butt" stroke-width="1.0"/>
+    </class>
+    <class id="139">
+        <line stroke="#d79331" stroke-dasharray="10,13" stroke-linecap="butt" stroke-width="1.0"/>
+    </class>
+    <class id="141">
+        <line stroke="#d79331" stroke-dasharray="5,10,3,10" stroke-linecap="butt" stroke-width="1.0"/>
+    </class>
+    <class id="143">
+        <line stroke="#d79331" stroke-dasharray="3,10" stroke-linecap="butt" stroke-width="1.0"/>
+    </class>
+    <class id="145">
+        <line stroke="#d79331" stroke-dasharray="18,2" stroke-linecap="butt" stroke-width="1.0"/>
+    </class>
+    <classgroup>
+	<class id="147" zoom-min="14"/>
+	<class id="149" zoom-min="14"/>
+	<class id="151" zoom-min="14"/>
+        <line stroke="#707070" stroke-width="1.0"/>
+    </classgroup>
+    <class id="161">
+        <line stroke="#707070" stroke-dasharray="7,2" stroke-linecap="butt" stroke-width="1.5"/>
+    </class>
+    <classgroup>
+	<class id="157" zoom-min="14"/>
+	<class id="159" zoom-min="14"/>
+        <line stroke="#707070" stroke-width="1.5"/>
+    </classgroup>
+    <classgroup>
+	<class id="163" zoom-min="14"/>
+	<class id="165" zoom-min="14"/>
+	<class id="167" zoom-min="14"/>
+	<class id="169" zoom-min="14"/>
+	<class id="171" zoom-min="14"/>
+	<class id="173" zoom-min="14"/>
+	<class id="175" zoom-min="14"/>
+	<class id="177" zoom-min="14"/>
+        <line stroke="#707070" stroke-linecap="butt" stroke-width="1.8"/>
+    </classgroup>
+    <class id="179">
+        <line stroke="#707070" stroke-linecap="butt" stroke-width="2.0"/>
+    </class>
+    <classgroup>
+	<class id="129b" zoom-min="14"/>
+	<class id="131b" zoom-min="14"/>
+	<class id="133b" zoom-min="14"/>
+        <line stroke="#000000" stroke-linecap="butt" stroke-width="0.7"/>
+    </classgroup>
+    <classgroup>
+	<class id="135b" zoom-min="14"/>
+	<class id="137b" zoom-min="14"/>
+	<class id="139b" zoom-min="14"/>
+	<class id="141b" zoom-min="14"/>
+	<class id="143b" zoom-min="14"/>
+	<class id="145b" zoom-min="14"/>
+	<class id="147b" zoom-min="14"/>
+	<class id="149b" zoom-min="14"/>
+	<class id="151b" zoom-min="14"/>
+        <line stroke="#000000" stroke-linecap="butt" stroke-width="1.1"/>
+    </classgroup>
+    <class id="153b">
+        <line stroke="#000000" stroke-dasharray="28,18" stroke-linecap="butt" stroke-width="1.2"/>
+    </class>
+    <class id="155b" zoom-min="14">
+        <line stroke="#000000" stroke-linecap="butt" stroke-width="1.4"/>
+    </class>
+    <classgroup>
+	<class id="157b" zoom-min="14"/>
+	<class id="159b" zoom-min="14"/>
+	<class id="161b" zoom-min="14"/>
+        <line stroke="#000000" stroke-linecap="butt" stroke-width="1.6"/>
+    </classgroup>
+    <classgroup>
+	<class id="163b"/>
+	<class id="165b"/>
+	<class id="167b"/>
+	<class id="169b"/>
+	<class id="171b"/>
+	<class id="173b"/>
+	<class id="175b"/>
+	<class id="177b"/>
+        <line stroke="#000000" stroke-linecap="butt" stroke-width="1.9"/>
+    </classgroup>
+    <class id="179b">
+        <line stroke="#000000" stroke-linecap="butt" stroke-width="2.1"/>
+    </class>
+    <class id="125" zoom-min="15">
+        <area fill="#f3d6b6" stroke="#6a5a8e" stroke-width="0.2"/>
+    </class>
+    <classgroup>
+        <class id="129" zoom-min="14"/>
+        <class id="129b" zoom-min="14"/>
+        <line stroke="#e5e0c2" stroke-dasharray="3,1" stroke-linecap="butt" stroke-width="0.45"/>
+    </classgroup>
+    <classgroup>
+        <class id="129" zoom-min="15"/>
+        <class id="129b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#e5e0c2" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="131" zoom-min="14"/>
+        <class id="131b" zoom-min="14"/>
+        <line stroke="#e5e0c2" stroke-width="0.45"/>
+    </classgroup>
+    <classgroup>
+        <class id="131" zoom-min="15"/>
+        <class id="131b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#e5e0c2" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="133" zoom-min="14"/>
+        <class id="133b" zoom-min="14"/>
+        <line stroke="#d0d0d0" stroke-width="0.45"/>
+    </classgroup>
+    <classgroup>
+        <class id="133" zoom-min="15"/>
+        <class id="133b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#d0d0d0" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="135" zoom-min="12"/>
+        <class id="135b" zoom-min="12"/>
+        <line stroke="#fffaf2" stroke-width="0.75"/>
+    </classgroup>
+    <classgroup>
+        <class id="135" zoom-min="15"/>
+        <class id="135b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#fffaf2" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="137" zoom-min="12"/>
+        <class id="137b" zoom-min="12"/>
+        <line stroke="#fff2de" stroke-width="0.75"/>
+    </classgroup>
+    <classgroup>
+        <class id="137" zoom-min="15"/>
+        <class id="137b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#fff2de" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="139" zoom-min="12"/>
+        <class id="139b" zoom-min="12"/>
+        <line stroke="#fff2de" stroke-width="0.7"/>
+    </classgroup>
+    <classgroup>
+        <class id="139" zoom-min="15"/>
+        <class id="139b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#fff2de" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="141" zoom-min="12"/>
+        <class id="141b" zoom-min="12"/>
+        <line stroke="#fff2de" stroke-width="0.7"/>
+    </classgroup>
+    <classgroup>
+        <class id="141" zoom-min="15"/>
+        <class id="141b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#fff2de" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="143" zoom-min="12"/>
+        <class id="143b" zoom-min="12"/>
+        <line stroke="#fff2de" stroke-width="0.7"/>
+    </classgroup>
+    <classgroup>
+        <class id="143" zoom-min="15"/>
+        <class id="143b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#fff2de" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="145" zoom-min="12"/>
+        <class id="145b" zoom-min="12"/>
+        <line stroke="#fff2de" stroke-width="0.75"/>
+    </classgroup>
+    <classgroup>
+        <class id="145" zoom-min="15"/>
+        <class id="145b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#fff2de" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="147"/>
+        <class id="147b"/>
+        <line stroke="#d1fad1" stroke-width="0.85"/>
+    </classgroup>
+    <classgroup>
+        <class id="147" zoom-min="15"/>
+        <class id="147b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#d1fad1" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="149"/>
+        <class id="149b"/>
+        <line stroke="#d3cb98" stroke-width="0.85"/>
+    </classgroup>
+    <classgroup>
+        <class id="149" zoom-min="15"/>
+        <class id="149b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#d3cb98" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="151" zoom-min="14"/>
+        <class id="151b" zoom-min="14"/>
+        <line stroke="#ffffff" stroke-width="0.85"/>
+    </classgroup>
+    <classgroup>
+        <class id="151" zoom-min="15"/>
+        <class id="151b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#ffffff" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="153"/>
+        <class id="153b"/>
+        <line stroke="#d0d0d0" stroke-dasharray="28,18" stroke-linecap="butt" stroke-width="1.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="153" zoom-min="15"/>
+        <class id="153b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#d0d0d0" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="155" zoom-min="14"/>
+        <class id="155b" zoom-min="14"/>
+        <line stroke="#d0d0d0" stroke-width="1.25"/>
+    </classgroup>
+    <classgroup>
+        <class id="155" zoom-min="15"/>
+        <class id="155b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#d0d0d0" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="157" zoom-min="14"/>
+        <class id="157b" zoom-min="14"/>
+        <line stroke="#e5e0c2" stroke-width="1.35"/>
+    </classgroup>
+    <classgroup>
+        <class id="157" zoom-min="15"/>
+        <class id="157b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#e5e0c2" stroke-width="2.0"/>
+    </classgroup>
+    <!--class id="158" zoom-min="13">
+        <line stroke="#ffffff" stroke-width="1.35"/>
+    </class-->
+    <!--class id="158" zoom-min="17">
+        <line stroke="#ffffff" stroke-width="1.35"/>
+    </class>
+    <class id="158" zoom-min="13" zoom-max="16">
+        <line stroke="#ff7070" stroke-width="1.35"/>
+    </class-->
+    <classgroup>
+        <class id="159" zoom-min="14"/>
+        <class id="159b" zoom-min="14"/>
+        <line stroke="#ffffff" stroke-width="1.35"/>
+    </classgroup>
+    <classgroup>
+        <class id="159" zoom-min="15"/>
+        <class id="159b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#ffffff" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="161"/>
+        <class id="161b"/>
+        <line stroke="#efadaa" stroke-width="1.35"/>
+    </classgroup>
+    <classgroup>
+        <class id="161" zoom-min="15"/>
+        <class id="161b" zoom-min="15"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#efadaa" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="163"/>
+        <class id="163b"/>
+        <line stroke="#ffff90" stroke-width="1.5"/>
+    </classgroup>
+    <classgroup>
+        <class id="163" zoom-min="14"/>
+        <class id="163b" zoom-min="14"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#ffff90" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="165"/>
+        <class id="165b"/>
+        <line stroke="#fdbf6f" stroke-width="1.5"/>
+    </classgroup>
+    <classgroup>
+        <class id="165" zoom-min="14"/>
+        <class id="165b" zoom-min="14"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#fdbf6f" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="167"/>
+        <class id="167b"/>
+        <line stroke="#e46d71" stroke-width="1.5"/>
+    </classgroup>
+    <classgroup>
+        <class id="167" zoom-min="14"/>
+        <class id="167b" zoom-min="14"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#e46d71" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="169"/>
+        <class id="169b"/>
+        <line stroke="#7fc97f" stroke-width="1.5"/>
+    </classgroup>
+    <classgroup>
+        <class id="169" zoom-min="14"/>
+        <class id="169b" zoom-min="14"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#7fc97f" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="171"/>
+        <class id="171b"/>
+        <line stroke="#809bc0" stroke-width="1.5"/>
+    </classgroup>
+    <classgroup>
+        <class id="171" zoom-min="14"/>
+        <class id="171b" zoom-min="14"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#809bc0" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="173"/>
+        <class id="173b"/>
+        <line stroke="#fdbf6f" stroke-width="1.5"/>
+    </classgroup>
+    <classgroup>
+        <class id="173" zoom-min="14"/>
+        <class id="173b" zoom-min="14"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#fdbf6f" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="175"/>
+        <class id="175b"/>
+        <line stroke="#e46d71" stroke-width="1.5"/>
+    </classgroup>
+    <classgroup>
+        <class id="175" zoom-min="14"/>
+        <class id="175b" zoom-min="14"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#e46d71" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="177"/>
+        <class id="177b"/>
+        <line stroke="#7fc97f" stroke-width="1.5"/>
+    </classgroup>
+    <classgroup>
+        <class id="177" zoom-min="14"/>
+        <class id="177b" zoom-min="14"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#7fc97f" stroke-width="2.0"/>
+    </classgroup>
+    <classgroup>
+        <class id="179"/>
+        <class id="179b"/>
+        <line stroke="#809bc0" stroke-width="1.7"/>
+    </classgroup>
+    <classgroup>
+        <class id="179" zoom-min="14"/>
+        <class id="179b" zoom-min="14"/>
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#809bc0" stroke-width="2.0"/>
+    </classgroup>
+    <!-- replaced by next rule -->
+    <!--class id="182">
+        <line stroke="#d4dcbd" stroke-linecap="square" stroke-width="4.5"/>
+    </class-->
+    <class id="101">
+        <line stroke="#d4dcbd" stroke-linecap="square" stroke-width="4.5"/>
+    </class>
+    <!-- replaced by next rule -->
+    <!--class id="183">
+        <line stroke="#d4dcbd" stroke-linecap="butt" stroke-width="1.8"/>
+    </class-->
+    <class id="102">
+        <line stroke="#d4dcbd" stroke-linecap="butt" stroke-width="1.8"/>
+    </class>
+    <class id="184">
+        <line stroke="#d0d0d0" stroke-linecap="butt" stroke-width="0.4"/>
+    </class>
+    <class id="185">
+        <line stroke="#e4e4e4" stroke-linecap="butt" stroke-width="0.3"/>
+    </class>
+    <class id="186">
+        <area fill="#e4e4e4" stroke="#d0d0d0" stroke-width="0.05"/>
+    </class>
+    <class id="187">
+        <line stroke="#000000" stroke-linecap="butt" stroke-width="0.1"/>
+    </class>
+    <class id="188">
+        <line stroke="#888888" stroke-linecap="butt" stroke-width="0.1"/>
+    </class>
+    <class id="189">
+        <line stroke="#707070" stroke-dasharray="15,10" stroke-linecap="butt" stroke-width="0.3"/>
+    </class>
+    <class id="190" zoom-min="16">
+        <lineSymbol src="oneway.bvg" width="20" repeat="true" offset="10" repeat-distance="120"/>
+    </class>
+    <class id="191">
+        <area fill="#5540ff40" stroke="#5540ff40" stroke-width="5.0"/>
+    </class>
+    <class id="192">
+        <area fill="#554040ff" stroke="#554040ff" stroke-width="5.0"/>
+    </class>
+    <class id="193">
+        <area fill="#55ff4040" stroke="#55ff4040" stroke-width="5.0"/>
+    </class>
+    <class id="194">
+        <area fill="#55000000" stroke="#55000000" stroke-width="5.0"/>
+    </class>
+    <class id="195">
+        <area fill="#55f6800a" stroke="#55f6800a" stroke-width="5.0"/>
+    </class>
+    <class id="196">
+        <area fill="#55f6dd0a" stroke="#55f6dd0a" stroke-width="5.0"/>
+    </class>
+    <class id="197">
+        <area fill="#55505050" stroke="#55505050" stroke-width="5.0"/>
+    </class>
+    <class id="199">
+        <line stroke="#5540ff40" stroke-width="5.0"/>
+    </class>
+    <class id="200">
+        <line stroke="#554040ff" stroke-width="5.0"/>
+    </class>
+    <class id="201">
+        <line stroke="#55ff4040" stroke-width="5.0"/>
+    </class>
+    <class id="202">
+        <line stroke="#55000000" stroke-width="5.0"/>
+    </class>
+    <class id="203">
+        <line stroke="#55f6800a" stroke-width="5.0"/>
+    </class>
+    <class id="204">
+        <line stroke="#55f6dd0a" stroke-width="5.0"/>
+    </class>
+    <class id="205">
+        <line stroke="#55505050" stroke-width="5.0"/>
+    </class>
+    <class id="206" zoom-min="14">
+        <pathText fill="#000000" font-size="10" font-style="bold" k="name" stroke="#ffffff" stroke-width="2.0"/>
+    </class>
+    <class id="207">
+        <line stroke="#cdabde" stroke-width="2.5"/>
+    </class>
+    <class id="208">
+        <line stroke="#c00000" stroke-dasharray="30,5" stroke-linecap="butt" stroke-width="1.0"/>
+    </class>
+    <class id="209">
+        <line stroke="#202020" stroke-linecap="butt" stroke-width="0.4"/>
+    </class>
+    <class id="210">
+        <line stroke="#202020" stroke-dasharray="2,200" stroke-linecap="butt" stroke-width="4.0"/>
+    </class>
+    <class id="214" zoom-min="14">
+        <pathText fill="#606060" font-size="10" font-style="bold" k="name" stroke="#ffffff" stroke-width="2.0"/>
+    </class>
+    <class id="215">
+        <area fill="#9b9b79" stroke="#707070" stroke-width="0.3"/>
+    </class>
+    <class id="216">
+        <line stroke="#000000" stroke-linecap="butt" stroke-width="0.4"/>
+    </class>
+    <class id="217">
+        <line stroke="#000000" stroke-linecap="butt" stroke-width="0.6"/>
+    </class>
+    <class id="218">
+        <line stroke="#000000" stroke-linecap="butt" stroke-width="0.8"/>
+    </class>
+    <class id="219">
+        <line stroke="#e6b7e6" stroke-linecap="butt" stroke-width="0.25"/>
+    </class>
+    <class id="220">
+        <line stroke="#4c0f4c" stroke-dasharray="12,18" stroke-linecap="butt" stroke-width="0.25"/>
+    </class>
+    <class id="221">
+        <line stroke="#0f0f4c" stroke-linecap="butt" stroke-width="0.4"/>
+    </class>
+    <class id="222">
+        <line stroke="#b7b7e6" stroke-dasharray="12,18" stroke-linecap="butt" stroke-width="0.25"/>
+    </class>
+    <class id="223">
+        <line stroke="#0f4c0f" stroke-linecap="butt" stroke-width="0.4"/>
+    </class>
+    <class id="224">
+        <line stroke="#b7e6e6" stroke-linecap="butt" stroke-width="0.25"/>
+    </class>
+    <class id="225">
+        <line stroke="#0f4c0f" stroke-dasharray="12,18" stroke-linecap="butt" stroke-width="0.25"/>
+    </class>
+    <class id="226">
+        <line stroke="#333333" stroke-linecap="butt" stroke-width="0.4"/>
+    </class>
+    <class id="227">
+        <line stroke="#e6e6e6" stroke-linecap="butt" stroke-width="0.25"/>
+    </class>
+    <class id="228">
+        <line stroke="#333333" stroke-dasharray="18,18" stroke-linecap="butt" stroke-width="0.25"/>
+    </class>
+    <class id="229">
+        <line stroke="#333333" stroke-linecap="butt" stroke-width="0.55"/>
+    </class>
+    <class id="230">
+        <line stroke="#e6e6e6" stroke-linecap="butt" stroke-width="0.4"/>
+    </class>
+    <class id="231">
+        <line stroke="#333333" stroke-dasharray="15,15" stroke-linecap="butt" stroke-width="0.4"/>
+    </class>
+    <class id="232">
+        <line stroke="#4ef94b" stroke-dasharray="15, 5, 5, 5" stroke-width="0.25"/>
+    </class>
+    <class id="233">
+        <line stroke="#f9574b" stroke-dasharray="1, 5" stroke-width="0.1"/>
+    </class>
+    <class id="234">
+        <line stroke="#f9574b" stroke-dasharray="5, 25" stroke-width="0.1"/>
+    </class>
+    <class id="235">
+        <line stroke="#f9574b" stroke-dasharray="15, 15" stroke-width="0.1"/>
+    </class>
+    <class id="236">
+        <line stroke="#f9574b" stroke-dasharray="15, 5, 5, 5" stroke-width="0.1"/>
+    </class>
+    <class id="237">
+        <line stroke="#f9574b" stroke-width="0.1"/>
+    </class>
+    <class id="238">
+        <line stroke="#f9574b" stroke-dasharray="5, 5" stroke-width="0.25"/>
+    </class>
+    <class id="239">
+        <line stroke="#f9574b" stroke-dasharray="15, 15" stroke-width="0.25"/>
+    </class>
+    <class id="240">
+        <line stroke="#f9574b" stroke-dasharray="15, 5, 5, 5" stroke-width="0.25"/>
+    </class>
+    <class id="241">
+        <line stroke="#f9574b" stroke-width="0.25"/>
+    </class>
+    <class id="242">
+        <line stroke="#80ffff00" stroke-width="0.75"/>
+    </class>
+    <class id="243">
+        <line stroke="#f9574b" stroke-dasharray="15, 15" stroke-width="0.25"/>
+    </class>
+    <class id="244">
+        <line stroke="#80ffff00" stroke-width="1.75"/>
+    </class>
+    <class id="245">
+        <line stroke="#f9574b" stroke-dasharray="1,2.11, 15, 5.2, 5.2, 5.4545" stroke-width="0.25"/>
+    </class>
+    <class id="284" zoom-min="14">
+        <circle fill="#ffffff" r="1.4" scale-radius="true"/>
+    </class>
+    <class id="281" zoom-min="16">
+        <circle fill="#707070" r="1.5"/>
+    </class>
+    <class id="293" zoom-min="16">
+        <symbol src="tree.bvg" height="5"/>
+    </class>
+    <classgroup>
+        <class id="43" zoom-min="17"/>
+        <class id="259" zoom-min="17"/>
+        <symbol src="fountain.bvg" height="16"/>
+    </classgroup>
+    <class id="252" zoom-min="17">
+        <symbol src="bench.bvg" height="12"/>
+    </class>
+    <class id="300" zoom-min="16">
+        <symbol src="railway-crossing.bvg" height="10"/>
+    </class>
+    <class id="301" zoom-min="16">
+        <symbol src="railway-crossing.bvg" height="16"/>
+    </class>
+    <class id="283" zoom-min="17">
+        <symbol src="traffic_lights.bvg" height="14"/>
+    </class>
+    <class id="290" zoom-min="15">
+        <symbol src="cave_entrance.bvg" height="16"/>
+    </class>
+</classes>

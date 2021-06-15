@@ -1,0 +1,233 @@
+<labelconfig>
+	<colors>
+		<color name="white" value="#ffffffff"/>
+		<color name="black" value="#ff000000"/>
+		<color name="grey" value="#ff606060"/>
+		<color name="red" value="#ffff0000"/>
+		<color name="green" value="#ff00ab04"/>
+		<color name="blue" value="#ff4040ff"/>
+	</colors>
+	<labels>
+		<!-- templates -->
+		<label type="plain" id="base" font="sans serif" font-style="bold" stroke-width="2" font-size="10" bg="white"/>
+		<label type="plain" id="place" font="sans serif" font-style="bold" stroke-width="2" fg="black" bg="white"/>
+
+		<label id="base-blue" parent="base" fg="blue"/>
+		<label id="icon-base" type="icon" parent="base" />
+		<label id="icon-blue" parent="icon-base" fg="blue"/>
+
+		<label id="icon-only" parent="icon-base" fg="blue"/>
+
+		<!-- places -->
+		<label parent="place" font-size="12">
+			<rule min="1" max="12" key="city" />
+		</label>
+		<label parent="place" font-size="11">
+			<rule min="10" max="13">
+				<rule key="town" />
+				<rule key="village" />
+				<rule key="hamlet" />
+			</rule>
+		</label>
+		<label parent="place" font-size="10">
+			<rule min="12" max="20">
+				<rule key="borough" />
+				<rule key="suburb" />
+			</rule>
+		</label>
+		<label parent="place" font-size="9">
+			<rule min="13" max="20">
+				<rule key="quarter" />
+				<rule key="neighborhood" />
+			</rule>
+		</label>
+		<label parent="place" font-size="11">
+			<rule min="10" max="15">
+				<rule key="island" />
+			</rule>
+		</label>
+		<label parent="place" font-size="9">
+			<rule min="13" max="20">
+				<rule key="islet" />
+			</rule>
+		</label>
+
+		<!-- housenumbers -->
+		<label parent="base" fg="grey">
+			<rule min="17" max="24" key="housenumbers" />
+		</label>
+
+		<!-- transport -->
+		<label type="dot" parent="base" fg="red" bg="white" dot-fg="red" radius="3">
+			<rule min="14" max="24" key="railwaystation" />
+		</label>
+		<label type="dot" parent="base" fg="red" bg="white" dot-fg="red" radius="3">
+			<rule min="14" max="24" key="railwayhalt" />
+		</label>
+		<label type="dot" parent="base" fg="red" bg="white" dot-fg="red" radius="2">
+			<rule min="17" max="24" key="tramstop" />
+		</label>
+		<label parent="icon-base" fg="red" image="bus.bvg">
+			<rule min="17" max="24" key="busstop" />
+		</label>
+		<label parent="icon-base" fg="red" image="bus_station.bvg">
+			<rule min="17" max="24" key="busstation" />
+		</label>
+
+		<!-- amenities -->
+		<label parent="base-blue">
+			<rule min="15" max="24" key="museum" />
+		</label>
+		<label parent="base-blue">
+			<rule min="16" max="24" key="gallery" />
+		</label>
+
+		<label parent="icon-blue" image="restaurant.bvg">
+			<rule min="16" max="24" key="restaurant" />
+		</label>
+		<label parent="icon-blue" image="cafe.bvg">
+			<rule min="16" max="24" key="cafe" />
+		</label>
+		<label parent="icon-blue" image="bar.bvg">
+			<rule min="16" max="24">
+				<rule key="pub" />
+				<rule key="bar" />
+			</rule>
+		</label>
+		<label parent="icon-blue" image="fastfood.bvg">
+			<rule min="16" max="24" key="fastfood" />
+		</label>
+
+		<label parent="icon-blue" image="library.bvg">
+			<rule min="16" max="24" key="library" />
+		</label>
+
+		<label parent="icon-blue" image="theatre.bvg">
+			<rule min="16" max="24" key="theatre" />
+		</label>
+		<label parent="icon-blue" image="cinema2.bvg">
+			<rule min="16" max="24" key="cinema" />
+		</label>
+
+		<label parent="icon-blue" image="hotel.bvg">
+			<rule min="16" max="24" key="hotel" />
+		</label>
+		<label parent="icon-blue" image="hostel.bvg">
+			<rule min="16" max="24" key="hostel" />
+		</label>
+		<label parent="icon-blue" image="camping.bvg">
+			<rule min="16" max="24" key="campsite" />
+		</label>
+
+		<label parent="icon-blue" image="supermarket.bvg">
+			<rule min="16" max="24" key="supermarket" />
+		</label>
+
+		<label parent="icon-blue" image="florist2.bvg">
+			<rule min="16" max="24" key="florist" />
+		</label>
+
+		<label parent="icon-blue" image="playground.bvg">
+			<rule min="16" max="24" key="playground" />
+		</label>
+
+		<label parent="icon-blue" image="university.bvg">
+			<rule min="16" max="24" key="university" />
+		</label>
+		<label parent="icon-blue" image="school.bvg">
+			<rule min="16" max="24" key="school" />
+		</label>
+		<label parent="icon-blue" image="nursery.bvg">
+			<rule min="16" max="24" key="kindergarten" />
+		</label>
+
+		<label parent="icon-blue" image="christian.bvg">
+			<rule min="16" max="24" key="christian" />
+		</label>
+		<label parent="icon-blue" image="jewish.bvg">
+			<rule min="16" max="24" key="jewish" />
+		</label>
+		<label parent="icon-blue" image="islamic.bvg">
+			<rule min="16" max="24" key="muslim" />
+		</label>
+
+		<label parent="icon-only" image="toilets.bvg">
+			<rule min="17" max="24" key="toilets" />
+		</label>
+		<label parent="icon-only" image="telephone.bvg">
+			<rule min="17" max="24" key="telephone" />
+		</label>
+
+		<label parent="icon-only" image="parking.bvg">
+			<rule min="17" max="24" key="parking" />
+		</label>
+
+		<label parent="icon-only" image="recycling.bvg">
+			<rule min="17" max="24" key="recycling" />
+		</label>
+
+		<label parent="icon-blue" image="post_office.bvg">
+			<rule min="16" max="24" key="postoffice" />
+		</label>
+		<label parent="icon-only" image="post_box.bvg">
+			<rule min="17" max="24" key="post_box" />
+		</label>
+
+		<label parent="icon-blue" image="airport.bvg">
+			<rule min="15" max="24" key="airport" />
+		</label>
+		<label parent="icon-only" image="helicopter.bvg">
+			<rule min="16" max="24" key="helipad" />
+		</label>
+
+		<label parent="icon-blue" image="bank.bvg">
+			<rule min="16" max="24" key="bank" />
+		</label>
+
+		<label parent="icon-blue" image="atm2.bvg">
+			<rule min="17" max="24" key="atm" />
+		</label>
+
+		<label parent="icon-blue" image="bakery.bvg">
+			<rule min="16" max="24" key="bakery" />
+		</label>
+
+		<label parent="icon-blue" image="firestation.bvg">
+			<rule min="16" max="24" key="firestation" />
+		</label>
+		<label parent="icon-blue" image="fuel.bvg">
+			<rule min="16" max="24" key="fuelstation" />
+		</label>
+		<label parent="icon-blue" image="hospital.bvg">
+			<rule min="16" max="24" key="hospital" />
+		</label>
+		<label parent="icon-blue" image="information.bvg">
+			<rule min="16" max="24" key="information" />
+		</label>
+		<label parent="icon-blue" image="pharmacy.bvg">
+			<rule min="16" max="24" key="pharmacy" />
+		</label>
+		<label parent="icon-blue" image="shelter2.bvg">
+			<rule min="16" max="24" key="shelter" />
+		</label>
+		<label parent="icon-blue" image="view_point.bvg">
+			<rule min="16" max="24" key="viewpoint" />
+		</label>
+		<label parent="icon-blue" image="rental_bicycle.bvg">
+			<rule min="16" max="24" key="bikerental" />
+		</label>
+
+		<label parent="icon-base" fg="black" image="peak.bvg">
+			<rule min="16" max="24" key="peak" />
+		</label>
+		<label parent="icon-base" fg="black" image="volcano.bvg">
+			<rule min="16" max="24" key="volcano" />
+		</label>
+
+
+		<!-- other -->
+		<label parent="base-blue">
+			<rule min="17" max="24" key="*" />
+		</label>
+	</labels>
+</labelconfig>

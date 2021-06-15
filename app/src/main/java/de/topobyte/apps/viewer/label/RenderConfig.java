@@ -182,6 +182,7 @@ public class RenderConfig
     Log.i(LOG_TAG, "Mapping type '" + type + " (" + typeId
         + ")' to class '" + classId + "'");
 
+    System.out.println("type: " + type);
     typeToClass.put(type, renderClass);
     classToType.put(renderClass, type);
     typeToClassId.put(type, classId);
@@ -223,6 +224,11 @@ public class RenderConfig
       }
     }
     return ids;
+  }
+
+  public RenderClass getRenderClass(String type)
+  {
+    return typeToClass.get(type);
   }
 
   public int getClassIdForTypeId(int typeId)

@@ -66,6 +66,7 @@ public class Global
 
   private Mapfile mapfile;
   private MapfileOpener opener;
+  private MapfileOpener openerHydrants;
 
   private Coordinate startupPosition;
 
@@ -114,6 +115,15 @@ public class Global
     this.opener = opener;
     mapfile = opener.open();
     imageSource.setMapFile(opener);
+  }
+
+  public void setMapFileHydrants(MapfileOpener opener) throws IOException,
+      ClassNotFoundException
+  {
+    if (this.openerHydrants != null && this.openerHydrants.equals(opener)) {
+      return;
+    }
+    this.openerHydrants = opener;
   }
 
   public Mapfile getMapFile()
@@ -241,6 +251,11 @@ public class Global
   public MapfileOpener getMapFileOpener()
   {
     return opener;
+  }
+
+  public MapfileOpener getMapFileOpenerHydrants()
+  {
+    return openerHydrants;
   }
 
   private final List<RenderThemeListener> renderThemeListeners = new ArrayList<>();

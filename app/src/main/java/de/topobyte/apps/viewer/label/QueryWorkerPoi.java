@@ -38,7 +38,10 @@ import de.topobyte.luqe.iface.QueryException;
 import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.mapformat.Mapfile;
 import de.topobyte.mapocado.mapformat.geom.Coordinate;
+import de.topobyte.mapocado.mapformat.interval.IntervalTree;
+import de.topobyte.mapocado.mapformat.model.Node;
 import de.topobyte.mapocado.mapformat.model.TextNode;
+import de.topobyte.mapocado.mapformat.model.Way;
 import de.topobyte.mapocado.mapformat.rtree.BoundingBox;
 import de.topobyte.mapocado.mapformat.rtree.disk.DiskTree;
 import de.topobyte.nomioc.luqe.dao.Dao;
@@ -64,10 +67,11 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
   private final SpatialIndex spatialIndex;
 
   private Mapfile mapfile;
+  private Mapfile mapfileHydrants;
 
   public QueryWorkerPoi(LabelDrawerPoi labelDrawer, SQLiteDatabase db,
                         RenderConfig renderConfig, SpatialIndex spatialIndex,
-                        MapfileOpener opener)
+                        MapfileOpener opener, MapfileOpener openerHydrants)
   {
     super(labelDrawer);
     labelDrawerPoi = labelDrawer;
@@ -82,6 +86,11 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
       mapfile = opener.open();
     } catch (Exception e) {
       Log.e(LOG, "Unable to open mapfile", e);
+    }
+    try {
+      mapfileHydrants = openerHydrants.open();
+    } catch (Exception e) {
+      Log.e(LOG, "Unable to open hydrants mapfile", e);
     }
   }
 
@@ -168,6 +177,45 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
 
     AndroidTimeUtil.time("query housenumbers", LOG,
         "Time to query housenumbers: %d");
+
+    BoundingBox rectRequest = new BoundingBox(bbox.getLon1(),
+        bbox.getLon2(), bbox.getLat1(), bbox.getLat2(), true);
+
+    String type = "railwaystation";
+    RenderClass renderClass = renderConfig.getRenderClass(type);
+    int classId = renderClass.classId;
+    List<Label> hydrantLabels = labelMapClass.get(classId);
+    if (hydrantLabels == null) {
+      hydrantLabels = new ArrayList<>();
+      labelMapClass.put(classId, hydrantLabels);
+    }
+
+    IntervalTree<Integer, DiskTree<Node>> nodeTrees = mapfileHydrants.getTreeNodes();
+    for (DiskTree<Node> t : nodeTrees.getObjects(zoom)) {
+      try {
+        List<Node> nodes = t.intersectionQuery(rectRequest);
+        System.out.println("nodes: " + nodes.size());
+        for (Node node : nodes) {
+          Coordinate point = node.getPoint();
+          hydrantLabels.add(new Label(point.getX(), point.getY(), "", classId, -1));
+        }
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    IntervalTree<Integer, DiskTree<Way>> wayTrees = mapfileHydrants.getTreeWays();
+    for (DiskTree<Way> t : wayTrees.getObjects(zoom)) {
+      try {
+        List<Way> ways = t.intersectionQuery(rectRequest);
+        System.out.println("ways: " + ways.size());
+        for (Way way : ways) {
+
+        }
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
 
     return labelMapClass;
   }

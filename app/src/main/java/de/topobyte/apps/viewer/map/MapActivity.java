@@ -48,6 +48,7 @@ public abstract class MapActivity extends LoaderActivity
   protected Global global;
 
   protected MapfileOpener opener;
+  protected MapfileOpener openerHydrants;
 
   private boolean loaded = false;
 
@@ -114,6 +115,7 @@ public abstract class MapActivity extends LoaderActivity
     // open map file
     Log.i(LOG_TAG_MA, "Opening map file");
     opener = new AssetMapfileOpener(this, ResourceConstants.ASS_MAP_FILE);
+    openerHydrants = new AssetMapfileOpener(this, ResourceConstants.ASS_MAP_FILE_HYDRANTS);
 
     if (AppConstants.USE_MAPFILE_POSITION) {
       try {
@@ -132,6 +134,7 @@ public abstract class MapActivity extends LoaderActivity
 
     try {
       global.setMapFile(opener);
+      global.setMapFileHydrants(openerHydrants);
     } catch (Exception e) {
       e.printStackTrace();
       Log.e(LOG_TAG_MA, "Error setting the mapfile", e);

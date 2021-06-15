@@ -21,6 +21,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.slimjars.dist.gnu.trove.list.TIntList;
+import com.slimjars.dist.gnu.trove.list.array.TIntArrayList;
 import com.slimjars.dist.gnu.trove.map.hash.TIntObjectHashMap;
 
 import java.io.IOException;
@@ -181,14 +182,6 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
     BoundingBox rectRequest = new BoundingBox(bbox.getLon1(),
         bbox.getLon2(), bbox.getLat1(), bbox.getLat2(), true);
 
-    String type = "railwaystation";
-    RenderClass renderClass = renderConfig.getRenderClass(type);
-    int classId = renderClass.classId;
-    List<Label> hydrantLabels = labelMapClass.get(classId);
-    if (hydrantLabels == null) {
-      hydrantLabels = new ArrayList<>();
-      labelMapClass.put(classId, hydrantLabels);
-    }
 
     IntervalTree<Integer, DiskTree<Node>> nodeTrees = mapfileHydrants.getTreeNodes();
     for (DiskTree<Node> t : nodeTrees.getObjects(zoom)) {
@@ -196,8 +189,25 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
         List<Node> nodes = t.intersectionQuery(rectRequest);
         System.out.println("nodes: " + nodes.size());
         for (Node node : nodes) {
-          Coordinate point = node.getPoint();
-          hydrantLabels.add(new Label(point.getX(), point.getY(), "", classId, -1));
+          TIntArrayList classes = node.getClasses();
+          for (int ci : classes.toArray()) {
+            // TODO: do not resolve via strings, use int lookup
+            String type = mapfileHydrants.getMetadata().getPoolForRefs().getString(ci);
+
+            RenderClass renderClass = renderConfig.getRenderClass(type);
+            if (renderClass == null) {
+              continue;
+            }
+            int classId = renderClass.classId;
+            List<Label> list = labelMapClass.get(classId);
+            if (list == null) {
+              list = new ArrayList<>();
+              labelMapClass.put(classId, list);
+            }
+
+            Coordinate point = node.getPoint();
+            list.add(new Label(point.getX(), point.getY(), "", classId, -1));
+          }
         }
       } catch (IOException e) {
         e.printStackTrace();

@@ -141,6 +141,11 @@ public class DrawingOrder
 
     order.add("other");
     order.add("housenumbers");
+
+    order.add("hydrant-underground");
+    order.add("hydrant-pillar");
+    order.add("fire-water-pond");
+    order.add("fire-water-pond2");
   }
 
 }

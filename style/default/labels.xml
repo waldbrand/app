@@ -229,5 +229,19 @@
 		<label parent="base-blue">
 			<rule min="17" max="24" key="*" />
 		</label>
+
+		<!-- waldbrand -->
+		<label type="dot" parent="base" fg="red" bg="white" dot-fg="red" radius="3">
+			<rule min="14" max="24">
+				<rule key="hydrant-underground" />
+				<rule key="hydrant-pillar" />
+			</rule>
+		</label>
+		<label type="dot" parent="base" fg="blue" bg="white" dot-fg="blue" radius="3">
+			<rule min="14" max="24">
+				<rule key="fire-water-pond" />
+				<rule key="fire-water-pond2" />
+			</rule>
+		</label>
 	</labels>
 </labelconfig>

@@ -204,6 +204,9 @@
     <string name="cat_furniture">Furniture</string>
     <string name="cat_books">Books</string>
 
+    <string name="cat_waldbrand">Waldbrand</string>
+    <string name="cat_hydrants">Hydrants</string>
+    <string name="cat_water_ponds">Water pond</string>
     <string name="cat_misc">Misc</string>
     <string name="cat_banks_atms">Banks &amp; ATMs</string>
     <string name="cat_embassies">Embassies</string>

@@ -25,11 +25,6 @@ public class ThemeConfig
 
   static {
     themes.add(new Theme("Default", "style-default", false));
-    themes.add(new Theme("At Night", "style-inverted-luminance", false));
-    themes.add(new Theme("Dark Blue", "style-inverted-rgb", false));
-    themes.add(new Theme("Pink", "style-pink", false));
-    themes.add(new Theme("Black & White light", "style-bw-light", false));
-    themes.add(new Theme("Black & White dark", "style-bw-dark", false));
   }
 
   private final String[] themeNames = themes.getNamesArray();

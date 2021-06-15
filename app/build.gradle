@@ -86,7 +86,6 @@ dependencies {
     implementation 'de.topobyte:android-map-utils:0.2.0'
     implementation 'de.topobyte:android-intent-utils:0.1.0'
     implementation 'com.slimjars.trove4j:trove4j-int-int-hash-map:1.0.1'
-    implementation project(':rotatelayout')
     implementation project(':loader-util')
     implementation project(':common-resources')
     implementation 'androidx.appcompat:appcompat:1.0.0'

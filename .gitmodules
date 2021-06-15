@@ -1,6 +1,3 @@
-[submodule "rotate-layout"]
-	path = rotate-layout
-	url = https://github.com/topobyte/rotate-layout.git
 [submodule "loader-util"]
 	path = loader-util
 	url = https://github.com/topobyte/android-loader-util.git

@@ -62,6 +62,7 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
   private final LabelDrawerPoi labelDrawerPoi;
 
   private RenderConfig renderConfig;
+  private RenderClassMapping classMappingWaldbrand;
 
   private final IConnection ldb;
 
@@ -93,11 +94,14 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
     } catch (Exception e) {
       Log.e(LOG, "Unable to open hydrants mapfile", e);
     }
+
+    classMappingWaldbrand = new RenderClassMapping(mapfileHydrants, renderConfig);
   }
 
   public void setRenderConfig(RenderConfig renderConfig)
   {
     this.renderConfig = renderConfig;
+    classMappingWaldbrand = new RenderClassMapping(mapfileHydrants, renderConfig);
   }
 
   private Label createLabel(SqLabel label, int placeType)
@@ -182,7 +186,6 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
     BoundingBox rectRequest = new BoundingBox(bbox.getLon1(),
         bbox.getLon2(), bbox.getLat1(), bbox.getLat2(), true);
 
-
     IntervalTree<Integer, DiskTree<Node>> nodeTrees = mapfileHydrants.getTreeNodes();
     for (DiskTree<Node> t : nodeTrees.getObjects(zoom)) {
       try {
@@ -191,10 +194,7 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
         for (Node node : nodes) {
           TIntArrayList classes = node.getClasses();
           for (int ci : classes.toArray()) {
-            // TODO: do not resolve via strings, use int lookup
-            String type = mapfileHydrants.getMetadata().getPoolForRefs().getString(ci);
-
-            RenderClass renderClass = renderConfig.getRenderClass(type);
+            RenderClass renderClass = classMappingWaldbrand.getRenderClass(ci);
             if (renderClass == null) {
               continue;
             }

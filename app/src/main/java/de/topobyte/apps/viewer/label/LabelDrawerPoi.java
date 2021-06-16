@@ -81,7 +81,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
 
   private final SpatialIndex spatialIndex;
   private final MapfileOpener opener;
-  private final MapfileOpener openerHydrants;
+  private final MapfileOpener openerWaldbrand;
 
   private RenderConfig renderConfig;
 
@@ -100,14 +100,14 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
 
   public LabelDrawerPoi(Context context, View view, float density,
                         SpatialIndex spatialIndex, MapfileOpener opener,
-                        MapfileOpener openerHydrants) throws IOException
+                        MapfileOpener openerWaldbrand) throws IOException
   {
     super(context, view, density);
     this.context = context;
 
     this.spatialIndex = spatialIndex;
     this.opener = opener;
-    this.openerHydrants = openerHydrants;
+    this.openerWaldbrand = openerWaldbrand;
 
     SharedPreferences prefs = PreferenceManager
         .getDefaultSharedPreferences(context);
@@ -158,7 +158,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
 
     if (!init) {
       queryWorkerPoi = new QueryWorkerPoi(this, db, renderConfig,
-          spatialIndex, opener, openerHydrants);
+          spatialIndex, opener, openerWaldbrand);
       queryWorker = queryWorkerPoi;
 
       new Thread(queryWorker).start();

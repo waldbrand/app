@@ -188,7 +188,7 @@ public class MapFragment extends Fragment
 
     // set map file
     try {
-      map.setMapFile(global.getMapFileOpener(), global.getMapFileOpenerHydrants());
+      map.setMapFile(global.getMapFileOpener(), global.getMapFileOpenerWaldbrand());
     } catch (Exception e) {
       Log.e(LOG_TAG, "Error while setting mapfile", e);
     }

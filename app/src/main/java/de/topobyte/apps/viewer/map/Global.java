@@ -66,7 +66,7 @@ public class Global
 
   private Mapfile mapfile;
   private MapfileOpener opener;
-  private MapfileOpener openerHydrants;
+  private MapfileOpener openerWaldbrand;
 
   private Coordinate startupPosition;
 
@@ -117,13 +117,13 @@ public class Global
     imageSource.setMapFile(opener);
   }
 
-  public void setMapFileHydrants(MapfileOpener opener) throws IOException,
+  public void setMapFileWaldbrand(MapfileOpener opener) throws IOException,
       ClassNotFoundException
   {
-    if (this.openerHydrants != null && this.openerHydrants.equals(opener)) {
+    if (this.openerWaldbrand != null && this.openerWaldbrand.equals(opener)) {
       return;
     }
-    this.openerHydrants = opener;
+    this.openerWaldbrand = opener;
   }
 
   public Mapfile getMapFile()
@@ -253,9 +253,9 @@ public class Global
     return opener;
   }
 
-  public MapfileOpener getMapFileOpenerHydrants()
+  public MapfileOpener getMapFileOpenerWaldbrand()
   {
-    return openerHydrants;
+    return openerWaldbrand;
   }
 
   private final List<RenderThemeListener> renderThemeListeners = new ArrayList<>();

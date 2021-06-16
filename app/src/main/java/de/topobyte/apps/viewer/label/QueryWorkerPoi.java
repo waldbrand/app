@@ -69,11 +69,11 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
   private final SpatialIndex spatialIndex;
 
   private Mapfile mapfile;
-  private Mapfile mapfileHydrants;
+  private Mapfile mapfileWaldbrand;
 
   public QueryWorkerPoi(LabelDrawerPoi labelDrawer, SQLiteDatabase db,
                         RenderConfig renderConfig, SpatialIndex spatialIndex,
-                        MapfileOpener opener, MapfileOpener openerHydrants)
+                        MapfileOpener opener, MapfileOpener openerWaldbrand)
   {
     super(labelDrawer);
     labelDrawerPoi = labelDrawer;
@@ -90,18 +90,18 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
       Log.e(LOG, "Unable to open mapfile", e);
     }
     try {
-      mapfileHydrants = openerHydrants.open();
+      mapfileWaldbrand = openerWaldbrand.open();
     } catch (Exception e) {
-      Log.e(LOG, "Unable to open hydrants mapfile", e);
+      Log.e(LOG, "Unable to open waldbrand mapfile", e);
     }
 
-    classMappingWaldbrand = new RenderClassMapping(mapfileHydrants, renderConfig);
+    classMappingWaldbrand = new RenderClassMapping(mapfileWaldbrand, renderConfig);
   }
 
   public void setRenderConfig(RenderConfig renderConfig)
   {
     this.renderConfig = renderConfig;
-    classMappingWaldbrand = new RenderClassMapping(mapfileHydrants, renderConfig);
+    classMappingWaldbrand = new RenderClassMapping(mapfileWaldbrand, renderConfig);
   }
 
   private Label createLabel(SqLabel label, int placeType)
@@ -186,7 +186,7 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
     BoundingBox rectRequest = new BoundingBox(bbox.getLon1(),
         bbox.getLon2(), bbox.getLat1(), bbox.getLat2(), true);
 
-    IntervalTree<Integer, DiskTree<Node>> nodeTrees = mapfileHydrants.getTreeNodes();
+    IntervalTree<Integer, DiskTree<Node>> nodeTrees = mapfileWaldbrand.getTreeNodes();
     for (DiskTree<Node> t : nodeTrees.getObjects(zoom)) {
       try {
         List<Node> nodes = t.intersectionQuery(rectRequest);
@@ -214,7 +214,7 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
       }
     }
 
-    IntervalTree<Integer, DiskTree<Way>> wayTrees = mapfileHydrants.getTreeWays();
+    IntervalTree<Integer, DiskTree<Way>> wayTrees = mapfileWaldbrand.getTreeWays();
     for (DiskTree<Way> t : wayTrees.getObjects(zoom)) {
       try {
         List<Way> ways = t.intersectionQuery(rectRequest);

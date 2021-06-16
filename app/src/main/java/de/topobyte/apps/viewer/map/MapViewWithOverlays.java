@@ -73,15 +73,15 @@ public class MapViewWithOverlays extends MapView
     super.init();
   }
 
-  public void setMapFile(MapfileOpener opener, MapfileOpener openerHydrants) throws IOException,
+  public void setMapFile(MapfileOpener opener, MapfileOpener openerWaldbrand) throws IOException,
       ClassNotFoundException
   {
     super.setMapFile(opener);
 
-    setup(opener, openerHydrants);
+    setup(opener, openerWaldbrand);
   }
 
-  private void setup(MapfileOpener opener, MapfileOpener openerHydrants)
+  private void setup(MapfileOpener opener, MapfileOpener openerWaldbrand)
   {
     float density = global.getDensity();
 
@@ -94,7 +94,7 @@ public class MapViewWithOverlays extends MapView
 
     try {
       labelDrawer = new LabelDrawerPoi(getContext(), this, density,
-          appData.getSpatialIndexPois(), opener, openerHydrants);
+          appData.getSpatialIndexPois(), opener, openerWaldbrand);
       labelDrawer.setDrawDebugFrame(false);
       labelDrawer.setDrawDebugBoxes(false);
       addOnDrawListener(labelDrawer);

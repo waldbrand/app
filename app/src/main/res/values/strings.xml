@@ -288,6 +288,8 @@
     <string name="map_copyright">© OpenStreetMap contributors</string>
     <string name="map_license">License: Open Data Commons Open Database License (ODbL)</string>
 
+    <string name="fb_mail">Send us an email</string>
+
     <!-- privacy dialog -->
 
     <string name="privacy_head">Privacy policy</string>

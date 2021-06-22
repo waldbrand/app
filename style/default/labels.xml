@@ -231,13 +231,13 @@
 		</label>
 
 		<!-- waldbrand -->
-		<label parent="icon-base" fg="red" bg="white" image="hydrant.bvg">
+		<label parent="icon-base" fg="red" bg="white" image="hydrant.bvg" image-height="28">
 			<rule min="14" max="24">
 				<rule key="hydrant-underground" />
 				<rule key="hydrant-pillar" />
 			</rule>
 		</label>
-		<label parent="icon-base" fg="blue" bg="white" image="speicher.bvg">
+		<label parent="icon-base" fg="blue" bg="white" image="speicher.bvg" image-height="28">
 			<rule min="14" max="24">
 				<rule key="fire-water-pond" />
 				<rule key="fire-water-pond2" />

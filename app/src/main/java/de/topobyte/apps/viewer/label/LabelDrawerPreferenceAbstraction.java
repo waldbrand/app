@@ -47,7 +47,7 @@ public class LabelDrawerPreferenceAbstraction
   public void storeLabelMode(LabelMode mode)
   {
     Editor editor = prefs.edit();
-    editor.putString(LabelDrawerPoi.PREF_MODE, mode.name());
+    editor.putString(LabelDrawerPoi.PREF_MODE, modeLookup.getName(mode));
     editor.commit();
   }
 

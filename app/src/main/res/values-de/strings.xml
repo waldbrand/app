@@ -92,9 +92,6 @@
     <string name="preferences_locations_sources">Standorteinstellungen</string>
     <string name="preferences_locations_sources_desc">Systemdialog zu Standortquellen anzeigen</string>
 
-    <string name="preferences_personalized_ads">Personalisierte Werbung</string>
-    <string name="preferences_personalized_ads_desc">Erlaube personalisierte Werbebanner. Wenn Sie diese Option deaktivieren, werden nur nicht-personalisierte Banner angezeigt</string>
-
     <string name="preferences_show_grid">Kacheln anzeigen</string>
     <string name="preferences_show_grid_desc">Die Grenzen der Karten-Kacheln anzeigen aus denen die Karte insgesamt aufgebaut ist</string>
     <string name="preferences_show_zoom_level">Zoomstufe anzeigen</string>

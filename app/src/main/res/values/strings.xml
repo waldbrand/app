@@ -94,9 +94,6 @@
     <string name="preferences_locations_sources">Location settings</string>
     <string name="preferences_locations_sources_desc">Show system settings for location sources</string>
 
-    <string name="preferences_personalized_ads">Personalized ads</string>
-    <string name="preferences_personalized_ads_desc">Show personalized ad banners. If you deactivate this option, only non-personalized ads will be displayed</string>
-
     <string name="preferences_show_grid">Show grid</string>
     <string name="preferences_show_grid_desc">Display the boundaries of the map tiles used to create the map</string>
     <string name="preferences_show_zoom_level">Show zoom level</string>

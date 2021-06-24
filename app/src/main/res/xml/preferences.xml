@@ -51,15 +51,6 @@
             android:title="@string/preferences_locations_sources" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="privacy"
-        android:title="@string/preferences_privacy">
-        <CheckBoxPreference
-            android:key="personalizedAds"
-            android:summary="@string/preferences_personalized_ads_desc"
-            android:title="@string/preferences_personalized_ads" />
-    </PreferenceCategory>
-
     <PreferenceCategory android:title="@string/preferences_advanced">
         <CheckBoxPreference
             android:key="showCoordinates"

@@ -234,13 +234,29 @@
 		<label parent="icon-base" fg="red" bg="white" image="hydrant.bvg" image-height="28">
 			<rule min="14" max="24">
 				<rule key="hydrant-underground" />
+				<rule key="hydrant-underground2" />
 				<rule key="hydrant-pillar" />
+				<rule key="hydrant-pillar2" />
 			</rule>
 		</label>
 		<label parent="icon-base" fg="blue" bg="white" image="speicher.bvg" image-height="28">
 			<rule min="14" max="24">
 				<rule key="fire-water-pond" />
 				<rule key="fire-water-pond2" />
+				<rule key="water-tank" />
+				<rule key="water-tank2" />
+			</rule>
+		</label>
+		<label parent="icon-base" fg="blue" bg="white" image="tiefbrunnen.bvg" image-height="28">
+			<rule min="14" max="24">
+				<rule key="hydrant-pipe" />
+				<rule key="hydrant-pipe2" />
+			</rule>
+		</label>
+		<label parent="icon-base" fg="blue" bg="white" image="saugstelle.bvg" image-height="22">
+			<rule min="14" max="24">
+				<rule key="suction-point" />
+				<rule key="suction-point2" />
 			</rule>
 		</label>
 	</labels>

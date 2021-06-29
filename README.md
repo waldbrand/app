@@ -44,11 +44,11 @@ Create a `local.properties` file:
 
 Build the application:
 
-    ./gradlew assembleGooglePaidDebug
+    ./gradlew assembleDebug
 
 Install:
 
-    adb install app/build/outputs/apk/googlePaid/debug/app-google-paid-debug.apk
+    adb install app/build/outputs/apk/debug/app-debug.apk
 
 ## Release builds
 
@@ -61,8 +61,8 @@ To create release builds, create a `keystore.properties` file:
 
 Build the application:
 
-    ./gradlew assembleGooglePaidRelease
+    ./gradlew assembleRelease
 
 Install:
 
-    adb install app/build/outputs/apk/googlePaid/release/app-google-paid-release.apk
+    adb install app/build/outputs/apk/release/app-release.apk

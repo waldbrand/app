@@ -1,13 +1,3 @@
-.gradle
-local.properties
-keystore.properties
 .DS_Store
-build
 *.swp
 *.iml
-.idea/*
-!.idea/codeStyleSettings.xml
-!.idea/codeStyles
-!.idea/dictionaries
-!.idea/saveactions_settings.xml
-!.idea/inspectionProfiles/

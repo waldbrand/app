@@ -1,0 +1,10 @@
+.gradle
+local.properties
+keystore.properties
+build
+.idea/*
+!.idea/codeStyleSettings.xml
+!.idea/codeStyles
+!.idea/dictionaries
+!.idea/saveactions_settings.xml
+!.idea/inspectionProfiles/

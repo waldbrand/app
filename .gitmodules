@@ -1,6 +1,6 @@
 [submodule "loader-util"]
-	path = loader-util
+	path = waldbrand-app/loader-util
 	url = https://github.com/topobyte/android-loader-util.git
 [submodule "common-resources"]
-	path = common-resources
+	path = waldbrand-app/common-resources
 	url = https://github.com/topobyte/android-common-resources.git

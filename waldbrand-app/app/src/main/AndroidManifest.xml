@@ -36,7 +36,6 @@
         <activity android:name="de.topobyte.apps.viewer.activities.PrivacyActivity" />
         <activity android:name="de.topobyte.apps.viewer.preferences.SettingsActivity" />
         <activity android:name="de.topobyte.apps.viewer.search.SearchActivity" />
-        <activity android:name="de.topobyte.apps.viewer.activities.MoreAppsActivity" />
     </application>
 
 </manifest>

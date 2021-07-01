@@ -53,6 +53,7 @@ import de.topobyte.apps.viewer.Database;
 import de.topobyte.bvg.BvgAndroidPainter;
 import de.topobyte.bvg.BvgIO;
 import de.topobyte.bvg.BvgImage;
+import de.topobyte.jeography.core.mapwindow.MapWindow;
 import de.topobyte.jeography.core.mapwindow.SteplessMapWindow;
 import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.mapformat.Mercator;
@@ -60,6 +61,7 @@ import de.topobyte.mapocado.styles.labels.elements.IconLabel;
 import de.topobyte.mapocado.styles.labels.elements.LabelType;
 import de.topobyte.mercatorcoordinates.GeoConv;
 import de.topobyte.sqlitespatial.spatialindex.access.SpatialIndex;
+import de.waldbrandapp.Waldbrand;
 
 public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView>
 {
@@ -411,4 +413,37 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
     super.destroy();
     db.close();
   }
+
+  public Poi getIcon(MapWindow mapWindow, float ex, float ey)
+  {
+    int dist = 40;
+    int dist2 = dist * dist;
+
+    double zoom = mapWindow.getZoom();
+
+    for (String type : Waldbrand.getLabelTypes()) {
+      RenderClass renderClass = renderConfig.getRenderClass(type);
+      Set<Label> labels = candidates.get(renderClass.classId);
+      if (labels == null) {
+        continue;
+      }
+      for (Label label : labels) {
+        double mx = Mercator.getX(label.x, zoom);
+        double my = Mercator.getY(label.y, zoom);
+
+        float x = (float) mapWindow.mercatorToX(mx);
+        float y = (float) mapWindow.mercatorToY(my);
+        if (distance(ex, ey, x, y) < dist2) {
+          return new Poi(type, label);
+        }
+      }
+    }
+    return null;
+  }
+
+  private float distance(float x1, float y1, float x2, float y2)
+  {
+    return (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
+  }
+
 }

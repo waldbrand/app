@@ -21,6 +21,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -33,6 +36,8 @@ import de.topobyte.luqe.iface.IConnection;
 import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.android.style.MapRenderConfig;
 
+import static android.widget.Toast.LENGTH_SHORT;
+
 public class MapViewWithOverlays extends MapView
 {
 
@@ -42,6 +47,8 @@ public class MapViewWithOverlays extends MapView
   private MapocadoScaleDrawer scaleDrawer;
 
   private final float gap = 5;
+
+  private GestureDetector gd;
 
   public MapViewWithOverlays(Context context, AttributeSet attrs, int defStyle)
   {
@@ -71,6 +78,16 @@ public class MapViewWithOverlays extends MapView
     db.close();
 
     super.init();
+
+    initGestureDetector();
+  }
+
+  @Override
+  public boolean onTouchEvent(MotionEvent event)
+  {
+    super.onTouchEvent(event);
+    gd.onTouchEvent(event);
+    return true;
   }
 
   public void setMapFile(MapfileOpener opener, MapfileOpener openerWaldbrand) throws IOException,
@@ -147,6 +164,29 @@ public class MapViewWithOverlays extends MapView
   {
     super.destroy();
     labelDrawer.destroy();
+  }
+
+  private void initGestureDetector()
+  {
+    gd = new GestureDetector(getContext(),
+        new GestureDetector.SimpleOnGestureListener()
+        {
+
+          @Override
+          public boolean onSingleTapConfirmed(MotionEvent e)
+          {
+            tap(e);
+            return true;
+          }
+
+        });
+  }
+
+  private void tap(MotionEvent e)
+  {
+    float x = e.getX();
+    float y = e.getY();
+    Toast.makeText(getContext(), String.format("Tap %.1f %.1f", x, y), LENGTH_SHORT).show();
   }
 
 }

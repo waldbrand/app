@@ -15,7 +15,7 @@ public class Waldbrand
     add("hydrant-underground", "Unterflurhydrant");
     add("hydrant-pillar", "Überflurhydrant");
     add("water-tank", "Wasserspeicher");
-    add("fire-water-pond", "Feuerlöschteich");
+    add("fire-water-pond", "Löschwasserteich");
     add("suction-point", "Saugstelle");
     add("hydrant-pipe", "Flachspiegelbrunnen");
   }

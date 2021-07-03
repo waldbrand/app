@@ -199,6 +199,14 @@
     <string name="cat_furniture">Möbel</string>
     <string name="cat_books">Bücher</string>
 
+    <string name="cat_waldbrand">Waldbrand</string>
+    <string name="cat_underground">Unterflurhydranten</string>
+    <string name="cat_pillar">Überflurhydranten</string>
+    <string name="cat_pipe">Flachspiegelbrunnen</string>
+    <string name="cat_water_ponds">Löschwasserteiche</string>
+    <string name="cat_water_tank">Wasserspeicher</string>
+    <string name="cat_suction_point">Saugstellen</string>
+
     <string name="cat_misc">Verschiedenes</string>
     <string name="cat_banks_atms">Banken und Automaten</string>
     <string name="cat_embassies">Botschaften</string>

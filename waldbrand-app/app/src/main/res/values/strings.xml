@@ -202,8 +202,13 @@
     <string name="cat_books">Books</string>
 
     <string name="cat_waldbrand">Waldbrand</string>
-    <string name="cat_hydrants">Hydrants</string>
-    <string name="cat_water_ponds">Water pond</string>
+    <string name="cat_underground">Hydrants (underground)</string>
+    <string name="cat_pillar">Hydrants (pillar)</string>
+    <string name="cat_pipe">Hydrants (pipe)</string>
+    <string name="cat_water_ponds">Water ponds</string>
+    <string name="cat_water_tank">Water tanks</string>
+    <string name="cat_suction_point">Suction points</string>
+
     <string name="cat_misc">Misc</string>
     <string name="cat_banks_atms">Banks &amp; ATMs</string>
     <string name="cat_embassies">Embassies</string>

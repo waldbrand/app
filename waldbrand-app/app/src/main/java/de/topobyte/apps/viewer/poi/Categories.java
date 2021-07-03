@@ -140,10 +140,18 @@ public class Categories
 
     Group waldbrand = new Group(R.string.cat_waldbrand);
     groups.add(waldbrand);
-    waldbrand.add(new DatabaseCategory(R.string.cat_hydrants, "c:hydrant",
-        "hydrant-pillar", "hydrant-underground"));
+    waldbrand.add(new DatabaseCategory(R.string.cat_underground, "c:underground",
+        "hydrant-underground", "hydrant-underground2"));
+    waldbrand.add(new DatabaseCategory(R.string.cat_pillar, "c:pillar",
+        "hydrant-pillar", "hydrant-pillar2"));
+    waldbrand.add(new DatabaseCategory(R.string.cat_pipe, "c:pipe",
+        "hydrant-pipe", "hydrant-pipe2"));
+    waldbrand.add(new DatabaseCategory(R.string.cat_water_tank, "c:water_tank",
+        "water-tank", "water-tank2"));
     waldbrand.add(new DatabaseCategory(R.string.cat_water_ponds, "c:water_pond",
         "fire-water-pond", "fire-water-pond2"));
+    waldbrand.add(new DatabaseCategory(R.string.cat_suction_point, "c:suction_point",
+        "suction-point", "suction-point2"));
 
     Group transportation = new Group(R.string.cat_transportation);
     groups.add(transportation);

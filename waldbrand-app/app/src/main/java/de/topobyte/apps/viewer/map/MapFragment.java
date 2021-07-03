@@ -31,9 +31,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ZoomControls;
 
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import org.locationtech.jts.geom.Coordinate;
 
@@ -69,8 +72,14 @@ public class MapFragment extends Fragment
   @Override
   public void onPoiClicked(Poi poi)
   {
-    PoiDetailsFragment poiDetails = new PoiDetailsFragment();
-    poiDetails.show(getFragmentManager(), PoiDetailsFragment.TAG);
+    PoiDetailsFragment poiDetails = PoiDetailsFragment.newInstance(poi);
+    getFragmentManager().beginTransaction().replace(R.id.bottom, poiDetails).commit();
+
+    BottomSheetBehavior<FrameLayout> bottomSheet = BottomSheetBehavior.from(bottom);
+    bottomSheet.setPeekHeight(120);
+    bottomSheet.setHideable(true);
+    bottomSheet.setFitToContents(true);
+    bottomSheet.setState(BottomSheetBehavior.STATE_COLLAPSED);
   }
 
   public interface OnViewCreatedListener
@@ -106,6 +115,7 @@ public class MapFragment extends Fragment
   private MapViewWithOverlays map;
   private OverlayGroup overlay;
   private ZoomControls zoomControls;
+  private FrameLayout bottom;
 
   private MagnificationConfig magnificationConfig;
 
@@ -175,6 +185,7 @@ public class MapFragment extends Fragment
     map = view.findViewById(R.id.map);
     overlay = view.findViewById(R.id.overlay);
     zoomControls = view.findViewById(R.id.overlay_zoom);
+    bottom = view.findViewById(R.id.bottom);
 
     try {
       OnViewCreatedListener listener = (OnViewCreatedListener) getActivity();

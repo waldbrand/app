@@ -23,7 +23,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -37,9 +36,6 @@ import de.topobyte.luqe.iface.IConnection;
 import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.android.style.MapRenderConfig;
 import de.waldbrandapp.PoiClickListener;
-import de.waldbrandapp.Waldbrand;
-
-import static android.widget.Toast.LENGTH_SHORT;
 
 public class MapViewWithOverlays extends MapView
 {
@@ -199,10 +195,6 @@ public class MapViewWithOverlays extends MapView
     if (poi == null) {
       return;
     }
-    String name = Waldbrand.getName(poi.getType());
-    Toast.makeText(getContext(),
-        String.format("%s [%.1f %.1f / %d %d]", name, x, y, poi.getLabel().x, poi.getLabel().y),
-        LENGTH_SHORT).show();
     if (poiClickListener != null) {
       poiClickListener.onPoiClicked(poi);
     }

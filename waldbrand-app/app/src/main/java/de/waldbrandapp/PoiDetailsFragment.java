@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import de.topobyte.apps.viewer.label.Poi;
 
+import static android.widget.Toast.LENGTH_SHORT;
+import static android.widget.Toast.makeText;
 import static de.topobyte.geomath.WGS84.merc2lat;
 import static de.topobyte.geomath.WGS84.merc2lon;
 import static de.topobyte.mapocado.mapformat.Geo.MERCATOR_SIZE;
@@ -58,6 +61,13 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
     double lon = merc2lon(x, MERCATOR_SIZE);
     double lat = merc2lat(y, MERCATOR_SIZE);
     textViewPosition.setText(format("Position (lon/lat): %f/%f", lon, lat));
+
+    Button buttonShare = view.findViewById(R.id.buttonShare);
+    Button buttonEdit = view.findViewById(R.id.buttonEdit);
+    buttonShare.setOnClickListener(
+        e -> makeText(requireContext(), "Noch nicht implementiert", LENGTH_SHORT).show());
+    buttonEdit.setOnClickListener(
+        e -> makeText(requireContext(), "Noch nicht implementiert", LENGTH_SHORT).show());
 
     return view;
   }

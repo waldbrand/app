@@ -36,6 +36,7 @@ import de.topobyte.luqe.android.AndroidConnection;
 import de.topobyte.luqe.iface.IConnection;
 import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.android.style.MapRenderConfig;
+import de.waldbrandapp.PoiClickListener;
 import de.waldbrandapp.Waldbrand;
 
 import static android.widget.Toast.LENGTH_SHORT;
@@ -51,6 +52,7 @@ public class MapViewWithOverlays extends MapView
   private final float gap = 5;
 
   private GestureDetector gd;
+  private PoiClickListener poiClickListener = null;
 
   public MapViewWithOverlays(Context context, AttributeSet attrs, int defStyle)
   {
@@ -184,6 +186,11 @@ public class MapViewWithOverlays extends MapView
         });
   }
 
+  public void setPoiClickListener(PoiClickListener listener)
+  {
+    poiClickListener = listener;
+  }
+
   private void tap(MotionEvent e)
   {
     float x = e.getX();
@@ -196,6 +203,9 @@ public class MapViewWithOverlays extends MapView
     Toast.makeText(getContext(),
         String.format("%s [%.1f %.1f / %d %d]", name, x, y, poi.getLabel().x, poi.getLabel().y),
         LENGTH_SHORT).show();
+    if (poiClickListener != null) {
+      poiClickListener.onPoiClicked(poi);
+    }
   }
 
 }

@@ -88,6 +88,7 @@ dependencies {
     implementation 'com.slimjars.trove4j:trove4j-int-int-hash-map:1.0.1'
     implementation project(':loader-util')
     implementation project(':common-resources')
+    implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'org.slf4j:slf4j-android:1.7.12'
     implementation 'pub.devrel:easypermissions:1.3.0'

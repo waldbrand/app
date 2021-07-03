@@ -46,6 +46,7 @@ import de.topobyte.android.misc.utils.Toaster;
 import de.topobyte.apps.viewer.AppConstants;
 import de.topobyte.apps.viewer.Constants;
 import de.topobyte.apps.viewer.NoLocationSourceDialog;
+import de.topobyte.apps.viewer.label.Poi;
 import de.topobyte.apps.viewer.location.LocationOverlay;
 import de.topobyte.apps.viewer.location.MapLocationListener;
 import de.topobyte.apps.viewer.overlay.OverlayGps;
@@ -53,15 +54,24 @@ import de.topobyte.apps.viewer.overlay.OverlayGroup;
 import de.topobyte.jeography.core.mapwindow.MapWindow;
 import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.android.style.MapRenderConfig;
+import de.waldbrandapp.PoiClickListener;
+import de.waldbrandapp.PoiDetailsFragment;
 import de.waldbrandapp.R;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
 
 public class MapFragment extends Fragment
-    implements RenderThemeListener, EasyPermissions.PermissionCallbacks
+    implements RenderThemeListener, EasyPermissions.PermissionCallbacks, PoiClickListener
 {
 
   public final static String ARG_USE_INTENT = "use-intent";
+
+  @Override
+  public void onPoiClicked(Poi poi)
+  {
+    PoiDetailsFragment poiDetails = new PoiDetailsFragment();
+    poiDetails.show(getFragmentManager(), PoiDetailsFragment.TAG);
+  }
 
   public interface OnViewCreatedListener
   {
@@ -214,6 +224,9 @@ public class MapFragment extends Fragment
     MapZoomControls<MapView> mapZoomControls = new MapZoomControls<>(map, zoomControls);
     map.setOnTouchListener(mapZoomControls);
     map.getMapWindow().addZoomListener(mapZoomControls);
+
+    // add POI click listener
+    map.setPoiClickListener(this);
 
     // set map position
     MapPreferenceAbstraction mpa = new MapPreferenceAbstraction(

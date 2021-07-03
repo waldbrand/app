@@ -79,7 +79,7 @@ public class MapFragment extends Fragment
     bottomSheet.setPeekHeight(120);
     bottomSheet.setHideable(true);
     bottomSheet.setFitToContents(true);
-    bottomSheet.setState(BottomSheetBehavior.STATE_COLLAPSED);
+    bottomSheet.setState(BottomSheetBehavior.STATE_EXPANDED);
   }
 
   public interface OnViewCreatedListener

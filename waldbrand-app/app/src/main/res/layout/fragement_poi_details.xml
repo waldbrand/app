@@ -29,10 +29,23 @@
             android:textSize="16dp"
             tools:text="Koordinate: 12.34343; 21.987" />
 
-        <Button
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Show on OSM" />
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teilen" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bearbeiten" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

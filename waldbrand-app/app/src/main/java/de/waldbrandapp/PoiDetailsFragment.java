@@ -14,6 +14,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import de.topobyte.apps.viewer.label.Poi;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
 import static android.widget.Toast.LENGTH_SHORT;
 import static android.widget.Toast.makeText;
 import static de.topobyte.geomath.WGS84.merc2lat;
@@ -27,9 +29,11 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
   private static final String ARG_TYPE = "type";
   private static final String ARG_X = "x";
   private static final String ARG_Y = "y";
+  private static final String ARG_DIAMETER = "diameter";
 
   private TextView textViewType;
   private TextView textViewPosition;
+  private TextView textViewDiameter;
 
   public static PoiDetailsFragment newInstance(Poi poi)
   {
@@ -37,6 +41,7 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
     args.putString(ARG_TYPE, poi.getType());
     args.putInt(ARG_X, poi.getLabel().x);
     args.putInt(ARG_Y, poi.getLabel().y);
+    args.putString(ARG_DIAMETER, poi.getLabel().getText());
 
     PoiDetailsFragment fragment = new PoiDetailsFragment();
     fragment.setArguments(args);
@@ -51,16 +56,25 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
     View view = inflater.inflate(R.layout.fragement_poi_details, container, false);
     textViewType = view.findViewById(R.id.type);
     textViewPosition = view.findViewById(R.id.position);
+    textViewDiameter = view.findViewById(R.id.diameter);
 
     Bundle args = getArguments();
     String type = args.getString(ARG_TYPE);
     int x = args.getInt(ARG_X);
     int y = args.getInt(ARG_Y);
+    String diameter = args.getString(ARG_DIAMETER);
 
     textViewType.setText(Waldbrand.getName(type));
     double lon = merc2lon(x, MERCATOR_SIZE);
     double lat = merc2lat(y, MERCATOR_SIZE);
     textViewPosition.setText(format("Position (lon/lat): %f/%f", lon, lat));
+
+    if (diameter == null) {
+      textViewDiameter.setVisibility(GONE);
+    } else {
+      textViewDiameter.setVisibility(VISIBLE);
+      textViewDiameter.setText(String.format("Innendurchmesser: %smm", diameter));
+    }
 
     Button buttonShare = view.findViewById(R.id.buttonShare);
     Button buttonEdit = view.findViewById(R.id.buttonEdit);

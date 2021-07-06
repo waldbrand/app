@@ -186,12 +186,18 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
     BoundingBox rectRequest = new BoundingBox(bbox.getLon1(),
         bbox.getLon2(), bbox.getLat1(), bbox.getLat2(), true);
 
+    int idDiameter =
+        mapfileWaldbrand.getMetadata().getPoolForKeepKeys().getId("fire_hydrant:diameter");
+
     IntervalTree<Integer, DiskTree<Node>> nodeTrees = mapfileWaldbrand.getTreeNodes();
     for (DiskTree<Node> t : nodeTrees.getObjects(zoom)) {
       try {
         List<Node> nodes = t.intersectionQuery(rectRequest);
         System.out.println("nodes: " + nodes.size());
         for (Node node : nodes) {
+          TIntObjectHashMap<String> tags = node.getTags();
+          String diameter = tags.get(idDiameter);
+
           TIntArrayList classes = node.getClasses();
           for (int ci : classes.toArray()) {
             RenderClass renderClass = classMappingWaldbrand.getRenderClass(ci);
@@ -206,7 +212,7 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
             }
 
             Coordinate point = node.getPoint();
-            list.add(new Label(point.getX(), point.getY(), "", classId, -1));
+            list.add(new Label(point.getX(), point.getY(), diameter, classId, -1));
           }
         }
       } catch (IOException e) {

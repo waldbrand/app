@@ -25,13 +25,22 @@
             android:id="@+id/position"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
+            android:layout_marginTop="8dp"
             android:textSize="16dp"
             tools:text="Koordinate: 12.34343; 21.987" />
+
+        <TextView
+            android:id="@+id/diameter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="16dp"
+            tools:text="Innendurchmesser: 80mm" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal">
 
             <Button

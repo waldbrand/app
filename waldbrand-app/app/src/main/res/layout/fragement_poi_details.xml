@@ -37,6 +37,14 @@
             android:textSize="16dp"
             tools:text="Innendurchmesser: 80mm" />
 
+        <TextView
+            android:id="@+id/volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="16dp"
+            tools:text="Volumen: 300m³" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

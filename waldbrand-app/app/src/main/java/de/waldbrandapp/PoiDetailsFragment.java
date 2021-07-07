@@ -20,6 +20,9 @@ import static android.widget.Toast.makeText;
 import static de.topobyte.geomath.WGS84.merc2lat;
 import static de.topobyte.geomath.WGS84.merc2lon;
 import static de.topobyte.mapocado.mapformat.Geo.MERCATOR_SIZE;
+import static de.waldbrandapp.Waldbrand.FIRE_WATER_POND;
+import static de.waldbrandapp.Waldbrand.UNDERGROUND;
+import static de.waldbrandapp.Waldbrand.WATER_TANK;
 import static java.lang.String.format;
 
 public class PoiDetailsFragment extends BottomSheetDialogFragment
@@ -33,6 +36,7 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
   private TextView textViewType;
   private TextView textViewPosition;
   private TextView textViewDiameter;
+  private TextView textViewVolume;
 
   public static PoiDetailsFragment newInstance(PoiLabel poi)
   {
@@ -56,6 +60,7 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
     textViewType = view.findViewById(R.id.type);
     textViewPosition = view.findViewById(R.id.position);
     textViewDiameter = view.findViewById(R.id.diameter);
+    textViewVolume = view.findViewById(R.id.volume);
 
     Bundle args = getArguments();
     int type = args.getInt(ARG_TYPE);
@@ -68,14 +73,24 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
     double lat = merc2lat(y, MERCATOR_SIZE);
     textViewPosition.setText(format("Position (lon/lat): %f/%f", lon, lat));
 
-    int idDiameter = Waldbrand.getStringId("fire_hydrant:diameter");
-    String diameter = tags.get(idDiameter);
+    textViewDiameter.setVisibility(GONE);
+    if (type == UNDERGROUND) {
+      int idDiameter = Waldbrand.getStringId("fire_hydrant:diameter");
+      String diameter = tags.get(idDiameter);
+      if (diameter != null) {
+        textViewDiameter.setVisibility(VISIBLE);
+        textViewDiameter.setText(String.format("Innendurchmesser: %smm", diameter));
+      }
+    }
 
-    if (diameter == null) {
-      textViewDiameter.setVisibility(GONE);
-    } else {
-      textViewDiameter.setVisibility(VISIBLE);
-      textViewDiameter.setText(String.format("Innendurchmesser: %smm", diameter));
+    textViewVolume.setVisibility(GONE);
+    if (type == FIRE_WATER_POND || type == WATER_TANK) {
+      int idVolume = Waldbrand.getStringId("water_tank:volume");
+      String volume = tags.get(idVolume);
+      if (volume != null) {
+        textViewVolume.setVisibility(VISIBLE);
+        textViewVolume.setText(String.format("Volumen: %s", volume));
+      }
     }
 
     Button buttonShare = view.findViewById(R.id.buttonShare);

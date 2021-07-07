@@ -22,6 +22,8 @@ import android.util.Log;
 
 import com.slimjars.dist.gnu.trove.list.TIntList;
 import com.slimjars.dist.gnu.trove.list.array.TIntArrayList;
+import com.slimjars.dist.gnu.trove.map.TIntIntMap;
+import com.slimjars.dist.gnu.trove.map.hash.TIntIntHashMap;
 import com.slimjars.dist.gnu.trove.map.hash.TIntObjectHashMap;
 
 import java.io.IOException;
@@ -48,6 +50,8 @@ import de.topobyte.mapocado.mapformat.rtree.disk.DiskTree;
 import de.topobyte.nomioc.luqe.dao.Dao;
 import de.topobyte.nomioc.luqe.model.SqLabel;
 import de.topobyte.sqlitespatial.spatialindex.access.SpatialIndex;
+import de.waldbrandapp.PoiLabel;
+import de.waldbrandapp.Waldbrand;
 
 /**
  * This worker executes queries on the database and returns the results to the
@@ -95,13 +99,29 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
       Log.e(LOG, "Unable to open waldbrand mapfile", e);
     }
 
-    classMappingWaldbrand = new RenderClassMapping(mapfileWaldbrand, renderConfig);
+    Waldbrand.setStringPool(mapfileWaldbrand.getMetadata().getPoolForKeepKeys());
+
+    processRenderConfig();
   }
 
   public void setRenderConfig(RenderConfig renderConfig)
   {
     this.renderConfig = renderConfig;
+    processRenderConfig();
+  }
+
+  private TIntIntMap waldbrandClassIdToConstant = new TIntIntHashMap();
+
+  private void processRenderConfig()
+  {
     classMappingWaldbrand = new RenderClassMapping(mapfileWaldbrand, renderConfig);
+
+    waldbrandClassIdToConstant.clear();
+    for (String type : Waldbrand.getLabelTypes()) {
+      int constant = Waldbrand.getConstant(type);
+      RenderClass renderClass = renderConfig.getRenderClass(type);
+      waldbrandClassIdToConstant.put(renderClass.classId, constant);
+    }
   }
 
   private Label createLabel(SqLabel label, int placeType)
@@ -186,9 +206,6 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
     BoundingBox rectRequest = new BoundingBox(bbox.getLon1(),
         bbox.getLon2(), bbox.getLat1(), bbox.getLat2(), true);
 
-    int idDiameter =
-        mapfileWaldbrand.getMetadata().getPoolForKeepKeys().getId("fire_hydrant:diameter");
-
     IntervalTree<Integer, DiskTree<Node>> nodeTrees = mapfileWaldbrand.getTreeNodes();
     for (DiskTree<Node> t : nodeTrees.getObjects(zoom)) {
       try {
@@ -196,7 +213,6 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
         System.out.println("nodes: " + nodes.size());
         for (Node node : nodes) {
           TIntObjectHashMap<String> tags = node.getTags();
-          String diameter = tags.get(idDiameter);
 
           TIntArrayList classes = node.getClasses();
           for (int ci : classes.toArray()) {
@@ -205,6 +221,7 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
               continue;
             }
             int classId = renderClass.classId;
+            int constant = waldbrandClassIdToConstant.get(classId);
             List<Label> list = labelMapClass.get(classId);
             if (list == null) {
               list = new ArrayList<>();
@@ -212,7 +229,7 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
             }
 
             Coordinate point = node.getPoint();
-            list.add(new Label(point.getX(), point.getY(), diameter, classId, -1));
+            list.add(new PoiLabel(point.getX(), point.getY(), null, classId, -1, constant, tags));
           }
         }
       } catch (IOException e) {

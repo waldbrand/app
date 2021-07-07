@@ -29,13 +29,13 @@ import java.io.IOException;
 import de.topobyte.apps.viewer.AppData;
 import de.topobyte.apps.viewer.Database;
 import de.topobyte.apps.viewer.label.LabelDrawerPoi;
-import de.topobyte.apps.viewer.label.Poi;
 import de.topobyte.apps.viewer.label.RenderConfig;
 import de.topobyte.luqe.android.AndroidConnection;
 import de.topobyte.luqe.iface.IConnection;
 import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.android.style.MapRenderConfig;
 import de.waldbrandapp.PoiClickListener;
+import de.waldbrandapp.PoiLabel;
 
 public class MapViewWithOverlays extends MapView
 {
@@ -191,7 +191,7 @@ public class MapViewWithOverlays extends MapView
   {
     float x = e.getX();
     float y = e.getY();
-    Poi poi = labelDrawer.getIcon(mapWindow, x, y);
+    PoiLabel poi = labelDrawer.getIcon(mapWindow, x, y);
     if (poi == null) {
       return;
     }

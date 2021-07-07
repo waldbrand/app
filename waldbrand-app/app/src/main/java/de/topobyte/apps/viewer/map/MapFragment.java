@@ -49,7 +49,6 @@ import de.topobyte.android.misc.utils.Toaster;
 import de.topobyte.apps.viewer.AppConstants;
 import de.topobyte.apps.viewer.Constants;
 import de.topobyte.apps.viewer.NoLocationSourceDialog;
-import de.topobyte.apps.viewer.label.Poi;
 import de.topobyte.apps.viewer.location.LocationOverlay;
 import de.topobyte.apps.viewer.location.MapLocationListener;
 import de.topobyte.apps.viewer.overlay.OverlayGps;
@@ -59,6 +58,7 @@ import de.topobyte.mapocado.android.mapfile.MapfileOpener;
 import de.topobyte.mapocado.android.style.MapRenderConfig;
 import de.waldbrandapp.PoiClickListener;
 import de.waldbrandapp.PoiDetailsFragment;
+import de.waldbrandapp.PoiLabel;
 import de.waldbrandapp.R;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
@@ -70,7 +70,7 @@ public class MapFragment extends Fragment
   public final static String ARG_USE_INTENT = "use-intent";
 
   @Override
-  public void onPoiClicked(Poi poi)
+  public void onPoiClicked(PoiLabel poi)
   {
     PoiDetailsFragment poiDetails = PoiDetailsFragment.newInstance(poi);
     getFragmentManager().beginTransaction().replace(R.id.bottom, poiDetails).commit();

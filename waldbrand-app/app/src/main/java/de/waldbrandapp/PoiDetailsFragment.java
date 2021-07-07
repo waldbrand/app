@@ -11,8 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-
-import de.topobyte.apps.viewer.label.Poi;
+import com.slimjars.dist.gnu.trove.map.TIntObjectMap;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -29,19 +28,19 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
   private static final String ARG_TYPE = "type";
   private static final String ARG_X = "x";
   private static final String ARG_Y = "y";
-  private static final String ARG_DIAMETER = "diameter";
+  private static final String ARG_TAGS = "tags";
 
   private TextView textViewType;
   private TextView textViewPosition;
   private TextView textViewDiameter;
 
-  public static PoiDetailsFragment newInstance(Poi poi)
+  public static PoiDetailsFragment newInstance(PoiLabel poi)
   {
     Bundle args = new Bundle();
-    args.putString(ARG_TYPE, poi.getType());
-    args.putInt(ARG_X, poi.getLabel().x);
-    args.putInt(ARG_Y, poi.getLabel().y);
-    args.putString(ARG_DIAMETER, poi.getLabel().getText());
+    args.putInt(ARG_TYPE, poi.getWaldbrandType());
+    args.putInt(ARG_X, poi.x);
+    args.putInt(ARG_Y, poi.y);
+    args.putSerializable(ARG_TAGS, poi.getTags());
 
     PoiDetailsFragment fragment = new PoiDetailsFragment();
     fragment.setArguments(args);
@@ -59,15 +58,18 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
     textViewDiameter = view.findViewById(R.id.diameter);
 
     Bundle args = getArguments();
-    String type = args.getString(ARG_TYPE);
+    int type = args.getInt(ARG_TYPE);
     int x = args.getInt(ARG_X);
     int y = args.getInt(ARG_Y);
-    String diameter = args.getString(ARG_DIAMETER);
+    TIntObjectMap<String> tags = (TIntObjectMap<String>) args.getSerializable(ARG_TAGS);
 
     textViewType.setText(Waldbrand.getName(type));
     double lon = merc2lon(x, MERCATOR_SIZE);
     double lat = merc2lat(y, MERCATOR_SIZE);
     textViewPosition.setText(format("Position (lon/lat): %f/%f", lon, lat));
+
+    int idDiameter = Waldbrand.getStringId("fire_hydrant:diameter");
+    String diameter = tags.get(idDiameter);
 
     if (diameter == null) {
       textViewDiameter.setVisibility(GONE);

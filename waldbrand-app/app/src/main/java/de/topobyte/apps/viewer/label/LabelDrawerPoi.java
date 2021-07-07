@@ -29,6 +29,7 @@ import android.view.View;
 import com.infomatiq.jsi.Rectangle;
 import com.slimjars.dist.gnu.trove.iterator.TIntIterator;
 import com.slimjars.dist.gnu.trove.list.TIntList;
+import com.slimjars.dist.gnu.trove.list.array.TIntArrayList;
 import com.slimjars.dist.gnu.trove.set.TIntSet;
 import com.slimjars.dist.gnu.trove.set.hash.TIntHashSet;
 
@@ -61,6 +62,7 @@ import de.topobyte.mapocado.styles.labels.elements.IconLabel;
 import de.topobyte.mapocado.styles.labels.elements.LabelType;
 import de.topobyte.mercatorcoordinates.GeoConv;
 import de.topobyte.sqlitespatial.spatialindex.access.SpatialIndex;
+import de.waldbrandapp.PoiLabel;
 import de.waldbrandapp.Waldbrand;
 
 public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView>
@@ -86,6 +88,8 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
   private final MapfileOpener openerWaldbrand;
 
   private RenderConfig renderConfig;
+
+  private TIntList waldbrandClassIds = new TIntArrayList();
 
   public synchronized void openDatabase()
   {
@@ -130,6 +134,12 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
   public void setRenderConfig(RenderConfig renderConfig)
   {
     this.renderConfig = renderConfig;
+
+    waldbrandClassIds.clear();
+    for (String type : Waldbrand.getLabelTypes()) {
+      RenderClass renderClass = renderConfig.getRenderClass(type);
+      waldbrandClassIds.add(renderClass.classId);
+    }
 
     initWorkers();
 
@@ -414,16 +424,15 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
     db.close();
   }
 
-  public Poi getIcon(MapWindow mapWindow, float ex, float ey)
+  public PoiLabel getIcon(MapWindow mapWindow, float ex, float ey)
   {
     int dist = 40;
     int dist2 = dist * dist;
 
     double zoom = mapWindow.getZoom();
 
-    for (String type : Waldbrand.getLabelTypes()) {
-      RenderClass renderClass = renderConfig.getRenderClass(type);
-      Set<Label> labels = candidates.get(renderClass.classId);
+    for (int classId : waldbrandClassIds.toArray()) {
+      Set<Label> labels = candidates.get(classId);
       if (labels == null) {
         continue;
       }
@@ -434,7 +443,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
         float x = (float) mapWindow.mercatorToX(mx);
         float y = (float) mapWindow.mercatorToY(my);
         if (distance(ex, ey, x, y) < dist2) {
-          return new Poi(type, label);
+          return (PoiLabel) label;
         }
       }
     }

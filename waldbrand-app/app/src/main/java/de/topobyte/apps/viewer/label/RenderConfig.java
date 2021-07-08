@@ -199,6 +199,11 @@ public class RenderConfig
     return set;
   }
 
+  public boolean isEnabled(int classId)
+  {
+    return enabledIds.contains(classId);
+  }
+
   public TIntList getRelevantClassIds(int zoom)
   {
     TIntList ids = new TIntArrayList();

@@ -432,6 +432,9 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
     double zoom = mapWindow.getZoom();
 
     for (int classId : waldbrandClassIds.toArray()) {
+      if (!renderConfig.isEnabled(classId)) {
+        continue;
+      }
       Set<Label> labels = candidates.get(classId);
       if (labels == null) {
         continue;

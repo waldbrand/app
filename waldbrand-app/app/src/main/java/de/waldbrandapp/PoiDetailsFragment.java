@@ -21,6 +21,7 @@ import static de.topobyte.geomath.WGS84.merc2lat;
 import static de.topobyte.geomath.WGS84.merc2lon;
 import static de.topobyte.mapocado.mapformat.Geo.MERCATOR_SIZE;
 import static de.waldbrandapp.Waldbrand.FIRE_WATER_POND;
+import static de.waldbrandapp.Waldbrand.PILLAR;
 import static de.waldbrandapp.Waldbrand.UNDERGROUND;
 import static de.waldbrandapp.Waldbrand.WATER_TANK;
 import static java.lang.String.format;
@@ -36,6 +37,7 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
   private TextView textViewType;
   private TextView textViewPosition;
   private TextView textViewDiameter;
+  private TextView textViewFlowrate;
   private TextView textViewVolume;
 
   public static PoiDetailsFragment newInstance(PoiLabel poi)
@@ -60,6 +62,7 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
     textViewType = view.findViewById(R.id.type);
     textViewPosition = view.findViewById(R.id.position);
     textViewDiameter = view.findViewById(R.id.diameter);
+    textViewFlowrate = view.findViewById(R.id.flowrate);
     textViewVolume = view.findViewById(R.id.volume);
 
     Bundle args = getArguments();
@@ -74,13 +77,13 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
     textViewPosition.setText(format("Position (lon/lat): %f/%f", lon, lat));
 
     textViewDiameter.setVisibility(GONE);
+    textViewFlowrate.setVisibility(GONE);
     if (type == UNDERGROUND) {
-      int idDiameter = Waldbrand.getStringId("fire_hydrant:diameter");
-      String diameter = tags.get(idDiameter);
-      if (diameter != null) {
-        textViewDiameter.setVisibility(VISIBLE);
-        textViewDiameter.setText(String.format("Innendurchmesser: %smm", diameter));
-      }
+      displayDiameter(tags, 10);
+    }
+
+    if (type == PILLAR) {
+      displayDiameter(tags, 15);
     }
 
     textViewVolume.setVisibility(GONE);
@@ -101,6 +104,24 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
         e -> makeText(requireContext(), "Noch nicht implementiert", LENGTH_SHORT).show());
 
     return view;
+  }
+
+  private void displayDiameter(TIntObjectMap<String> tags, int factor)
+  {
+    int idDiameter = Waldbrand.getStringId("fire_hydrant:diameter");
+    String diameter = tags.get(idDiameter);
+    if (diameter != null) {
+      textViewDiameter.setVisibility(VISIBLE);
+      textViewDiameter.setText(String.format("Innendurchmesser: %smm", diameter));
+      try {
+        int d = Integer.parseInt(diameter);
+        int flowrate = (int) Math.round(d * factor);
+        textViewFlowrate.setVisibility(VISIBLE);
+        textViewFlowrate.setText(String.format("Durchflussleistung: %dl/min", flowrate));
+      } catch (NumberFormatException e) {
+        // ignore for now
+      }
+    }
   }
 
 }

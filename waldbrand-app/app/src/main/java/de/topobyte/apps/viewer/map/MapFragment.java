@@ -37,6 +37,7 @@ import android.widget.ZoomControls;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import org.locationtech.jts.geom.Coordinate;
 
@@ -63,6 +64,8 @@ import de.waldbrandapp.R;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
 
+import static de.waldbrandapp.PoiDetailsFragment.TAG;
+
 public class MapFragment extends Fragment
     implements RenderThemeListener, EasyPermissions.PermissionCallbacks, PoiClickListener
 {
@@ -72,8 +75,17 @@ public class MapFragment extends Fragment
   @Override
   public void onPoiClicked(PoiLabel poi)
   {
+    if (poi == null) {
+      Fragment fragment = getFragmentManager().findFragmentByTag(TAG);
+      if (fragment != null) {
+        BottomSheetDialogFragment bottomSheet = (BottomSheetDialogFragment) fragment;
+        bottomSheet.dismiss();
+      }
+      return;
+    }
+
     PoiDetailsFragment poiDetails = PoiDetailsFragment.newInstance(poi);
-    getFragmentManager().beginTransaction().replace(R.id.bottom, poiDetails).commit();
+    getFragmentManager().beginTransaction().replace(R.id.bottom, poiDetails, TAG).commit();
 
     configureBottomSheetBehavior(true);
   }

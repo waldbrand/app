@@ -192,9 +192,6 @@ public class MapViewWithOverlays extends MapView
     float x = e.getX();
     float y = e.getY();
     PoiLabel poi = labelDrawer.getIcon(mapWindow, x, y);
-    if (poi == null) {
-      return;
-    }
     if (poiClickListener != null) {
       poiClickListener.onPoiClicked(poi);
     }

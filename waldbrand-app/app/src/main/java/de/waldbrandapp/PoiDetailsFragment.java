@@ -50,6 +50,8 @@ import static java.lang.String.format;
 public class PoiDetailsFragment extends BottomSheetDialogFragment
 {
 
+  public static String TAG = PoiDetailsFragment.class.getName();
+
   private static final String ARG_TYPE = "type";
   private static final String ARG_X = "x";
   private static final String ARG_Y = "y";

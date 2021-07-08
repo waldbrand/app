@@ -75,11 +75,18 @@ public class MapFragment extends Fragment
     PoiDetailsFragment poiDetails = PoiDetailsFragment.newInstance(poi);
     getFragmentManager().beginTransaction().replace(R.id.bottom, poiDetails).commit();
 
+    configureBottomSheetBehavior(true);
+  }
+
+  private void configureBottomSheetBehavior(boolean expand)
+  {
     BottomSheetBehavior<FrameLayout> bottomSheet = BottomSheetBehavior.from(bottom);
     bottomSheet.setPeekHeight(120);
     bottomSheet.setHideable(true);
     bottomSheet.setFitToContents(true);
-    bottomSheet.setState(BottomSheetBehavior.STATE_EXPANDED);
+    if (expand) {
+      bottomSheet.setState(BottomSheetBehavior.STATE_EXPANDED);
+    }
   }
 
   public interface OnViewCreatedListener
@@ -276,6 +283,8 @@ public class MapFragment extends Fragment
     renderThemeChanged(global.getRenderConfig());
 
     map.postInvalidate();
+
+    configureBottomSheetBehavior(false);
 
     if (bundle == null) {
       return view;

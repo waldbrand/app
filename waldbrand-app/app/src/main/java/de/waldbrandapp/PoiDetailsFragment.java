@@ -17,6 +17,8 @@
 
 package de.waldbrandapp;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +31,8 @@ import androidx.annotation.Nullable;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.slimjars.dist.gnu.trove.map.TIntObjectMap;
+
+import java.util.Locale;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -117,8 +121,7 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
     Button buttonEdit = view.findViewById(R.id.buttonEdit);
     buttonShare.setOnClickListener(
         e -> makeText(requireContext(), "Noch nicht implementiert", LENGTH_SHORT).show());
-    buttonEdit.setOnClickListener(
-        e -> makeText(requireContext(), "Noch nicht implementiert", LENGTH_SHORT).show());
+    buttonEdit.setOnClickListener(e -> openEditor(lon, lat));
 
     return view;
   }
@@ -139,6 +142,16 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
         // ignore for now
       }
     }
+  }
+
+  private void openEditor(double lon, double lat)
+  {
+    int zoom = 17;
+    String pattern =
+        "https://waldbrand-app.de/mapcomplete/waldbrand.html?z=%d&lat=%f&lon=%f";
+    String link = format(Locale.US, pattern, zoom, lat, lon);
+    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+    startActivity(intent);
   }
 
 }

@@ -148,7 +148,7 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
   {
     int zoom = 17;
     String pattern =
-        "https://waldbrand-app.de/mapcomplete/waldbrand.html?z=%d&lat=%f&lon=%f";
+        "https://waldbrand-app.de/mapcomplete/waldbrand.html?z=%d&lat=%f&lon=%f#start";
     String link = format(Locale.US, pattern, zoom, lat, lon);
     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
     startActivity(intent);

@@ -75,6 +75,9 @@ public class MapFragment extends Fragment
   @Override
   public void onPoiClicked(PoiLabel poi)
   {
+    map.getLabelDrawer().setSelected(poi);
+    map.postInvalidate();
+
     if (poi == null) {
       Fragment fragment = getFragmentManager().findFragmentByTag(TAG);
       if (fragment != null) {

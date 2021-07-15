@@ -22,6 +22,7 @@ import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
@@ -90,6 +91,8 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
   private RenderConfig renderConfig;
 
   private TIntList waldbrandClassIds = new TIntArrayList();
+
+  private Label selected = null;
 
   public synchronized void openDatabase()
   {
@@ -283,11 +286,21 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
       double mx = Mercator.getX(label.x, mapWindow.getZoom());
       double my = Mercator.getY(label.y, mapWindow.getZoom());
 
-      float x = (float) mapWindow.mercatorToX(mx) - w / 2;
-      float y = (float) mapWindow.mercatorToY(my) - h / 2;
+      double cx = mapWindow.mercatorToX(mx);
+      double cy = mapWindow.mercatorToY(my);
+
+      float x = (float) cx - w / 2;
+      float y = (float) cy - h / 2;
+
+      if (label == selected) {
+        Paint p = new Paint();
+        p.setColor(0x66ff0000);
+
+        float radius = ((w + h) / 4) * 1.7f;
+        canvas.drawCircle((float) cx, (float) cy, radius, p);
+      }
       canvas.drawBitmap(bitmap, x, y, null);
     }
-
   }
 
   private void renderDots(int type, SteplessMapWindow mapWindow, BBox bbox,
@@ -456,6 +469,11 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
   private float distance(float x1, float y1, float x2, float y2)
   {
     return (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
+  }
+
+  public void setSelected(Label label)
+  {
+    selected = label;
   }
 
 }

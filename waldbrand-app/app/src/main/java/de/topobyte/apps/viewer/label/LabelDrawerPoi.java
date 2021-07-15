@@ -90,7 +90,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
 
   private RenderConfig renderConfig;
 
-  private TIntList waldbrandClassIds = new TIntArrayList();
+  private final TIntList waldbrandClassIds = new TIntArrayList();
 
   private Label selected = null;
 
@@ -256,7 +256,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
     Bitmap bitmap = symbolsCache.get(imageName);
 
     if (bitmap == null) {
-      BvgImage image = null;
+      BvgImage image;
       File file = renderConfig.getSymbol(imageName);
 
       try {
@@ -289,14 +289,14 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
       double cx = mapWindow.mercatorToX(mx);
       double cy = mapWindow.mercatorToY(my);
 
-      float x = (float) cx - w / 2;
-      float y = (float) cy - h / 2;
+      float x = (float) cx - w / 2f;
+      float y = (float) cy - h / 2f;
 
       if (label == selected) {
         Paint p = new Paint();
         p.setColor(0x66ff0000);
 
-        float radius = ((w + h) / 4) * 1.7f;
+        float radius = ((w + h) / 4f) * 1.7f;
         canvas.drawCircle((float) cx, (float) cy, radius, p);
       }
       canvas.drawBitmap(bitmap, x, y, null);
@@ -335,6 +335,9 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
     Map<String, Bitmap> bm = bitmaps.get(type);
 
     List<LabelBox> basket = renderedLabels.get(type);
+    if (basket == null) {
+      return;
+    }
     basket.clear();
 
     if (labels == null) {
@@ -382,8 +385,6 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
 
     double zoom = mapWindow.getZoom();
 
-    int id = type;
-
     AndroidTimeUtil.time("render-intersect");
     Log.i(LOG, "LabelDrawer: labels are null: " + (labels == null));
     Log.i(LOG, "LabelDrawer: I got " + labels.size() + " labels");
@@ -403,7 +404,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
       float x = (float) mapWindow.mercatorToX(mx);
       float y = (float) mapWindow.mercatorToY(my);
 
-      int bx = Math.round(x - label.width / 2);
+      int bx = Math.round(x - label.width / 2f);
       int by = Math.round(y + labelClass.dy);
 
       int itemId = label.getId();
@@ -415,9 +416,8 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
       // try primary position
       r.set(bx, by, bx + label.width, by + lbc.height);
       if (tester.isFree(r)) {
-        use(id, label, labelClass, canvas, tester, bm, r, basket);
+        use(type, label, labelClass, canvas, tester, bm, r, basket);
         usedIds.add(itemId);
-        continue;
       }
     }
     AndroidTimeUtil.time("render-intersect", LOG_TIMES,

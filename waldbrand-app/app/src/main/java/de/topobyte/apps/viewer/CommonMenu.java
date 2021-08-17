@@ -22,7 +22,9 @@ import android.view.MenuItem;
 
 import androidx.fragment.app.FragmentActivity;
 
-import de.topobyte.android.intent.utils.AppMetaIntents;
+import java.util.Locale;
+
+import de.topobyte.android.intent.utils.IntentFactory;
 import de.topobyte.apps.viewer.activities.AboutActivity;
 import de.topobyte.apps.viewer.activities.PrivacyActivity;
 import de.topobyte.apps.viewer.preferences.SettingsActivity;
@@ -53,7 +55,9 @@ public class CommonMenu
         return true;
 
       case R.id.menu_faq:
-        intent = AppMetaIntents.createFAQIntent(context);
+        String language = Locale.getDefault().getLanguage();
+        intent = IntentFactory
+            .createUrlIntent("https://waldbrand-app.de/android-app/faq?lang=" + language);
         context.startActivity(intent);
         return true;
 

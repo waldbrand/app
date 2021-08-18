@@ -124,11 +124,11 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
 
     textViewId.setVisibility(GONE);
     if (type == RETTUNGSPUNKT) {
-      int idId = Waldbrand.getStringId("rettungspunkt-id");
-      String id = tags.get(idId);
-      if (id != null) {
+      int idNr = Waldbrand.getStringId("rettungspunkt-nr");
+      String nr = tags.get(idNr);
+      if (nr != null) {
         textViewId.setVisibility(VISIBLE);
-        textViewId.setText(String.format("Nummer: %s", id));
+        textViewId.setText(String.format("Nummer: %s", nr));
       }
     }
 

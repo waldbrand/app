@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DIR=$(dirname $0)
-REPO="$DIR/../"
+REPO="$DIR/../.."
 MATERIAL="$REPO/../material"
 MARKERS="$MATERIAL/marker/vectorized-font"
 

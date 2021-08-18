@@ -259,5 +259,10 @@
 				<rule key="suction-point2" />
 			</rule>
 		</label>
+		<label parent="icon-base" fg="blue" bg="white" image="rettungspunkt.bvg" image-height="28">
+			<rule min="14" max="24">
+				<rule key="rettungspunkt" />
+			</rule>
+		</label>
 	</labels>
 </labelconfig>

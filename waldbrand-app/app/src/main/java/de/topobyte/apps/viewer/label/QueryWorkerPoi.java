@@ -213,7 +213,6 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
         System.out.println("nodes: " + nodes.size());
         for (Node node : nodes) {
           TIntObjectHashMap<String> tags = node.getTags();
-
           TIntArrayList classes = node.getClasses();
           for (int ci : classes.toArray()) {
             RenderClass renderClass = classMappingWaldbrand.getRenderClass(ci);

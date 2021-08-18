@@ -208,6 +208,7 @@
     <string name="cat_water_ponds">Water ponds</string>
     <string name="cat_water_tank">Water tanks</string>
     <string name="cat_suction_point">Suction points</string>
+    <string name="cat_emergency_access_point">Emergency access point</string>
 
     <string name="cat_misc">Misc</string>
     <string name="cat_banks_atms">Banks &amp; ATMs</string>

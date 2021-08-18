@@ -206,6 +206,7 @@
     <string name="cat_water_ponds">Löschwasserteiche</string>
     <string name="cat_water_tank">Wasserspeicher</string>
     <string name="cat_suction_point">Saugstellen</string>
+    <string name="cat_emergency_access_point">Rettungspunkte</string>
 
     <string name="cat_misc">Verschiedenes</string>
     <string name="cat_banks_atms">Banken und Automaten</string>

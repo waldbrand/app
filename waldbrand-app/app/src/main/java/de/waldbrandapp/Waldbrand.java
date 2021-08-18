@@ -38,6 +38,7 @@ public class Waldbrand
   public static final int FIRE_WATER_POND = 4;
   public static final int SUCTION_POINT = 5;
   public static final int PIPE = 6;
+  public static final int RETTUNGSPUNKT = 7;
 
   private static List<String> labelTypes = new ArrayList<>();
   private static Map<String, String> typeToName = new HashMap<>();
@@ -46,18 +47,30 @@ public class Waldbrand
   private static StringPool stringPool;
 
   static {
-    add("hydrant-underground", "Unterflurhydrant", UNDERGROUND);
-    add("hydrant-pillar", "Überflurhydrant", PILLAR);
-    add("water-tank", "Wasserspeicher", WATER_TANK);
-    add("fire-water-pond", "Löschwasserteich", FIRE_WATER_POND);
-    add("suction-point", "Saugstelle", SUCTION_POINT);
-    add("hydrant-pipe", "Flachspiegelbrunnen", PIPE);
+    add2("hydrant-underground", "Unterflurhydrant", UNDERGROUND);
+    add2("hydrant-pillar", "Überflurhydrant", PILLAR);
+    add2("water-tank", "Wasserspeicher", WATER_TANK);
+    add2("fire-water-pond", "Löschwasserteich", FIRE_WATER_POND);
+    add2("suction-point", "Saugstelle", SUCTION_POINT);
+    add2("hydrant-pipe", "Flachspiegelbrunnen", PIPE);
+    add("rettungspunkt", "Rettungspunkt", RETTUNGSPUNKT);
   }
 
   private static void add(String type, String name, int constant)
   {
+    add(type, name, constant, false);
+  }
+
+  private static void add2(String type, String name, int constant)
+  {
+    add(type, name, constant, true);
+  }
+
+  private static void add(String type, String name, int constant, boolean add2)
+  {
     constantToName.put(constant, name);
-    for (String t : new String[]{type, type + "2"}) {
+    String[] types = add2 ? new String[]{type, type + "2"} : new String[]{type};
+    for (String t : types) {
       labelTypes.add(t);
       typeToName.put(t, name);
       typeToConstant.put(t, constant);

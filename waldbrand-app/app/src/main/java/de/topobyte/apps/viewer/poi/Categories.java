@@ -152,6 +152,9 @@ public class Categories
         "fire-water-pond", "fire-water-pond2"));
     waldbrand.add(new DatabaseCategory(R.string.cat_suction_point, "c:suction_point",
         "suction-point", "suction-point2"));
+    waldbrand
+        .add(new DatabaseCategory(R.string.cat_emergency_access_point, "c:emergency_access_point",
+            "rettungspunkt"));
 
     Group transportation = new Group(R.string.cat_transportation);
     groups.add(transportation);

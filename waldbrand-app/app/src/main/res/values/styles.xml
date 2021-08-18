@@ -20,8 +20,8 @@
 
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="colorAccent">#33b5e5</item>
-        <item name="colorPrimary">#9FA8DA</item>
-        <item name="colorPrimaryDark">#5C6BC0</item>
+        <item name="colorPrimary">#F44336</item>
+        <item name="colorPrimaryDark">#B71C1C</item>
     </style>
 
     <style name="DialogFont">

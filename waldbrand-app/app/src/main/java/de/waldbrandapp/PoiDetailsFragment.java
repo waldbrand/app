@@ -17,6 +17,20 @@
 
 package de.waldbrandapp;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+import static android.widget.Toast.LENGTH_SHORT;
+import static android.widget.Toast.makeText;
+import static java.lang.String.format;
+import static de.topobyte.geomath.WGS84.merc2lat;
+import static de.topobyte.geomath.WGS84.merc2lon;
+import static de.topobyte.mapocado.mapformat.Geo.MERCATOR_SIZE;
+import static de.waldbrandapp.Waldbrand.FIRE_WATER_POND;
+import static de.waldbrandapp.Waldbrand.PILLAR;
+import static de.waldbrandapp.Waldbrand.RETTUNGSPUNKT;
+import static de.waldbrandapp.Waldbrand.UNDERGROUND;
+import static de.waldbrandapp.Waldbrand.WATER_TANK;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -34,19 +48,6 @@ import com.slimjars.dist.gnu.trove.map.TIntObjectMap;
 
 import java.util.Locale;
 
-import static android.view.View.GONE;
-import static android.view.View.VISIBLE;
-import static android.widget.Toast.LENGTH_SHORT;
-import static android.widget.Toast.makeText;
-import static de.topobyte.geomath.WGS84.merc2lat;
-import static de.topobyte.geomath.WGS84.merc2lon;
-import static de.topobyte.mapocado.mapformat.Geo.MERCATOR_SIZE;
-import static de.waldbrandapp.Waldbrand.FIRE_WATER_POND;
-import static de.waldbrandapp.Waldbrand.PILLAR;
-import static de.waldbrandapp.Waldbrand.UNDERGROUND;
-import static de.waldbrandapp.Waldbrand.WATER_TANK;
-import static java.lang.String.format;
-
 public class PoiDetailsFragment extends BottomSheetDialogFragment
 {
 
@@ -62,6 +63,7 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
   private TextView textViewDiameter;
   private TextView textViewFlowrate;
   private TextView textViewVolume;
+  private TextView textViewId;
 
   public static PoiDetailsFragment newInstance(PoiLabel poi)
   {
@@ -87,6 +89,7 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
     textViewDiameter = view.findViewById(R.id.diameter);
     textViewFlowrate = view.findViewById(R.id.flowrate);
     textViewVolume = view.findViewById(R.id.volume);
+    textViewId = view.findViewById(R.id.id);
 
     Bundle args = getArguments();
     int type = args.getInt(ARG_TYPE);
@@ -116,6 +119,16 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
       if (volume != null) {
         textViewVolume.setVisibility(VISIBLE);
         textViewVolume.setText(String.format("Volumen: %s", volume));
+      }
+    }
+
+    textViewId.setVisibility(GONE);
+    if (type == RETTUNGSPUNKT) {
+      int idId = Waldbrand.getStringId("rettungspunkt-id");
+      String id = tags.get(idId);
+      if (id != null) {
+        textViewId.setVisibility(VISIBLE);
+        textViewId.setText(String.format("Nummer: %s", id));
       }
     }
 

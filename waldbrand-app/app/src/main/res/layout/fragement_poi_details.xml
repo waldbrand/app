@@ -54,6 +54,14 @@
             android:textSize="16dp"
             tools:text="Volumen: 300m³" />
 
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="16dp"
+            tools:text="Number: 1234" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

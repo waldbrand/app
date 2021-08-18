@@ -13,15 +13,43 @@
     <View style="@style/MediumSpacer" />
 
     <TextView
-        android:id="@+id/textViewMapCopyright"
+        style="@style/Subhead"
+        android:text="@string/base_data" />
+
+    <TextView
+        android:id="@+id/textViewMapCopyrightOSM"
         style="@style/Text"
-        android:text="@string/map_copyright"
+        android:text="@string/copyright_osm"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textViewMapLicense"
+        android:id="@+id/textViewMapLicenseOSM"
         style="@style/Text"
-        android:text="@string/map_license"
+        android:text="@string/license_osm"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <View style="@style/MediumSpacer" />
+
+    <TextView
+        style="@style/Subhead"
+        android:text="@string/emergency_access_points" />
+
+    <TextView
+        android:id="@+id/textViewEmergencyAccessPointsCopyright"
+        style="@style/Text"
+        android:text="@string/copyright_lfb"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textViewEmergencyAccessPointsLicense"
+        style="@style/Text"
+        android:text="@string/license_dl_de_by_20"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textViewEmergencyAccessPointsLink"
+        style="@style/Text"
+        android:text="@string/link_dataset"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </merge>

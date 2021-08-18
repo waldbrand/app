@@ -286,8 +286,14 @@
     <string name="disclaimer">Dieses Programm wurde mit großer Sorgfalt erstellt, um Ihnen zu helfen diese Stadt zu erkunden. Die Daten, die es darstellt stammen aus dem OpenStreetMap-Projekt. Dadurch, dass die OpenStreetMap ein Gemeinschaftsprojekt ist, für das viele Individuen die Daten sammeln, können wir keinerlei Gewährleistung über die Genauigkeit, Korrektheit, Vollständigkeit oder Verlässlichkeit der dargestellten Informationen geben. Dies trifft insbesondere auf alle ortsbezogenen Daten, die auf der Karte dargestellt werden, sowie Telefonnummern oder Internetadressen zu. Da wir die Stimmigkeit der Daten nicht garantieren können, wird diese Software „wie sie ist“ angeboten, ohne jegliche Garantie. Demzufolge sollten Sie sich nicht auf diese Informationen verlassen, sondern immer auch andere Quellen zu Rate ziehen. Insbesondere im Straßenverkehr gilt selbstverständlich immer die örtliche Beschilderung.</string>
 
     <string name="map_data">Kartendaten</string>
-    <string name="map_copyright">© OpenStreetMap contributors</string>
-    <string name="map_license">Lizenz: Open Data Commons Open Database License (ODbL)</string>
+    <string name="base_data">Basisdaten and Wasserentnahmestellen</string>
+    <string name="copyright_osm">© OpenStreetMap contributors</string>
+    <string name="license_osm">Lizenz: Open Data Commons Open Database License (ODbL)</string>
+
+    <string name="emergency_access_points">Rettungspunkte</string>
+    <string name="copyright_lfb">© Landesbetrieb Forst Brandenburg</string>
+    <string name="license_dl_de_by_20">Lizenz: Datenlizenz Deutschland – Namensnennung – Version 2.0 (dl-de/by-2-0)</string>
+    <string name="link_dataset">Verweis zum Datensatz</string>
 
     <!-- privacy dialog -->
 

@@ -158,7 +158,7 @@ public class MapView extends BaseMapView
 
     // draw overlay text at the bottom
 
-    String copyright = "Map data by OpenStreetMap";
+    String copyright = "Map data by OpenStreetMap, Landesbetrieb Forst Brandenburg";
     textOverlayDrawer.drawBottomLeft(canvas, copyright, margin, getHeight());
   }
 

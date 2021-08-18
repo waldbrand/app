@@ -288,8 +288,14 @@
     <string name="disclaimer">This program has been implemented with great care to help you exploring this city. The data it presents has been taken from the OpenStreetMap project. Because of OpenStreetMap\'s collaborative way of collecting data, we cannot make warranties of any kind about the accurateness, correctness, completeness or reliability of the information presented here. This applies especially to all location based information presented on the map as well as information such as telephone numbers or website URLs. Because we cannot guarantee the validity of the data presented, this software is provided on an \"As Is\" basis without a warranty of any kind. Thus you should not rely on the information presented here, but instead always consider additional sources of information as well. Especially in road transportation, local traffic signs and traffic lights do of course apply and take precedence over any information on this map.</string>
 
     <string name="map_data">Map data</string>
-    <string name="map_copyright">© OpenStreetMap contributors</string>
-    <string name="map_license">License: Open Data Commons Open Database License (ODbL)</string>
+    <string name="base_data">Base data and hydrants</string>
+    <string name="copyright_osm">© OpenStreetMap contributors</string>
+    <string name="license_osm">License: Open Data Commons Open Database License (ODbL)</string>
+
+    <string name="emergency_access_points">Emergency access points</string>
+    <string name="copyright_lfb">© Landesbetrieb Forst Brandenburg</string>
+    <string name="license_dl_de_by_20">License: Data licence Germany – attribution – version 2.0 (dl-de/by-2-0)</string>
+    <string name="link_dataset">Reference to the dataset</string>
 
     <string name="fb_mail">Send us an email</string>
 

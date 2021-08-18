@@ -68,13 +68,22 @@ public class AboutActivity extends PlainActivity
     Linkify.addLinks(license, Pattern.compile(getString(R.string.gpl_3_0)), "", allFilter,
         new StaticUrlTransformer("https://www.gnu.org/licenses/gpl-3.0.en.html"));
 
-    TextView mapCopyright = findViewById(R.id.textViewMapCopyright);
-    TextView mapLicense = findViewById(R.id.textViewMapLicense);
+    TextView copyrightOSM = findViewById(R.id.textViewMapCopyrightOSM);
+    TextView licenseOSM = findViewById(R.id.textViewMapLicenseOSM);
 
-    Linkify.addLinks(mapCopyright, Pattern.compile("OpenStreetMap"), "", allFilter,
+    Linkify.addLinks(copyrightOSM, Pattern.compile("OpenStreetMap"), "", allFilter,
         new StaticUrlTransformer("http://openstreetmap.org/about"));
-    Linkify.addLinks(mapLicense, Pattern.compile("Open Database License"), "", allFilter,
+    Linkify.addLinks(licenseOSM, Pattern.compile("Open Database License"), "", allFilter,
         new StaticUrlTransformer("http://opendatacommons.org/licenses/odbl"));
+
+    TextView licenseLFB = findViewById(R.id.textViewEmergencyAccessPointsLicense);
+    TextView linkLFB = findViewById(R.id.textViewEmergencyAccessPointsLink);
+
+    Linkify.addLinks(licenseLFB, Pattern.compile("[^:]+"), "", (s, start, end) -> start != 0,
+        new StaticUrlTransformer("https://www.govdata.de/dl-de/by-2-0"));
+    Linkify.addLinks(linkLFB, Pattern.compile(".*"), "", allFilter,
+        new StaticUrlTransformer(
+            "https://geoportal.brandenburg.de/detailansichtdienst/render?view=gdibb&url=https%3A%2F%2Fregistry.gdi-de.org%2Fid%2Fde.bb.metadata%2F8D7BE274-EB8A-4E63-8111-A0E5A0CBFC12"));
   }
 
   private void setupFeedback()

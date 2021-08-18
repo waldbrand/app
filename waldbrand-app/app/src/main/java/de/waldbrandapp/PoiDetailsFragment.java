@@ -97,6 +97,8 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
     int y = args.getInt(ARG_Y);
     TIntObjectMap<String> tags = (TIntObjectMap<String>) args.getSerializable(ARG_TAGS);
 
+    boolean displayEditButton = true;
+
     textViewType.setText(Waldbrand.getName(type));
     double lon = merc2lon(x, MERCATOR_SIZE);
     double lat = merc2lat(y, MERCATOR_SIZE);
@@ -124,6 +126,7 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
 
     textViewId.setVisibility(GONE);
     if (type == RETTUNGSPUNKT) {
+      displayEditButton = false;
       int idNr = Waldbrand.getStringId("rettungspunkt-nr");
       String nr = tags.get(idNr);
       if (nr != null) {
@@ -137,6 +140,10 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
     buttonShare.setOnClickListener(
         e -> makeText(requireContext(), "Noch nicht implementiert", LENGTH_SHORT).show());
     buttonEdit.setOnClickListener(e -> openEditor(lon, lat));
+
+    if (!displayEditButton) {
+      buttonEdit.setVisibility(GONE);
+    }
 
     return view;
   }

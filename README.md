@@ -20,21 +20,24 @@ Clone the repository recursively (including submodules):
 
     git clone --recursive https://github.com/waldbrand/app.git
 
+Afterwards go to the directory `waldbrand-app` for the following
+steps.
+
 ## Add local map and database files
 
-You need a map file and database to build the app in directory
-`app/src/main/assets`. The map file is called `map.xmap.jet` and the
-database is called `map.sqlite.jet`.
+You need a few asset files that contain map data in order to build the app.
+Those files need to be put in directory
+`app/src/main/assets`.
+You need a map file called `map.xmap.jet` for the base layers from
+OpenStreetMap, a database called `map.sqlite.jet` for the search
+functionality and another map file called `waldbrand.xmap.jet`
+that contains hydrants, emergency access points etc.
 
-You can download example files for Berlin using this script:
+Those files can be obtained or created as described in the
+[waldbrand/website](https://github.com/waldbrand/website)
+repository.
 
-    ./data/get-berlin-data.sh
-
-There a few more scripts for other cities:
-
-    ./data/get-bayreuth-data.sh
-    ./data/get-cambridge-data.sh
-    ./data/get-cottbus-data.sh
+## Android SDK
 
 Create a `local.properties` file:
 

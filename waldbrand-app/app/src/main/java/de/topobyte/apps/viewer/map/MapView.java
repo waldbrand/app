@@ -189,8 +189,8 @@ public class MapView extends BaseMapView
     int h2 = height / 2;
     int w2 = width / 2;
     float radius = 25 * global.getDensity();
-    float f = 4;
-    canvas.drawCircle(w2, h2, radius, paintReticle);
+    float f = 3;
+    // canvas.drawCircle(w2, h2, radius, paintReticle);
     canvas.drawLine(w2 - radius, h2, w2 - radius + radius / f, h2, paintReticle);
     canvas.drawLine(w2 + radius, h2, w2 + radius - radius / f, h2, paintReticle);
     canvas.drawLine(w2, h2 - radius, w2, h2 - radius + radius / f, paintReticle);

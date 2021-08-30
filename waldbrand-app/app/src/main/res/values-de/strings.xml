@@ -98,6 +98,8 @@
     <string name="preferences_show_zoom_level_desc">Die aktuelle Zoomstufe oben links einblenden</string>
     <string name="preferences_show_coordinates">Koordinaten anzeigen</string>
     <string name="preferences_show_coordinates_desc">Die Koordinaten des Zentrums des aktuellen Kartenausschnitts oben links einblenden</string>
+    <string name="preferences_show_reticle">Fadenkreuz anzeigen</string>
+    <string name="preferences_show_reticle_desc">Ein Fadenkreuz anzeigen um die Kartenmitte hervorzuheben</string>
 
     <!-- search -->
 

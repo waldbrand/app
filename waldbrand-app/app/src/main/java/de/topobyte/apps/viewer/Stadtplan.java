@@ -369,11 +369,14 @@ public class Stadtplan extends MapActivity implements OverlayListener,
         preferences.getBoolean(Constants.PREF_SHOW_ZOOM_LEVEL, Constants.DEFAULT_SHOW_ZOOM_LEVEL);
     boolean showCoordinates =
         preferences.getBoolean(Constants.PREF_SHOW_COORDINATES, Constants.DEFAULT_SHOW_COORDINATES);
+    boolean showReticle =
+        preferences.getBoolean(Constants.PREF_SHOW_RETICLE, Constants.DEFAULT_SHOW_RETICLE);
 
     MapViewWithOverlays map = mapFragment.getMap();
     map.setDrawGrid(showGrid);
     map.setDrawZoomLevel(showZoomLevel);
     map.setDrawPosition(showCoordinates);
+    map.setDrawReticle(showReticle);
   }
 
   /**

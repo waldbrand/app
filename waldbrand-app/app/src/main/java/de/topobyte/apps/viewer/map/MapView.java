@@ -19,6 +19,7 @@ package de.topobyte.apps.viewer.map;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.util.AttributeSet;
 
 import java.io.IOException;
@@ -75,6 +76,8 @@ public class MapView extends BaseMapView
   protected float overlayBgStroke = 2;
   protected float margin = 5;
 
+  private Paint paintReticle = new Paint(Paint.ANTI_ALIAS_FLAG);
+
   // initialization, called on construction
 
   protected void init()
@@ -104,6 +107,12 @@ public class MapView extends BaseMapView
     textOverlayDrawer = new TextOverlayDrawer(overlayTextSize,
         overlayBgStroke, global.getDensity());
 
+    paintReticle.setColor(0xFF000000);
+    paintReticle.setStrokeCap(Paint.Cap.ROUND);
+    paintReticle.setStrokeJoin(Paint.Join.ROUND);
+    paintReticle.setStyle(Paint.Style.STROKE);
+    paintReticle.setStrokeWidth(2.0f);
+
     mapWindow.addZoomListener(() -> global.updateCacheSize(calculateCacheSize()));
   }
 
@@ -120,6 +129,7 @@ public class MapView extends BaseMapView
 
   protected boolean drawZoomLevel = false;
   protected boolean drawPosition = false;
+  protected boolean drawReticle = false;
 
   public void setDrawZoomLevel(boolean drawZoomLevel)
   {
@@ -131,6 +141,11 @@ public class MapView extends BaseMapView
     this.drawPosition = drawPosition;
   }
 
+  public void setDrawReticle(boolean drawReticle)
+  {
+    this.drawReticle = drawReticle;
+  }
+
   public void setDrawGrid(boolean drawGrid)
   {
     super.setDrawGrid(drawGrid);
@@ -140,6 +155,11 @@ public class MapView extends BaseMapView
   protected void onDraw(Canvas canvas)
   {
     super.onDraw(canvas);
+
+    // draw reticle
+    if (drawReticle) {
+      drawReticle(canvas);
+    }
 
     // draw overlay text at the top
 
@@ -160,6 +180,17 @@ public class MapView extends BaseMapView
 
     String copyright = "Map data by OpenStreetMap, Landesbetrieb Forst Brandenburg";
     textOverlayDrawer.drawBottomLeft(canvas, copyright, margin, getHeight());
+  }
+
+  private void drawReticle(Canvas canvas)
+  {
+    int height = getHeight();
+    int width = getWidth();
+    int h2 = height / 2;
+    int w2 = width / 2;
+    canvas.drawCircle(w2, h2, 25 * global.getDensity(), paintReticle);
+    canvas.drawLine(0, h2, width, h2, paintReticle);
+    canvas.drawLine(w2, 0, w2, height, paintReticle);
   }
 
   /*

@@ -100,6 +100,8 @@
     <string name="preferences_show_zoom_level_desc">Display the current zoom level in the upper left corner</string>
     <string name="preferences_show_coordinates">Show coordinates</string>
     <string name="preferences_show_coordinates_desc">Display the current coordinates of the map center in the upper left corner</string>
+    <string name="preferences_show_reticle">Show reticle</string>
+    <string name="preferences_show_reticle_desc">Display a reticle to highlight the center of the map</string>
 
     <!-- search -->
 

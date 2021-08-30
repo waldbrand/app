@@ -57,6 +57,10 @@
             android:summary="@string/preferences_show_coordinates_desc"
             android:title="@string/preferences_show_coordinates" />
         <CheckBoxPreference
+            android:key="showReticle"
+            android:summary="@string/preferences_show_reticle_desc"
+            android:title="@string/preferences_show_reticle" />
+        <CheckBoxPreference
             android:key="showZoomLevel"
             android:summary="@string/preferences_show_zoom_level_desc"
             android:title="@string/preferences_show_zoom_level" />

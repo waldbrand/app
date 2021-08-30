@@ -147,7 +147,7 @@ public class MapView extends BaseMapView
     if (drawPosition) {
       double lon = mapWindow.getCenterLon();
       double lat = mapWindow.getCenterLat();
-      String text = String.format("Position (lon/lat): %f %f", lon, lat);
+      String text = String.format("Kartenmitte (lon/lat): %f %f", lon, lat);
       textOverlayDrawer.drawTopLeft(canvas, text, margin, line++);
     }
 

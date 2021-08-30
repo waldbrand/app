@@ -107,7 +107,7 @@ public class MapView extends BaseMapView
     textOverlayDrawer = new TextOverlayDrawer(overlayTextSize,
         overlayBgStroke, global.getDensity());
 
-    paintReticle.setColor(0xFF000000);
+    paintReticle.setColor(0x99000000);
     paintReticle.setStrokeCap(Paint.Cap.ROUND);
     paintReticle.setStrokeJoin(Paint.Join.ROUND);
     paintReticle.setStyle(Paint.Style.STROKE);
@@ -188,9 +188,10 @@ public class MapView extends BaseMapView
     int width = getWidth();
     int h2 = height / 2;
     int w2 = width / 2;
-    canvas.drawCircle(w2, h2, 25 * global.getDensity(), paintReticle);
-    canvas.drawLine(0, h2, width, h2, paintReticle);
-    canvas.drawLine(w2, 0, w2, height, paintReticle);
+    float radius = 25 * global.getDensity();
+    canvas.drawCircle(w2, h2, radius, paintReticle);
+    canvas.drawLine(w2 - radius, h2, w2 + radius, h2, paintReticle);
+    canvas.drawLine(w2, h2 - radius, w2, h2 + radius, paintReticle);
   }
 
   /*

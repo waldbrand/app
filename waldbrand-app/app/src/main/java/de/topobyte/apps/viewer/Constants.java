@@ -45,7 +45,7 @@ public class Constants
   public static final int DEFAULT_MOVE_SPEED = 100;
   public static final int MAX_MOVE_SPEED = 500;
 
-  public static final boolean DEFAULT_HAS_SCALE_BAR = false;
+  public static final boolean DEFAULT_HAS_SCALE_BAR = true;
 
   public static final int DEFAULT_MAGNIFICATION = 100;
 

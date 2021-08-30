@@ -28,7 +28,6 @@ import de.topobyte.android.appversions.VersionUpdateChecker;
 import de.topobyte.android.loader3.TaskFragment;
 import de.topobyte.android.maps.utils.MagnificationConfig;
 import de.topobyte.apps.viewer.map.MapPreferenceAbstraction;
-import de.topobyte.apps.viewer.theme.ThemeConfig;
 import de.waldbrandapp.BuildConfig;
 
 public class InitFragment extends TaskFragment
@@ -64,8 +63,8 @@ public class InitFragment extends TaskFragment
 
       initializeMagnificationSettings();
 
-      if (versionUpdateChecker.getStoredVersion() < 80) {
-        initializeThemes();
+      if (versionUpdateChecker.getStoredVersion() < 7) {
+        setScaleBarEnabledByDefault();
       }
 
       if (versionUpdateChecker.getStoredVersion() < 91 || forceCopyDatabase) {
@@ -123,16 +122,13 @@ public class InitFragment extends TaskFragment
     editor.commit();
   }
 
-  private void initializeThemes()
+  private void setScaleBarEnabledByDefault()
   {
     SharedPreferences preferences = PreferenceManager
         .getDefaultSharedPreferences(getActivity());
 
-    ThemeConfig themeConfig = new ThemeConfig();
-    String renderThemeKey = themeConfig.getDefaultThemeKey();
-
     SharedPreferences.Editor editor = preferences.edit();
-    editor.putString(Constants.PREF_RENDER_THEME, renderThemeKey);
+    editor.putBoolean(Constants.PREF_SHOW_SCALE_BAR, Constants.DEFAULT_HAS_SCALE_BAR);
     editor.commit();
   }
 

@@ -51,8 +51,6 @@ public class Constants
 
   public static boolean DEFAULT_TIPS_AT_STARTUP = true;
 
-  public static boolean DEFAULT_PERSONALIZED_ADS = true;
-
   public static String[] PERMS_LOCATION_ARRAY = {Manifest.permission.ACCESS_FINE_LOCATION};
   public static List<String> PERMS_LOCATION_LIST = Arrays.asList(PERMS_LOCATION_ARRAY);
   public static final int RC_LOCATION_UPDATES = 1;

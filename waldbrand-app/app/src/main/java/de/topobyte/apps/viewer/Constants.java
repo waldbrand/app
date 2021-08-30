@@ -25,7 +25,6 @@ import java.util.List;
 public class Constants
 {
 
-  public static final String PREF_FULLSCREEN = "fullscreen";
   public static final String PREF_HAS_WAKE_LOCK = "wakeLock";
   public static final String PREF_MOVE_SPEED = "moveSpeed";
   public static final String PREF_RENDER_THEME = "renderTheme";

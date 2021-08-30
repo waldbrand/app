@@ -63,7 +63,7 @@ public class InitFragment extends TaskFragment
       initializeMagnificationSettings();
 
       if (versionUpdateChecker.getStoredVersion() < 7) {
-        setScaleBarEnabledByDefault();
+        enabledByDefaultScaleBarCoordinatesAndReticle();
       }
 
       FileUtil.wipeFiles(getActivity());
@@ -111,13 +111,15 @@ public class InitFragment extends TaskFragment
     editor.commit();
   }
 
-  private void setScaleBarEnabledByDefault()
+  private void enabledByDefaultScaleBarCoordinatesAndReticle()
   {
     SharedPreferences preferences = PreferenceManager
         .getDefaultSharedPreferences(getActivity());
 
     SharedPreferences.Editor editor = preferences.edit();
     editor.putBoolean(Constants.PREF_SHOW_SCALE_BAR, Constants.DEFAULT_HAS_SCALE_BAR);
+    editor.putBoolean(Constants.PREF_SHOW_COORDINATES, Constants.DEFAULT_SHOW_COORDINATES);
+    editor.putBoolean(Constants.PREF_SHOW_RETICLE, Constants.DEFAULT_SHOW_RETICLE);
     editor.commit();
   }
 

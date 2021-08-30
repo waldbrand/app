@@ -27,7 +27,6 @@ import java.io.IOException;
 import de.topobyte.android.appversions.VersionUpdateChecker;
 import de.topobyte.android.loader3.TaskFragment;
 import de.topobyte.android.maps.utils.MagnificationConfig;
-import de.topobyte.apps.viewer.map.MapPreferenceAbstraction;
 import de.waldbrandapp.BuildConfig;
 
 public class InitFragment extends TaskFragment
@@ -67,19 +66,9 @@ public class InitFragment extends TaskFragment
         setScaleBarEnabledByDefault();
       }
 
-      if (versionUpdateChecker.getStoredVersion() < 91 || forceCopyDatabase) {
-        MapPreferenceAbstraction mapPrefs = new MapPreferenceAbstraction(getActivity(), null);
-        mapPrefs.clearPosition();
-      }
-
-      if (versionUpdateChecker.getStoredVersion() <= 120) {
-        initializePersonalizedAdsSettings();
-        initializeDebugSettings();
-      }
-
       FileUtil.wipeFiles(getActivity());
 
-      boolean enoughSpace = false;
+      boolean enoughSpace;
       enoughSpace = FileUtil
           .hasEnoughSpaceAtLocation(getActivity().getFilesDir(),
               ResourceConstantsHelper
@@ -148,32 +137,6 @@ public class InitFragment extends TaskFragment
     }
 
     return filesOk;
-  }
-
-  private void initializePersonalizedAdsSettings()
-  {
-    SharedPreferences preferences = PreferenceManager
-        .getDefaultSharedPreferences(getActivity());
-
-    SharedPreferences.Editor editor = preferences.edit();
-
-    editor.putBoolean(Constants.PREF_PERSONALIZED_ADS, Constants.DEFAULT_PERSONALIZED_ADS);
-
-    editor.commit();
-  }
-
-  private void initializeDebugSettings()
-  {
-    SharedPreferences preferences = PreferenceManager
-        .getDefaultSharedPreferences(getActivity());
-
-    SharedPreferences.Editor editor = preferences.edit();
-
-    editor.putBoolean(Constants.PREF_SHOW_GRID, Constants.DEFAULT_SHOW_GRID);
-    editor.putBoolean(Constants.PREF_SHOW_ZOOM_LEVEL, Constants.DEFAULT_SHOW_ZOOM_LEVEL);
-    editor.putBoolean(Constants.PREF_SHOW_COORDINATES, Constants.DEFAULT_SHOW_COORDINATES);
-
-    editor.commit();
   }
 
 }

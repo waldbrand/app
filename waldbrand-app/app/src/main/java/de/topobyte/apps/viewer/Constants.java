@@ -37,7 +37,6 @@ public class Constants
   public static final String PREF_APP_INFO = "appInfo";
   public static final String PREF_LOCATION_SOURCES = "locationSources";
   public static final String PREF_CAT_PRIVACY = "privacy";
-  public static final String PREF_PERSONALIZED_ADS = "personalizedAds";
   public static final String PREF_SHOW_GRID = "showGrid";
   public static final String PREF_SHOW_ZOOM_LEVEL = "showZoomLevel";
   public static final String PREF_SHOW_COORDINATES = "showCoordinates";

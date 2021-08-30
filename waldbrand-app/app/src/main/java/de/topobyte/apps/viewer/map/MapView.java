@@ -17,12 +17,22 @@
 
 package de.topobyte.apps.viewer.map;
 
+import static de.topobyte.apps.viewer.CoordinateSystem.UTM;
+import static de.topobyte.apps.viewer.CoordinateSystem.WGS84;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 
+import org.locationtech.proj4j.CRSFactory;
+import org.locationtech.proj4j.CoordinateReferenceSystem;
+import org.locationtech.proj4j.CoordinateTransform;
+import org.locationtech.proj4j.CoordinateTransformFactory;
+import org.locationtech.proj4j.ProjCoordinate;
+
 import java.io.IOException;
+import java.util.Locale;
 
 import de.topobyte.adt.geo.BBox;
 import de.topobyte.android.maps.utils.TextOverlayDrawer;
@@ -30,6 +40,7 @@ import de.topobyte.android.maps.utils.map.BaseMapView;
 import de.topobyte.android.mapview.ImageManagerSourceRam;
 import de.topobyte.android.mapview.ReferenceCountedBitmap;
 import de.topobyte.apps.viewer.AppConstants;
+import de.topobyte.apps.viewer.CoordinateSystem;
 import de.topobyte.jeography.core.Tile;
 import de.topobyte.jeography.core.mapwindow.SteplessMapWindow;
 import de.topobyte.jeography.core.viewbounds.BboxViewBounds;
@@ -130,6 +141,7 @@ public class MapView extends BaseMapView
   protected boolean drawZoomLevel = false;
   protected boolean drawPosition = false;
   protected boolean drawReticle = false;
+  protected CoordinateSystem coordinateSystem = WGS84;
 
   public void setDrawZoomLevel(boolean drawZoomLevel)
   {
@@ -151,6 +163,11 @@ public class MapView extends BaseMapView
     super.setDrawGrid(drawGrid);
   }
 
+  public void setCoordinateSystem(CoordinateSystem coordinateSystem)
+  {
+    this.coordinateSystem = coordinateSystem;
+  }
+
   @Override
   protected void onDraw(Canvas canvas)
   {
@@ -167,12 +184,21 @@ public class MapView extends BaseMapView
     if (drawPosition) {
       double lon = mapWindow.getCenterLon();
       double lat = mapWindow.getCenterLat();
-      String text = String.format("Kartenmitte (lon/lat): %f %f", lon, lat);
+
+      String text = null;
+      if (coordinateSystem == WGS84) {
+        text = String.format(Locale.GERMAN, "Kartenmitte (lon/lat): %f %f", lon, lat);
+      } else if (coordinateSystem == UTM) {
+        CoordinateTransform wgsToUtm = getWgsToUtm();
+        ProjCoordinate result = new ProjCoordinate();
+        wgsToUtm.transform(new ProjCoordinate(lon, lat), result);
+        text = String.format(Locale.GERMAN, "Kartenmitte (E/N): %.2f %.2f", result.x, result.y);
+      }
       textOverlayDrawer.drawTopLeft(canvas, text, margin, line++);
     }
 
     if (drawZoomLevel) {
-      String text = String.format("Zoom: %f", mapWindow.getZoom());
+      String text = String.format(Locale.GERMAN, "Zoom: %f", mapWindow.getZoom());
       textOverlayDrawer.drawTopLeft(canvas, text, margin, line++);
     }
 
@@ -225,6 +251,24 @@ public class MapView extends BaseMapView
   public void longClick(float x, float y)
   {
     // do nothing at the moment
+  }
+
+  private CoordinateTransform wgsToUtm = null;
+
+  private CoordinateTransform getWgsToUtm()
+  {
+    if (wgsToUtm == null) {
+      CRSFactory crsFactory = new CRSFactory();
+      CoordinateReferenceSystem WGS84 =
+          crsFactory.createFromParameters("WGS84", "+proj=longlat +datum=WGS84 +no_defs");
+      CoordinateReferenceSystem UTM =
+          crsFactory.createFromParameters("UTM",
+              "+proj=utm +zone=33 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
+
+      CoordinateTransformFactory ctFactory = new CoordinateTransformFactory();
+      wgsToUtm = ctFactory.createTransform(WGS84, UTM);
+    }
+    return wgsToUtm;
   }
 
 }

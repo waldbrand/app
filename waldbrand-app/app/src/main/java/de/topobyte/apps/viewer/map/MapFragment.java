@@ -17,6 +17,8 @@
 
 package de.topobyte.apps.viewer.map;
 
+import static de.waldbrandapp.PoiDetailsFragment.TAG;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -50,6 +52,7 @@ import de.topobyte.android.misc.utils.Toaster;
 import de.topobyte.apps.viewer.AppConstants;
 import de.topobyte.apps.viewer.Constants;
 import de.topobyte.apps.viewer.NoLocationSourceDialog;
+import de.topobyte.apps.viewer.coordinatesystems.CoordinateSystem;
 import de.topobyte.apps.viewer.location.LocationOverlay;
 import de.topobyte.apps.viewer.location.MapLocationListener;
 import de.topobyte.apps.viewer.overlay.OverlayGps;
@@ -63,8 +66,6 @@ import de.waldbrandapp.PoiLabel;
 import de.waldbrandapp.R;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
-
-import static de.waldbrandapp.PoiDetailsFragment.TAG;
 
 public class MapFragment extends Fragment
     implements RenderThemeListener, EasyPermissions.PermissionCallbacks, PoiClickListener
@@ -411,6 +412,10 @@ public class MapFragment extends Fragment
     // scale bar
     boolean hasScaleBar = mpa.hasScaleBar();
     setHasScaleBar(hasScaleBar);
+
+    // coordinate system
+    CoordinateSystem coordinateSystem = mpa.getCoordinateSystem();
+    map.setCoordinateSystem(coordinateSystem);
   }
 
   private void setHasScaleBar(boolean hasScaleBar)

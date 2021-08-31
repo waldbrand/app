@@ -17,8 +17,8 @@
 
 package de.topobyte.apps.viewer.map;
 
-import static de.topobyte.apps.viewer.CoordinateSystem.UTM;
-import static de.topobyte.apps.viewer.CoordinateSystem.WGS84;
+import static de.topobyte.apps.viewer.coordinatesystems.CoordinateSystem.UTM;
+import static de.topobyte.apps.viewer.coordinatesystems.CoordinateSystem.WGS84;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -40,7 +40,7 @@ import de.topobyte.android.maps.utils.map.BaseMapView;
 import de.topobyte.android.mapview.ImageManagerSourceRam;
 import de.topobyte.android.mapview.ReferenceCountedBitmap;
 import de.topobyte.apps.viewer.AppConstants;
-import de.topobyte.apps.viewer.CoordinateSystem;
+import de.topobyte.apps.viewer.coordinatesystems.CoordinateSystem;
 import de.topobyte.jeography.core.Tile;
 import de.topobyte.jeography.core.mapwindow.SteplessMapWindow;
 import de.topobyte.jeography.core.viewbounds.BboxViewBounds;

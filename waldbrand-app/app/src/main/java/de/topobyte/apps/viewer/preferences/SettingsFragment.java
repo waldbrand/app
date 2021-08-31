@@ -28,6 +28,8 @@ import android.provider.Settings;
 import androidx.annotation.Nullable;
 
 import de.topobyte.apps.viewer.Constants;
+import de.topobyte.apps.viewer.coordinatesystems.CoordinateSystem;
+import de.topobyte.apps.viewer.coordinatesystems.CoordinateSystemConfig;
 import de.topobyte.apps.viewer.theme.ThemeConfig;
 import de.waldbrandapp.R;
 
@@ -40,6 +42,7 @@ public class SettingsFragment extends PreferenceFragment
     super.onCreate(savedInstanceState);
     addPreferencesFromResource(R.xml.preferences);
     updateThemePreference();
+    initCoordinateSystemsPreference();
   }
 
   @Override
@@ -60,6 +63,34 @@ public class SettingsFragment extends PreferenceFragment
     renderStyleList.setEntries(themeConfig.getThemeNames());
     renderStyleList.setEntryValues(themeConfig.getThemeKeys());
     renderStyleList.setDefaultValue(themeConfig.getDefaultThemeKey());
+  }
+
+  private void initCoordinateSystemsPreference()
+  {
+    CoordinateSystemConfig coordinateSystemConfig = new CoordinateSystemConfig();
+
+    ListPreference coordinateSystemList =
+        (ListPreference) findPreference(Constants.PREF_COORDINATE_SYSTEM);
+    coordinateSystemList.setEntries(coordinateSystemConfig.getNames());
+    coordinateSystemList.setEntryValues(coordinateSystemConfig.getKeys());
+
+    String defaultKey = coordinateSystemConfig.getDefaultKey();
+    coordinateSystemList.setDefaultValue(defaultKey);
+    if (coordinateSystemList.getValue() == null) {
+      coordinateSystemList.setValue(defaultKey);
+    }
+
+    Preference.OnPreferenceChangeListener p = (preference, key) -> {
+      if (key == null) {
+        key = defaultKey;
+      }
+      CoordinateSystem cs = coordinateSystemConfig.getMapping().get(key);
+      coordinateSystemList.setSummary(cs.getName());
+      return true;
+    };
+
+    coordinateSystemList.setOnPreferenceChangeListener(p);
+    p.onPreferenceChange(coordinateSystemList, coordinateSystemList.getValue());
   }
 
   private void setupAppInfoButton()

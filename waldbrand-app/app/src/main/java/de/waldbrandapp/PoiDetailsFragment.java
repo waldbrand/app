@@ -32,8 +32,10 @@ import static de.waldbrandapp.Waldbrand.UNDERGROUND;
 import static de.waldbrandapp.Waldbrand.WATER_TANK;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +49,10 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.slimjars.dist.gnu.trove.map.TIntObjectMap;
 
 import java.util.Locale;
+
+import de.topobyte.apps.viewer.coordinatesystems.CoordinateFormatter;
+import de.topobyte.apps.viewer.coordinatesystems.CoordinateSystem;
+import de.topobyte.apps.viewer.map.MapPreferenceAbstraction;
 
 public class PoiDetailsFragment extends BottomSheetDialogFragment
 {
@@ -64,6 +70,9 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
   private TextView textViewFlowrate;
   private TextView textViewVolume;
   private TextView textViewId;
+
+  private double lon, lat;
+  private CoordinateFormatter coordinateFormatter = new CoordinateFormatter();
 
   public static PoiDetailsFragment newInstance(PoiLabel poi)
   {
@@ -97,12 +106,14 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
     int y = args.getInt(ARG_Y);
     TIntObjectMap<String> tags = (TIntObjectMap<String>) args.getSerializable(ARG_TAGS);
 
+    lon = merc2lon(x, MERCATOR_SIZE);
+    lat = merc2lat(y, MERCATOR_SIZE);
+
     boolean displayEditButton = true;
 
     textViewType.setText(Waldbrand.getName(type));
-    double lon = merc2lon(x, MERCATOR_SIZE);
-    double lat = merc2lat(y, MERCATOR_SIZE);
-    textViewPosition.setText(format("Position (lon/lat): %f/%f", lon, lat));
+
+    displayPosition(true);
 
     textViewDiameter.setVisibility(GONE);
     textViewFlowrate.setVisibility(GONE);
@@ -146,6 +157,24 @@ public class PoiDetailsFragment extends BottomSheetDialogFragment
     }
 
     return view;
+  }
+
+  @Override
+  public void onResume()
+  {
+    super.onResume();
+    displayPosition(false);
+  }
+
+  private void displayPosition(boolean force)
+  {
+    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
+    CoordinateSystem coordinateSystem = MapPreferenceAbstraction.getCoordinateSystem(preferences);
+    boolean update = force || coordinateFormatter.getCoordinateSystem() != coordinateSystem;
+    coordinateFormatter.setCoordinateSystem(coordinateSystem);
+    if (update) {
+      textViewPosition.setText(coordinateFormatter.format("Position", lon, lat));
+    }
   }
 
   private void displayDiameter(TIntObjectMap<String> tags, int factor)

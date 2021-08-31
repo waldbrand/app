@@ -139,6 +139,11 @@ public class MapPreferenceAbstraction
 
   public CoordinateSystem getCoordinateSystem()
   {
+    return getCoordinateSystem(preferences);
+  }
+
+  public static CoordinateSystem getCoordinateSystem(SharedPreferences preferences)
+  {
     String key = preferences
         .getString(Constants.PREF_COORDINATE_SYSTEM, CoordinateSystemConfig.DEFAULT.getKey());
     return CoordinateSystemConfig.getMapping().get(key);

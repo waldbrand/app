@@ -23,6 +23,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 
 import java.io.IOException;
+import java.util.Locale;
 
 import de.topobyte.adt.geo.BBox;
 import de.topobyte.android.maps.utils.TextOverlayDrawer;
@@ -30,6 +31,8 @@ import de.topobyte.android.maps.utils.map.BaseMapView;
 import de.topobyte.android.mapview.ImageManagerSourceRam;
 import de.topobyte.android.mapview.ReferenceCountedBitmap;
 import de.topobyte.apps.viewer.AppConstants;
+import de.topobyte.apps.viewer.coordinatesystems.CoordinateFormatter;
+import de.topobyte.apps.viewer.coordinatesystems.CoordinateSystem;
 import de.topobyte.jeography.core.Tile;
 import de.topobyte.jeography.core.mapwindow.SteplessMapWindow;
 import de.topobyte.jeography.core.viewbounds.BboxViewBounds;
@@ -130,6 +133,7 @@ public class MapView extends BaseMapView
   protected boolean drawZoomLevel = false;
   protected boolean drawPosition = false;
   protected boolean drawReticle = false;
+  protected CoordinateFormatter coordinateFormatter = new CoordinateFormatter();
 
   public void setDrawZoomLevel(boolean drawZoomLevel)
   {
@@ -151,6 +155,11 @@ public class MapView extends BaseMapView
     super.setDrawGrid(drawGrid);
   }
 
+  public void setCoordinateSystem(CoordinateSystem coordinateSystem)
+  {
+    coordinateFormatter.setCoordinateSystem(coordinateSystem);
+  }
+
   @Override
   protected void onDraw(Canvas canvas)
   {
@@ -167,12 +176,13 @@ public class MapView extends BaseMapView
     if (drawPosition) {
       double lon = mapWindow.getCenterLon();
       double lat = mapWindow.getCenterLat();
-      String text = String.format("Kartenmitte (lon/lat): %f %f", lon, lat);
+
+      String text = coordinateFormatter.format("Kartenmitte", lon, lat);
       textOverlayDrawer.drawTopLeft(canvas, text, margin, line++);
     }
 
     if (drawZoomLevel) {
-      String text = String.format("Zoom: %f", mapWindow.getZoom());
+      String text = String.format(Locale.GERMAN, "Zoom: %f", mapWindow.getZoom());
       textOverlayDrawer.drawTopLeft(canvas, text, margin, line++);
     }
 

@@ -41,6 +41,7 @@ public class Constants
   public static final String PREF_SHOW_ZOOM_LEVEL = "showZoomLevel";
   public static final String PREF_SHOW_COORDINATES = "showCoordinates";
   public static final String PREF_SHOW_RETICLE = "showReticle";
+  public static final String PREF_COORDINATE_SYSTEM = "coordinateSystem";
 
   public static final int DEFAULT_MOVE_SPEED = 100;
   public static final int MAX_MOVE_SPEED = 500;

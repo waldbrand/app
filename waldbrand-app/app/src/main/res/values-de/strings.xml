@@ -101,6 +101,9 @@
     <string name="preferences_show_reticle">Fadenkreuz anzeigen</string>
     <string name="preferences_show_reticle_desc">Ein Fadenkreuz anzeigen um die Kartenmitte hervorzuheben</string>
 
+    <string name="preferences_coordinate_system_dialog_title">Koordinatensystem auswählen</string>
+    <string name="preferences_coordinate_system_title">Koordinatensystem</string>
+
     <!-- search -->
 
     <string name="search_hint">Datenbank durchsuchen</string>

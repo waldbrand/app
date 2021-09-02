@@ -28,6 +28,8 @@ import org.locationtech.jts.geom.Coordinate;
 import de.topobyte.android.maps.utils.view.MapPosition;
 import de.topobyte.apps.viewer.AppConstants;
 import de.topobyte.apps.viewer.Constants;
+import de.topobyte.apps.viewer.coordinatesystems.CoordinateSystem;
+import de.topobyte.apps.viewer.coordinatesystems.CoordinateSystemConfig;
 
 public class MapPreferenceAbstraction
 {
@@ -134,4 +136,17 @@ public class MapPreferenceAbstraction
     return preferences.getBoolean(Constants.PREF_SHOW_SCALE_BAR,
         Constants.DEFAULT_HAS_SCALE_BAR);
   }
+
+  public CoordinateSystem getCoordinateSystem()
+  {
+    return getCoordinateSystem(preferences);
+  }
+
+  public static CoordinateSystem getCoordinateSystem(SharedPreferences preferences)
+  {
+    String key = preferences
+        .getString(Constants.PREF_COORDINATE_SYSTEM, CoordinateSystemConfig.DEFAULT.getKey());
+    return CoordinateSystemConfig.getMapping().get(key);
+  }
+
 }

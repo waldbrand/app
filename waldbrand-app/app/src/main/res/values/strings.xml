@@ -103,6 +103,9 @@
     <string name="preferences_show_reticle">Show reticle</string>
     <string name="preferences_show_reticle_desc">Display a reticle to highlight the center of the map</string>
 
+    <string name="preferences_coordinate_system_dialog_title">Select a coordinate system</string>
+    <string name="preferences_coordinate_system_title">Coordinate system</string>
+
     <!-- search -->
 
     <string name="search_hint">Search database</string>

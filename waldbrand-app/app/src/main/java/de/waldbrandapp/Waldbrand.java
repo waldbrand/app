@@ -69,6 +69,7 @@ public class Waldbrand
   private static void add(String type, String name, int constant, boolean add2)
   {
     constantToName.put(constant, name);
+    // the map file contains '<type>' for nodes and '<type>2' for ways
     String[] types = add2 ? new String[]{type, type + "2"} : new String[]{type};
     for (String t : types) {
       labelTypes.add(t);

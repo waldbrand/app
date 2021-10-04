@@ -158,6 +158,11 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
     clearBitmapsAndCandidates();
   }
 
+  private boolean isWaldbrandType(int type)
+  {
+    return waldbrandClassIds.contains(type);
+  }
+
   boolean init = false;
 
   private void initWorkers()
@@ -233,7 +238,42 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
         && lat >= box.getLat2() && lat <= box.getLat1();
   }
 
-  private final Map<String, Bitmap> symbolsCache = new HashMap<>();
+  private final Map<CacheKey, Bitmap> symbolsCache = new HashMap<>();
+
+  /**
+   * A class for caching the icon bitmaps by the combination of filename and zoom-based
+   * scale-factor. Since we display smaller icons for the Waldbrand icons on lower zoom levels,
+   * we need to take that zoom-based factor into account when caching the pre-rendered bitmaps
+   * of the vector icons.
+   */
+  private static class CacheKey
+  {
+
+    private final String filename;
+    private final float scale;
+
+    private CacheKey(String filename, float scale)
+    {
+      this.filename = filename;
+      this.scale = scale;
+    }
+
+    @Override
+    public boolean equals(Object o)
+    {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+      CacheKey other = (CacheKey) o;
+      return Float.compare(scale, other.scale) == 0 &&
+          filename.equals(other.filename);
+    }
+
+    @Override
+    public int hashCode()
+    {
+      return filename.hashCode() + Float.floatToIntBits(scale);
+    }
+  }
 
   private void renderIcons(int type, SteplessMapWindow mapWindow, BBox bbox,
                            Canvas canvas, RectangleIntersectionTester tester)
@@ -253,6 +293,16 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
 
     String imageName = icon.getImage();
 
+    float zoomScale = 1;
+    if (isWaldbrandType(type)) {
+      if (mapWindow.getZoom() < 13) {
+        zoomScale = 0.2f;
+      } else if (mapWindow.getZoom() < 15) {
+        zoomScale = 0.5f;
+      }
+    }
+
+    CacheKey key = new CacheKey(imageName, zoomScale);
     Bitmap bitmap = symbolsCache.get(imageName);
 
     if (bitmap == null) {
@@ -267,7 +317,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
         return;
       }
 
-      float height = labelClass.iconSize;
+      float height = labelClass.iconSize * zoomScale;
       float scale = (float) (height / image.getHeight());
       float width = (float) (image.getWidth() * scale);
 
@@ -276,7 +326,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
       Canvas c = new Canvas(bitmap);
       BvgAndroidPainter.draw(c, image, 0, 0, scale, scale, scale);
 
-      symbolsCache.put(imageName, bitmap);
+      symbolsCache.put(key, bitmap);
     }
 
     int w = bitmap.getWidth();

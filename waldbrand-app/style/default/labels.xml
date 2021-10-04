@@ -322,17 +322,18 @@
 			</rule>
 		</label>
 		<!-- emergency access points -->
-		<label parent="icon-base" fg="blue" bg="white" image="rettungspunkt.bvg" image-height="7">
+		<label id="eap" parent="icon-base" fg="blue" bg="white"/>
+		<label parent="eap" image="rettungspunkt.bvg" image-height="7">
 			<rule min="11" max="13">
 				<rule key="rettungspunkt" />
 			</rule>
 		</label>
-		<label parent="icon-base" fg="blue" bg="white" image="rettungspunkt.bvg" image-height="14">
+		<label parent="eap" image="rettungspunkt.bvg" image-height="14">
 			<rule min="14" max="15">
 				<rule key="rettungspunkt" />
 			</rule>
 		</label>
-		<label parent="icon-base" fg="blue" bg="white" image="rettungspunkt.bvg" image-height="28">
+		<label parent="eap" image="rettungspunkt.bvg" image-height="28">
 			<rule min="16" max="24">
 				<rule key="rettungspunkt" />
 			</rule>

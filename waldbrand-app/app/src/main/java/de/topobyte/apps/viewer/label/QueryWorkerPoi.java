@@ -198,6 +198,8 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
 
     int diameterKey =
         mapfileWaldbrand.getMetadata().getPoolForKeepKeys().getId("fire_hydrant:diameter");
+    int rettungspunktNrKey =
+        mapfileWaldbrand.getMetadata().getPoolForKeepKeys().getId("rettungspunkt-nr");
 
     for (DiskTree<Node> t : nodeTrees.getObjects(zoom)) {
       try {
@@ -224,6 +226,8 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
               String text = null;
               if (constant == Waldbrand.UNDERGROUND) {
                 text = node.getTags().get(diameterKey);
+              } else if (constant == Waldbrand.RETTUNGSPUNKT) {
+                text = node.getTags().get(rettungspunktNrKey);
               }
               list.add(new PoiLabel(point.getX(), point.getY(), text, classId, -1, constant, tags));
             }

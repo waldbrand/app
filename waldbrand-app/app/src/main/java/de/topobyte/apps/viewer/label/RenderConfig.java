@@ -28,15 +28,14 @@ import android.view.WindowManager;
 import com.slimjars.dist.gnu.trove.list.TIntList;
 import com.slimjars.dist.gnu.trove.list.array.TIntArrayList;
 import com.slimjars.dist.gnu.trove.map.TIntIntMap;
-import com.slimjars.dist.gnu.trove.map.TObjectIntMap;
 import com.slimjars.dist.gnu.trove.map.hash.TIntIntHashMap;
 import com.slimjars.dist.gnu.trove.map.hash.TIntObjectHashMap;
-import com.slimjars.dist.gnu.trove.map.hash.TObjectIntHashMap;
 import com.slimjars.dist.gnu.trove.set.TIntSet;
 import com.slimjars.dist.gnu.trove.set.hash.TIntHashSet;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -69,7 +68,7 @@ public class RenderConfig
 
   private final PoiTypeInfo typesInfo;
 
-  private final TObjectIntMap<String> typeToClassId;
+  private final Map<String, TIntList> typeToClassIds;
   private final TIntIntMap typeIdToClassId;
 
   // This defines the rendering order
@@ -79,7 +78,7 @@ public class RenderConfig
   private final TIntSet enabledIds = new TIntHashSet();
 
   private int idFactory = 0;
-  private final Map<String, RenderClass> typeToClass = new HashMap<>();
+  private final Map<String, List<RenderClass>> typeToClasses = new HashMap<>();
   private final Map<RenderClass, String> classToType = new HashMap<>();
 
   public RenderConfig(MapRenderConfig mapRenderConfig, Context context)
@@ -99,7 +98,7 @@ public class RenderConfig
     StyleDirectory style = mapRenderConfig.getStyleDirectory();
 
     typesInfo = PoiTypeInfo.getInstance(ldb);
-    typeToClassId = new TObjectIntHashMap<>(10, 0.5f, -1);
+    typeToClassIds = new HashMap<>(10, 0.5f);
     typeIdToClassId = new TIntIntHashMap();
 
     db.close();
@@ -146,13 +145,15 @@ public class RenderConfig
 
     renderClasses = new ArrayList<>();
     for (String type : DrawingOrder.order) {
-      RenderClass renderClass = typeToClass.get(type);
-      classToType.remove(renderClass);
-      if (renderClass == null) {
+      List<RenderClass> rcs = typeToClasses.get(type);
+      if (rcs == null) {
         Log.w(LOG_TAG, "unmapped type, no class found: " + type);
         continue;
       }
-      renderClasses.add(renderClass);
+      for (RenderClass rc : rcs) {
+        classToType.remove(rc);
+        renderClasses.add(rc);
+      }
     }
     if (!classToType.isEmpty()) {
       for (Entry<RenderClass, String> entry : classToType.entrySet()) {
@@ -172,8 +173,7 @@ public class RenderConfig
   private void addRule(Rule rule, String type, int typeId, LabelContainer lc,
                        float density)
   {
-    LabelClass labelClass = new LabelClass(lc.getType(), lc.getLabel(), 1,
-        density);
+    LabelClass labelClass = new LabelClass(lc.getType(), lc.getLabel(), density);
 
     int classId = idFactory++;
     RenderClass renderClass = new RenderClass(classId, typeId,
@@ -182,9 +182,19 @@ public class RenderConfig
     Log.i(LOG_TAG, "Mapping type '" + type + " (" + typeId
         + ")' to class '" + classId + "'");
 
-    typeToClass.put(type, renderClass);
+    List<RenderClass> rcs = typeToClasses.get(type);
+    if (rcs == null) {
+      rcs = new ArrayList<>(1);
+      typeToClasses.put(type, rcs);
+    }
+    rcs.add(renderClass);
     classToType.put(renderClass, type);
-    typeToClassId.put(type, classId);
+    TIntList classIds = typeToClassIds.get(type);
+    if (classIds == null) {
+      classIds = new TIntArrayList(1);
+      typeToClassIds.put(type, classIds);
+    }
+    classIds.add(classId);
     if (typeId >= 0) {
       typeIdToClassId.put(typeId, classId);
     }
@@ -216,6 +226,12 @@ public class RenderConfig
     return ids;
   }
 
+  public boolean isRenderClassRelevant(RenderClass renderClass, int zoom)
+  {
+    return zoom >= renderClass.minZoom && zoom <= renderClass.maxZoom
+        && enabledIds.contains(renderClass.classId);
+  }
+
   public TIntList getRelevantTypeIds(int zoom)
   {
     TIntList ids = new TIntArrayList();
@@ -230,9 +246,9 @@ public class RenderConfig
     return ids;
   }
 
-  public RenderClass getRenderClass(String type)
+  public List<RenderClass> getRenderClasses(String type)
   {
-    return typeToClass.get(type);
+    return typeToClasses.get(type);
   }
 
   public int getClassIdForTypeId(int typeId)
@@ -247,15 +263,15 @@ public class RenderConfig
 
   public boolean areHousenumbersRelevant(int zoom)
   {
-    int classId = typeToClassId.get(Categories.TYPE_NAME_HOUSENUMBERS);
-    RenderClass renderClass = renderClassMap.get(classId);
+    TIntList classIds = typeToClassIds.get(Categories.TYPE_NAME_HOUSENUMBERS);
+    RenderClass renderClass = renderClassMap.get(classIds.get(0));
     return zoom >= renderClass.minZoom && zoom <= renderClass.maxZoom
         && enabledIds.contains(renderClass.classId);
   }
 
   public int getHousenumberClassId()
   {
-    return typeToClassId.get(Categories.TYPE_NAME_HOUSENUMBERS);
+    return typeToClassIds.get(Categories.TYPE_NAME_HOUSENUMBERS).get(0);
   }
 
   public void reloadVisibility(Context context)
@@ -282,21 +298,24 @@ public class RenderConfig
   private void configureMinimal()
   {
     for (String place : places) {
-      int id = typeToClassId.get(place);
-      enabledIds.add(id);
+      TIntList ids = typeToClassIds.get(place);
+      enabledIds.addAll(ids);
     }
   }
 
   private void configureByConfig(SharedPreferences prefs)
   {
     TIntSet other = new TIntHashSet();
-    other.addAll(typeToClassId.valueCollection());
-    other.remove(typeToClassId.get(Categories.TYPE_NAME_HOUSENUMBERS));
+    Collection<TIntList> lists = typeToClassIds.values();
+    for (TIntList list : lists) {
+      other.addAll(list);
+    }
+    other.removeAll(typeToClassIds.get(Categories.TYPE_NAME_HOUSENUMBERS));
 
     for (String place : places) {
-      int id = typeToClassId.get(place);
-      enabledIds.add(id);
-      other.remove(id);
+      TIntList ids = typeToClassIds.get(place);
+      enabledIds.addAll(ids);
+      other.removeAll(ids);
     }
 
     Categories categories = Categories.getLabelInstance();
@@ -306,22 +325,22 @@ public class RenderConfig
         if (category instanceof DatabaseCategory) {
           DatabaseCategory dc = (DatabaseCategory) category;
           for (String type : dc.getIdentifiers()) {
-            int id = typeToClassId.get(type);
-            if (id < 0) {
+            TIntList ids = typeToClassIds.get(type);
+            if (ids == null) {
               Log.w(LOG_TAG, "No id found for '" + type + "'");
               continue;
             }
-            other.remove(id);
+            other.removeAll(ids);
             if (enabled) {
-              enabledIds.add(id);
+              enabledIds.addAll(ids);
             }
           }
         } else if (category instanceof MapfileCategory) {
           // MapfileCategory mc = (MapfileCategory) category;
           if (enabled) {
-            int id = typeToClassId
+            TIntList ids = typeToClassIds
                 .get(Categories.TYPE_NAME_HOUSENUMBERS);
-            enabledIds.add(id);
+            enabledIds.addAll(ids);
           }
         }
       }

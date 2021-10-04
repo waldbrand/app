@@ -20,6 +20,8 @@ package de.topobyte.apps.viewer.label;
 import com.slimjars.dist.gnu.trove.map.TIntObjectMap;
 import com.slimjars.dist.gnu.trove.map.hash.TIntObjectHashMap;
 
+import java.util.List;
+
 import de.topobyte.mapocado.mapformat.Mapfile;
 import de.topobyte.mapocado.mapformat.io.Metadata;
 
@@ -29,7 +31,7 @@ import de.topobyte.mapocado.mapformat.io.Metadata;
 public class RenderClassMapping
 {
 
-  TIntObjectMap<RenderClass> refToRenderClass = new TIntObjectHashMap<>();
+  TIntObjectMap<List<RenderClass>> refToRenderClasses = new TIntObjectHashMap<>();
 
   public RenderClassMapping(Mapfile mapfile,
                             RenderConfig renderConfig)
@@ -37,14 +39,14 @@ public class RenderClassMapping
     Metadata metadata = mapfile.getMetadata();
     for (int ref = 0; ref < metadata.getPoolForRefs().getNumberOfEntries(); ref++) {
       String type = metadata.getPoolForRefs().getString(ref);
-      RenderClass renderClass = renderConfig.getRenderClass(type);
-      refToRenderClass.put(ref, renderClass);
+      List<RenderClass> renderClasses = renderConfig.getRenderClasses(type);
+      refToRenderClasses.put(ref, renderClasses);
     }
   }
 
-  public RenderClass getRenderClass(int ref)
+  public List<RenderClass> getRenderClasses(int ref)
   {
-    return refToRenderClass.get(ref);
+    return refToRenderClasses.get(ref);
   }
 
 }

@@ -22,8 +22,6 @@ import android.util.Log;
 
 import com.slimjars.dist.gnu.trove.list.TIntList;
 import com.slimjars.dist.gnu.trove.list.array.TIntArrayList;
-import com.slimjars.dist.gnu.trove.map.TIntIntMap;
-import com.slimjars.dist.gnu.trove.map.hash.TIntIntHashMap;
 import com.slimjars.dist.gnu.trove.map.hash.TIntObjectHashMap;
 
 import java.io.IOException;
@@ -66,7 +64,7 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
   private final LabelDrawerPoi labelDrawerPoi;
 
   private RenderConfig renderConfig;
-  private RenderClassMapping classMappingWaldbrand;
+  private final WaldbrandMapping waldbrandMapping = new WaldbrandMapping();
 
   private final IConnection ldb;
 
@@ -100,28 +98,18 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
     }
 
     Waldbrand.setStringPool(mapfileWaldbrand.getMetadata().getPoolForKeepKeys());
-
-    processRenderConfig();
+    waldbrandMapping.processRenderConfig(mapfileWaldbrand, renderConfig);
   }
 
   public void setRenderConfig(RenderConfig renderConfig)
   {
     this.renderConfig = renderConfig;
-    processRenderConfig();
+    waldbrandMapping.processRenderConfig(mapfileWaldbrand, renderConfig);
   }
 
-  private TIntIntMap waldbrandClassIdToConstant = new TIntIntHashMap();
-
-  private void processRenderConfig()
+  public WaldbrandMapping getWaldbrandMapping()
   {
-    classMappingWaldbrand = new RenderClassMapping(mapfileWaldbrand, renderConfig);
-
-    waldbrandClassIdToConstant.clear();
-    for (String type : Waldbrand.getLabelTypes()) {
-      int constant = Waldbrand.getConstant(type);
-      RenderClass renderClass = renderConfig.getRenderClass(type);
-      waldbrandClassIdToConstant.put(renderClass.classId, constant);
-    }
+    return waldbrandMapping;
   }
 
   private Label createLabel(SqLabel label, int placeType)
@@ -207,6 +195,10 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
         bbox.getLon2(), bbox.getLat1(), bbox.getLat2(), true);
 
     IntervalTree<Integer, DiskTree<Node>> nodeTrees = mapfileWaldbrand.getTreeNodes();
+
+    int diameterKey =
+        mapfileWaldbrand.getMetadata().getPoolForKeepKeys().getId("fire_hydrant:diameter");
+
     for (DiskTree<Node> t : nodeTrees.getObjects(zoom)) {
       try {
         List<Node> nodes = t.intersectionQuery(rectRequest);
@@ -215,20 +207,26 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
           TIntObjectHashMap<String> tags = node.getTags();
           TIntArrayList classes = node.getClasses();
           for (int ci : classes.toArray()) {
-            RenderClass renderClass = classMappingWaldbrand.getRenderClass(ci);
-            if (renderClass == null) {
+            List<RenderClass> renderClasses = waldbrandMapping.getRenderClasses(ci);
+            if (renderClasses == null) {
               continue;
             }
-            int classId = renderClass.classId;
-            int constant = waldbrandClassIdToConstant.get(classId);
-            List<Label> list = labelMapClass.get(classId);
-            if (list == null) {
-              list = new ArrayList<>();
-              labelMapClass.put(classId, list);
-            }
+            for (RenderClass renderClass : renderClasses) {
+              int classId = renderClass.classId;
+              int constant = waldbrandMapping.getConstantForClassId(classId);
+              List<Label> list = labelMapClass.get(classId);
+              if (list == null) {
+                list = new ArrayList<>();
+                labelMapClass.put(classId, list);
+              }
 
-            Coordinate point = node.getPoint();
-            list.add(new PoiLabel(point.getX(), point.getY(), null, classId, -1, constant, tags));
+              Coordinate point = node.getPoint();
+              String text = null;
+              if (constant == Waldbrand.UNDERGROUND) {
+                text = node.getTags().get(diameterKey);
+              }
+              list.add(new PoiLabel(point.getX(), point.getY(), text, classId, -1, constant, tags));
+            }
           }
         }
       } catch (IOException e) {

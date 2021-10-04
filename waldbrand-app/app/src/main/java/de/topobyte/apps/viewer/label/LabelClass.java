@@ -50,8 +50,7 @@ public class LabelClass implements MagnificationSupport
   public Label labelStyle;
   public int dy;
 
-  public LabelClass(LabelType type, Label labelStyle, float magnification,
-                    float density)
+  public LabelClass(LabelType type, Label labelStyle, float density)
   {
     this.type = type;
     this.labelStyle = labelStyle;

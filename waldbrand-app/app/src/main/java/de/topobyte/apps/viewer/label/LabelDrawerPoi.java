@@ -140,8 +140,10 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
 
     waldbrandClassIds.clear();
     for (String type : Waldbrand.getLabelTypes()) {
-      RenderClass renderClass = renderConfig.getRenderClass(type);
-      waldbrandClassIds.add(renderClass.classId);
+      List<RenderClass> renderClasses = renderConfig.getRenderClasses(type);
+      for (RenderClass renderClass : renderClasses) {
+        waldbrandClassIds.add(renderClass.classId);
+      }
     }
 
     initWorkers();
@@ -156,11 +158,6 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
     }
     symbolsCache.clear();
     clearBitmapsAndCandidates();
-  }
-
-  private boolean isWaldbrandType(int type)
-  {
-    return waldbrandClassIds.contains(type);
   }
 
   boolean init = false;
@@ -241,21 +238,22 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
   private final Map<CacheKey, Bitmap> symbolsCache = new HashMap<>();
 
   /**
-   * A class for caching the icon bitmaps by the combination of filename and zoom-based
-   * scale-factor. Since we display smaller icons for the Waldbrand icons on lower zoom levels,
-   * we need to take that zoom-based factor into account when caching the pre-rendered bitmaps
+   * A class for caching the icon bitmaps by the combination of filename and size.
+   * <p>
+   * Since we display smaller icons for the Waldbrand icons on lower zoom levels,
+   * we need to take the size into account when caching the pre-rendered bitmaps
    * of the vector icons.
    */
   private static class CacheKey
   {
 
     private final String filename;
-    private final float scale;
+    private final int size;
 
-    private CacheKey(String filename, float scale)
+    private CacheKey(String filename, int size)
     {
       this.filename = filename;
-      this.scale = scale;
+      this.size = size;
     }
 
     @Override
@@ -264,14 +262,13 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
       if (this == o) return true;
       if (o == null || getClass() != o.getClass()) return false;
       CacheKey other = (CacheKey) o;
-      return Float.compare(scale, other.scale) == 0 &&
-          filename.equals(other.filename);
+      return size == other.size && filename.equals(other.filename);
     }
 
     @Override
     public int hashCode()
     {
-      return filename.hashCode() + Float.floatToIntBits(scale);
+      return filename.hashCode() + size;
     }
   }
 
@@ -293,17 +290,8 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
 
     String imageName = icon.getImage();
 
-    float zoomScale = 1;
-    if (isWaldbrandType(type)) {
-      if (mapWindow.getZoom() < 13) {
-        zoomScale = 0.2f;
-      } else if (mapWindow.getZoom() < 15) {
-        zoomScale = 0.5f;
-      }
-    }
-
-    CacheKey key = new CacheKey(imageName, zoomScale);
-    Bitmap bitmap = symbolsCache.get(imageName);
+    CacheKey key = new CacheKey(imageName, labelClass.iconSize);
+    Bitmap bitmap = symbolsCache.get(key);
 
     if (bitmap == null) {
       BvgImage image;
@@ -317,7 +305,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
         return;
       }
 
-      float height = labelClass.iconSize * zoomScale;
+      float height = labelClass.iconSize;
       float scale = (float) (height / image.getHeight());
       float width = (float) (image.getWidth() * scale);
 
@@ -342,7 +330,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
       float x = (float) cx - w / 2f;
       float y = (float) cy - h / 2f;
 
-      if (label == selected) {
+      if (selected != null && label.x == selected.x && label.y == selected.y) {
         Paint p = new Paint();
         p.setColor(0x66ff0000);
 
@@ -435,6 +423,24 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
 
     double zoom = mapWindow.getZoom();
 
+    int dy = labelClass.dy;
+    boolean ignoreText = false;
+
+    WaldbrandMapping waldbrandMapping = queryWorkerPoi.getWaldbrandMapping();
+    if (waldbrandMapping.getConstantForClassId(type) == Waldbrand.UNDERGROUND) {
+      if (mapWindow.getZoom() < 14) {
+        ignoreText = true;
+      } else if (mapWindow.getZoom() < 16) {
+        dy += 10;
+      } else {
+        dy += 20;
+      }
+    }
+
+    if (ignoreText) {
+      return;
+    }
+
     AndroidTimeUtil.time("render-intersect");
     Log.i(LOG, "LabelDrawer: labels are null: " + (labels == null));
     Log.i(LOG, "LabelDrawer: I got " + labels.size() + " labels");
@@ -455,7 +461,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
       float y = (float) mapWindow.mercatorToY(my);
 
       int bx = Math.round(x - label.width / 2f);
-      int by = Math.round(y + labelClass.dy);
+      int by = Math.round(y + dy);
 
       int itemId = label.getId();
       // housenumber labels have ids == -1
@@ -493,6 +499,7 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
     int dist2 = dist * dist;
 
     double zoom = mapWindow.getZoom();
+    int izoom = (int) Math.floor(zoom);
 
     for (int classId : waldbrandClassIds.toArray()) {
       if (!renderConfig.isEnabled(classId)) {
@@ -503,6 +510,10 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
         continue;
       }
       for (Label label : labels) {
+        RenderClass renderClass = renderConfig.get(classId);
+        if (!renderConfig.isRenderClassRelevant(renderClass, izoom)) {
+          continue;
+        }
         double mx = Mercator.getX(label.x, zoom);
         double my = Mercator.getY(label.y, zoom);
 

@@ -234,7 +234,7 @@
 
 		<!-- hydrants -->
 		<label id="hydrant" parent="icon-base" fg="black" bg="white"/>
-		<label parent="hydrant" image="hydrant.bvg" image-height="8">
+		<label parent="hydrant" image="hydrant-template.bvg" image-height="8">
 			<rule min="11" max="13">
 				<rule key="hydrant-underground" />
 				<rule key="hydrant-underground2" />
@@ -242,7 +242,7 @@
 				<rule key="hydrant-pillar2" />
 			</rule>
 		</label>
-		<label parent="hydrant" image="hydrant.bvg" image-height="14" font="sans serif" font-style="bold" stroke-width="1" font-size="5">
+		<label parent="hydrant" image="hydrant-template.bvg" image-height="14" font="sans serif" font-style="bold" stroke-width="1" font-size="5">
 			<rule min="14" max="15">
 				<rule key="hydrant-underground" />
 				<rule key="hydrant-underground2" />
@@ -250,7 +250,7 @@
 				<rule key="hydrant-pillar2" />
 			</rule>
 		</label>
-		<label parent="hydrant" image="hydrant.bvg" image-height="28" font="sans serif" font-style="bold" stroke-width="2" font-size="10">
+		<label parent="hydrant" image="hydrant-template.bvg" image-height="28" font="sans serif" font-style="bold" stroke-width="2" font-size="10">
 			<rule min="16" max="24">
 				<rule key="hydrant-underground" />
 				<rule key="hydrant-underground2" />

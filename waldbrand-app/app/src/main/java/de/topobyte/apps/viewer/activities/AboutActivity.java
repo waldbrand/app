@@ -28,8 +28,6 @@ import java.util.regex.Pattern;
 
 import de.topobyte.android.common.resources.CommonIcons;
 import de.topobyte.android.intent.utils.IntentFactory;
-import de.topobyte.android.intent.utils.ThankOption;
-import de.topobyte.android.intent.utils.TopobyteIntentFactory;
 import de.topobyte.apps.viewer.FeedbackUtil;
 import de.waldbrandapp.BuildConfig;
 import de.waldbrandapp.R;
@@ -52,7 +50,6 @@ public class AboutActivity extends PlainActivity
     appVersion.setText(String.format(appVersionTemplate, versionName));
 
     setupFeedback();
-    setupDonate();
 
     TextView website = findViewById(R.id.textViewWebsite);
     TextView repo = findViewById(R.id.textViewRepo);
@@ -106,41 +103,6 @@ public class AboutActivity extends PlainActivity
     buttonMail.setOnClickListener(view -> FeedbackUtil.sendFeedbackMail(AboutActivity.this));
 
     buttonShare.setOnClickListener(view -> FeedbackUtil.share(AboutActivity.this));
-  }
-
-  private void setupDonate()
-  {
-    Button buttonDonate1 = findViewById(R.id.buttonDonate1);
-    Button buttonDonate2 = findViewById(R.id.buttonDonate2);
-    Button buttonDonate5 = findViewById(R.id.buttonDonate5);
-    Button buttonDonate10 = findViewById(R.id.buttonDonate10);
-
-    CommonIcons commonIcons = new CommonIcons(this, 36);
-
-    commonIcons.setCafe(buttonDonate1);
-    commonIcons.setBeer(buttonDonate2);
-    commonIcons.setCinema(buttonDonate5);
-    commonIcons.setRestaurant(buttonDonate10);
-
-    buttonDonate1.setOnClickListener(view -> {
-      Intent intent = TopobyteIntentFactory.createThanksAppDetailIntent(ThankOption.THANK_1);
-      startActivity(intent);
-    });
-
-    buttonDonate2.setOnClickListener(view -> {
-      Intent intent = TopobyteIntentFactory.createThanksAppDetailIntent(ThankOption.THANK_2);
-      startActivity(intent);
-    });
-
-    buttonDonate5.setOnClickListener(view -> {
-      Intent intent = TopobyteIntentFactory.createThanksAppDetailIntent(ThankOption.THANK_5);
-      startActivity(intent);
-    });
-
-    buttonDonate10.setOnClickListener(view -> {
-      Intent intent = TopobyteIntentFactory.createThanksAppDetailIntent(ThankOption.THANK_10);
-      startActivity(intent);
-    });
   }
 
   static final Linkify.MatchFilter allFilter = (s, start, end) -> true;

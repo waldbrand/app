@@ -13,10 +13,6 @@
 
     <View style="@style/HorizontalLine" />
 
-    <include layout="@layout/about_donate" />
-
-    <View style="@style/HorizontalLine" />
-
     <include layout="@layout/about_map_copyright" />
 
     <View style="@style/HorizontalLine" />

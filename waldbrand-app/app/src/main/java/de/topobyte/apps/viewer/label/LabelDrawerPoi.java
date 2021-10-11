@@ -17,6 +17,9 @@
 
 package de.topobyte.apps.viewer.label;
 
+import static de.waldbrandapp.Waldbrand.PILLAR;
+import static de.waldbrandapp.Waldbrand.UNDERGROUND;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
@@ -427,7 +430,8 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
     boolean ignoreText = false;
 
     WaldbrandMapping waldbrandMapping = queryWorkerPoi.getWaldbrandMapping();
-    if (waldbrandMapping.getConstantForClassId(type) == Waldbrand.UNDERGROUND) {
+    int wc = waldbrandMapping.getConstantForClassId(type);
+    if (wc == UNDERGROUND || wc == PILLAR) {
       if (mapWindow.getZoom() < 14) {
         ignoreText = true;
       } else if (mapWindow.getZoom() < 16) {

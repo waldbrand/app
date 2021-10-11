@@ -17,6 +17,10 @@
 
 package de.topobyte.apps.viewer.label;
 
+import static de.waldbrandapp.Waldbrand.PILLAR;
+import static de.waldbrandapp.Waldbrand.RETTUNGSPUNKT;
+import static de.waldbrandapp.Waldbrand.UNDERGROUND;
+
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
@@ -224,9 +228,16 @@ public class QueryWorkerPoi extends QueryWorker<BaseMapView>
 
               Coordinate point = node.getPoint();
               String text = null;
-              if (constant == Waldbrand.UNDERGROUND) {
-                text = node.getTags().get(diameterKey);
-              } else if (constant == Waldbrand.RETTUNGSPUNKT) {
+              if (constant == UNDERGROUND) {
+                String diameter = node.getTags().get(diameterKey);
+                if (diameter == null) {
+                  text = "H";
+                } else {
+                  text = "H" + diameter;
+                }
+              } else if (constant == PILLAR) {
+                text = "ÜH";
+              } else if (constant == RETTUNGSPUNKT) {
                 text = node.getTags().get(rettungspunktNrKey);
               }
               list.add(new PoiLabel(point.getX(), point.getY(), text, classId, -1, constant, tags));

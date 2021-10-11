@@ -234,7 +234,7 @@
 
 		<!-- hydrants -->
 		<label id="hydrant" parent="icon-base" fg="black" bg="white"/>
-		<label parent="hydrant" image="hydrant-template.bvg" image-height="8">
+		<label parent="hydrant" image="hydrant.bvg" image-height="8">
 			<rule min="11" max="13">
 				<rule key="hydrant-underground" />
 				<rule key="hydrant-underground2" />

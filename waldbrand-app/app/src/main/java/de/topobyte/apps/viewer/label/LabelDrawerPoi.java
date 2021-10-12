@@ -435,9 +435,9 @@ public class LabelDrawerPoi extends LabelDrawer<Integer, LabelClass, BaseMapView
       if (mapWindow.getZoom() < 14) {
         ignoreText = true;
       } else if (mapWindow.getZoom() < 16) {
-        dy += 10;
+        dy += 5.7 * density;
       } else {
-        dy += 20;
+        dy += 11.4 * density;
       }
     }
 

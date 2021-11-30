@@ -13,8 +13,8 @@ android {
         applicationId 'de.waldbrandapp.brandenburg'
         minSdkVersion 14
         targetSdkVersion 30
-        versionCode 14
-        versionName "2.4.0"
+        versionCode 15
+        versionName "2.5.0"
         buildConfigField "int", "MAP_FILE_SIZE", "" +
                 new File("app/src/main/assets/map.xmap.jet").size()
         buildConfigField "int", "DATABASE_FILE_SIZE", "" +

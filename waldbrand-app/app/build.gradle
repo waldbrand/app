@@ -7,12 +7,12 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion '30.0.2'
     defaultConfig {
         applicationId 'de.waldbrandapp.brandenburg'
         minSdkVersion 14
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 25
         versionName "2.15.0"
         buildConfigField "int", "MAP_FILE_SIZE", "" +

@@ -15,9 +15,6 @@ buildscript {
 allprojects {
     repositories {
         maven {
-            url maven_path_topobyte
-        }
-        maven {
             url 'https://mvn.topobyte.de'
         }
         maven {
